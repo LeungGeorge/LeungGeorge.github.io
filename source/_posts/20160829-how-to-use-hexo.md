@@ -24,4 +24,5 @@ comments: false
 
 
 [安装Hexo](http://www.jianshu.com/p/35e197cb1273)  
-[hexo.io](https://hexo.io/)
+[hexo.io](https://hexo.io/)  
+[hexo](http://blog.sina.com.cn/s/blog_617ccc0c0101h84p.html)
