@@ -1,7 +1,8 @@
 ---
 title: markdownMarxico
 date: 2016-08-28 23:01:41
-tags:
+categories: markdown
+
 ---
 # Welcome to Marxico
 

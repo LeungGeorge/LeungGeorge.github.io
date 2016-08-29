@@ -1,9 +1,9 @@
 ---
 title: how to use hexo
-tags: 写作
+date: 2016-08-29 21:34:52
 categories: hexo
 comments: false
-date: 2016-08-29 21:34:52
+
 ---
 
 **目录:**
