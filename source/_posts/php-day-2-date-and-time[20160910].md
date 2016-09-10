@@ -10,6 +10,7 @@ date: 2016-09-10 13:21:22
 # 日期转换为时间戳
 ```
 <?php
+
     //日期转换为时间戳
     $strDateTime = '2016-09-10 12:01:01';
     $intTime = strtotime($strDateTime);
@@ -24,10 +25,12 @@ int(1473480061)
 # 时间戳转换为日期
 ```
 <?php
+
     //时间戳转换为日期
     $intTime = time();
     $strDateTime = date('Y-m-d H:i:s', $intTime);
     var_dump($strDateTime);
+
 ?>
 
 输出：
