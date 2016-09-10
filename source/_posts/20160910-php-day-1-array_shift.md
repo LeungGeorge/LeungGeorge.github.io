@@ -1,9 +1,10 @@
 ---
-title: php day 1 array_shift
-tags: 写作
-categories: PHP
+title: php day 1 array_shift  
+tags: 写作  
+categories: PHP  
 comments: false
-date: 2016-09-10 11:18:22
+date: 2016-09-10 11:18:22  
+
 ---
 # array_shift用法
 
@@ -16,13 +17,25 @@ array_shift()将数组array的第一个单元移除并作为结果返回，array
 
 ```
 <?php
-$ 
-
+    $stack = array("orange", "banana", "apple", "raspberry");
+    $fruit = array_shift($stack);
+    print_r($stack);
 ?>
-```  
-`<blockqu搭搭撒撒ote>`  
-`<blockquote>`
 
+输出：
+Array
+(
+    [0] => banana
+    [1] => apple
+    [2] => raspberry
+)
+
+```  
+
+
+
+
+---
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
 <script>
@@ -31,6 +44,4 @@ hljs.initHighlightingOnLoad();
 </script>
 
 
-作者：LeungGeorge  
 来源：[http://leunggeorge.github.io/](http://leunggeorge.github.io/)  
-著作权归作者所有，转载请联系作者获得授权。
