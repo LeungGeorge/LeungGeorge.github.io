@@ -1,7 +1,7 @@
 ---
 title: ubuntu-shell-awk
 tags: 写作
-categories: 随笔
+categories: ubuntu
 comments: false
 date: 2016-09-10 13:02:55
 ---
