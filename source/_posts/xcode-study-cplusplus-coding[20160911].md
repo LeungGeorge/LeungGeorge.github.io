@@ -11,10 +11,16 @@ date: 2016-09-11 14:57:40
 
 # 创建C++项目
 1. 新建项目,选template  
-[File]>>[New]>>[Project],出现弹窗：
+[File]>>[New]>>[Project],出现弹窗：  
 ![新建项目](http://leunggeorge.github.io/src_img/xcode_study/choose a template for your new project.png)
-2. 啊
-
+2. 填写项目名称  
+![填写项目名称](http://leunggeorge.github.io/src_img/xcode_study/choose options for your new project.png)
+3. 删除main.m  
+![填写项目名称](http://leunggeorge.github.io/src_img/xcode_study/delete main.m.png)
+4. 添加main.cpp(取消勾选 Also create a header file)  
+![填写项目名称](http://leunggeorge.github.io/src_img/xcode_study/new file.png)
+5. 编译运行  
+![编译运行](http://leunggeorge.github.io/src_img/xcode_study/end.png)
 
 
 
