@@ -1,12 +1,18 @@
 ---
-title: xcode study cplusplus coding
+title: Xcode study cplusplus coding
 tags: 写作
 categories: 随笔
 comments: false
 date: 2016-09-11 14:57:40
----
-ad
 
+---
+# 前言  
+来自Windows星球的我，到Mac上不知道咋写C++代码了，找个编译器都费劲。终于功夫不负有心人，先是配置gdb，但是没有搞定调试那一步；网上搜了一把，然后就有了这篇笔记——用Xcode搞起C++。
+
+# 创建C++项目
+1. 新建项目
+
+2. 啊
 
 
 
