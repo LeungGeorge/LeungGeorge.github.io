@@ -7,7 +7,7 @@ date: 2016-09-10 13:21:22
 
 ---
 
-# 日期转换为时间戳
+# 日期转换为时间戳  
 ```
 <?php
 
@@ -17,10 +17,9 @@ date: 2016-09-10 13:21:22
     var_dump(intval($intTime));
 ?>
 
-```   
 输出：  
 int(1473480061)
-
+``` 
 
 # 时间戳转换为日期
 ```
@@ -30,19 +29,16 @@ int(1473480061)
     $intTime = time();
     $strDateTime = date('Y-m-d H:i:s', $intTime);
     var_dump($strDateTime);
-
 ?>
-
-``` 
 
 输出：  
 string(19) "2016-09-10 13:30:01"
 
-
+``` 
 # 日期的加减
+
 ```
 <?php
-
     var_dump(date('Y-m-d H:i:s', time()));
     var_dump(date('Y-m-d H:i:s', strtotime("-2 day")));
     var_dump(date('Y-m-d H:i:s', strtotime("+2 day")));
@@ -57,10 +53,7 @@ string(19) "2016-09-10 13:30:01"
     
     var_dump(date('Y-m-d H:i:s', strtotime("+1 year")));
     var_dump(date('Y-m-d H:i:s', strtotime("next Thursday")));
-    
 ?>
-
-``` 
 
 输出：  
 string(19) "2016-09-10 13:42:04"  
@@ -73,8 +66,7 @@ string(19) "2016-08-10 13:42:04"
 string(19) "2016-10-10 13:42:04"  
 string(19) "2017-09-10 13:42:04"  
 string(19) "2016-09-15 00:00:00"  
-
-
+```
 
 
 ---
