@@ -1,7 +1,7 @@
 ---
 title: php day 1 array  
-tags: 写作  
-categories: PHP  
+tags: writting  
+categories: php  
 comments: false
 date: 2016-09-10 11:18:22  
 

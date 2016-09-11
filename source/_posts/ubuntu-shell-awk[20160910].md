@@ -1,6 +1,6 @@
 ---
 title: ubuntu-shell-awk
-tags: 写作
+tags: writting
 categories: ubuntu
 comments: false
 date: 2016-09-10 13:02:55

@@ -1,7 +1,7 @@
 ---
 title: php day 2 date and time
-tags: 写作
-categories: PHP
+tags: writting
+categories: php
 comments: false
 date: 2016-09-10 13:21:22
 
