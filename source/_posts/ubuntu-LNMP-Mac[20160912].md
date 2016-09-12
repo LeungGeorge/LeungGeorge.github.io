@@ -12,7 +12,9 @@ date: 2016-09-12 21:14:24
 ```
 brew install nginx
 ```
-启动 nginx  
+
+启动、关闭 nginx
+
 ```
 nginx
 nginx -s reload|reopen|stop|quit 
