@@ -10,9 +10,6 @@ date: 2016-09-12 21:14:24
 # 安装homebrew
 
 
-# 安装php-fpm
-
-
 # 安装Nginx
 安装
 
@@ -111,6 +108,8 @@ Nginx配置文件root对应目录下新建index.php
 	phpinfo(); 
 ?>
 ```
+
+# 安装php
 
 
 # 参考资料
