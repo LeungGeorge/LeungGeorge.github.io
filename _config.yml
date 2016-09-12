@@ -69,7 +69,7 @@ pagination_dir: page
 # theme: landscape
 # theme: yilia
 # theme: pacman
-theme: pacman
+theme: jacman
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
