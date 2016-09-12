@@ -6,8 +6,7 @@ comments: false
 date: 2016-09-10 11:18:22  
 
 ---
-# array_shift用法
-
+# array_shift用法 
 array_shift-将数组开头的单元移出数组。
 
 说明：  
@@ -34,6 +33,7 @@ Array
 
 # array交集
 ## array_intersect_assoc
+原型：array array_intersect_assoc ( array array1, array array2 [, array ...] )   
 array_intersect_assoc()，带索引检查计算数组的交集。要求<键名,键值>完全一致。
 
 ```
@@ -56,6 +56,7 @@ array(1) {
 ```
 
 ## array_intersect
+原型：array array_intersect ( array array1, array array2 [, array ...] )  
 array_intersect()返回一个数组，该数组包含了所有在array1中同时也在其他所有数组中的值。键名保留不变。
 
 ```
