@@ -32,6 +32,55 @@ Array
 
 ```  
 
+# array交集
+## array_intersect_assoc
+array_intersect_assoc()，带索引检查计算数组的交集。要求<键名,键值>完全一致。
+
+```
+<?php
+
+// 求数组交集, key 也用于比较
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "green", "yellow", "red");
+$result_array = array_intersect_assoc($array1, $array2);
+
+var_dump($result_array);
+
+?>
+
+输出：
+array(1) {
+  ["a"]=>
+  string(5) "green"
+}
+```
+
+## array_intersect
+array_intersect()返回一个数组，该数组包含了所有在array1中同时也在其他所有数组中的值。键名保留不变。
+
+```
+<?php
+
+// 求数组交集, key 也用于比较
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "green", "yellow", "red");
+$result_array = array_intersect($array1, $array2);
+
+var_dump($result_array);
+
+?>
+
+输出：
+array(2) {
+  ["a"]=>
+  string(5) "green"
+  [0]=>
+  string(3) "red"
+}
+```
+
+
+
 
 
 
