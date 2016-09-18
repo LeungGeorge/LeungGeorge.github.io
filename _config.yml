@@ -73,7 +73,8 @@ pagination_dir: page
 # theme: hexo-theme-next
 # theme: uno
 # theme: concise
-theme: hexo-theme-freemind
+# theme: hexo-theme-freemind
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
