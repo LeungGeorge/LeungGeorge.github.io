@@ -15,7 +15,7 @@ avatar: https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d212
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://leunggeorge.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -37,7 +37,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0 #把文件名称转换为 (1) 小写或 (2) 大写
 render_drafts: false #显示草稿
-post_asset_folder: false #是否启动资源文件夹
+post_asset_folder: true #是否启动资源文件夹
 relative_link: false #把链接改为与根目录的相对位址
 future: true
 highlight: #代码块的设置
@@ -82,3 +82,11 @@ deploy:
   type: git
   repository: https://github.com/LeungGeorge/LeungGeorge.github.io.git
   branch: master
+
+algolia:
+    applicationID: 'FWXTLLN24O'
+    apiKey: '7e9c02f8fe7327a1a61313ea72c825f1'
+    adminApiKey: 'e032be0e67d4e83d8ff5e1ab16116b41'
+    indexName: 'leunggeorge_github_blog'
+    chunkSize: 5000
+
