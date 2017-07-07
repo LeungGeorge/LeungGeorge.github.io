@@ -84,9 +84,8 @@ deploy:
   branch: master
 
 algolia:
-    applicationID: 'FWXTLLN24O'
-    apiKey: '7e9c02f8fe7327a1a61313ea72c825f1'
-    adminApiKey: 'e032be0e67d4e83d8ff5e1ab16116b41'
-    indexName: 'leunggeorge_github_blog'
-    chunkSize: 5000
-
+  applicationID: 'FWXTLLN24O'
+  apiKey: '9fe78ed368d4c017f33c16a170ce10a0'
+  adminApiKey: '8497682cec675ee57e29c86c41956994'
+  indexName: 'leunggeorge_github_blog'
+  chunkSize: 5000
