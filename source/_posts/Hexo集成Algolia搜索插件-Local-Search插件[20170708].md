@@ -63,6 +63,8 @@ algolia:
   adminApiKey: adminApiKey
   indexName: indexName
   chunkSize: 5000
+  filter:
+    - title
 ```
 
 ## 4. 更新index
