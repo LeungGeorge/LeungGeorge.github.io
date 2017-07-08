@@ -29,6 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - search.html
 
 # Writing
 new_post_name: :title[:year:month:day].md # File name of new posts
@@ -91,3 +92,8 @@ algolia:
   chunkSize: 5000
   fields:
     - title
+
+search:
+  path: search.xml
+  field: post
+
