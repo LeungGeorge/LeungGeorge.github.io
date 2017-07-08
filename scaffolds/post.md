@@ -1,8 +1,10 @@
 ---
 title: {{ title }}  
 date: {{ date }}  
-tags: writting  
-categories: essay   
+tags: 
+  - writting  
+categories: 
+  - essay   
 comments: false
 ---
 
