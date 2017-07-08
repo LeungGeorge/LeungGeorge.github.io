@@ -1,10 +1,10 @@
 ---
 title: hexo algolia Error AlgoliaSearchNodeJS.AlgoliaSearchCore
 tags: 
-  - Hexo
+  - hexo
   - Search
 categories: 
-  - Hexo
+  - hexo
 comments: false 
 date: 2017-07-08 00:06:32  
 

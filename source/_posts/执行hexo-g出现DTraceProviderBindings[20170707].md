@@ -2,7 +2,8 @@
 title: 执行hexo g出现DTraceProviderBindings
 tags: 
   - hexo
-categories: hexo
+categories: 
+  - hexo
 comments: false
 date: 2017-07-07 20:06:42
 ---

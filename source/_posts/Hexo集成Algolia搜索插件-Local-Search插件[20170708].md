@@ -6,7 +6,7 @@ tags:
   - search
   
 categories: 
-  - Hexo
+  - hexo
 comments: false
 date: 2017-07-08 11:30:05
 ---

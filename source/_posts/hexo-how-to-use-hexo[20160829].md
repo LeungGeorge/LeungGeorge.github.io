@@ -2,9 +2,9 @@
 title: how to use hexo
 date: 2016-08-29 21:34:52
 tags:
-  - Hexo
+  - hexo
 categories: 
-  - Hexo
+  - hexo
 comments: false
 
 ---

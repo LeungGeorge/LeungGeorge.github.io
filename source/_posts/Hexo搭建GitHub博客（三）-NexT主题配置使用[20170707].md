@@ -1,11 +1,11 @@
 ---
 title: Hexo搭建GitHub博客（三）- NexT主题配置使用
 tags: 
-  - Hexo
+  - hexo
   - NexT
   - 主题
 categories: 
-  - Hexo
+  - hexo
 comments: false
 date: 2017-07-07 20:29:45  
 
