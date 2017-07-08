@@ -9,3 +9,5 @@ git commit -m "auto commit"
 git push origin hexo
 
 git pull
+
+hexo algolia
