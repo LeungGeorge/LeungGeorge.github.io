@@ -10,4 +10,3 @@ git push origin hexo
 
 git pull
 
-hexo algolia
