@@ -5,8 +5,8 @@
 
 
 # Site
-title: LeungGeorge's WebSite
-subtitle:
+title: 一本正经胡说八道
+subtitle: 
 description:
 author: Leung George
 language: zh-Hans
@@ -90,8 +90,6 @@ algolia:
   adminApiKey: 8497682cec675ee57e29c86c41956994
   indexName: dev_jobbymsblog
   chunkSize: 5000
-  fields:
-    - title
 
 search:
   path: search.xml

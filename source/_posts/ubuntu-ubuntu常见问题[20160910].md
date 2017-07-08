@@ -1,7 +1,12 @@
 ---
 title: ubuntu常见问题
-tags: 写作
-categories: ubuntu
+tags: 
+  - ubuntu
+  - 文件
+  - 音乐播放器
+  - PHP开发环境
+categories: 
+  - ubuntu
 comments: false
 date: 2016-09-10 13:13:33
 

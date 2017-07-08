@@ -1,7 +1,9 @@
 ---
 title: xcode study cplusplus coding
-tags: writting
-categories: essay
+tags: 
+  - XCode
+categories: 
+  - XCode
 comments: false
 date: 2016-09-11 14:57:40
 

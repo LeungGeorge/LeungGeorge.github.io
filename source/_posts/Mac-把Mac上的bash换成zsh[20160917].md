@@ -1,7 +1,11 @@
 ---
 title: Mac-把Mac上的bash换成zsh
-tags: writting
-categories: essay
+tags: 
+  - bash
+  - zsh
+  - Mac
+categories: 
+  - Mac
 comments: false
 date: 2016-09-17 20:10:10
 

@@ -1,7 +1,10 @@
 ---
 title: php day 1 array  
-tags: writting  
-categories: PHP  
+tags: 
+  - PHP
+  - array  
+categories: 
+  - PHP  
 comments: false  
 date: 2016-09-10 11:18:22  
 

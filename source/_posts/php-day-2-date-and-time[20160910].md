@@ -1,7 +1,10 @@
 ---
 title: php day 2 date and time
-tags: writting
-categories: PHP
+tags: 
+  - 日期
+  - 时间转换
+categories: 
+  - PHP
 comments: false
 date: 2016-09-10 13:21:22
 

@@ -1,7 +1,8 @@
 ---
 title: 执行hexo g出现DTraceProviderBindings
-tags: writting
-categories: essay
+tags: 
+  - hexo
+categories: hexo
 comments: false
 date: 2017-07-07 20:06:42
 ---

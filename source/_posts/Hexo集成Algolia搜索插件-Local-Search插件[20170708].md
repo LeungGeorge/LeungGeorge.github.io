@@ -1,14 +1,14 @@
 ---
 title: 'Hexo集成Algolia搜索插件,Local Search插件'
-tags: 
-  - writting
-  - Testing
-  - Another Tag
-categories: essay
+tags:
+  - hexo
+  - algolia
+  - search
+  
+categories: 
+  - Hexo
 comments: false
 date: 2017-07-08 11:30:05
-description: 本文主要介绍Hexo Search 插件在github.io中的安装使用方法。
-
 ---
 
 # 集成为搜索Local Search
@@ -58,10 +58,10 @@ npm install --save hexo-algolia
 
 ```
 algolia:
-  applicationID: 'applicationID'
-  apiKey: 'apiKey'
-  adminApiKey: 'adminApiKey'
-  indexName: 'indexName'
+  applicationID: applicationID
+  apiKey: apiKey
+  adminApiKey: adminApiKey
+  indexName: indexName
   chunkSize: 5000
 ```
 

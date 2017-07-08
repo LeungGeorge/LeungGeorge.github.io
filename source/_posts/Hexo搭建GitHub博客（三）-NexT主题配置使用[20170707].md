@@ -1,7 +1,11 @@
 ---
 title: Hexo搭建GitHub博客（三）- NexT主题配置使用
-tags: writting
-categories: essay
+tags: 
+  - Hexo
+  - NexT
+  - 主题
+categories: 
+  - Hexo
 comments: false
 date: 2017-07-07 20:29:45  
 

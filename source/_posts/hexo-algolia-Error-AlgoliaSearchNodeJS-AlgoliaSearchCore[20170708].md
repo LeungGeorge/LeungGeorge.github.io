@@ -1,7 +1,10 @@
 ---
 title: hexo algolia Error AlgoliaSearchNodeJS.AlgoliaSearchCore
-tags: writting
-categories: essay
+tags: 
+  - Hexo
+  - Search
+categories: 
+  - Hexo
 comments: false 
 date: 2017-07-08 00:06:32  
 

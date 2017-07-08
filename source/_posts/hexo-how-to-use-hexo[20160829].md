@@ -1,7 +1,10 @@
 ---
 title: how to use hexo
 date: 2016-08-29 21:34:52
-categories: hexo
+tags:
+  - Hexo
+categories: 
+  - Hexo
 comments: false
 
 ---

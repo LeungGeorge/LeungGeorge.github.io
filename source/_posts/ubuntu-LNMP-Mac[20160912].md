@@ -1,10 +1,14 @@
 ---
 title: ubuntu LNMP Mac
-tags: writting
-categories: ubuntu
+tags: 
+  - homebrew
+  - nginx
+  - mysql
+  - php
+categories: 
+  - ubuntu
 comments: false
 date: 2016-09-12 21:14:24
-
 ---
 
 # 安装homebrew

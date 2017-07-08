@@ -1,7 +1,11 @@
 ---
 title: markdownMarxico
+tags:
+  - markdown
+  - markdown语法
 date: 2016-08-28 23:01:41
-categories: markdown
+categories: 
+  - markdown
 
 ---
 # Welcome to Marxico

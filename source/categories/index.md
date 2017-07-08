@@ -1,4 +1,7 @@
 ---
 title: categories
-date: 2016-09-18 21:40:53
+date: 2017-07-08 16:49:47
+type: "categories"
+comments: false
+ 
 ---

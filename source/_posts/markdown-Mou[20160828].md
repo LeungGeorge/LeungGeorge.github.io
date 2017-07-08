@@ -1,8 +1,11 @@
 ---
 title: markdownMou
 date: 2016-08-28 23:01:17
-tags: writting
-categories: markdown
+tags: 
+  - markdown
+  - markdown语法
+categories: 
+  - markdown
 
 ---
 # Mou
