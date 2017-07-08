@@ -35,6 +35,7 @@ local_search:
 # 集成Algolia
 ## 1. 注册Algolia，穿件Index  
     前往 Algolia 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。
+    ![image](Hexo集成Algolia搜索插件-Local-Search插件[20170708]/algolia_index.png)
 
 
 
