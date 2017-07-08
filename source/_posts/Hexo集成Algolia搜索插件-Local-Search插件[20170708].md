@@ -1,9 +1,13 @@
 ---
 title: 'Hexo集成Algolia搜索插件,Local Search插件'
-tags: writting
+tags: 
+  - writting
+  - Testing
+  - Another Tag
 categories: essay
 comments: false
 date: 2017-07-08 11:30:05
+description: 本文主要介绍Hexo Search 插件在github.io中的安装使用方法。
 
 ---
 
@@ -31,6 +35,7 @@ search:
 local_search:
   enable: true
 ```
+
 
 # 集成Algolia
 ## 1. 注册Algolia，穿件Index  
