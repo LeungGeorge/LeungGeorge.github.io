@@ -90,6 +90,8 @@ algolia:
   adminApiKey: 8497682cec675ee57e29c86c41956994
   indexName: dev_jobbymsblog
   chunkSize: 5000
+  filter:
+    - title
 
 search:
   path: search.xml
