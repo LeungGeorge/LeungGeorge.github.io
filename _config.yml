@@ -93,13 +93,16 @@ algolia:
   filter:
     - title
 
-search:
+#search: true
+search: 
   path: search.xml
   field: post
   format: html
   limit: 10000
   filter:
     - title
+
+
 
 #RSS订阅
 feed:
