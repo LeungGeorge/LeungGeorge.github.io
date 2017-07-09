@@ -203,6 +203,7 @@ algolia:
 更改主题配置文件，找到 Algolia Search 配置部分,将 enable 改为 true 即可，根据需要你可以调整 labels 中的文本。 
 
 ```
+algolia: true
 # Algolia Search
 algolia_search:
   enable: true
@@ -327,4 +328,5 @@ baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 
 [安装Hexo](http://www.jianshu.com/p/35e197cb1273)  
 [hexo.io](https://hexo.io/)  
-[hexo](http://blog.sina.com.cn/s/blog_617ccc0c0101h84p.html)
+[hexo](http://blog.sina.com.cn/s/blog_617ccc0c0101h84p.html)  
+[安装 blog-admin 博客插件](http://keychar.com/2016/05/28/install-blog-admin/)
