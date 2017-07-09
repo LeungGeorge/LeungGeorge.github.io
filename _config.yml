@@ -99,10 +99,6 @@ search:
   field: post
   format: html
   limit: 10000
-  filter:
-    - title
-
-
 
 #RSS订阅
 feed:
