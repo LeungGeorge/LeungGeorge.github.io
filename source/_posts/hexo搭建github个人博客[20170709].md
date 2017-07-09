@@ -28,39 +28,32 @@ sudo apt-get install nodejs
 ```
 
 # Hexo命令
+## 写博客常用命令
+**常用：**
 
-## 新建文章
-
-``` bash
-$ hexo new "My New Post"
+```
+hexo new "postName"       #新建文章
+hexo new page "pageName"  #新建页面
+hexo generate             #生成静态页面至public目录
+hexo server               #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
+hexo deploy               #将.deploy目录部署到GitHub
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+**简写:**
 
-## 生成博客
-
-``` bash
-$ hexo generate
+```
+hexo n == hexo new
+hexo g == hexo generate
+hexo s == hexo server
+hexo d == hexo deploy
 ```
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+**复合：**
 
-## 预览页面效果
-
-``` bash
-$ hexo server
 ```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-
-## 部署到github
-
-``` bash
-$ hexo deploy
+hexo deploy -g
+hexo server -g
 ```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
 
 ## 偷懒的办法
 写一个shell文件，把上面的命令写到里面，这样就不用每次都敲一遍了，嘿嘿。。。
@@ -124,6 +117,7 @@ theme: next
 scheme: Mist
 #scheme: Pisces
 ```
+#### 添加阅读进度
 
 
 
@@ -330,8 +324,6 @@ baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 # 更新
 # 总结
 # 参考引用
-# 搭建博客相关网站
-
 
 [安装Hexo](http://www.jianshu.com/p/35e197cb1273)  
 [hexo.io](https://hexo.io/)  
