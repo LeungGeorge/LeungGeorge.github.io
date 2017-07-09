@@ -1,12 +1,11 @@
 ---
-title: how to use hexo
-date: 2016-08-29 21:34:52
+title: hexo搭建github个人博客
 tags:
-  - hexo
-categories: 
-  - hexo
+  - writting
+categories:
+  - essay
 comments: false
-
+date: 2017-07-09 09:48:42
 ---
 
 
@@ -95,6 +94,11 @@ post_asset_folder: true #是否启动资源文件夹
 #7. 评论设置
 #8. 404页面
 配置腾讯公益
+
+```
+![image](pic-404.png)
+```
+
 #9. 统计
 #10. 更新
 #11. 总结
