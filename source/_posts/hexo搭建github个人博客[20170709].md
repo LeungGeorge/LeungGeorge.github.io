@@ -1,15 +1,18 @@
 ---
 title: hexo搭建github个人博客
 tags:
-  - writting
+  - hexo
+  - blog
+  - search
+  - local search 
+  - next
+  - 统计
 categories:
-  - essay
+  - hexo
 comments: false
 date: 2017-07-09 09:48:42
 ---
-
-
-#1. 安装Hexo
+# 安装Hexo
 
 ## 安装node.js
 
@@ -19,23 +22,190 @@ sudo apt-get update
 sudo apt-get install nodejs
 ```
 
-##  安装hexo
+## 安装hexo
 ```
  sudo npm install hexo -g
 ```
 
-#2. 部署Hexo
-#3. Hexo命令
-#4. 一些报错处理
-#5. 博客管理
-#6. 插件
+# Hexo命令
+
+## 新建文章
+
+``` bash
+$ hexo new "My New Post"
+```
+
+More info: [Writing](https://hexo.io/docs/writing.html)
+
+## 生成博客
+
+``` bash
+$ hexo generate
+```
+
+More info: [Generating](https://hexo.io/docs/generating.html)
+
+## 预览页面效果
+
+``` bash
+$ hexo server
+```
+
+More info: [Server](https://hexo.io/docs/server.html)
+
+
+## 部署到github
+
+``` bash
+$ hexo deploy
+```
+
+More info: [Deployment](https://hexo.io/docs/deployment.html)
+
+## 偷懒的办法
+写一个shell文件，把上面的命令写到里面，这样就不用每次都敲一遍了，嘿嘿。。。
+例如：
+创建preview.sh，内容如下，这样就可以直接预览了：
+
+```
+#!/bin/bash
+hexo clean
+hexo g
+hexo s
+```
+创建push，内容如下，这样就可以push到github了：
+
+```
+#!/bin/bash
+git pull
+hexo g
+hexo d
+git add --all
+git commit -m "auto commit"
+git push origin hexo
+git pull
+```
+
+
+
+# 一些报错处理
+## 执行hexo algolia时报Error AlgoliaSearchNodeJS.AlgoliaSearchCore
+**报错信息**
+
+```
+/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/async.js:61
+        fn = function () { throw arg; };
+                           ^
+Error
+    at AlgoliaSearchNodeJS.AlgoliaSearchCore (/home/work/github/blog/LeungGeorge.github.io/node_modules/algoliasearch/src/AlgoliaSearchCore.js:51:11)
+    at AlgoliaSearchNodeJS.AlgoliaSearch (/home/work/github/blog/LeungGeorge.github.io/node_modules/algoliasearch/src/AlgoliaSearch.js:11:21)
+    at AlgoliaSearchNodeJS.AlgoliaSearchServer (/home/work/github/blog/LeungGeorge.github.io/node_modules/algoliasearch/src/server/builds/AlgoliaSearchServer.js:17:17)
+    at new AlgoliaSearchNodeJS (/home/work/github/blog/LeungGeorge.github.io/node_modules/algoliasearch/src/server/builds/node.js:79:23)
+    at algoliasearch (/home/work/github/blog/LeungGeorge.github.io/node_modules/algoliasearch/src/server/builds/node.js:68:10)
+    at /home/work/github/blog/LeungGeorge.github.io/node_modules/hexo-algoliasearch/lib/algolia.js:119:18
+    at tryCatcher (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise.successAdapter [as _fulfillmentHandler0] (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/nodeify.js:22:30)
+    at Promise._settlePromise (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/promise.js:566:21)
+    at Promise._settlePromise0 (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/home/work/github/blog/LeungGeorge.github.io/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:637:20)
+    at tryOnImmediate (timers.js:610:5)
+    at processImmediate [as _immediateCallback] (timers.js:582:5)
+```
+
+**修复方法**
+安装hexo-algolia@0.2.0，再执行hexo algolia就可以了
+
+```
+npm install hexo-algolia@0.2.0
+```
+
+## 执行hexo g时报Error: Cannot find module DTraceProviderBindings
+**报错信息**
+
+```
+{ Error: Cannot find module './build/default/DTraceProviderBindings'
+    at Function.Module._resolveFilename (module.js:472:15)
+    at Function.Module._load (module.js:420:25)
+    at Module.require (module.js:500:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/usr/local/lib/node_modules/hexo/node_modules/dtrace-provider/dtrace-provider.js:17:23)
+    at Module._compile (module.js:573:32)
+    at Object.Module._extensions..js (module.js:582:10)
+    at Module.load (module.js:490:32)
+    at tryModuleLoad (module.js:449:12)
+    at Function.Module._load (module.js:441:3)
+    at Module.require (module.js:500:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/usr/local/lib/node_modules/hexo/node_modules/bunyan/lib/bunyan.js:79:18)
+    at Module._compile (module.js:573:32)
+    at Object.Module._extensions..js (module.js:582:10)
+    at Module.load (module.js:490:32) code: 'MODULE_NOT_FOUND' }  
+```
+
+**解决办法**
+重装：hexo-cli  
+
+```
+npm uninstall hexo-cli -g  
+npm install hexo-cli -g   
+```
+
+
+# 主题
+其他主题安装方法类似
+## NexT主题配置使用
+### 主题下载
+进入博客目录文件
+
+```
+git clone https://github.com/iissnan/hexo-theme-next themes/next
+```
+
+### 修改站点配置文件
+配置theme为：<font color=red>next</font>
+
+```
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+# theme: landscape
+# theme: yilia
+# theme: pacman
+# theme: jacman
+# theme: hexo-theme-next
+# theme: uno
+# theme: concise
+# theme: hexo-theme-freemind
+theme: next
+```
+
+
+### 修改主题配置
+修改Scheme：<font color=red>Mist</font>
+
+```
+# Schemes
+# scheme: Muse
+scheme: Mist
+#scheme: Pisces
+```
+
+
+
+
+# 插件
 ## RSS插件
-安装hexo-generator-feed
+**安装hexo-generator-feed**
 
 ```
 npm install hexo-generator-feed --save
 ```
-修改站点配置文件：
+
+**修改站点配置文件**
 
 ```
 feed:
@@ -47,14 +217,14 @@ feed:
 ```
 
 ## Sitemap插件
-给博客生成一个站点地图:
+**给博客生成一个站点地图**
 
 ```
 npm install hexo-generator-sitemap --save
 npm install hexo-generator-baidu-sitemap --save
 ```
 
-修改站点配置文件：
+**修改站点配置**
 
 ```
 # 自动生成sitemap
@@ -63,47 +233,173 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 ```
+## 搜索插件
+### 集成Algolia
+**1.注册Algolia，创建Index  **
+
+前往 Algolia 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。  
+    
+![image](algolia_index.png)
+
+**2.安装hexo algolia**
+
+Index 创建完成后，此时这个 Index 里未包含任何数据。 接下来需要安装 Hexo Algolia 扩展， 这个扩展的功能是搜集站点的内容并通过 API 发送给 Algolia。前往站点根目录，执行命令安装：
+
+```
+npm install --save hexo-algolia
+```
+
+**3.设置key，更新站点配置文件**
+
+在 Algolia 服务站点上找到需要使用的一些配置的值，包括 ApplicationID、Search API Key、 Admin API Key。注意，Admin API Key 需要保密保存。  
+
+![image](api_keys.png)  
+编辑 站点配置文件，新增以下配置(替换除了 chunkSize 以外的其他字段为在 Algolia 获取到的值)：
+
+```
+algolia:
+  applicationID: applicationID
+  apiKey: apiKey
+  adminApiKey: adminApiKey
+  indexName: indexName
+  chunkSize: 5000
+  filter:
+    - title
+```
+
+**4.更新index**
+
+当配置完成，在站点根目录下执行 hexo algolia 来更新 Index。请注意观察命令的输出。
+
+![image](update_index-4.png)  
+
+**5.主题集成**
+
+更改主题配置文件，找到 Algolia Search 配置部分,将 enable 改为 true 即可，根据需要你可以调整 labels 中的文本。 
+
+```
+# Algolia Search
+algolia_search:
+  enable: true
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}"
+    hits_stats: "${hits} results found in ${time} ms"
+```
 
 
-## search插件
-### 安装hexo-generator-searchdb
+
+### Local Search插件
+**1.安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：**
+
 ```
 npm install hexo-generator-searchdb --save
 ```
 
-## 百度统计插件
+**2.编辑 站点配置文件，新增以下内容**
+
+```
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+```
+
+**3.编辑 主题配置文件，启用本地搜索功能：**
+
+enable修改为：<font color=red>true</font>
+
+```
+# Local search
+local_search:
+  enable: true
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+```
+
+
 ## 图片插件
-安装
+
+### 安装
 
 ```
 npm install https://github.com/CodeFalling/hexo-asset-image -- save
 ```
-修改站点配置文件：
+### 修改站点配置
 
 ```
 post_asset_folder: true #是否启动资源文件夹
 ```
 
-使用
+### 使用
+**注意**，test-image.png放到md文件对应的目录中。格式如下（无需包含路径名）：
+```
+![image](test-image.png)
 ```
 
+# 评论设置
+
+# 404页面
+
+在主题目录新增404.html文件(配置为腾讯公益)，内容为：
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8;"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="robots" content="all" />
+  <meta name="robots" content="index,follow"/>
+  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
+</head>
+<body>
+  <script type="text/plain" src="http://www.qq.com/404/search_children.js"
+          charset="utf-8" homePageUrl="/"
+          homePageName="BackToHomePage">
+  </script>
+  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
+  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
+</body>
+</html>
 ```
 
+效果预览：
 
-
-#7. 评论设置
-#8. 404页面
-配置腾讯公益
-
-```
 ![image](pic-404.png)
+
+# 统计
+## 百度统计
+### 注册百度统计
+获取统计串：
+
+![image](baidu-tongji.png)
+
+### 修改主题配置
+主题配置文件中增加baidu_analytics配置。
+注意:修改85c063245825f8a02c40f450c05f5d86为自己的串
+
+```
+# Baidu Analytics ID
+baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 ```
 
-#9. 统计
-#10. 更新
-#11. 总结
-#12. 参考引用
-#13. 搭建博客相关网站
+### 检查安装效果：
+大概过20分钟，就可以去[百度统计](https://tongji.baidu.com/)看到效果了。
+![image](jian-cha-an-zhuang-xiao-guo.png)
+
+
+
+# 更新
+# 总结
+# 参考引用
+# 搭建博客相关网站
 
 
 [安装Hexo](http://www.jianshu.com/p/35e197cb1273)  
