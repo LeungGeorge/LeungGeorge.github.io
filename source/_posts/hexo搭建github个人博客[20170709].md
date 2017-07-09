@@ -27,6 +27,8 @@ sudo apt-get install nodejs
  sudo npm install hexo -g
 ```
 
+<!--more-->
+
 # Hexo命令
 ## 写博客常用命令
 **常用：**
@@ -142,7 +144,7 @@ feed:
 ```
 
 ## Sitemap插件
-**给博客生成一个站点地图**
+**给博客生成一个站点地图，提交搜索引擎**
 
 ```
 npm install hexo-generator-sitemap --save
@@ -324,9 +326,10 @@ baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 
 # 更新
 # 总结
-# 参考引用
+# 引用
 
 [安装Hexo](http://www.jianshu.com/p/35e197cb1273)  
 [hexo.io](https://hexo.io/)  
 [hexo](http://blog.sina.com.cn/s/blog_617ccc0c0101h84p.html)  
-[安装 blog-admin 博客插件](http://keychar.com/2016/05/28/install-blog-admin/)
+[安装 blog-admin 博客插件](http://keychar.com/2016/05/28/install-blog-admin/)  
+[Hexo的Next主题配置](http://blog.csdn.net/zuoziji416/article/details/53204478)
