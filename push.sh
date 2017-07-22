@@ -1,4 +1,5 @@
 #!/bin/bash
+cp baidu-verify-F90255460A.txt ./public/
 git pull
 
 hexo clean
