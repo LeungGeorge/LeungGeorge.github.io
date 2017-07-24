@@ -73,6 +73,11 @@ class CrawlSpider(scrapy.Spider):
         pass
 ```
 
+### 保存数据
+
+```
+scrapy crawl JianShuSpider  -o items.json -t json
+```
 
 # 错误处理
 ## [scrapy.core.engine] DEBUG: Crawled (403) <GET http://www.jianshu.com/> (referer: None)
