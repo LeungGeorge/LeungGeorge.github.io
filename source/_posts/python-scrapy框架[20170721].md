@@ -118,7 +118,7 @@ class JianShuSpiderAgent(UserAgentMiddleware):
 
 
 
-> 参考资料  
+> 参考资料
 > [西刺免费代理IP](http://www.xicidaili.com/)  
 > [scrapy代理、UA配置](http://www.cnblogs.com/rwxwsblog/p/4575894.html?utm_source=tuicool&utm_medium=referral)  
 > [Scrapy环境搭建](http://agroup.baidu.com/media/md/article/78144)  
