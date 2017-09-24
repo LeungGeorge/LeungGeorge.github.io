@@ -5,6 +5,7 @@ tags:
 categories:
   - essay
 comments: false
+description: 修改php上传文件大小限制
 date: 2017-07-13 11:18:52
 ---
 

@@ -7,8 +7,8 @@ tags:
 categories: 
   - Mac
 comments: false
+description: Mac-把Mac上的bash换成zsh
 date: 2016-09-17 20:10:10
-
 ---
 
 1. 下载.oh-my-zsh配置  

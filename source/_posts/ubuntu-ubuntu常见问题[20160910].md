@@ -9,6 +9,7 @@ categories:
   - ubuntu
 comments: false
 date: 2016-09-10 13:13:33
+description: ubuntu常见问题
 
 ---
 

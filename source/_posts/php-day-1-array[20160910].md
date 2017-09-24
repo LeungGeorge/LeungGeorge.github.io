@@ -7,6 +7,7 @@ categories:
   - PHP  
 comments: false  
 date: 2016-09-10 11:18:22  
+description: php day 1 array  
 
 ---
 # array_shift用法 
