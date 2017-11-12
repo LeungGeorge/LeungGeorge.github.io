@@ -3,6 +3,7 @@ title: python scrapy框架
 tags:
   - 爬虫
   - Python
+  - scrapy
 categories:
   - Python
 comments: false
