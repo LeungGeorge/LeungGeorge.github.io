@@ -1,5 +1,5 @@
 ---
-title: starUML破解方法（Windows10 & MAC）-【摘录】
+title: starUML破解方法（Windows10 & MAC）
 tags:
   - writting
 categories:
@@ -21,6 +21,7 @@ description:
 /Applications/StarUML.app/Contents/www/license/node/LicenseManagerDomain.js
 ```
 
+<!--more-->
 
 2，找到文件23行，修改对应下面函数。更改为如下代码：
 
