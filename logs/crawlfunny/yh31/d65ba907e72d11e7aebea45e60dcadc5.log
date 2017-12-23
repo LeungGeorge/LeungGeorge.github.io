@@ -1,0 +1,204 @@
+2017-12-22 23:36:14 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: crawlfunny)
+2017-12-22 23:36:14 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'crawlfunny.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['crawlfunny.spiders'], 'LOG_FILE': 'logs/crawlfunny/yh31/d65ba907e72d11e7aebea45e60dcadc5.log', 'BOT_NAME': 'crawlfunny'}
+2017-12-22 23:36:14 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2017-12-22 23:36:14 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-12-22 23:36:14 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-12-22 23:36:14 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2017-12-22 23:36:14 [scrapy.core.engine] INFO: Spider opened
+2017-12-22 23:36:14 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-12-22 23:36:14 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-12-22 23:36:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/robots.txt> (referer: None)
+2017-12-22 23:36:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_1.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_6.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_5.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_7.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_2.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_4.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_3.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_10.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_11.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_12.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_13.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_14.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_9.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_15.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_16.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_20.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_17.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_18.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_19.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_22.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_23.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_25.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_26.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_21.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_27.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_24.html> (referer: None)
+2017-12-22 23:36:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_28.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_29.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_30.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_31.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_8.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_33.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_34.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_35.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_36.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_41.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_37.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_38.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_32.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_40.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_39.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_42.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_43.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_44.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_45.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_46.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_48.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_50.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_47.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_49.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_51.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_52.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_53.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_54.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_56.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_57.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_55.html> (referer: None)
+2017-12-22 23:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_58.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_59.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_61.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_62.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_67.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_68.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_69.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_64.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_60.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_66.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_70.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_71.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_72.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_73.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_65.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_75.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_74.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_63.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_76.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_77.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_78.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_82.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_81.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_79.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_80.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_83.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_84.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_85.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_86.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_87.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_91.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_89.html> (referer: None)
+2017-12-22 23:36:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_90.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_92.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_93.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_94.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_95.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_96.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_97.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_98.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_99.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_100.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_101.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_102.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_103.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_104.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_105.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_106.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_107.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_108.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_109.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_110.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_111.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_112.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_113.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_114.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_115.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_116.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_117.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_118.html> (referer: None)
+2017-12-22 23:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_119.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_88.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_120.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_127.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_121.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_129.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_128.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_132.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_126.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_131.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_130.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_124.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_133.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_135.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_123.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_136.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_125.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_134.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_138.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_122.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_137.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_144.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_141.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_143.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_139.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_147.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_140.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_148.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_145.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_146.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_142.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_149.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_151.html> (referer: None)
+2017-12-22 23:36:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://qq.yh31.com/ka/zr/List_150.html> (referer: None)
+2017-12-22 23:36:22 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-12-22 23:36:22 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 42639,
+ 'downloader/request_count': 152,
+ 'downloader/request_method_count/GET': 152,
+ 'downloader/response_bytes': 1081403,
+ 'downloader/response_count': 152,
+ 'downloader/response_status_count/200': 152,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 12, 22, 15, 36, 22, 61920),
+ 'log_count/DEBUG': 153,
+ 'log_count/INFO': 7,
+ 'memusage/max': 50843648,
+ 'memusage/startup': 50843648,
+ 'response_received_count': 152,
+ 'scheduler/dequeued': 151,
+ 'scheduler/dequeued/memory': 151,
+ 'scheduler/enqueued': 151,
+ 'scheduler/enqueued/memory': 151,
+ 'start_time': datetime.datetime(2017, 12, 22, 15, 36, 14, 365163)}
+2017-12-22 23:36:22 [scrapy.core.engine] INFO: Spider closed (finished)
