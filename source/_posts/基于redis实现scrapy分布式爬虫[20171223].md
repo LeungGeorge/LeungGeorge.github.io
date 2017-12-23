@@ -41,6 +41,7 @@ pip install scrapy-redis
 
 
 # 新建分布式爬虫
+![image](dir-tree.png)
 ## 新建项目
 ```
 scrapy startproject distributedspider
