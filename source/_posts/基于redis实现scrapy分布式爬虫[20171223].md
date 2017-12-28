@@ -3,7 +3,8 @@ title: 基于redis实现scrapy分布式爬虫
 tags:
   - writting
 categories:
-  - essay
+  - Python
+  - scrapy
 comments: false
 date: 2017-12-23 17:08:56
 description:
