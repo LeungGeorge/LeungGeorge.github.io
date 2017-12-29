@@ -6,6 +6,7 @@ tags:
   - 音乐播放器
   - PHP开发环境
 categories: 
+  - linux
   - ubuntu
 comments: false
 date: 2016-09-10 13:13:33

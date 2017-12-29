@@ -4,7 +4,8 @@ tags:
   - awk
   - uniq
 date: 2016-08-28 21:51:19
-categories: 
+categories:
+  - linux 
   - ubuntu
 description: awk
 

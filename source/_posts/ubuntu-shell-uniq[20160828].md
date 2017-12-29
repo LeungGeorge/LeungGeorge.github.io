@@ -5,6 +5,7 @@ tags:
   - shell
 date: 2016-08-28 21:51:19
 categories: 
+  - linux
   - ubuntu
 description: uniq
 

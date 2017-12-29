@@ -6,7 +6,7 @@ tags:
   - mysql
   - php
 categories: 
-  - ubuntu
+  - linux
 comments: false
 date: 2016-09-12 21:14:24
 description: ubuntu LNMP Mac
