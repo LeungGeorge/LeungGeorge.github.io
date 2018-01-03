@@ -5,4 +5,4 @@ public
 .deploy_git
 debug.log
 npm-debug.log
-package.json
+package\.json
