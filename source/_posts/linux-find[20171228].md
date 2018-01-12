@@ -1,5 +1,5 @@
 ---
-title: find命令
+title: linux-shell-find
 tags:
   - writting
   - shell

@@ -1,5 +1,5 @@
 ---
-title: uniq
+title: linux-uniq
 tags: 
   - uniq
   - shell
