@@ -23,3 +23,8 @@ date: 2016-08-28 23:05:50
 > [php](https://leunggeorge.gitbooks.io/php/content/)  
 > [linux](https://leunggeorge.gitbooks.io/linux/content/)  
 > [coding](https://leunggeorge.gitbooks.io/coding/content/)
+
+## 赞助
+感谢赞助^_^
+
+<img src="http://leunggeorge.github.io/src_img/donate.png" width="30%" height="30%">  
