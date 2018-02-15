@@ -27,4 +27,4 @@ date: 2016-08-28 23:05:50
 ## 赞助
 感谢赞助^_^
 
-<img src="http://leunggeorge.github.io/src_img/donate.png" width="30%" height="30%">  
+<img src="https://leunggeorge.github.io/src_img/donate.png" width="30%" height="30%">  
