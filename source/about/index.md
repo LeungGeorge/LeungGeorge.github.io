@@ -19,10 +19,15 @@ date: 2016-08-28 23:05:50
 2. [一些IT网站](https://www.zhihu.com/question/26155575)
 3. [九章算法](http://www.jiuzhang.com/)
 
-> 一本正经胡说八道  
-> [php](https://leunggeorge.gitbooks.io/php/content/)  
-> [linux](https://leunggeorge.gitbooks.io/linux/content/)  
-> [coding](https://leunggeorge.gitbooks.io/coding/content/)
+
+## 书籍
+### PHP
+1. [魔法书](https://leunggeorge.gitbooks.io/grimoire/content/)
+2. [PHP5中文手册](https://pan.baidu.com/s/1tJ6RVb07if105CmQWXJ_dg)
+
+
+
+
 
 ## 赞助
 感谢赞助^_^
