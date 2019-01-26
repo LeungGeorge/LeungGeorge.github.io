@@ -132,5 +132,3 @@ post_wordcount:
   min2read: true          # 单篇 阅读时长
   totalcount: true       # 网站 字数统计
   separated_meta: true
-
-
