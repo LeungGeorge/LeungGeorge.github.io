@@ -90,8 +90,6 @@ algolia:
   adminApiKey: '8497682cec675ee57e29c86c41956994'
   indexName: 'dev_jobbymsblog'
   chunkSize: 5000
-  filter:
-    -title
 
 #search: true
 search: 
@@ -99,8 +97,6 @@ search:
   field: post
   format: html
   limit: 10000
-  filter:
-    -title
 
 #RSS订阅
 feed:
