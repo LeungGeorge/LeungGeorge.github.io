@@ -91,7 +91,7 @@ algolia:
   indexName: 'dev_jobbymsblog'
   chunkSize: 5000
   filter:
-    - title
+    -title
 
 #search: true
 search: 
@@ -100,7 +100,7 @@ search:
   format: html
   limit: 10000
   filter:
-    - title
+    -title
 
 #RSS订阅
 feed:
