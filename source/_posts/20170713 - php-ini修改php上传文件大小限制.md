@@ -1,4 +1,5 @@
 ---
+uuid: e316c9ab-31d4-11e9-b40e-e5de14f70114
 title: php.ini修改php上传文件大小限制
 tags:
   - writting

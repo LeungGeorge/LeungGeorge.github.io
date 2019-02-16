@@ -1,4 +1,5 @@
 ---
+uuid: e316c9a5-31d4-11e9-b40e-e5de14f70114
 title: ubuntu LNMP Mac
 tags: 
   - homebrew

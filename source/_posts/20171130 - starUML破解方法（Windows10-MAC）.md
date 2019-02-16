@@ -1,4 +1,5 @@
 ---
+uuid: e316c9b4-31d4-11e9-b40e-e5de14f70114
 title: starUML破解方法（Windows10 & MAC）
 tags:
   - writting
