@@ -86,8 +86,8 @@ deploy:
 
 algolia:
   applicationID: FWXTLLN24O
-  apiKey: '9fe78ed368d4c017f33c16a170ce10a0'
-  adminApiKey: '8497682cec675ee57e29c86c41956994'
+  apiKey: 9fe78ed368d4c017f33c16a170ce10a0
+  adminApiKey: 8497682cec675ee57e29c86c41956994
   indexName: 'dev_jobbymsblog'
   chunkSize: 5000
   fields:
