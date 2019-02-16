@@ -1,4 +1,5 @@
 options:
   lineNumbers: true
+  imagePrefix: 'leunggeorge.github.io - pasted - '
 editor:
   lineNumbers: true

@@ -143,5 +143,7 @@ post_wordcount:
   totalcount: true       # 网站 字数统计
   separated_meta: true
 
+
+# hexo-admin authentification
 admin:
   deployCommand: './push.sh'
