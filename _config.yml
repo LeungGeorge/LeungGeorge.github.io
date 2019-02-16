@@ -91,12 +91,12 @@ algolia:
   indexName: 'dev_jobbymsblog'
   chunkSize: 5000
   fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
+    # - content:strip:truncate,0,500
+    # - excerpt:strip
+    # - gallery
+    # - permalink
+    # - photos
+    # - slug
     - tags
     - title
 
@@ -142,3 +142,6 @@ post_wordcount:
   min2read: true          # 单篇 阅读时长
   totalcount: true       # 网站 字数统计
   separated_meta: true
+
+admin:
+  deployCommand: './push.sh'
