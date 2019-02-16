@@ -5,8 +5,6 @@ hexo clean
 hexo g
 hexo d
 
-cp baidu-verify-F90255460A.txt ./public/
-
 hexo algolia
 
 git add --all
