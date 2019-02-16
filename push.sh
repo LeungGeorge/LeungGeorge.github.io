@@ -7,7 +7,7 @@ hexo d
 
 cp baidu-verify-F90255460A.txt ./public/
 
-#hexo algolia
+hexo algolia
 
 git add --all
 git commit -m "auto commit"
