@@ -2,5 +2,8 @@ options:
   lineNumbers: true
   imagePrefix: leunggeorge.github.io-image-
   askImageFilename: false
+  spellcheck: true
 editor:
   lineNumbers: true
+  inputStyle: contenteditable
+  spellcheck: true
