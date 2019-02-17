@@ -92,8 +92,8 @@ algolia:
   adminApiKey: 8497682cec675ee57e29c86c41956994
   chunkSize: 5000
   fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
+    # - content:strip:truncate,0,500
+    # - excerpt:strip
     - title
 #     # - gallery
 #     # - permalink

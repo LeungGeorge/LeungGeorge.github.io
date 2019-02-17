@@ -5,7 +5,7 @@ hexo clean
 hexo g
 hexo d
 
-hexo algolia
+#hexo algolia
 
 git add --all
 git commit -m "auto commit"
