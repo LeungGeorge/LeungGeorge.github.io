@@ -95,11 +95,11 @@ algolia:
     # - content:strip:truncate,0,500
     # - excerpt:strip
     - title
-#     # - gallery
-#     # - permalink
-#     # - photos
-#     # - slug
-#     # - tags
+    # - tags
+    # - gallery
+    # - permalink
+    # - photos
+    # - slug
 
 #search: true
 search: 
