@@ -1,11 +1,10 @@
----
 uuid: e316f0b8-31d4-11e9-b40e-e5de14f70114
 title: hexo搭建github个人博客
 tags:
   - hexo
   - blog
   - search
-  - local search 
+  - local search
   - next
   - 统计
 categories:
@@ -29,6 +28,7 @@ sudo apt-get install nodejs
 ```
 
 <!--more-->
+
 
 # Hexo命令
 ## 写博客常用命令
@@ -231,6 +231,7 @@ algolia:
   filter:
     - title
 ```
+> 注意：此处的`filter`与`Algolia`的`Searchable attributes`保持一致。
 
 **4.更新index**
 

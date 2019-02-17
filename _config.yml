@@ -93,13 +93,13 @@ algolia:
   chunkSize: 5000
   fields:
     # - content:strip:truncate,0,500
-    # - excerpt:strip
+    - excerpt:strip
     - title
     # - tags
     # - gallery
     # - permalink
     # - photos
-    # - slug
+    - slug
 
 #search: true
 search: 
