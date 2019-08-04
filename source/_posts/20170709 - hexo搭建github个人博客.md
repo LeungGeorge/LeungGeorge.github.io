@@ -373,3 +373,4 @@ baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 > [安装 blog-admin 博客插件](http://keychar.com/2016/05/28/install-blog-admin/)  
 > [Hexo的Next主题配置](http://blog.csdn.net/zuoziji416/article/details/53204478)
 > [Hexo(Pages)—优化博客](http://plainboiledwaterln.cn/HexoBlog/HexoPagesOptimize.html)
+> [Hexo 插件](https://hexo.io/plugins/)

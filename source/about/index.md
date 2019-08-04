@@ -1,10 +1,6 @@
+title: 我的收藏
+date: 2016-08-28 23:05:50
 ---
-title: 我的收藏  
-date: 2016-08-28 23:05:50  
-
-
----
-
 ## 搬砖
 1. [在线测试环境](http://www.dooccn.com/php5.6/)
 2. [PHP设计模式](https://phptherightway.golaravel.com/pages/Design-Patterns.html)
@@ -32,4 +28,4 @@ date: 2016-08-28 23:05:50
 ## 赞助
 感谢赞助^_^
 
-<img src="https://leunggeorge.github.io/src_img/donate-shou-kuan-8.88.png" width="50%" height="50%">  
+<img src="https://leunggeorge.github.io/src_img/donate-shou-kuan-8.88.png" width="50%" height="50%">
