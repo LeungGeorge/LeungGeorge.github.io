@@ -28,4 +28,4 @@ date: 2016-08-28 23:05:50
 ## 赞助
 感谢赞助^_^
 
-<img src="https://leunggeorge.github.io/src_img/donate-shou-kuan-8.88.png" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190905205418.png" width="30%" height="30%">
