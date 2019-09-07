@@ -2,11 +2,12 @@
 uuid: 4c947a50-cfda-11e9-abce-b19ae548998f
 title: MySQL表转为Golang结构体
 tags:
-  - golang
   - Table2Struct
-  - 工具
+  - Golang
+  - MySQL
 categories:
   - essay
+  - 工具
 comments: false
 date: 2019-09-05 20:40:10
 description:
