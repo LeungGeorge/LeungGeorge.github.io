@@ -13,7 +13,7 @@ date: 2019-09-05 20:40:10
 description:
 ---
 
-- `MySQL` 表结构转为 `go` 结构体。把一下代码写入 `main.go`，执行 `go run main.go` 就会把数据结构写入到 `model.go`。
+- `MySQL` 表结构转为 `go` 结构体。
 
 <!--more-->
 
