@@ -25,7 +25,7 @@ date: 2016-08-28 23:05:50
 
 
 
-## 赞助
+<!-- ## 赞助
 感谢赞助^_^
 
-<img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190905205418.png" width="30%" height="30%">
+<img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190905205418.png" width="30%" height="30%"> -->

@@ -9,14 +9,7 @@ comments: false
 description:  
 ---
 
-
-
-
-
-
-
-
-
+<!--more-->
 
 ---
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">

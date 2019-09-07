@@ -13,15 +13,16 @@ description:
 ---
 
 # 安装redis
+
 ## 下载
 
-```
+```shell
 wget http://download.redis.io/releases/redis-stable.tar.gz
 ```
 
 ## 安装
 
-```
+```shell
 tar -zxvf redis-stable.tar.gz
 cd redis-stable
 ```
@@ -29,28 +30,30 @@ cd redis-stable
 
 ## 运行
 
-```
+```shell
 ./src/redis-server
 ./src/redis-cli
 ```
 
+## 安装scrapy-redis
 
-# 安装scrapy-redis
-
-```
+```shell
 pip install scrapy-redis
 ```
 
-
 # 新建分布式爬虫
-![image](dir-tree.png)
+
+![20190907082159.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907082159.png)
+
 ## 新建项目
-```
+
+```shell
 scrapy startproject distributedspider
 ```
 
 ## 新建redis crawler(mycrawler_redis.py)
-```
+
+```python
 import redis
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
@@ -125,17 +128,18 @@ REDIS_PORT = 6379
 
 ## 运行
 ### 启动redis
-![image](redis-server.png)
+
+![20190907082348.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907082348.png)
 
 ### 运行spider1
-![image](spider1.png)
+![20190907082407.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907082407.png)
 
 ### 运行spider2
-![image](spider2.png)
+![20190907082428.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907082428.png)
 
 ### 添加start_urls
 方式一（手动添加）：
-![image](add-start-url.png)
+![20190907082458.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907082458.png)
 
 方式二（执行脚本添加）：
 
@@ -146,8 +150,9 @@ scrapy crawl mycrawler_redis
 ### 结论
 可以看到spider1、spider2在并行处理请求
 
-![image](spider1-run.png)
-![image](spider2-run.png)
+![20190907082524.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907082524.png)
+
+![20190907082541.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907082541.png)
 
 ---
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
