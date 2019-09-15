@@ -6,7 +6,6 @@ tags:
   - markdown语法
 categories: 
   - 工具  
-  - markdown
 description: markdown常用语法
 
 ---

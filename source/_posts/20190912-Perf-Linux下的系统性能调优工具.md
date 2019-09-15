@@ -8,8 +8,6 @@ tags:
   - Linux
 categories:
   - essay
-  - Linux
-  - Perf
 comments: false
 date: 2019-09-12 10:18:28
 description:

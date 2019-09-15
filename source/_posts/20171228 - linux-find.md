@@ -3,10 +3,10 @@ uuid: e316f0b2-31d4-11e9-b40e-e5de14f70114
 title: linux-shell-find
 tags:
   - writing
+  - Linux
   - shell
 categories:
-  - linux
-  - shell
+  - essay
 comments: false
 date: 2017-12-28 11:59:00
 description:

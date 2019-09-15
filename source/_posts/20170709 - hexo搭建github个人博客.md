@@ -1,6 +1,7 @@
 uuid: e316f0b8-31d4-11e9-b40e-e5de14f70114
 title: hexo搭建github个人博客
 tags:
+  - blog
   - hexo
   - search
   - local search
@@ -8,7 +9,6 @@ tags:
   - 统计
 categories:
   - 工具
-  - blog
 comments: false
 date: 2017-07-09 09:48:42
 ---

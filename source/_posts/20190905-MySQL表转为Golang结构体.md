@@ -6,7 +6,6 @@ tags:
   - Golang
   - MySQL
 categories:
-  - essay
   - 工具
 comments: false
 date: 2019-09-05 20:40:10
