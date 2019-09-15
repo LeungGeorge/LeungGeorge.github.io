@@ -202,7 +202,7 @@ baidusitemap:
 ### 集成Algolia
 **1.注册Algolia，创建Index  **
 
-前往 Algolia 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。  
+前往 [Algolia](https://www.algolia.com/) 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。  
     
 ![image](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/blog/hexo/algolia_index.png)
 
@@ -358,8 +358,8 @@ baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 ```
 
 ### 检查安装效果：
-大概过20分钟，就可以去[百度统计](https://tongji.baidu.com/)看到效果了。
-![image](jian-cha-an-zhuang-xiao-guo.png)
+大概过20分钟，就可以去[百度统计](https://tongji.baidu.com/)看到效果了。  
+![image](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/blog/hexo/jian-cha-an-zhuang-xiao-guo.png)
 
 
 
