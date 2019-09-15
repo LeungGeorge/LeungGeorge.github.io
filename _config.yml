@@ -149,17 +149,3 @@ post_wordcount:
 # hexo-admin authentification
 admin:
   deployCommand: './push.sh'
-
-# Valine.
-# You can get your appid and appkey from https://leancloud.cn
-# more info please open https://valine.js.org
-valine:
-  enable: true
-  appid: mKfzfMPBFU4kNOQRwVnAziVg-gzGzoHsz
-  appkey: 6t4P3ILBwvJF2hgBHGrGSG1T
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  placeholder: 走过路过，不留下点什么吗？ # comment box placeholder
-  avatar: mm # gravatar style
-  guest_info: nick,mail,link # custom comment header
-  pageSize: 10 # pagination size
