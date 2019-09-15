@@ -2,7 +2,7 @@
 uuid: e316f0b1-31d4-11e9-b40e-e5de14f70114
 title: 基于redis实现scrapy分布式爬虫
 tags:
-  - writting
+  - writing
 categories:
   - Python
   - scrapy

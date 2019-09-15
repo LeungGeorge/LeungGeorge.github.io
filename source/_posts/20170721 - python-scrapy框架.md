@@ -6,6 +6,7 @@ tags:
   - Python
   - scrapy
 categories:
+  - essay
   - Python
   - scrapy
 comments: false

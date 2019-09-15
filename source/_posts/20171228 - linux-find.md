@@ -2,7 +2,7 @@
 uuid: e316f0b2-31d4-11e9-b40e-e5de14f70114
 title: linux-shell-find
 tags:
-  - writting
+  - writing
   - shell
 categories:
   - linux

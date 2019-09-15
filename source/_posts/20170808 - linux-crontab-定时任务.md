@@ -1,7 +1,7 @@
 uuid: e316c9ae-31d4-11e9-b40e-e5de14f70114
 title: linux-crontab 定时任务
 tags:
-  - writting
+  - writing
 categories:
   - essay
 comments: false
