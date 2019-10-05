@@ -53,7 +53,7 @@ func makeslice(et *_type, len, cap int) unsafe.Pointer {
 
 ## 容量扩容策略
 
-> 总结：  
+> 总结：
 > 1. 新容量 cap 大于旧容量 old.cap 的 2 倍时，直接采用 cap；  
 > 2. 旧容量 old.cap 小于 1024 时，扩容为旧容量 old.cap 的 2 倍；  
 > 3. 旧容量 old.cap 大于等于 1024 时，按照旧容量 old.cap 的 1.25 倍指数幂增长；  
