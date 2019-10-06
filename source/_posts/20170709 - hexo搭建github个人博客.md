@@ -1,3 +1,4 @@
+---
 uuid: e316f0b8-31d4-11e9-b40e-e5de14f70114
 title: hexo搭建github个人博客
 tags:
@@ -12,6 +13,10 @@ categories:
 comments: false
 date: 2017-07-09 09:48:42
 ---
+
+使用 hexo 搭建 github个人博客。
+
+<!-- more -->
 # 安装Hexo
 
 ## 安装node.js

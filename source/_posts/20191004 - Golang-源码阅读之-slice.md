@@ -6,7 +6,7 @@ tags:
   - Golang
   - slice
 categories:
-  - Golang
+  - golang
 comments: false
 date: 2019-10-04 21:02:51
 description:
