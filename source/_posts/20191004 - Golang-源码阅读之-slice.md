@@ -70,7 +70,7 @@ func makeslice(et *_type, len, cap int) unsafe.Pointer {
 // NOT to the new requested capacity.
 // This is for codegen convenience. The old slice's length is used immediately
 // to calculate where to write new values during an append.
-// TODO: When the old backend is gone, reconsider this decision.
+// When the old backend is gone, reconsider this decision.
 // The SSA backend might prefer the new length or to return only ptr/cap and save stack space.
 //
 // slice 在追加数据时使用 growslice 处理容量增长

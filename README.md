@@ -1,3 +1,1 @@
-# 欢迎光临
-
-[https://leunggeorge.github.io/](https://leunggeorge.github.io/)
+没有什么事儿是一句话讲不明白的。如果有，那就写篇博客！
