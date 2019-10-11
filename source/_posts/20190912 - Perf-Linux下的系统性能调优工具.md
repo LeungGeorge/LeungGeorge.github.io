@@ -2,10 +2,10 @@
 uuid: 9b6b7600-d503-11e9-a0ee-612a8b317ab0
 title: Perf -- Linux下的系统性能调优工具
 tags:
-  - Perf
+  - perf
   - 性能调优
   - 工具
-  - Linux
+  - linux
 categories:
   - essay
 comments: false

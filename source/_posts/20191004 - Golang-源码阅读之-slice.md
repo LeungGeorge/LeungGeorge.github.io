@@ -3,7 +3,7 @@ uuid: 45eb3480-e6a7-11e9-977f-9db37c7f68ec
 title: Golang 源码阅读之 slice
 tags:
   - 源码阅读
-  - Golang
+  - golang
   - slice
 categories:
   - golang

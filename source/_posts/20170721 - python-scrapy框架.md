@@ -3,7 +3,7 @@ uuid: e316c9ac-31d4-11e9-b40e-e5de14f70114
 title: python scrapy框架
 tags:
   - 爬虫
-  - Python
+  - python
   - scrapy
 categories:
   - essay
