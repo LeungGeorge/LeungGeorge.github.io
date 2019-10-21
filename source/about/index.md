@@ -3,12 +3,12 @@ title: 关于
 date: 2016-08-28 23:05:50
 ---
 
-闲暇时记得一二行，免得忘却。
+闲暇时记得一二行
 > 
 > 没有什么事儿是一句话讲不明白的。  
 > 如果有，那就写篇博客！ 
 > 
-> 【[留言呗](https://github.com/LeungGeorge/LeungGeorge.github.io/issues/new)】!  
+> 【[点我留言](https://github.com/LeungGeorge/LeungGeorge.github.io/issues/new)】  
 
 
 <!-- ## 赞助
