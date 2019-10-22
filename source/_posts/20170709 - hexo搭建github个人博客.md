@@ -4,10 +4,6 @@ title: hexo搭建github个人博客
 tags:
   - blog
   - hexo
-  - search
-  - local search
-  - next
-  - 统计
 categories:
   - 工具
 comments: false

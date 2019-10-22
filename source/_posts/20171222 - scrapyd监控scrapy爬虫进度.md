@@ -2,7 +2,8 @@
 uuid: e316f0b0-31d4-11e9-b40e-e5de14f70114
 title: scrapyd监控scrapy爬虫进度
 tags:
-  - writing
+  - scrapy
+  - scrapyd
 categories:
   - essay
 comments: false

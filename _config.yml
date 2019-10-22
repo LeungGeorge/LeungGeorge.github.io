@@ -127,6 +127,9 @@ baidusitemap:
 # 为首页和归档页面设置不同的文章篇数
 index_generator:
   per_page: 10
+  order_by: -date
+  # order_by: -updated
+
 
 archive_generator:
   per_page: 20

@@ -3,7 +3,8 @@ uuid: 2f711cc0-f3d0-11e9-b7dd-6f88ead869a3
 title: 灵魂三问之 SELECT COUNT 那些事儿
 tags:
   - 灵魂三问
-  - writing
+  - mysql
+  - select count
 categories:
   - mysql
 comments: false
