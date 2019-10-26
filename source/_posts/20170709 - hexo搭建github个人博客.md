@@ -25,7 +25,7 @@ sudo apt-get install nodejs
 
 ## 安装hexo
 ```
- sudo npm install hexo -g
+sudo npm install hexo -g
 ```
 
 <!--more-->
