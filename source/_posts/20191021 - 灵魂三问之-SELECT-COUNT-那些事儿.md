@@ -26,7 +26,7 @@ description: 关于 SELECT COUNT 那些事儿，这篇博客总结的很好，�
 9、SELECT COUNT(*) 的时候，加不加where条件有差别吗？
 10、COUNT(*)、COUNT(1)和COUNT(字段名)的执行过程是怎样的？
 ```
-
+<!-- 
 ## COUNT有几种用法?
 
 > COUNT(column), COUNT(*), COUNT(1)
@@ -82,19 +82,17 @@ InnoDB中索引分为聚簇索引（主键索引）和非聚簇索引（非主�
 2. COUNT(1)
    - 与 COUNT(*) 执行过程一致。
 3. COUNT(字段名)
-   - 扫表，并过滤 NULL 记录。多了一个字段是否为 NULL 的判断，所以他的性能要比 COUNT(*) 慢。
+   - 扫表，并过滤 NULL 记录。多了一个字段是否为 NULL 的判断，所以他的性能要比 COUNT(*) 慢。 -->
 
-> 本文是简短总结，完整版参考原文：  
+
+> 完整版参考原文：  
 > [不就是SELECT COUNT语句吗](https://juejin.im/post/5dad103a518825579a1f9aaf?utm_source=gold_browser_extension)  
 
 
 
----
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
 <script>
 hljs.tabReplace = ' ';
 hljs.initHighlightingOnLoad();
 </script>
-
-> 来源：[https://leunggeorge.github.io/](https://leunggeorge.github.io/)  
