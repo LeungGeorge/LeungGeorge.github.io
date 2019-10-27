@@ -7,7 +7,7 @@ tags:
   - 工具
   - linux
 categories:
-  - essay
+  - linux
 comments: false
 date: 2019-09-12 10:18:28
 description: 备忘。

@@ -3,10 +3,10 @@ uuid: e316f0b1-31d4-11e9-b40e-e5de14f70114
 title: 基于redis实现scrapy分布式爬虫
 tags:
   - scrapy
+  - 分布式
   - 爬虫
-  - 分布式爬虫
 categories:
-  - essay
+  - python
 comments: false
 date: 2017-12-23 17:08:56
 description:
