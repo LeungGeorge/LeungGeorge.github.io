@@ -121,6 +121,21 @@ theme: next
 scheme: Mist
 #scheme: Pisces
 ```
+
+#### TOC设置成全部展开
+
+修改 next 主题样式，`themes/next/source/css/_common/components/sidebar/sidebar-toc.styl`：
+```html
+.post-toc .nav .nav-child { display: none; }
+```
+修改为：
+```html
+.post-toc .nav .nav-child { display: block; }
+```
+
+效果如图：
+![20191029152851.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191029152851.png)
+
 #### 添加阅读进度
 
 #### 添加点击鼠标红心效果
