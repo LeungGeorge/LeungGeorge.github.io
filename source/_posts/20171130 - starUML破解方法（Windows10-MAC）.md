@@ -4,7 +4,7 @@ title: starUML破解方法（Windows10 & MAC）
 tags:
   - staruml
 categories:
-  - essay
+  - 工具
 comments: false
 date: 2017-11-30 10:00:55
 description: 

@@ -3,8 +3,7 @@ uuid: bc02f8b0-e8a5-11e9-900c-9588bf31f02c
 title: npm 一键更新 package.json 依赖模块版本
 tags:
   - npm
-  - package.json
-  - 依赖模块版本升级
+  - 版本升级
 categories:
   - 工具
 comments: false
