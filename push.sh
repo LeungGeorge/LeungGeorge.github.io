@@ -8,8 +8,8 @@
 
 git add --all
 git commit -m "auto commit"
-git pull
+#git pull
 
-git push origin hexo
+#git push origin hexo
 
 
