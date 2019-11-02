@@ -211,13 +211,14 @@ sidebar:
 
 # Blog rolls
 links_title: 收藏
-# links_layout: block
-links_layout: inline
+links_layout: block
+# links_layout: inline
 links:
   #Title: http://example.com/
-  Byr: https://bbs.byr.cn/
-  圈子: https://luuman.github.io/FrontEndGuide/V1/index.html
-
+  BRY: https://bbs.byr.cn/
+  圈子（技术站点聚合页）: https://luuman.github.io/FrontEndGuide/V1/index.html
+  美团技术团队（技术分享社区）: https://tech.meituan.com/
+  优知学院（技术分享社区）: https://youzhixueyuan.com/history-articles.html
 
 # ---------------------------------------------------------------
 # Post Settings
