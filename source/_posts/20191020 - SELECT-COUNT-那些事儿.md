@@ -1,14 +1,13 @@
 ---
 uuid: 2f711cc0-f3d0-11e9-b7dd-6f88ead869a3
-title: 灵魂三问之 SELECT COUNT 那些事儿
+title: SELECT COUNT 那些事儿
 tags:
-  - 灵魂三问
   - mysql
   - select count
 categories:
   - mysql
 comments: false
-date: 2019-10-21 14:58:28
+date: 2019-10-20 14:58:28
 description: 关于 SELECT COUNT 那些事儿，这篇博客总结的很好，感谢博主。COUNT(column), COUNT(*), COUNT(1)。
 ---
 
