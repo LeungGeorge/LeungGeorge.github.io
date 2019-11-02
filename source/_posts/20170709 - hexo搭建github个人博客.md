@@ -158,6 +158,8 @@ scheme: Mist
 
 
 #### 添加文章阅读数
+> 使用 [LeanCloud](https://leancloud.cn/) 添加文章阅读量
+
 1、修改配置:themes/next/_config.yml
 
 ```
