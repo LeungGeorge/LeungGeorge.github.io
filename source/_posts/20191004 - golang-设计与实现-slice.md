@@ -1,12 +1,13 @@
 ---
 uuid: 45eb3480-e6a7-11e9-977f-9db37c7f68ec
-title: Golang 源码阅读之 slice
+title: golang 设计与实现 slice
 tags:
   - 源码
   - golang
   - slice
 categories:
   - golang
+  - golang设计与实现
 comments: false
 date: 2019-10-04 21:02:51
 description:
