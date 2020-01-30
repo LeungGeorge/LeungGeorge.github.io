@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>七点一刻的魔法书</title>
+  
+  <subtitle>没有什么事儿是一句话讲不明白的。如果有，那就写篇博客！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://leunggeorge.github.io/"/>
+  <updated>2020-01-29T04:43:36.833Z</updated>
+  <id>https://leunggeorge.github.io/</id>
+  
+  <author>
+    <name>七点一刻</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你应该知道的伟大程序架构</title>
+    <link href="https://leunggeorge.github.io/2019/11/02/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%BC%9F%E5%A4%A7%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84/"/>
+    <id>https://leunggeorge.github.io/2019/11/02/你应该知道的伟大程序架构/</id>
+    <published>2019-11-02T13:59:06.000Z</published>
+    <updated>2020-01-29T04:43:36.833Z</updated>
+    
+    <summary type="html">
+    
+      重要的是要知道最好的几种可能的架构，这样您可以轻松地创建一个适合所有要求的优化方案。
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="cqrs" scheme="https://leunggeorge.github.io/tags/cqrs/"/>
+    
+      <category term="微服务" scheme="https://leunggeorge.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="架构" scheme="https://leunggeorge.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12306是如何支撑百万qps的？</title>
+    <link href="https://leunggeorge.github.io/2019/10/27/12306%E6%98%AF%E5%A6%82%E4%BD%95%E6%94%AF%E6%92%91%E7%99%BE%E4%B8%87qps%E7%9A%84%EF%BC%9F/"/>
+    <id>https://leunggeorge.github.io/2019/10/27/12306是如何支撑百万qps的？/</id>
+    <published>2019-10-27T04:48:32.000Z</published>
+    <updated>2020-01-29T14:48:11.780Z</updated>
+    
+    <summary type="html">
+    
+      本文介绍模拟了一下单机如何优化到高性能，集群如何避免单点故障，保证订单不超卖、不少卖的一些策略，完整的订单系统还有订单进度的查看，每台服务器上都有一个任务，定时的从总库存同步余票和库存信息展示给用户，还有用户在订单有效期内不支付，释放订单，补充到库存等等。
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="12306" scheme="https://leunggeorge.github.io/tags/12306/"/>
+    
+      <category term="高并发" scheme="https://leunggeorge.github.io/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyRadio-用于Ubuntu命令行的网络电台播放器</title>
+    <link href="https://leunggeorge.github.io/2019/10/27/PyRadio-%E7%94%A8%E4%BA%8EUbuntu%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E7%94%B5%E5%8F%B0%E6%92%AD%E6%94%BE%E5%99%A8/"/>
+    <id>https://leunggeorge.github.io/2019/10/27/PyRadio-用于Ubuntu命令行的网络电台播放器/</id>
+    <published>2019-10-26T19:16:23.000Z</published>
+    <updated>2020-01-29T14:49:01.019Z</updated>
+    
+    <summary type="html">
+    
+      PyRadio是一个基于开放源代码的基于网络的电台播放器，在命令控制台中运行。 该软件以Python实现，并使用mplayer或VLC媒体进行播放。
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="pyradio" scheme="https://leunggeorge.github.io/tags/pyradio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SELECT COUNT 那些事儿</title>
+    <link href="https://leunggeorge.github.io/2019/10/20/SELECT-COUNT-%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/"/>
+    <id>https://leunggeorge.github.io/2019/10/20/SELECT-COUNT-那些事儿/</id>
+    <published>2019-10-20T06:58:28.000Z</published>
+    <updated>2020-01-29T04:43:36.832Z</updated>
+    
+    <summary type="html">
+    
+      关于 SELECT COUNT 那些事儿，这篇博客总结的很好，感谢博主。COUNT(column), COUNT(*), COUNT(1)。
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="https://leunggeorge.github.io/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://leunggeorge.github.io/tags/mysql/"/>
+    
+      <category term="select count" scheme="https://leunggeorge.github.io/tags/select-count/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gcache 源码分析</title>
+    <link href="https://leunggeorge.github.io/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>https://leunggeorge.github.io/2019/10/07/gcache-源码分析/</id>
+    <published>2019-10-07T07:02:57.000Z</published>
+    <updated>2020-01-29T04:43:36.832Z</updated>
+    
+    <summary type="html">
+    
+      首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想。喝杯咖啡（雀巢的味道不错），然后开始 gcache 的源码分析。
+    
+    </summary>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="源码" scheme="https://leunggeorge.github.io/tags/%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="gcache" scheme="https://leunggeorge.github.io/tags/gcache/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm 一键更新 package.json 依赖模块版本</title>
+    <link href="https://leunggeorge.github.io/2019/10/07/npm-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0-package-json-%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9D%97%E7%89%88%E6%9C%AC/"/>
+    <id>https://leunggeorge.github.io/2019/10/07/npm-一键更新-package-json-依赖模块版本/</id>
+    <published>2019-10-07T01:56:53.000Z</published>
+    <updated>2020-01-29T04:43:36.832Z</updated>
+    
+    <summary type="html">
+    
+      github 报 We found potential security vulnerabilities in your dependencies，遂升级依赖包版本。记录 package.json 升级方法。
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://leunggeorge.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="npm" scheme="https://leunggeorge.github.io/tags/npm/"/>
+    
+      <category term="版本升级" scheme="https://leunggeorge.github.io/tags/%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang 配置文件热加载</title>
+    <link href="https://leunggeorge.github.io/2019/10/06/Golang-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%83%AD%E5%8A%A0%E8%BD%BD/"/>
+    <id>https://leunggeorge.github.io/2019/10/06/Golang-配置文件热加载/</id>
+    <published>2019-10-06T08:13:27.000Z</published>
+    <updated>2020-01-29T04:43:36.831Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 &lt;code&gt;github.com/fsnotify/fsnotify&lt;/code&gt;，监听 &lt;code&gt;Create&lt;/code&gt;、&lt;code&gt;Remove&lt;/code&gt;、&lt;code&gt;Write&lt;/code&gt;、&lt;code&gt;Chmod&lt;/code&gt;、&lt;code&gt;Rename&lt;/code&gt; 等事件，实现对文件状态的实时监听，当文件有变化时执行已注册的回调函数（如下），实现对配置的重新加载。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="热加载" scheme="https://leunggeorge.github.io/tags/%E7%83%AD%E5%8A%A0%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang 设计与实现 slice</title>
+    <link href="https://leunggeorge.github.io/2019/10/04/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice/"/>
+    <id>https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/</id>
+    <published>2019-10-04T13:02:51.000Z</published>
+    <updated>2020-01-30T15:30:06.427Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Golang 动态数组 slice。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="设计与实现" scheme="https://leunggeorge.github.io/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
+    
+      <category term="源码" scheme="https://leunggeorge.github.io/tags/%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="slice" scheme="https://leunggeorge.github.io/tags/slice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go 开发者路线图</title>
+    <link href="https://leunggeorge.github.io/2019/10/03/Go-%E5%BC%80%E5%8F%91%E8%80%85%E8%B7%AF%E7%BA%BF%E5%9B%BE/"/>
+    <id>https://leunggeorge.github.io/2019/10/03/Go-开发者路线图/</id>
+    <published>2019-10-03T08:34:06.000Z</published>
+    <updated>2020-01-29T04:43:36.830Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在 2019 成为一名 &lt;a href=&quot;https://golang.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Go&lt;/a&gt; 开发者的路线图：&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="文摘" scheme="https://leunggeorge.github.io/tags/%E6%96%87%E6%91%98/"/>
+    
+      <category term="学习路线" scheme="https://leunggeorge.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCP 与 UDP</title>
+    <link href="https://leunggeorge.github.io/2019/10/03/TCP-%E4%B8%8E-UDP/"/>
+    <id>https://leunggeorge.github.io/2019/10/03/TCP-与-UDP/</id>
+    <published>2019-10-03T01:49:58.000Z</published>
+    <updated>2020-01-29T04:43:36.831Z</updated>
+    
+    <summary type="html">
+    
+      TCP、UDP的一些特型的读书笔记。——摘自《图解TCP/IP》
+    
+    </summary>
+    
+    
+      <category term="网络" scheme="https://leunggeorge.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="tcp" scheme="https://leunggeorge.github.io/tags/tcp/"/>
+    
+      <category term="udp" scheme="https://leunggeorge.github.io/tags/udp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang 速查表</title>
+    <link href="https://leunggeorge.github.io/2019/09/15/Golang-%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>https://leunggeorge.github.io/2019/09/15/Golang-速查表/</id>
+    <published>2019-09-15T13:15:03.000Z</published>
+    <updated>2020-01-29T04:43:36.830Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简要介绍 Go 语法及特性。原文：&lt;a href=&quot;https://github.com/a8m/go-lang-cheat-sheet&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;go-lang-cheat-sheet&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="必知必会" scheme="https://leunggeorge.github.io/tags/%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+      <category term="速查表" scheme="https://leunggeorge.github.io/tags/%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang 新手可能会踩的坑</title>
+    <link href="https://leunggeorge.github.io/2019/09/15/Golang-%E6%96%B0%E6%89%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E8%B8%A9%E7%9A%84%E5%9D%91/"/>
+    <id>https://leunggeorge.github.io/2019/09/15/Golang-新手可能会踩的坑/</id>
+    <published>2019-09-15T12:40:09.000Z</published>
+    <updated>2020-01-29T04:43:36.830Z</updated>
+    
+    <summary type="html">
+    
+      Go 是一门简单有趣的编程语言，与其他语言一样，在使用时不免会遇到很多坑，不过它们大多不是 Go 本身的设计缺陷。如果你刚从其他语言转到 Go，那这篇文章里的坑多半会踩到。本文是从 github 上摘录的一篇文章（不记得是哪位兄弟翻译的了，后续遇到了再补上）
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="必知必会" scheme="https://leunggeorge.github.io/tags/%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Perf -- Linux下的系统性能调优工具</title>
+    <link href="https://leunggeorge.github.io/2019/09/12/Perf-Linux%E4%B8%8B%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E5%B7%A5%E5%85%B7/"/>
+    <id>https://leunggeorge.github.io/2019/09/12/Perf-Linux下的系统性能调优工具/</id>
+    <published>2019-09-12T02:18:28.000Z</published>
+    <updated>2020-01-29T04:43:36.828Z</updated>
+    
+    <summary type="html">
+    
+      备忘。
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://leunggeorge.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="https://leunggeorge.github.io/tags/linux/"/>
+    
+      <category term="perf" scheme="https://leunggeorge.github.io/tags/perf/"/>
+    
+      <category term="性能调优" scheme="https://leunggeorge.github.io/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
+    
+      <category term="工具" scheme="https://leunggeorge.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL表转为Golang结构体</title>
+    <link href="https://leunggeorge.github.io/2019/09/05/MySQL%E8%A1%A8%E8%BD%AC%E4%B8%BAGolang%E7%BB%93%E6%9E%84%E4%BD%93/"/>
+    <id>https://leunggeorge.github.io/2019/09/05/MySQL表转为Golang结构体/</id>
+    <published>2019-09-05T12:40:10.000Z</published>
+    <updated>2020-01-29T04:43:36.828Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MySQL&lt;/code&gt; 表结构转为 &lt;code&gt;go&lt;/code&gt; 结构体。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://leunggeorge.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="mysql" scheme="https://leunggeorge.github.io/tags/mysql/"/>
+    
+      <category term="table2struct" scheme="https://leunggeorge.github.io/tags/table2struct/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mac 安装 zsh</title>
+    <link href="https://leunggeorge.github.io/2019/01/26/mac-%E5%AE%89%E8%A3%85-zsh/"/>
+    <id>https://leunggeorge.github.io/2019/01/26/mac-安装-zsh/</id>
+    <published>2019-01-26T11:12:43.000Z</published>
+    <updated>2020-01-29T04:43:36.828Z</updated>
+    
+    <summary type="html">
+    
+      mac 安装 zsh
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://leunggeorge.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="zsh" scheme="https://leunggeorge.github.io/tags/zsh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP 状态码</title>
+    <link href="https://leunggeorge.github.io/2018/04/23/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+    <id>https://leunggeorge.github.io/2018/04/23/HTTP-状态码/</id>
+    <published>2018-04-23T07:53:29.000Z</published>
+    <updated>2020-01-29T04:43:36.828Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;HTTP-状态码&quot;&gt;&lt;a href=&quot;#HTTP-状态码&quot; class=&quot;headerlink&quot; title=&quot;HTTP 状态码&quot;&gt;&lt;/a&gt;HTTP 状态码&lt;/h2&gt;&lt;p&gt;HTTP是一种请求/回应（Request/Response）的网路传输协定，当用户端应用程式(浏览器)要求一网页资讯或资源（Document）时，网站伺服器端就会回传状态码（Status Code），这些状态码通常是以数据化显示，使用者最常见到应该是 404，其它包括 200、301、302、304、403、410、500等等。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="网络" scheme="https://leunggeorge.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="http" scheme="https://leunggeorge.github.io/tags/http/"/>
+    
+      <category term="状态码" scheme="https://leunggeorge.github.io/tags/%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>威尔逊得分</title>
+    <link href="https://leunggeorge.github.io/2018/02/09/%E5%A8%81%E5%B0%94%E9%80%8A%E5%BE%97%E5%88%86/"/>
+    <id>https://leunggeorge.github.io/2018/02/09/威尔逊得分/</id>
+    <published>2018-02-09T03:51:56.000Z</published>
+    <updated>2020-01-29T04:43:36.827Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;如何评价知乎的回答排序算法？&quot;&gt;&lt;a href=&quot;#如何评价知乎的回答排序算法？&quot; class=&quot;headerlink&quot; title=&quot;如何评价知乎的回答排序算法？&quot;&gt;&lt;/a&gt;如何评价知乎的回答排序算法？&lt;/h2&gt;&lt;p&gt;知乎今天上线了新的回答排序算法。&lt;/p&gt;
+&lt;p&gt;你也许不会注意到太大的变化，毕竟旧版排序在大部分情形下效果也不错。因此，这次改进的目标，是更好地做到两点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;专业、严谨、认真的高质量回答，排序应该更靠前&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;新创作的优质回答，能更快地获得更好的排序&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
+    
+    
+      <category term="威尔逊得分" scheme="https://leunggeorge.github.io/tags/%E5%A8%81%E5%B0%94%E9%80%8A%E5%BE%97%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于redis实现scrapy分布式爬虫</title>
+    <link href="https://leunggeorge.github.io/2017/12/23/%E5%9F%BA%E4%BA%8Eredis%E5%AE%9E%E7%8E%B0scrapy%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"/>
+    <id>https://leunggeorge.github.io/2017/12/23/基于redis实现scrapy分布式爬虫/</id>
+    <published>2017-12-23T09:08:56.000Z</published>
+    <updated>2020-01-29T04:43:36.827Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;安装redis&quot;&gt;&lt;a href=&quot;#安装redis&quot; class=&quot;headerlink&quot; title=&quot;安装redis&quot;&gt;&lt;/a&gt;安装redis&lt;/h1&gt;&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget http://download.redis.io/releases/redis-stable.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar -zxvf redis-stable.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd redis-stable&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://leunggeorge.github.io/categories/python/"/>
+    
+    
+      <category term="爬虫" scheme="https://leunggeorge.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="scrapy" scheme="https://leunggeorge.github.io/tags/scrapy/"/>
+    
+      <category term="分布式" scheme="https://leunggeorge.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scrapyd监控scrapy爬虫进度</title>
+    <link href="https://leunggeorge.github.io/2017/12/22/scrapyd%E7%9B%91%E6%8E%A7scrapy%E7%88%AC%E8%99%AB%E8%BF%9B%E5%BA%A6/"/>
+    <id>https://leunggeorge.github.io/2017/12/22/scrapyd监控scrapy爬虫进度/</id>
+    <published>2017-12-22T15:30:33.000Z</published>
+    <updated>2020-01-29T04:43:36.827Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h1&gt;&lt;h2 id=&quot;安装scrapyd&quot;&gt;&lt;a href=&quot;#安装scrapyd&quot; class=&quot;headerlink&quot; title=&quot;安装scrapyd&quot;&gt;&lt;/a&gt;安装scrapyd&lt;/h2&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; scrapyd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;安装scrapyd-client&quot;&gt;&lt;a href=&quot;#安装scrapyd-client&quot; class=&quot;headerlink&quot; title=&quot;安装scrapyd-client&quot;&gt;&lt;/a&gt;安装scrapyd-client&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; scrapyd-&lt;span class=&quot;keyword&quot;&gt;client&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;运行scrapyd服务&quot;&gt;&lt;a href=&quot;#运行scrapyd服务&quot; class=&quot;headerlink&quot; title=&quot;运行scrapyd服务&quot;&gt;&lt;/a&gt;运行scrapyd服务&lt;/h1&gt;&lt;figure class=&quot;highlight ebnf&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;scrapyd&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Spider进度查看地址：&lt;a href=&quot;http://localhost:6800/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost:6800/&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://leunggeorge.github.io/categories/python/"/>
+    
+    
+      <category term="爬虫" scheme="https://leunggeorge.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="python" scheme="https://leunggeorge.github.io/tags/python/"/>
+    
+      <category term="scrapy" scheme="https://leunggeorge.github.io/tags/scrapy/"/>
+    
+      <category term="scrapyd" scheme="https://leunggeorge.github.io/tags/scrapyd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fis 修改上传文件大小限制</title>
+    <link href="https://leunggeorge.github.io/2017/12/15/fis-%E4%BF%AE%E6%94%B9%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6/"/>
+    <id>https://leunggeorge.github.io/2017/12/15/fis-修改上传文件大小限制/</id>
+    <published>2017-12-15T02:41:50.000Z</published>
+    <updated>2020-01-29T04:43:36.827Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.修改php.ini  &lt;/p&gt;
+  &lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://leunggeorge.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="fis" scheme="https://leunggeorge.github.io/tags/fis/"/>
+    
+  </entry>
+  
+</feed>
