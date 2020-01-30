@@ -1,13 +1,12 @@
 ---
-uuid: 7722d520-fc9c-11e9-8c90-8be8bcb5b811
-title: Golang Web 框架对比
+uuid: c5dd0990-437a-11ea-9050-1de245a04744
+title: Golang-Web-框架对比
 tags:
   - 框架
   - golang
 categories:
   - 工具
 comments: false
-date: 2019-11-02 11:40:55
 description: 本文介绍了一些主流的 Golang Web 框架，并从流行度、社区、功能等多个角度做了对比。
 ---
 
@@ -29,6 +28,8 @@ description: 本文介绍了一些主流的 Golang Web 框架，并从流行度�
 > [6 款最棒的 Go 语言 Web 框架简介](https://studygolang.com/articles/11897)
 
 
+
+---
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
 <script>

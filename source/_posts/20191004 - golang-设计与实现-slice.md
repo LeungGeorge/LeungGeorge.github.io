@@ -1,6 +1,6 @@
 ---
 uuid: 45eb3480-e6a7-11e9-977f-9db37c7f68ec
-title: golang 设计与实现——slice
+title: golang 设计与实现 slice
 tags:
   - 源码
   - golang

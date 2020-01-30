@@ -14,6 +14,7 @@ description: PyRadio是一个基于开放源代码的基于网络的电台播放
 <!--more-->
 
 ## 效果图
+
 ![20191027032730.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191027032730.png)
 
 ## 快捷键

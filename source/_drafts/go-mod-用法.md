@@ -1,11 +1,12 @@
 ---
-title: {{ title }}
-tags: 
-  - writing  
-categories: 
-  - essay   
+uuid: 9e3e5e20-437a-11ea-b422-61b7409aa8eb
+title: go-mod-用法
+tags:
+  - writing
+categories:
+  - essay
 comments: false
-description:  
+description:
 ---
 
 

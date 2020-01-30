@@ -1,11 +1,12 @@
 ---
-title: {{ title }}
-tags: 
-  - writing  
-categories: 
-  - essay   
+uuid: b70b3ea0-437a-11ea-ad77-ad22e2ab7647
+title: golang-设计与实现之-gin-框架
+tags:
+  - writing
+categories:
+  - essay
 comments: false
-description:  
+description:
 ---
 
 

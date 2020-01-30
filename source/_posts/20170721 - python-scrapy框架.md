@@ -17,8 +17,8 @@ description: 本文主要介绍了scrapy框架的使用，并给出了scrapy框�
 
 [Scrapy 安装教程](http://scrapy-chs.readthedocs.io/zh_CN/latest/intro/install.html)
 
-# 使用
-## 创建新项目
+## 使用
+### 创建新项目
 创造一个项目：  
 
 ```
@@ -82,8 +82,9 @@ class CrawlSpider(scrapy.Spider):
 scrapy crawl JianShuSpider  -o items.json -t json
 ```
 
-# 错误处理
-## [scrapy.core.engine] DEBUG: Crawled (403) <GET http://www.jianshu.com/> (referer: None)
+### 错误处理
+`[scrapy.core.engine] DEBUG: Crawled (403) <GET http://www.jianshu.com/> (referer: None)`
+
 修改DOWNLOADER_MIDDLEWARES配置：
 
 ```
@@ -92,7 +93,8 @@ DOWNLOADER_MIDDLEWARES = {
 }
 ```
 
-## [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.jianshu.com/> (referer: None)
+`[scrapy.core.scraper] ERROR: Spider error processing <GET http://www.jianshu.com/> (referer: None)`
+
 修改DOWNLOADER_MIDDLEWARES配置：
 
 ```
@@ -121,7 +123,7 @@ class JianShuSpiderAgent(UserAgentMiddleware):
 
 
 
-> 参考资料
+> 参考资料  
 > [西刺免费代理IP](http://www.xicidaili.com/)  
 > [scrapy代理、UA配置](http://www.cnblogs.com/rwxwsblog/p/4575894.html?utm_source=tuicool&utm_medium=referral)  
 > [Scrapy环境搭建](http://agroup.baidu.com/media/md/article/78144)  
