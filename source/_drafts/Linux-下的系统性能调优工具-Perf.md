@@ -1,6 +1,6 @@
 ---
-uuid: 9b6b7600-d503-11e9-a0ee-612a8b317ab0
-title: Perf -- Linux下的系统性能调优工具
+uuid: 899572e0-437c-11ea-aad6-1b374a10bce8
+title: Linux 下的系统性能调优工具 Perf
 tags:
   - perf
   - 性能调优
@@ -9,9 +9,9 @@ tags:
 categories:
   - linux
 comments: false
-date: 2019-09-12 10:18:28
-description: 备忘。
+description:
 ---
+
 
 
 Perf -- Linux下的系统性能调优工具
@@ -25,6 +25,8 @@ Perf -- Linux下的系统性能调优工具
 
 
 
+
+
 ---
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
@@ -33,4 +35,4 @@ hljs.tabReplace = ' ';
 hljs.initHighlightingOnLoad();
 </script>
 
-> 来源：[https://leunggeorge.github.io/](https://leunggeorge.github.io/)  
+<!-- > 来源：[https://leunggeorge.github.io/](https://leunggeorge.github.io/)   -->

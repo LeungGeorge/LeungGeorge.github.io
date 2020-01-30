@@ -24,6 +24,8 @@ max_execution_time = 600 ;每个PHP页面运行的最大时间值(秒)，默认3
 max_input_time = 600 ;每个PHP页面接收数据所需的最大时间，默认60秒  
 memory_limit = 8m ;每个PHP页面所吃掉的最大内存，默认8M  
 把上述参数修改后，在网络所允许的正常情况下，就可以上传大体积文件了  
+
+```
 max_execution_time = 600  
 max_input_time = 600  
 memory_limit = 32m  
@@ -31,11 +33,11 @@ file_uploads = on
 upload_tmp_dir = /tmp  
 upload_max_filesize = 32m  
 post_max_size = 32m  
+```
 
 
-
-引用地址：  
-[文章1](http://www.phpchina.com/blog-52440-181965.html)
+> 引用地址：   
+> [文章1](http://www.phpchina.com/blog-52440-181965.html)
 
 
 
