@@ -127,9 +127,9 @@
     
       <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
     
-      <category term="gcache" scheme="https://leunggeorge.github.io/tags/gcache/"/>
-    
       <category term="源码" scheme="https://leunggeorge.github.io/tags/%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="gcache" scheme="https://leunggeorge.github.io/tags/gcache/"/>
     
   </entry>
   
