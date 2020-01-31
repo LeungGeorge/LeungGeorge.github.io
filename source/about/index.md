@@ -14,7 +14,7 @@ date: 2016-08-28 23:05:50
 
 ## 关于作者
 
-某厂一名搬运工，闲来无事，喜欢码字，[七点一刻](https://leunggeorge.github.io/) 。  
+​闲来无事，喜欢码字，欢迎关注，[七点一刻](https://leunggeorge.github.io/) 。   
 
 ## 贡献
 
