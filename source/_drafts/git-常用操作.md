@@ -1,12 +1,13 @@
 ---
-uuid: a8123210-4379-11ea-904a-45a4afaa2ba2
-title: golang 设计与实现之 gin 框架
+uuid: 5b9f6a70-4409-11ea-85a2-0759b3fd8fa1
+title: git 常用操作
 tags:
-  - golang
-  - 设计与实现
-  - gin
+  - git
+  - writing
 categories:
-  - golang
+  - essay
+comments: false
+description:
 ---
 
 
@@ -18,8 +19,6 @@ categories:
 
 
 
-
-> [源码解析之:gin](https://www.kancloud.cn/liuqing_will/the_source_code_analysis_of_gin/616920)
 
 
 
