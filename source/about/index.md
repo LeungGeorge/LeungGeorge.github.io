@@ -21,10 +21,6 @@ date: 2016-08-28 23:05:50
 
 本文使用 markdown 编写，提交 PR 时，文章排版请遵循 [中文文案排版指北](https://github.com/mzlogin/chinese-copywriting-guidelines/blob/Simplified/README.md)。
 
-## 支持
-
-<img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200130112427.png" width="50%">
-
 ## 转载合作
 
 转载本指南，请注明 [GitHub](https://github.com/LeungGeorge/LeungGeorge.github.io) 链接，谢谢！
