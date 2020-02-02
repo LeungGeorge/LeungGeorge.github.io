@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>七点一刻的魔法书</title>
   
-  <subtitle>没有什么事儿是一句话讲不明白的。如果有，那就写篇博客！</subtitle>
+  <subtitle>魔法书里面记载了许多“召唤术”，可以召唤天使或者精灵为自己服务。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leunggeorge.github.io/"/>
-  <updated>2020-01-29T04:43:36.833Z</updated>
+  <updated>2020-02-01T16:19:55.586Z</updated>
   <id>https://leunggeorge.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>golang 令牌桶限流器 rate</title>
+    <link href="https://leunggeorge.github.io/2020/02/01/golang-%E4%BB%A4%E7%89%8C%E6%A1%B6%E9%99%90%E6%B5%81%E5%99%A8-rate/"/>
+    <id>https://leunggeorge.github.io/2020/02/01/golang-令牌桶限流器-rate/</id>
+    <published>2020-02-01T14:22:04.000Z</published>
+    <updated>2020-02-01T16:19:55.586Z</updated>
+    
+    <summary type="html">
+    
+      golang 实现的令牌桶限流器。
+    
+    </summary>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="令牌桶" scheme="https://leunggeorge.github.io/tags/%E4%BB%A4%E7%89%8C%E6%A1%B6/"/>
+    
+      <category term="限流器" scheme="https://leunggeorge.github.io/tags/%E9%99%90%E6%B5%81%E5%99%A8/"/>
+    
+      <category term="rate" scheme="https://leunggeorge.github.io/tags/rate/"/>
+    
+  </entry>
   
   <entry>
     <title>你应该知道的伟大程序架构</title>
@@ -483,31 +510,6 @@
     
     
       <category term="fis" scheme="https://leunggeorge.github.io/tags/fis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>starUML破解方法（Windows10 &amp; MAC）</title>
-    <link href="https://leunggeorge.github.io/2017/11/30/starUML%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95%EF%BC%88Windows10-MAC%EF%BC%89/"/>
-    <id>https://leunggeorge.github.io/2017/11/30/starUML破解方法（Windows10-MAC）/</id>
-    <published>2017-11-30T02:00:55.000Z</published>
-    <updated>2020-01-29T04:43:36.827Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;破解之路&quot;&gt;&lt;a href=&quot;#破解之路&quot; class=&quot;headerlink&quot; title=&quot;破解之路&quot;&gt;&lt;/a&gt;破解之路&lt;/h1&gt;&lt;h2 id=&quot;Mac版（摘自互联网）&quot;&gt;&lt;a href=&quot;#Mac版（摘自互联网）&quot; class=&quot;headerlink&quot; title=&quot;Mac版（摘自互联网）&quot;&gt;&lt;/a&gt;Mac版（摘自互联网）&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;原文请查看引用【StarUML 版本破解(MAC版)】&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;1，打开对应 mac版本的安装包位置，在对应目录js文件&lt;/p&gt;
-&lt;figure class=&quot;highlight crmsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/Applications/StarUML.app/Contents/www/license/&lt;span class=&quot;keyword&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;/LicenseManagerDomain&lt;/span&gt;.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://leunggeorge.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="staruml" scheme="https://leunggeorge.github.io/tags/staruml/"/>
     
   </entry>
   
