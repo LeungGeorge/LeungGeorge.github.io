@@ -1,4 +1,3 @@
----
 uuid: ae7a5640-4410-11ea-be26-5f58b99d11f6
 title: golang 令牌桶限流器 rate
 tags:
@@ -12,12 +11,6 @@ comments: false
 description: golang 实现的令牌桶限流器。
 date: 2020-02-01 22:22:04
 ---
-
-
-
-
-
-
 <!--more-->
 
 
@@ -27,7 +20,7 @@ date: 2020-02-01 22:22:04
 ## 令牌桶算法
 令牌桶算法(Token Bucket)随着时间流逝,系统会按恒定1/QPS时间间隔(如果QPS=100,则间隔是10ms)往桶里加入Token,如果桶已经满了就不再加了。新请求来临时,会各自拿走一个Token,如果没有Token可拿了就阻塞或者拒绝服务.
 
-![20200201001841.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200201001841.png)
+![upload successful](/images/leunggeorge.github.io-image-4.png)
 
 > 限流器 rate 原理与上图的令牌桶类似。
 
@@ -43,7 +36,7 @@ func NewLimiter(r Limit, b int) *Limiter
 - `r` : 令牌桶每秒可以产生 `r` 个 token。  
 - `b` : 令牌桶的大小。
 
-![20200201220059.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200201220059.png)
+![upload successful](/images/leunggeorge.github.io-image-8.png)
 
 ### Reserve/ReserveN
 - 获取一个预定对象 `r`，表示调用者需要等待的相关信息（如，是否可以处理、何时可以处理等等），调用者可根据 `r` 自行决定处理逻辑。
@@ -67,7 +60,8 @@ time.Sleep(r.Delay())
 ```
 
 #### 实现逻辑
-![20200201174528.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200201174528.png)
+
+![upload successful](/images/leunggeorge.github.io-image-5.png)
 
 
 ### Allow/AllowN
@@ -102,7 +96,8 @@ func (lim *Limiter) WaitN(ctx context.Context, n int) (err error)
 
 #### 实现逻辑
 
-![20200201215553.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200201215553.png)
+
+![upload successful](/images/leunggeorge.github.io-image-6.png)
 
 ### SetLimit/SetLimitAt
 令牌桶限流频率设置。
@@ -112,8 +107,7 @@ func (lim *Limiter) WaitN(ctx context.Context, n int) (err error)
 
 
 > ## 引用
-> [限流算法之漏桶算法、令牌桶算法](https://blog.csdn.net/skiof007/article/details/81302566)  
-
+> [限流算法之漏桶算法、令牌桶算法](https://blog.csdn.net/skiof007/article/details/81302566)  
 
 ---
 ![20200131220947.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200131220947.png)

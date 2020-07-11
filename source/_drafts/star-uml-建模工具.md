@@ -1,19 +1,15 @@
----
 uuid: 707c2090-4720-11ea-a4bf-6f20a583fbd1
 title: star uml 建模工具
 description: UML 是一种建模语言，可以用于面向对象系统的分析与设计
+date: 2020-07-11 18:44:54
 ---
-
-
-
-
-
 <!--more-->
 <!-- 1. 发布前：删除草稿的 uuid -->
 <!-- 2. 发布后：补充tag，category -->
 
 ## 面向对象设计与分析
 - 模型是一个系统的完整抽象。人们对某个领域特定问题的求解及解决方案，对他们的理解和认识都蕴含在模型中。
+
 
 **我们分析问题的一个常见模型：**
 ![20200202213109.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200202213109.png)

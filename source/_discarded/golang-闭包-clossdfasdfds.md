@@ -1,6 +1,11 @@
----
-title: {{ title }}
-description:  摘要
+uuid: 114047c0-c365-11ea-8593-6fa8931ad007
+title: golang 闭包(clossdfasdfds?
+description: 摘要
+tags:
+  - golang
+  - tag
+categories: []
+date: 2020-07-11 18:55:00
 ---
 
 
