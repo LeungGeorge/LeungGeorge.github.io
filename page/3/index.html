@@ -90,7 +90,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="魔法书" type="application/atom+xml">
 
 
 
@@ -104,13 +104,13 @@
 
 <meta name="description" content="day day up">
 <meta property="og:type" content="website">
-<meta property="og:title" content="七点一刻的魔法书">
+<meta property="og:title" content="魔法书">
 <meta property="og:url" content="https://leunggeorge.github.io/page/3/index.html">
-<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:site_name" content="魔法书">
 <meta property="og:description" content="day day up">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="七点一刻的魔法书">
+<meta name="twitter:title" content="魔法书">
 <meta name="twitter:description" content="day day up">
 
 
@@ -145,7 +145,7 @@
 
 
 
-  <title>七点一刻的魔法书</title>
+  <title>魔法书</title>
   
 
 
@@ -193,12 +193,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">七点一刻的魔法书</span>
+        <span class="site-title">魔法书</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">魔法书里面记载了许多“召唤术”，可以召唤天使或者精灵为自己服务。</p>
+        <p class="site-subtitle">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</p>
       
   </div>
 
@@ -337,6 +337,178 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2017/12/22/scrapyd监控scrapy爬虫进度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/22/scrapyd监控scrapy爬虫进度/" itemprop="url">scrapyd监控scrapy爬虫进度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-22T23:30:33+08:00">
+                2017-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+             <span id="/2017/12/22/scrapyd监控scrapy爬虫进度/" class="leancloud_visitors" data-flag-title="scrapyd监控scrapy爬虫进度">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  178
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="安装scrapyd"><a href="#安装scrapyd" class="headerlink" title="安装scrapyd"></a>安装scrapyd</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> scrapyd</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装scrapyd-client"><a href="#安装scrapyd-client" class="headerlink" title="安装scrapyd-client"></a>安装scrapyd-client</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> scrapyd-<span class="keyword">client</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="运行scrapyd服务"><a href="#运行scrapyd服务" class="headerlink" title="运行scrapyd服务"></a>运行scrapyd服务</h1><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">scrapyd</span></span><br></pre></td></tr></table></figure>
+
+<p>Spider进度查看地址：<a href="http://localhost:6800/" target="_blank" rel="noopener">http://localhost:6800/</a></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/22/scrapyd监控scrapy爬虫进度/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2017/12/15/fis-修改上传文件大小限制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -346,7 +518,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -532,7 +704,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -702,7 +874,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -868,7 +1040,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -1034,7 +1206,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -1200,7 +1372,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -1366,7 +1538,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -1532,7 +1704,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -1698,7 +1870,7 @@ hljs.initHighlightingOnLoad();
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
+      <meta itemprop="name" content="魔法书">
     </span>
 
     
@@ -1846,172 +2018,6 @@ hljs.initHighlightingOnLoad();
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2017/07/19/正则表达式用法总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="七点一刻">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="七点一刻的魔法书">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/19/正则表达式用法总结/" itemprop="url">正则表达式用法总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T11:39:08+08:00">
-                2017-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/essay/" itemprop="url" rel="index">
-                    <span itemprop="name">essay</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-          
-          
-             <span id="/2017/07/19/正则表达式用法总结/" class="leancloud_visitors" data-flag-title="正则表达式用法总结">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  9.2k
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/19/正则表达式用法总结/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2059,7 +2065,7 @@ hljs.initHighlightingOnLoad();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2081,7 +2087,7 @@ hljs.initHighlightingOnLoad();
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">66</span>
+                <span class="site-state-item-count">67</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2170,7 +2176,7 @@ hljs.initHighlightingOnLoad();
 <div class="copyright">
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

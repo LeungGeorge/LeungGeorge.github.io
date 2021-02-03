@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>七点一刻的魔法书</title>
+  <title>魔法书</title>
   
-  <subtitle>魔法书里面记载了许多“召唤术”，可以召唤天使或者精灵为自己服务。</subtitle>
+  <subtitle>书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leunggeorge.github.io/"/>
-  <updated>2020-02-04T07:04:38.503Z</updated>
+  <updated>2021-02-03T02:02:07.167Z</updated>
   <id>https://leunggeorge.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>什么读书方法效果最好？</title>
+    <link href="https://leunggeorge.github.io/2021/02/03/%E4%BB%80%E4%B9%88%E8%AF%BB%E4%B9%A6%E6%96%B9%E6%B3%95%E6%95%88%E6%9E%9C%E6%9C%80%E5%A5%BD%EF%BC%9F/"/>
+    <id>https://leunggeorge.github.io/2021/02/03/什么读书方法效果最好？/</id>
+    <published>2021-02-03T01:56:38.000Z</published>
+    <updated>2021-02-03T02:02:07.167Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;苏轼在被贬黄州期间，一位朋友前来拜访，等了很长时间才得以见面。苏轼不好意思地说，自己刚才在做每天功课，耽误了时间才有失远迎。这位朋友很惊讶，询问每天做的是什么功课。苏轼回答，自己正在学习《汉书》，每天边读边手抄。朋友更加震惊，当时苏轼已颇具盛名，为何还用手抄这种费时费力的方
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
+    
+    
+      <category term="reading" scheme="https://leunggeorge.github.io/tags/reading/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何创建一个npm包</title>
     <link href="https://leunggeorge.github.io/2020/02/04/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAnpm%E5%8C%85/"/>
     <id>https://leunggeorge.github.io/2020/02/04/如何创建一个npm包/</id>
-    <published>2020-02-04T06:58:26.000Z</published>
-    <updated>2020-02-04T07:04:38.503Z</updated>
+    <published>2020-02-04T06:58:00.000Z</published>
+    <updated>2021-02-03T01:52:23.502Z</updated>
     
     <summary type="html">
     
@@ -30,10 +54,10 @@
     </summary>
     
     
-      <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
+      <category term="工具" scheme="https://leunggeorge.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="writing" scheme="https://leunggeorge.github.io/tags/writing/"/>
+      <category term="npm" scheme="https://leunggeorge.github.io/tags/npm/"/>
     
   </entry>
   
@@ -42,7 +66,7 @@
     <link href="https://leunggeorge.github.io/2020/02/01/golang-%E4%BB%A4%E7%89%8C%E6%A1%B6%E9%99%90%E6%B5%81%E5%99%A8-rate/"/>
     <id>https://leunggeorge.github.io/2020/02/01/golang-令牌桶限流器-rate/</id>
     <published>2020-02-01T14:22:04.000Z</published>
-    <updated>2020-02-01T16:19:55.586Z</updated>
+    <updated>2021-02-03T01:52:23.501Z</updated>
     
     <summary type="html">
     
@@ -69,7 +93,7 @@
     <link href="https://leunggeorge.github.io/2019/11/02/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%BC%9F%E5%A4%A7%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84/"/>
     <id>https://leunggeorge.github.io/2019/11/02/你应该知道的伟大程序架构/</id>
     <published>2019-11-02T13:59:06.000Z</published>
-    <updated>2020-01-29T04:43:36.833Z</updated>
+    <updated>2020-04-07T01:59:14.507Z</updated>
     
     <summary type="html">
     
@@ -94,7 +118,7 @@
     <link href="https://leunggeorge.github.io/2019/10/27/12306%E6%98%AF%E5%A6%82%E4%BD%95%E6%94%AF%E6%92%91%E7%99%BE%E4%B8%87qps%E7%9A%84%EF%BC%9F/"/>
     <id>https://leunggeorge.github.io/2019/10/27/12306是如何支撑百万qps的？/</id>
     <published>2019-10-27T04:48:32.000Z</published>
-    <updated>2020-01-29T14:48:11.780Z</updated>
+    <updated>2020-04-07T01:59:14.506Z</updated>
     
     <summary type="html">
     
@@ -117,7 +141,7 @@
     <link href="https://leunggeorge.github.io/2019/10/27/PyRadio-%E7%94%A8%E4%BA%8EUbuntu%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E7%94%B5%E5%8F%B0%E6%92%AD%E6%94%BE%E5%99%A8/"/>
     <id>https://leunggeorge.github.io/2019/10/27/PyRadio-用于Ubuntu命令行的网络电台播放器/</id>
     <published>2019-10-26T19:16:23.000Z</published>
-    <updated>2020-01-29T14:49:01.019Z</updated>
+    <updated>2020-04-07T01:59:14.517Z</updated>
     
     <summary type="html">
     
@@ -138,7 +162,7 @@
     <link href="https://leunggeorge.github.io/2019/10/20/SELECT-COUNT-%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/"/>
     <id>https://leunggeorge.github.io/2019/10/20/SELECT-COUNT-那些事儿/</id>
     <published>2019-10-20T06:58:28.000Z</published>
-    <updated>2020-01-29T04:43:36.832Z</updated>
+    <updated>2020-04-07T01:59:14.501Z</updated>
     
     <summary type="html">
     
@@ -161,7 +185,7 @@
     <link href="https://leunggeorge.github.io/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
     <id>https://leunggeorge.github.io/2019/10/07/gcache-源码分析/</id>
     <published>2019-10-07T07:02:57.000Z</published>
-    <updated>2020-01-31T03:20:49.735Z</updated>
+    <updated>2020-04-07T01:59:14.505Z</updated>
     
     <summary type="html">
     
@@ -186,7 +210,7 @@
     <link href="https://leunggeorge.github.io/2019/10/07/npm-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0-package-json-%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9D%97%E7%89%88%E6%9C%AC/"/>
     <id>https://leunggeorge.github.io/2019/10/07/npm-一键更新-package-json-依赖模块版本/</id>
     <published>2019-10-07T01:56:53.000Z</published>
-    <updated>2020-01-29T04:43:36.832Z</updated>
+    <updated>2020-04-07T01:59:14.522Z</updated>
     
     <summary type="html">
     
@@ -209,7 +233,7 @@
     <link href="https://leunggeorge.github.io/2019/10/06/Golang-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%83%AD%E5%8A%A0%E8%BD%BD/"/>
     <id>https://leunggeorge.github.io/2019/10/06/Golang-配置文件热加载/</id>
     <published>2019-10-06T08:13:27.000Z</published>
-    <updated>2020-01-29T04:43:36.831Z</updated>
+    <updated>2020-04-07T01:59:14.519Z</updated>
     
     <summary type="html">
     
@@ -232,7 +256,7 @@
     <link href="https://leunggeorge.github.io/2019/10/04/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice/"/>
     <id>https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/</id>
     <published>2019-10-04T13:02:51.000Z</published>
-    <updated>2020-01-30T15:30:06.427Z</updated>
+    <updated>2020-04-07T01:59:14.511Z</updated>
     
     <summary type="html">
     
@@ -259,7 +283,7 @@
     <link href="https://leunggeorge.github.io/2019/10/03/Go-%E5%BC%80%E5%8F%91%E8%80%85%E8%B7%AF%E7%BA%BF%E5%9B%BE/"/>
     <id>https://leunggeorge.github.io/2019/10/03/Go-开发者路线图/</id>
     <published>2019-10-03T08:34:06.000Z</published>
-    <updated>2020-01-29T04:43:36.830Z</updated>
+    <updated>2020-04-07T01:59:14.508Z</updated>
     
     <summary type="html">
     
@@ -286,7 +310,7 @@
     <link href="https://leunggeorge.github.io/2019/10/03/TCP-%E4%B8%8E-UDP/"/>
     <id>https://leunggeorge.github.io/2019/10/03/TCP-与-UDP/</id>
     <published>2019-10-03T01:49:58.000Z</published>
-    <updated>2020-01-29T04:43:36.831Z</updated>
+    <updated>2020-04-07T01:59:14.503Z</updated>
     
     <summary type="html">
     
@@ -309,7 +333,7 @@
     <link href="https://leunggeorge.github.io/2019/09/15/Golang-%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>https://leunggeorge.github.io/2019/09/15/Golang-速查表/</id>
     <published>2019-09-15T13:15:03.000Z</published>
-    <updated>2020-01-29T04:43:36.830Z</updated>
+    <updated>2020-04-07T01:59:14.523Z</updated>
     
     <summary type="html">
     
@@ -334,7 +358,7 @@
     <link href="https://leunggeorge.github.io/2019/09/15/Golang-%E6%96%B0%E6%89%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E8%B8%A9%E7%9A%84%E5%9D%91/"/>
     <id>https://leunggeorge.github.io/2019/09/15/Golang-新手可能会踩的坑/</id>
     <published>2019-09-15T12:40:09.000Z</published>
-    <updated>2020-01-29T04:43:36.830Z</updated>
+    <updated>2020-04-07T01:59:14.520Z</updated>
     
     <summary type="html">
     
@@ -357,7 +381,7 @@
     <link href="https://leunggeorge.github.io/2019/09/05/MySQL%E8%A1%A8%E8%BD%AC%E4%B8%BAGolang%E7%BB%93%E6%9E%84%E4%BD%93/"/>
     <id>https://leunggeorge.github.io/2019/09/05/MySQL表转为Golang结构体/</id>
     <published>2019-09-05T12:40:10.000Z</published>
-    <updated>2020-01-29T04:43:36.828Z</updated>
+    <updated>2020-04-07T01:59:14.512Z</updated>
     
     <summary type="html">
     
@@ -384,7 +408,7 @@
     <link href="https://leunggeorge.github.io/2019/01/26/mac-%E5%AE%89%E8%A3%85-zsh/"/>
     <id>https://leunggeorge.github.io/2019/01/26/mac-安装-zsh/</id>
     <published>2019-01-26T11:12:43.000Z</published>
-    <updated>2020-01-29T04:43:36.828Z</updated>
+    <updated>2020-04-07T01:59:14.504Z</updated>
     
     <summary type="html">
     
@@ -405,7 +429,7 @@
     <link href="https://leunggeorge.github.io/2018/04/23/HTTP-%E7%8A%B6%E6%80%81%E7%A0%81/"/>
     <id>https://leunggeorge.github.io/2018/04/23/HTTP-状态码/</id>
     <published>2018-04-23T07:53:29.000Z</published>
-    <updated>2020-01-29T04:43:36.828Z</updated>
+    <updated>2020-04-07T01:59:14.510Z</updated>
     
     <summary type="html">
     
@@ -428,7 +452,7 @@
     <link href="https://leunggeorge.github.io/2018/02/09/%E5%A8%81%E5%B0%94%E9%80%8A%E5%BE%97%E5%88%86/"/>
     <id>https://leunggeorge.github.io/2018/02/09/威尔逊得分/</id>
     <published>2018-02-09T03:51:56.000Z</published>
-    <updated>2020-01-29T04:43:36.827Z</updated>
+    <updated>2020-04-07T01:59:14.511Z</updated>
     
     <summary type="html">
     
@@ -454,7 +478,7 @@
     <link href="https://leunggeorge.github.io/2017/12/23/%E5%9F%BA%E4%BA%8Eredis%E5%AE%9E%E7%8E%B0scrapy%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"/>
     <id>https://leunggeorge.github.io/2017/12/23/基于redis实现scrapy分布式爬虫/</id>
     <published>2017-12-23T09:08:56.000Z</published>
-    <updated>2020-01-29T04:43:36.827Z</updated>
+    <updated>2020-04-07T01:59:14.502Z</updated>
     
     <summary type="html">
     
@@ -473,39 +497,6 @@
       <category term="scrapy" scheme="https://leunggeorge.github.io/tags/scrapy/"/>
     
       <category term="分布式" scheme="https://leunggeorge.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>scrapyd监控scrapy爬虫进度</title>
-    <link href="https://leunggeorge.github.io/2017/12/22/scrapyd%E7%9B%91%E6%8E%A7scrapy%E7%88%AC%E8%99%AB%E8%BF%9B%E5%BA%A6/"/>
-    <id>https://leunggeorge.github.io/2017/12/22/scrapyd监控scrapy爬虫进度/</id>
-    <published>2017-12-22T15:30:33.000Z</published>
-    <updated>2020-01-29T04:43:36.827Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h1&gt;&lt;h2 id=&quot;安装scrapyd&quot;&gt;&lt;a href=&quot;#安装scrapyd&quot; class=&quot;headerlink&quot; title=&quot;安装scrapyd&quot;&gt;&lt;/a&gt;安装scrapyd&lt;/h2&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; scrapyd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;安装scrapyd-client&quot;&gt;&lt;a href=&quot;#安装scrapyd-client&quot; class=&quot;headerlink&quot; title=&quot;安装scrapyd-client&quot;&gt;&lt;/a&gt;安装scrapyd-client&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; scrapyd-&lt;span class=&quot;keyword&quot;&gt;client&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;运行scrapyd服务&quot;&gt;&lt;a href=&quot;#运行scrapyd服务&quot; class=&quot;headerlink&quot; title=&quot;运行scrapyd服务&quot;&gt;&lt;/a&gt;运行scrapyd服务&lt;/h1&gt;&lt;figure class=&quot;highlight ebnf&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;scrapyd&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;Spider进度查看地址：&lt;a href=&quot;http://localhost:6800/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost:6800/&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://leunggeorge.github.io/categories/python/"/>
-    
-    
-      <category term="爬虫" scheme="https://leunggeorge.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="python" scheme="https://leunggeorge.github.io/tags/python/"/>
-    
-      <category term="scrapy" scheme="https://leunggeorge.github.io/tags/scrapy/"/>
-    
-      <category term="scrapyd" scheme="https://leunggeorge.github.io/tags/scrapyd/"/>
     
   </entry>
   
