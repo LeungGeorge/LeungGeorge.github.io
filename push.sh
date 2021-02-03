@@ -7,7 +7,7 @@ hexo d
 # hexo algolia
 
 git add --all
-git commit -m "auto commit"
+git commit -m "by 七点一刻"
 git pull
 
 git push origin hexo
