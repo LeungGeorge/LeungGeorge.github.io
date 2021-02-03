@@ -6,7 +6,7 @@
 
 # Site
 title: 魔法书
-subtitle: 魔法书里面记载了许多“召唤术”，可以召唤天使或者精灵为自己服务。 
+subtitle: 书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务 
 description: day day up
 author: 七点一刻
 language: zh-Hans
@@ -127,8 +127,8 @@ baidusitemap:
 # 为首页和归档页面设置不同的文章篇数
 index_generator:
   per_page: 10
-  order_by: -date
-  # order_by: -updated
+  # order_by: -date
+  order_by: -updated
 
 
 archive_generator:

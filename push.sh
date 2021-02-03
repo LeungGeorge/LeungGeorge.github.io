@@ -1,15 +1,13 @@
 #!/bin/bash
 
-#hexo clean
-#hexo g
-#hexo d
+hexo clean
+hexo g
+hexo d
 
 # hexo algolia
 
 git add --all
 git commit -m "auto commit"
-#git pull
+git pull
 
-#git push origin hexo
-
-
+git push origin hexo
