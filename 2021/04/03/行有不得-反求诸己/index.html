@@ -84,7 +84,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="python,scrapy,">
+  <meta name="keywords" content="writing,">
 
 
 
@@ -102,18 +102,17 @@
 
 
 
-<meta name="description" content="本文主要介绍了使用scrapy框架实现抓取代理ip的功能。">
-<meta name="keywords" content="python,scrapy">
+<meta name="keywords" content="writing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用scrapy抓取代理ip实例">
-<meta property="og:url" content="https://leunggeorge.github.io/2017/11/12/使用scrapy抓取代理ip实例/index.html">
+<meta property="og:title" content="行有不得, 反求诸己">
+<meta property="og:url" content="https://leunggeorge.github.io/2021/04/03/行有不得-反求诸己/index.html">
 <meta property="og:site_name" content="魔法书">
-<meta property="og:description" content="本文主要介绍了使用scrapy框架实现抓取代理ip的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-07T01:59:14.524Z">
+<meta property="og:image" content="https://leunggeorge.github.io/images/leunggeorge.github.io-image-9.png">
+<meta property="og:updated_time" content="2021-04-04T02:50:31.307Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用scrapy抓取代理ip实例">
-<meta name="twitter:description" content="本文主要介绍了使用scrapy框架实现抓取代理ip的功能。">
+<meta name="twitter:title" content="行有不得, 反求诸己">
+<meta name="twitter:image" content="https://leunggeorge.github.io/images/leunggeorge.github.io-image-9.png">
 
 
 
@@ -141,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="https://leunggeorge.github.io/2017/11/12/使用scrapy抓取代理ip实例/">
+  <link rel="canonical" href="https://leunggeorge.github.io/2021/04/03/行有不得-反求诸己/">
 
 
 
 
 
-  <title>使用scrapy抓取代理ip实例 | 魔法书</title>
+  <title>行有不得, 反求诸己 | 魔法书</title>
   
 
 
@@ -337,7 +336,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2017/11/12/使用scrapy抓取代理ip实例/">
+    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2021/04/03/行有不得-反求诸己/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七点一刻">
@@ -354,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用scrapy抓取代理ip实例</h1>
+          <h1 class="post-title" itemprop="name headline">行有不得, 反求诸己</h1>
         
 
         <div class="post-meta">
@@ -366,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-12T23:18:36+08:00">
-                2017-11-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-03T10:44:25+08:00">
+                2021-04-03
               </time>
             
 
@@ -389,8 +388,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/essay/" itemprop="url" rel="index">
+                    <span itemprop="name">essay</span>
                   </a>
                 </span>
 
@@ -404,7 +403,7 @@
 
           
           
-             <span id="/2017/11/12/使用scrapy抓取代理ip实例/" class="leancloud_visitors" data-flag-title="使用scrapy抓取代理ip实例">
+             <span id="/2021/04/03/行有不得-反求诸己/" class="leancloud_visitors" data-flag-title="行有不得, 反求诸己">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -430,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1k
+                  0
                 </span>
               
 
@@ -440,10 +439,6 @@
             </div>
           
 
-          
-              <div class="post-description">
-                  本文主要介绍了使用scrapy框架实现抓取代理ip的功能。
-              </div>
           
 
         </div>
@@ -456,53 +451,13 @@
       
 
       
-        <h1 id="使用scrapy抓取代理ip实例"><a href="#使用scrapy抓取代理ip实例" class="headerlink" title="使用scrapy抓取代理ip实例"></a>使用scrapy抓取代理ip实例</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>如果你尚未安装scrapy，或者不知道怎么创建爬虫项目，请参考 <a href="http://leunggeorge.github.io/2017/07/21/python-scrapy%E6%A1%86%E6%9E%B6/">python scrapy框架</a> 安装一节。</p>
-<p>我们创建项目collectips；新建爬虫xicidaili。</p>
-<h2 id="主要代码解析"><a href="#主要代码解析" class="headerlink" title="主要代码解析"></a>主要代码解析</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name</span> = <span class="string">'xicidaili'</span></span><br><span class="line"><span class="attr">allowed_domains</span> = [<span class="string">'www.xicidaili.com'</span>]</span><br><span class="line"><span class="attr">start_urls</span> = [<span class="string">'http://www.xicidaili.com/nn/1'</span>]</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<!-- 1. 发布前：删除草稿的 uuid -->
+<!-- 2. 发布后：补充tag，category -->
 
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">def parse(self, response):</span><br><span class="line">    ip_list = response.xpath(<span class="string">'//*[@id="ip_list"]'</span>)</span><br><span class="line">    trs = ip_list[<span class="number">0</span>].xpath(<span class="string">'tr'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">tr</span> in trs[<span class="number">1</span>:]:</span><br><span class="line">        item = CollectipsItem()</span><br><span class="line"></span><br><span class="line">        item[<span class="string">'ip'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[2]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'port'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[3]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'server_address'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[4]/a/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'is_gao_ni'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[5]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'ip_type'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[6]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'speed'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[7]/div/@title'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        item[<span class="string">'connection_time'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[8]/div/@title'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        item[<span class="string">'alive_time'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[9]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'check_time'</span>] = <span class="keyword">tr</span>.xpath(<span class="string">'td[10]/text()'</span>).extract()</span><br><span class="line">        myProxy = str(<span class="keyword">tr</span>.xpath(<span class="string">'td[2]/text()'</span>).extract()[<span class="number">0</span>]) + str(<span class="string">':'</span>) + str(<span class="keyword">tr</span>.xpath(<span class="string">'td[3]/text()'</span>).extract()[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> self.is_valid_ip(myProxy) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">'save a valid ip'</span></span><br><span class="line">            objFile = <span class="keyword">open</span>(<span class="string">'ip_port_list.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">            rowData = myProxy</span><br><span class="line">            objFile.<span class="keyword">write</span>(rowData)</span><br><span class="line">            objFile.<span class="keyword">write</span>(<span class="string">'\n'</span>)</span><br><span class="line">            objFile.<span class="keyword">close</span>()</span><br><span class="line">            yield item</span><br><span class="line"></span><br><span class="line">    pagination = response.xpath(<span class="string">'//*[@id="body"]/div[2]'</span>)</span><br><span class="line">    alist = pagination[<span class="number">0</span>].xpath(<span class="string">'a'</span>)</span><br><span class="line">    pageNum = response.url.<span class="keyword">split</span>(<span class="string">'/'</span>)[-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> pageNum &gt;= <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'crawl end...'</span></span><br><span class="line">        <span class="keyword">exit</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">a</span> in alis<span class="variable">t:</span></span><br><span class="line">        class_name = <span class="keyword">a</span>.xpath(<span class="string">'text()'</span>).extract()</span><br><span class="line">        class_name2 = class_name[<span class="number">0</span>].strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">u</span><span class="string">'下一页 ›'</span> == class_name2:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">'next page...............'</span></span><br><span class="line">            nextPageHref = <span class="keyword">a</span>.xpath(<span class="string">'@href'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">            nextPageHrefFullUrl = response.urljoin(nextPageHref)</span><br><span class="line">            yield scrapy.Request(nextPageHrefFullUrl, callback=self.parse)</span><br></pre></td></tr></table></figure>
 
-<h3 id="检验代理ip可用性"><a href="#检验代理ip可用性" class="headerlink" title="检验代理ip可用性"></a>检验代理ip可用性</h3><p>我们需要对抓取的代理ip的可用性进行验证，方式如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_valid_ip</span><span class="params">(self, proxy)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'check ip...'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        protocol = <span class="string">'http://'</span></span><br><span class="line">        proxies = &#123;protocol: proxy&#125;</span><br><span class="line">        <span class="keyword">if</span> requests.get(<span class="string">'http://www.baidu.com'</span>, proxies=proxies, timeout=<span class="number">2</span>).status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'ip is not valid...'</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><ol>
-<li>修改下载延迟</li>
-</ol>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Configure a delay for requests for the same website (default: 0)</span></span><br><span class="line"><span class="comment"># See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay</span></span><br><span class="line"><span class="comment"># See also autothrottle settings and docs</span></span><br><span class="line"><span class="attr">DOWNLOAD_DELAY</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>新增下载中间件</li>
-</ol>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Enable or disable downloader middlewares</span></span><br><span class="line"><span class="meta"># See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html</span></span><br><span class="line">DOWNLOADER_MIDDLEWARES = &#123;</span><br><span class="line"><span class="meta">#    'collectips.middlewares.MyCustomDownloaderMiddleware': 543,</span></span><br><span class="line">    <span class="string">'collectips.middlewares.CollectipsSpiderMiddleware'</span>: <span class="number">100</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>代理IP</li>
-</ol>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">IP_POOL</span> = [</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"59.40.69.231:8010"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"27.219.36.127:8118"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"118.187.58.34:53281"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"117.78.37.198:8000"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"42.55.171.123:80"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"119.115.21.17:80"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"17-11-05 11:44:4395"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"59.40.50.169:8010"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"61.129.70.131:8080"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"61.152.81.193:9100"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"120.204.85.29:3128"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"219.228.126.86:8123"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"61.152.81.193:9100"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"218.82.33.225:53853"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"ipaddr"</span>:<span class="string">"223.167.190.17:42789"</span>&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>USER_AGENT设置</li>
-</ol>
-<figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">USER_AGENT_LIST</span> = [</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (X11; CrOS i686 2268.111.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1092.0 Safari/536.6"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1090.0 Safari/536.6"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/19.77.34.5 Safari/537.1"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.9 Safari/536.5"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.36 Safari/536.5"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1063.0 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1063.0 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1063.0 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1062.0 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1062.0 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.1 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.1 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.1 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1061.0 Safari/536.3"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24"</span>,</span><br><span class="line">    <span class="comment">"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24"</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h2 id="gogogo西刺代理"><a href="#gogogo西刺代理" class="headerlink" title="gogogo西刺代理"></a>gogogo西刺代理</h2><p>运行：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">scrapy</span> <span class="selector-tag">crawl</span> <span class="selector-tag">xicidaili</span> <span class="selector-tag">-o</span> <span class="selector-tag">my_ip</span><span class="selector-class">.json</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="抓取数据示例"><a href="#抓取数据示例" class="headerlink" title="抓取数据示例"></a>抓取数据示例</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"connection_time"</span>:<span class="string">"0.034秒"</span>,</span><br><span class="line">    <span class="attr">"check_time"</span>:[</span><br><span class="line">        <span class="string">"17-11-12 16:37"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"is_gao_ni"</span>:[</span><br><span class="line">        <span class="string">"高匿"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"ip"</span>:[</span><br><span class="line">        <span class="string">"119.130.240.25"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"server_address"</span>:[</span><br><span class="line">        <span class="string">"广东广州"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"alive_time"</span>:[</span><br><span class="line">        <span class="string">"2小时"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"ip_type"</span>:[</span><br><span class="line">        <span class="string">"HTTPS"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"speed"</span>:<span class="string">"0.174秒"</span>,</span><br><span class="line">    <span class="attr">"port"</span>:[</span><br><span class="line">        <span class="string">"8118"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
-<p>源码：<a href="https://github.com/LeungGeorge/spider/tree/master/collectips" target="_blank" rel="noopener">collectips</a></p>
-</blockquote>
 <hr>
-<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
-<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
-<script>
-hljs.tabReplace = ' ';
-hljs.initHighlightingOnLoad();
-</script>
-
-
-<p>来源：<a href="http://leunggeorge.github.io/">http://leunggeorge.github.io/</a>  </p>
+<p><img src="/images/leunggeorge.github.io-image-9.png" alt="20200131220947.png"></p>
 
       
     </div>
@@ -527,7 +482,7 @@ hljs.initHighlightingOnLoad();
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://leunggeorge.github.io/2017/11/12/使用scrapy抓取代理ip实例/" title="使用scrapy抓取代理ip实例">https://leunggeorge.github.io/2017/11/12/使用scrapy抓取代理ip实例/</a>
+      <a href="https://leunggeorge.github.io/2021/04/03/行有不得-反求诸己/" title="行有不得, 反求诸己">https://leunggeorge.github.io/2021/04/03/行有不得-反求诸己/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -543,9 +498,7 @@ hljs.initHighlightingOnLoad();
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-            <a href="/tags/scrapy/" rel="tag"># scrapy</a>
+            <a href="/tags/writing/" rel="tag"># writing</a>
           
         </div>
       
@@ -558,8 +511,8 @@ hljs.initHighlightingOnLoad();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/23/HTTP使用POST提交数据常见方式/" rel="next" title="HTTP使用POST提交数据常见方式">
-                <i class="fa fa-chevron-left"></i> HTTP使用POST提交数据常见方式
+              <a href="/2021/02/03/什么读书方法效果最好？/" rel="next" title="什么读书方法效果最好？">
+                <i class="fa fa-chevron-left"></i> 什么读书方法效果最好？
               </a>
             
           </div>
@@ -568,8 +521,8 @@ hljs.initHighlightingOnLoad();
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/25/安装pip/" rel="prev" title="安装pip">
-                安装pip <i class="fa fa-chevron-right"></i>
+              <a href="/2021/04/04/梦想就是-那种让你感到坚持就是幸福的东西/" rel="prev" title="梦想就是'那种让你感到坚持就是幸福的东西'">
+                梦想就是'那种让你感到坚持就是幸福的东西' <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -636,17 +589,8 @@ hljs.initHighlightingOnLoad();
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140" alt="七点一刻">
           <p class="site-author-name" itemprop="name">七点一刻</p>
@@ -750,22 +694,6 @@ hljs.initHighlightingOnLoad();
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用scrapy抓取代理ip实例"><span class="nav-number">1.</span> <span class="nav-text">使用scrapy抓取代理ip实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要代码解析"><span class="nav-number">1.2.</span> <span class="nav-text">主要代码解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析"><span class="nav-number">1.2.2.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检验代理ip可用性"><span class="nav-number">1.2.3.</span> <span class="nav-text">检验代理ip可用性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置"><span class="nav-number">1.3.</span> <span class="nav-text">修改配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gogogo西刺代理"><span class="nav-number">1.4.</span> <span class="nav-text">gogogo西刺代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抓取数据示例"><span class="nav-number">1.5.</span> <span class="nav-text">抓取数据示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">2.</span> <span class="nav-text">引用</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
