@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leunggeorge.github.io/"/>
-  <updated>2021-04-04T02:52:35.424Z</updated>
+  <updated>2021-08-29T09:30:14.055Z</updated>
   <id>https://leunggeorge.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次 Golang 内存泄露问题分析</title>
+    <link href="https://leunggeorge.github.io/2021/08/29/%E8%AE%B0%E4%B8%80%E6%AC%A1-golang-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
+    <id>https://leunggeorge.github.io/2021/08/29/记一次-golang-内存泄露问题分析/</id>
+    <published>2021-08-29T08:22:42.000Z</published>
+    <updated>2021-08-29T09:30:14.055Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;pprof&quot;&gt;&lt;a href=&quot;#pprof&quot; class=&quot;headerlink&quot; title=&quot;pprof
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
+    
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="writing" scheme="https://leunggeorge.github.io/tags/writing/"/>
+    
+      <category term="内存泄露" scheme="https://leunggeorge.github.io/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>敬畏生命, 敬畏规章, 敬畏职责！</title>
@@ -275,7 +307,7 @@
     <link href="https://leunggeorge.github.io/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
     <id>https://leunggeorge.github.io/2019/10/07/gcache-源码分析/</id>
     <published>2019-10-07T07:02:57.000Z</published>
-    <updated>2020-04-07T01:59:14.505Z</updated>
+    <updated>2021-11-30T02:01:46.870Z</updated>
     
     <summary type="html">
     
@@ -490,27 +522,6 @@
       <category term="mysql" scheme="https://leunggeorge.github.io/tags/mysql/"/>
     
       <category term="table2struct" scheme="https://leunggeorge.github.io/tags/table2struct/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mac 安装 zsh</title>
-    <link href="https://leunggeorge.github.io/2019/01/26/mac-%E5%AE%89%E8%A3%85-zsh/"/>
-    <id>https://leunggeorge.github.io/2019/01/26/mac-安装-zsh/</id>
-    <published>2019-01-26T11:12:43.000Z</published>
-    <updated>2020-04-07T01:59:14.504Z</updated>
-    
-    <summary type="html">
-    
-      mac 安装 zsh
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://leunggeorge.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="zsh" scheme="https://leunggeorge.github.io/tags/zsh/"/>
     
   </entry>
   
