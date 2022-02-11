@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "acorn": "^7.3.1",
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "eslint": "^6.5.1",
     "hexo": "^4.2.1",
     "hexo-admin": "^2.3.0",
