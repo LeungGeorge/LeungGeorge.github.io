@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leunggeorge.github.io/"/>
-  <updated>2022-12-08T02:55:50.735Z</updated>
+  <updated>2022-12-09T13:22:02.866Z</updated>
   <id>https://leunggeorge.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://leunggeorge.github.io/2022/12/08/%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1/"/>
     <id>https://leunggeorge.github.io/2022/12/08/代码评审/</id>
     <published>2022-12-08T02:18:05.000Z</published>
-    <updated>2022-12-08T02:55:50.735Z</updated>
+    <updated>2022-12-09T13:22:02.866Z</updated>
     
     <summary type="html">
     
@@ -70,9 +70,9 @@
       <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
     
     
-      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
-    
       <category term="writing" scheme="https://leunggeorge.github.io/tags/writing/"/>
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
     
       <category term="内存泄露" scheme="https://leunggeorge.github.io/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/"/>
     
@@ -422,11 +422,11 @@
     
       <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
     
-      <category term="设计与实现" scheme="https://leunggeorge.github.io/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
-    
       <category term="源码" scheme="https://leunggeorge.github.io/tags/%E6%BA%90%E7%A0%81/"/>
     
       <category term="slice" scheme="https://leunggeorge.github.io/tags/slice/"/>
+    
+      <category term="设计与实现" scheme="https://leunggeorge.github.io/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
     
   </entry>
   
