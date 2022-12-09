@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
@@ -26,8 +26,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -45,7 +45,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -79,23 +79,23 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="crontab,">
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="魔法书" type="application/atom+xml">
+  <meta name="keywords" content="crontab," />
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+  <link rel="alternate" href="/atom.xml" title="魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -103,17 +103,16 @@
 
 
 <meta name="description" content="定时任务crontab 定时任务详解，各种周期的ct任务写法。我们通过创建ct任务（crontab定时任务），可以达到周期运行脚本的目的。时间周期为：分钟、小时、日、月、周的各种组合。">
-<meta name="keywords" content="crontab">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux-crontab 定时任务">
-<meta property="og:url" content="https://leunggeorge.github.io/2017/08/08/linux-crontab-定时任务/index.html">
+<meta property="og:url" content="https://leunggeorge.github.io/2017/08/08/linux-crontab-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/index.html">
 <meta property="og:site_name" content="魔法书">
 <meta property="og:description" content="定时任务crontab 定时任务详解，各种周期的ct任务写法。我们通过创建ct任务（crontab定时任务），可以达到周期运行脚本的目的。时间周期为：分钟、小时、日、月、周的各种组合。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-07T01:59:14.516Z">
+<meta property="article:published_time" content="2017-08-08T11:47:47.000Z">
+<meta property="article:modified_time" content="2020-04-07T01:59:14.516Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="crontab">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux-crontab 定时任务">
-<meta name="twitter:description" content="定时任务crontab 定时任务详解，各种周期的ct任务写法。我们通过创建ct任务（crontab定时任务），可以达到周期运行脚本的目的。时间周期为：分钟、小时、日、月、周的各种组合。">
 
 
 
@@ -141,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="https://leunggeorge.github.io/2017/08/08/linux-crontab-定时任务/">
+  <link rel="canonical" href="https://leunggeorge.github.io/2017/08/08/linux-crontab-定时任务/"/>
 
 
 
@@ -173,7 +172,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -191,7 +190,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">魔法书</span>
         <span class="logo-line-after"><i></i></span>
@@ -222,7 +221,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -232,7 +231,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -242,7 +241,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -252,7 +251,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -262,7 +261,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -277,7 +276,7 @@
 
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -337,11 +336,11 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2017/08/08/linux-crontab-定时任务/">
+    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2017/08/08/linux-crontab-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七点一刻">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
     </span>
 
@@ -377,7 +376,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -404,7 +403,7 @@
 
           
           
-             <span id="/2017/08/08/linux-crontab-定时任务/" class="leancloud_visitors" data-flag-title="linux-crontab 定时任务">
+             <span id="/2017/08/08/linux-crontab-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" class="leancloud_visitors" data-flag-title="linux-crontab 定时任务">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -464,16 +463,19 @@
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">0 </span>* * * * shellCommand</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>每小时的1,10,20分钟执行一次</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> * * * * shellCommand</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> * * * * shellCommand</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>8-11点的1,10,20分钟执行一次</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> <span class="number">8</span><span class="number">-11</span> * * * shellCommand</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> <span class="number">8</span><span class="number">-11</span> * * * shellCommand</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>每隔2天的8-11点的1,10,20分钟执行一次</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> <span class="number">8</span><span class="number">-11</span> */<span class="number">2</span> * * shellCommand</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> <span class="number">8</span><span class="number">-11</span> */<span class="number">2</span> * * shellCommand</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>每隔周一的8-11点的1,10,20分钟执行一次</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> <span class="number">8</span><span class="number">-11</span> * * <span class="number">1</span> shellCommand</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span> <span class="number">8</span><span class="number">-11</span> * * <span class="number">1</span> shellCommand</span><br></pre></td></tr></table></figure>
+
+
+
 
 </li>
 </ol>
@@ -511,7 +513,7 @@ hljs.initHighlightingOnLoad();
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://leunggeorge.github.io/2017/08/08/linux-crontab-定时任务/" title="linux-crontab 定时任务">https://leunggeorge.github.io/2017/08/08/linux-crontab-定时任务/</a>
+      <a href="https://leunggeorge.github.io/2017/08/08/linux-crontab-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" title="linux-crontab 定时任务">https://leunggeorge.github.io/2017/08/08/linux-crontab-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -540,7 +542,7 @@ hljs.initHighlightingOnLoad();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/29/黑客与画家/" rel="next" title="黑客与画家">
+              <a href="/2017/07/29/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6/" rel="next" title="黑客与画家">
                 <i class="fa fa-chevron-left"></i> 黑客与画家
               </a>
             
@@ -550,7 +552,7 @@ hljs.initHighlightingOnLoad();
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/15/线上数据库使用规范/" rel="prev" title="线上数据库使用规范">
+              <a href="/2017/08/15/%E7%BA%BF%E4%B8%8A%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/" rel="prev" title="线上数据库使用规范">
                 线上数据库使用规范 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -581,7 +583,7 @@ hljs.initHighlightingOnLoad();
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript">
+<script type="text/javascript" >
   var jiathis_config={
     hideMore:false
   }
@@ -619,7 +621,7 @@ hljs.initHighlightingOnLoad();
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -630,7 +632,9 @@ hljs.initHighlightingOnLoad();
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140" alt="七点一刻">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
           <p class="site-author-name" itemprop="name">七点一刻</p>
            
               <p class="site-description motion-element" itemprop="description">day day up</p>
@@ -641,7 +645,7 @@ hljs.initHighlightingOnLoad();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -663,7 +667,7 @@ hljs.initHighlightingOnLoad();
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -765,10 +769,10 @@ hljs.initHighlightingOnLoad();
       <div class="footer-inner">
         <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<div class="copyright">
+<div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -777,12 +781,12 @@ hljs.initHighlightingOnLoad();
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

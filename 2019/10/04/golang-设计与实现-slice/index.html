@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
@@ -26,8 +26,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -45,7 +45,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -79,23 +79,23 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="golang,设计与实现,源码,slice,">
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="魔法书" type="application/atom+xml">
+  <meta name="keywords" content="golang,设计与实现,源码,slice," />
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+  <link rel="alternate" href="/atom.xml" title="魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -103,17 +103,19 @@
 
 
 <meta name="description" content="Golang 动态数组 slice。">
-<meta name="keywords" content="golang,设计与实现,源码,slice">
 <meta property="og:type" content="article">
 <meta property="og:title" content="golang 设计与实现 slice">
-<meta property="og:url" content="https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/index.html">
+<meta property="og:url" content="https://leunggeorge.github.io/2019/10/04/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice/index.html">
 <meta property="og:site_name" content="魔法书">
 <meta property="og:description" content="Golang 动态数组 slice。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-07T01:59:14.511Z">
+<meta property="article:published_time" content="2019-10-04T13:02:51.000Z">
+<meta property="article:modified_time" content="2020-04-07T01:59:14.511Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="golang">
+<meta property="article:tag" content="设计与实现">
+<meta property="article:tag" content="源码">
+<meta property="article:tag" content="slice">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="golang 设计与实现 slice">
-<meta name="twitter:description" content="Golang 动态数组 slice。">
 
 
 
@@ -141,7 +143,7 @@
 
 
 
-  <link rel="canonical" href="https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/">
+  <link rel="canonical" href="https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/"/>
 
 
 
@@ -173,7 +175,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -191,7 +193,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">魔法书</span>
         <span class="logo-line-after"><i></i></span>
@@ -222,7 +224,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -232,7 +234,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -242,7 +244,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -252,7 +254,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -262,7 +264,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -277,7 +279,7 @@
 
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -337,11 +339,11 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/">
+    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2019/10/04/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七点一刻">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
     </span>
 
@@ -377,7 +379,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -404,7 +406,7 @@
 
           
           
-             <span id="/2019/10/04/golang-设计与实现-slice/" class="leancloud_visitors" data-flag-title="golang 设计与实现 slice">
+             <span id="/2019/10/04/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice/" class="leancloud_visitors" data-flag-title="golang 设计与实现 slice">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -471,6 +473,7 @@
 </blockquote>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// growslice handles slice growth during append.</span></span><br><span class="line"><span class="comment">// It is passed the slice element type, the old slice, and the desired new minimum capacity,</span></span><br><span class="line"><span class="comment">// and it returns a new slice with at least that capacity, with the old data</span></span><br><span class="line"><span class="comment">// copied into it.</span></span><br><span class="line"><span class="comment">// The new slice's length is set to the old slice's length,</span></span><br><span class="line"><span class="comment">// NOT to the new requested capacity.</span></span><br><span class="line"><span class="comment">// This is for codegen convenience. The old slice's length is used immediately</span></span><br><span class="line"><span class="comment">// to calculate where to write new values during an append.</span></span><br><span class="line"><span class="comment">// When the old backend is gone, reconsider this decision.</span></span><br><span class="line"><span class="comment">// The SSA backend might prefer the new length or to return only ptr/cap and save stack space.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// slice 在追加数据时使用 growslice 处理容量增长</span></span><br><span class="line"><span class="comment">// 入参：slice 元素类型，旧 slice，期望容量</span></span><br><span class="line"><span class="comment">// 返回：新 slice</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">growslice</span><span class="params">(et *_type, old slice, <span class="built_in">cap</span> <span class="keyword">int</span>)</span> <span class="title">slice</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> raceenabled &#123;</span><br><span class="line">		callerpc := getcallerpc()</span><br><span class="line">		racereadrangepc(old.array, <span class="keyword">uintptr</span>(old.<span class="built_in">len</span>*<span class="keyword">int</span>(et.size)), callerpc, funcPC(growslice))</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> msanenabled &#123;</span><br><span class="line">		msanread(old.array, <span class="keyword">uintptr</span>(old.<span class="built_in">len</span>*<span class="keyword">int</span>(et.size)))</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">cap</span> &lt; old.<span class="built_in">cap</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(errorString(<span class="string">"growslice: cap out of range"</span>))</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> et.size == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="comment">// append should not create a slice with nil pointer but non-zero len.</span></span><br><span class="line">		<span class="comment">// We assume that append doesn't need to preserve old.array in this case.</span></span><br><span class="line">		<span class="keyword">return</span> slice&#123;unsafe.Pointer(&amp;zerobase), old.<span class="built_in">len</span>, <span class="built_in">cap</span>&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	newcap := old.<span class="built_in">cap</span></span><br><span class="line">	doublecap := newcap + newcap</span><br><span class="line">	<span class="comment">// 期望容量 cap 超过旧容量 2 倍时，直接使用 cap 作为新 slice 的容量</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">cap</span> &gt; doublecap &#123;</span><br><span class="line">		newcap = <span class="built_in">cap</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// 就容量小于 1024 时，空间按 2 倍增长</span></span><br><span class="line">		<span class="keyword">if</span> old.<span class="built_in">len</span> &lt; <span class="number">1024</span> &#123;</span><br><span class="line">			newcap = doublecap</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// Check 0 &lt; newcap to detect overflow</span></span><br><span class="line">			<span class="comment">// and prevent an infinite loop.</span></span><br><span class="line">			<span class="comment">// 新容量以 (1 + 1 / 4) 倍率增加，直到大于期望容量</span></span><br><span class="line">			<span class="keyword">for</span> <span class="number">0</span> &lt; newcap &amp;&amp; newcap &lt; <span class="built_in">cap</span> &#123;</span><br><span class="line">				newcap += newcap / <span class="number">4</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// Set newcap to the requested cap when</span></span><br><span class="line">			<span class="comment">// the newcap calculation overflowed.</span></span><br><span class="line">			<span class="comment">// 防止溢出</span></span><br><span class="line">			<span class="keyword">if</span> newcap &lt;= <span class="number">0</span> &#123;</span><br><span class="line">				newcap = <span class="built_in">cap</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> overflow <span class="keyword">bool</span></span><br><span class="line">	<span class="keyword">var</span> lenmem, newlenmem, capmem <span class="keyword">uintptr</span></span><br><span class="line">	<span class="comment">// Specialize for common values of et.size.</span></span><br><span class="line">	<span class="comment">// For 1 we don't need any division/multiplication.</span></span><br><span class="line">	<span class="comment">// For sys.PtrSize, compiler will optimize division/multiplication into a shift by a constant.</span></span><br><span class="line">	<span class="comment">// For powers of 2, use a variable shift.</span></span><br><span class="line">	<span class="comment">// 计算新容量</span></span><br><span class="line">	<span class="keyword">switch</span> &#123;</span><br><span class="line">	<span class="keyword">case</span> et.size == <span class="number">1</span>:</span><br><span class="line">		lenmem = <span class="keyword">uintptr</span>(old.<span class="built_in">len</span>)</span><br><span class="line">		newlenmem = <span class="keyword">uintptr</span>(<span class="built_in">cap</span>)</span><br><span class="line">		capmem = roundupsize(<span class="keyword">uintptr</span>(newcap))</span><br><span class="line">		overflow = <span class="keyword">uintptr</span>(newcap) &gt; maxAlloc</span><br><span class="line">		newcap = <span class="keyword">int</span>(capmem)</span><br><span class="line">	<span class="keyword">case</span> et.size == sys.PtrSize:</span><br><span class="line">		lenmem = <span class="keyword">uintptr</span>(old.<span class="built_in">len</span>) * sys.PtrSize</span><br><span class="line">		newlenmem = <span class="keyword">uintptr</span>(<span class="built_in">cap</span>) * sys.PtrSize</span><br><span class="line">		capmem = roundupsize(<span class="keyword">uintptr</span>(newcap) * sys.PtrSize)</span><br><span class="line">		overflow = <span class="keyword">uintptr</span>(newcap) &gt; maxAlloc/sys.PtrSize</span><br><span class="line">		newcap = <span class="keyword">int</span>(capmem / sys.PtrSize)</span><br><span class="line">	<span class="keyword">case</span> isPowerOfTwo(et.size):</span><br><span class="line">		<span class="keyword">var</span> shift <span class="keyword">uintptr</span></span><br><span class="line">		<span class="keyword">if</span> sys.PtrSize == <span class="number">8</span> &#123;</span><br><span class="line">			<span class="comment">// Mask shift for better code generation.</span></span><br><span class="line">			shift = <span class="keyword">uintptr</span>(sys.Ctz64(<span class="keyword">uint64</span>(et.size))) &amp; <span class="number">63</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			shift = <span class="keyword">uintptr</span>(sys.Ctz32(<span class="keyword">uint32</span>(et.size))) &amp; <span class="number">31</span></span><br><span class="line">		&#125;</span><br><span class="line">		lenmem = <span class="keyword">uintptr</span>(old.<span class="built_in">len</span>) &lt;&lt; shift</span><br><span class="line">		newlenmem = <span class="keyword">uintptr</span>(<span class="built_in">cap</span>) &lt;&lt; shift</span><br><span class="line">		capmem = roundupsize(<span class="keyword">uintptr</span>(newcap) &lt;&lt; shift)</span><br><span class="line">		overflow = <span class="keyword">uintptr</span>(newcap) &gt; (maxAlloc &gt;&gt; shift)</span><br><span class="line">		newcap = <span class="keyword">int</span>(capmem &gt;&gt; shift)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		lenmem = <span class="keyword">uintptr</span>(old.<span class="built_in">len</span>) * et.size</span><br><span class="line">		newlenmem = <span class="keyword">uintptr</span>(<span class="built_in">cap</span>) * et.size</span><br><span class="line">		capmem, overflow = math.MulUintptr(et.size, <span class="keyword">uintptr</span>(newcap))</span><br><span class="line">		capmem = roundupsize(capmem)</span><br><span class="line">		newcap = <span class="keyword">int</span>(capmem / et.size)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// The check of overflow in addition to capmem &gt; maxAlloc is needed</span></span><br><span class="line">	<span class="comment">// to prevent an overflow which can be used to trigger a segfault</span></span><br><span class="line">	<span class="comment">// on 32bit architectures with this example program:</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// type T [1&lt;&lt;27 + 1]int64</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// var d T</span></span><br><span class="line">	<span class="comment">// var s []T</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// func main() &#123;</span></span><br><span class="line">	<span class="comment">//   s = append(s, d, d, d, d)</span></span><br><span class="line">	<span class="comment">//   print(len(s), "\n")</span></span><br><span class="line">	<span class="comment">// &#125;</span></span><br><span class="line">	<span class="keyword">if</span> overflow || capmem &gt; maxAlloc &#123;</span><br><span class="line">		<span class="built_in">panic</span>(errorString(<span class="string">"growslice: cap out of range"</span>))</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> p unsafe.Pointer</span><br><span class="line">	<span class="keyword">if</span> et.ptrdata == <span class="number">0</span> &#123;</span><br><span class="line">		p = mallocgc(capmem, <span class="literal">nil</span>, <span class="literal">false</span>)</span><br><span class="line">		<span class="comment">// The append() that calls growslice is going to overwrite from old.len to cap (which will be the new length).</span></span><br><span class="line">		<span class="comment">// Only clear the part that will not be overwritten.</span></span><br><span class="line">		memclrNoHeapPointers(add(p, newlenmem), capmem-newlenmem)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// Note: can't use rawmem (which avoids zeroing of memory), because then GC can scan uninitialized memory.</span></span><br><span class="line">		p = mallocgc(capmem, et, <span class="literal">true</span>)</span><br><span class="line">		<span class="keyword">if</span> lenmem &gt; <span class="number">0</span> &amp;&amp; writeBarrier.enabled &#123;</span><br><span class="line">			<span class="comment">// Only shade the pointers in old.array since we know the destination slice p</span></span><br><span class="line">			<span class="comment">// only contains nil pointers because it has been cleared during alloc.</span></span><br><span class="line">			bulkBarrierPreWriteSrcOnly(<span class="keyword">uintptr</span>(p), <span class="keyword">uintptr</span>(old.array), lenmem)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 复制旧数据</span></span><br><span class="line">	memmove(p, old.array, lenmem)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> slice&#123;p, old.<span class="built_in">len</span>, newcap&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
 <hr>
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
@@ -506,7 +509,7 @@ hljs.initHighlightingOnLoad();
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/" title="golang 设计与实现 slice">https://leunggeorge.github.io/2019/10/04/golang-设计与实现-slice/</a>
+      <a href="https://leunggeorge.github.io/2019/10/04/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice/" title="golang 设计与实现 slice">https://leunggeorge.github.io/2019/10/04/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -524,9 +527,9 @@ hljs.initHighlightingOnLoad();
           
             <a href="/tags/golang/" rel="tag"># golang</a>
           
-            <a href="/tags/设计与实现/" rel="tag"># 设计与实现</a>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/" rel="tag"># 设计与实现</a>
           
-            <a href="/tags/源码/" rel="tag"># 源码</a>
+            <a href="/tags/%E6%BA%90%E7%A0%81/" rel="tag"># 源码</a>
           
             <a href="/tags/slice/" rel="tag"># slice</a>
           
@@ -541,7 +544,7 @@ hljs.initHighlightingOnLoad();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/03/Go-开发者路线图/" rel="next" title="Go 开发者路线图">
+              <a href="/2019/10/03/Go-%E5%BC%80%E5%8F%91%E8%80%85%E8%B7%AF%E7%BA%BF%E5%9B%BE/" rel="next" title="Go 开发者路线图">
                 <i class="fa fa-chevron-left"></i> Go 开发者路线图
               </a>
             
@@ -551,7 +554,7 @@ hljs.initHighlightingOnLoad();
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/06/Golang-配置文件热加载/" rel="prev" title="Golang 配置文件热加载">
+              <a href="/2019/10/06/Golang-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%83%AD%E5%8A%A0%E8%BD%BD/" rel="prev" title="Golang 配置文件热加载">
                 Golang 配置文件热加载 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -582,7 +585,7 @@ hljs.initHighlightingOnLoad();
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript">
+<script type="text/javascript" >
   var jiathis_config={
     hideMore:false
   }
@@ -620,7 +623,7 @@ hljs.initHighlightingOnLoad();
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -631,7 +634,9 @@ hljs.initHighlightingOnLoad();
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140" alt="七点一刻">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
           <p class="site-author-name" itemprop="name">七点一刻</p>
            
               <p class="site-description motion-element" itemprop="description">day day up</p>
@@ -642,7 +647,7 @@ hljs.initHighlightingOnLoad();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -664,7 +669,7 @@ hljs.initHighlightingOnLoad();
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -766,10 +771,10 @@ hljs.initHighlightingOnLoad();
       <div class="footer-inner">
         <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<div class="copyright">
+<div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -778,12 +783,12 @@ hljs.initHighlightingOnLoad();
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

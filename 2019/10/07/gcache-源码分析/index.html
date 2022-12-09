@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
@@ -26,8 +26,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -45,7 +45,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -79,23 +79,23 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="golang,源码,gcache,">
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="魔法书" type="application/atom+xml">
+  <meta name="keywords" content="golang,源码,gcache," />
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+  <link rel="alternate" href="/atom.xml" title="魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -103,13 +103,11 @@
 
 
 <meta name="description" content="首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想。喝杯咖啡（雀巢的味道不错），然后开始 gcache 的源码分析。">
-<meta name="keywords" content="golang,源码,gcache">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gcache 源码分析">
-<meta property="og:url" content="https://leunggeorge.github.io/2019/10/07/gcache-源码分析/index.html">
+<meta property="og:url" content="https://leunggeorge.github.io/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="魔法书">
 <meta property="og:description" content="首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想。喝杯咖啡（雀巢的味道不错），然后开始 gcache 的源码分析。">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191024232913.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191024171029.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025000537.png">
@@ -136,10 +134,13 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025003158.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025005129.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025005827.png">
-<meta property="og:updated_time" content="2021-11-30T02:01:46.870Z">
+<meta property="article:published_time" content="2019-10-07T07:02:57.000Z">
+<meta property="article:modified_time" content="2021-11-30T02:01:46.870Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="golang">
+<meta property="article:tag" content="源码">
+<meta property="article:tag" content="gcache">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gcache 源码分析">
-<meta name="twitter:description" content="首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想。喝杯咖啡（雀巢的味道不错），然后开始 gcache 的源码分析。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191024232913.png">
 
 
@@ -168,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="https://leunggeorge.github.io/2019/10/07/gcache-源码分析/">
+  <link rel="canonical" href="https://leunggeorge.github.io/2019/10/07/gcache-源码分析/"/>
 
 
 
@@ -200,7 +201,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -218,7 +219,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">魔法书</span>
         <span class="logo-line-after"><i></i></span>
@@ -249,7 +250,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -259,7 +260,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -269,7 +270,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -279,7 +280,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -289,7 +290,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -304,7 +305,7 @@
 
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -364,11 +365,11 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2019/10/07/gcache-源码分析/">
+    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七点一刻">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
     </span>
 
@@ -404,7 +405,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -431,7 +432,7 @@
 
           
           
-             <span id="/2019/10/07/gcache-源码分析/" class="leancloud_visitors" data-flag-title="gcache 源码分析">
+             <span id="/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="leancloud_visitors" data-flag-title="gcache 源码分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -553,20 +554,17 @@
 
 <h4 id="设置键值对"><a href="#设置键值对" class="headerlink" title="设置键值对"></a>设置键值对</h4><p>我们通过 SET 方法为 SimpleCache 设置键值对：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gc := gcache.New(<span class="number">3</span>).</span><br><span class="line">    Simple().</span><br><span class="line">    Build()</span><br><span class="line"></span><br><span class="line">gc.Set(<span class="string">"k1"</span>, <span class="string">"v1"</span>)</span><br><span class="line">gc.Set(<span class="string">"k2"</span>, <span class="string">"v2"</span>)</span><br><span class="line">gc.Set(<span class="string">"k3"</span>, <span class="string">"v3"</span>)</span><br></pre></td></tr></table></figure>
-
 <p>如图，展示了设置上述 3 个键值对之后 SimpleCache 的状态（为了在接下来操作中表述简单，此处未设置失效时间）：<br><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191024171029.png" alt="20191024171029"></p>
 <h4 id="读取键值对"><a href="#读取键值对" class="headerlink" title="读取键值对"></a>读取键值对</h4><p>由于 SimpleCache 没有排序策略，读取操作不会改变键值对的相对排序。</p>
 <h4 id="缓存满时增加键值对"><a href="#缓存满时增加键值对" class="headerlink" title="缓存满时增加键值对"></a>缓存满时增加键值对</h4><p>当 SimpleCache 缓存满时再增加键值对，会先执行淘汰策略。随机淘汰 items 中的键值对（因为 golang 中，map 遍历是随机的）。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gc.Set(<span class="string">"k4"</span>, <span class="string">"v4"</span>)</span><br></pre></td></tr></table></figure>
-
 <p>：<br>如图，展示了随机淘汰 items 中 1 个键值对，并新增键值对过程中，SimpleCache 的变化（为了在接下来操作中表述简单，此处未设置失效时间）：<br><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025000537.png" alt="20191025000537"><br><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025000736.png" alt="20191025000736"><br><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025000755.png" alt="20191025000755"></p>
 <h3 id="LRUCache"><a href="#LRUCache" class="headerlink" title="LRUCache"></a>LRUCache</h3><p>gcache 中 LRUCache 由 lru.go/LRUCache 结构表示：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Discards the least recently used items first.</span></span><br><span class="line"><span class="keyword">type</span> LRUCache <span class="keyword">struct</span> &#123;</span><br><span class="line">	baseCache</span><br><span class="line">	items     <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*list.Element</span><br><span class="line">	evictList *list.List</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li><input disabled type="checkbox"> baseCache 为缓存基础数据结构，包含缓存大小以及各种回调函数；</li>
-<li><input disabled type="checkbox"> items 是一个 map 类型，可以在 O(1) 时间内找到指定键值对，值为 lruItem；</li>
-<li><input disabled type="checkbox"> evictList 是一个双向链表，用来淘汰最近未使用的键值对，是实现 LRU 策略的关键结构；</li>
+<li><input disabled="" type="checkbox"> baseCache 为缓存基础数据结构，包含缓存大小以及各种回调函数；</li>
+<li><input disabled="" type="checkbox"> items 是一个 map 类型，可以在 O(1) 时间内找到指定键值对，值为 lruItem；</li>
+<li><input disabled="" type="checkbox"> evictList 是一个双向链表，用来淘汰最近未使用的键值对，是实现 LRU 策略的关键结构；</li>
 </ul>
 <p>LRUCache 中 lruItem 由 lru.go/lruItem 结构表示：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> lruItem <span class="keyword">struct</span> &#123;</span><br><span class="line">	clock      Clock</span><br><span class="line">	key        <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">	value      <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">	expiration *time.Time</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -591,6 +589,7 @@
 <p>关键代码：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get a value from cache pool using key if it exists.</span></span><br><span class="line"><span class="comment">// If it dose not exists key and has LoaderFunc,</span></span><br><span class="line"><span class="comment">// generate a value using `LoaderFunc` method returns value.</span></span><br><span class="line"><span class="comment">// 读取键值对</span></span><br><span class="line"><span class="comment">// 如果存在缓存，则返回；</span></span><br><span class="line"><span class="comment">// 否则，如果定义了 LoaderFunc 回调，则执行回调。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">Get</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">	v, err := c.get(key, <span class="literal">false</span>)</span><br><span class="line">	<span class="keyword">if</span> err == KeyNotFoundError &#123;</span><br><span class="line">		<span class="keyword">return</span> c.getWithLoader(key, <span class="literal">true</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> v, err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">get</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;, onLoad <span class="keyword">bool</span>)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">	v, err := c.getValue(key, onLoad)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> c.deserializeFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> c.deserializeFunc(key, v)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> v, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">getValue</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;, onLoad <span class="keyword">bool</span>)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">	c.mu.Lock()</span><br><span class="line">	item, ok := c.items[key]</span><br><span class="line">	<span class="comment">// 命中缓存</span></span><br><span class="line">	<span class="keyword">if</span> ok &#123;</span><br><span class="line">		it := item.Value.(*lruItem)</span><br><span class="line">		<span class="comment">// 缓存未过期</span></span><br><span class="line">		<span class="keyword">if</span> !it.IsExpired(<span class="literal">nil</span>) &#123;</span><br><span class="line">			c.evictList.MoveToFront(item)</span><br><span class="line">			v := it.value</span><br><span class="line">			c.mu.Unlock()</span><br><span class="line">			<span class="keyword">if</span> !onLoad &#123;</span><br><span class="line">				c.stats.IncrHitCount()</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> v, <span class="literal">nil</span></span><br><span class="line">		&#125;</span><br><span class="line">		c.removeElement(item)</span><br><span class="line">	&#125;</span><br><span class="line">	c.mu.Unlock()</span><br><span class="line">	<span class="keyword">if</span> !onLoad &#123;</span><br><span class="line">		c.stats.IncrMissCount()</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span>, KeyNotFoundError</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
 <h4 id="缓存满时增加键值对-1"><a href="#缓存满时增加键值对-1" class="headerlink" title="缓存满时增加键值对"></a>缓存满时增加键值对</h4><p>当 LRUCache 缓存满时再增加键值对，会先执行淘汰策略。淘汰链表尾部键值对，并删除 items 中对应 key。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gc.Set(<span class="string">"k5"</span>, <span class="string">"v5"</span>)</span><br></pre></td></tr></table></figure>
 
@@ -601,18 +600,16 @@
 <p>k5 键值对，插入到链表头部位置：<br><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191009202241.png" alt="20191009202241"></p>
 <h3 id="LFUCache"><a href="#LFUCache" class="headerlink" title="LFUCache"></a>LFUCache</h3><p>gcache 中 LFUCache 由 lfu.go/LFUCache 结构表示：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Discards the least frequently used items first.</span></span><br><span class="line"><span class="comment">// LFUCache 会优先删除访问频次最少的键值对</span></span><br><span class="line"><span class="keyword">type</span> LFUCache <span class="keyword">struct</span> &#123;</span><br><span class="line">	baseCache</span><br><span class="line">	items    <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*lfuItem</span><br><span class="line">	freqList *list.List <span class="comment">// list for freqEntry</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li><input disabled type="checkbox"> baseCache 为缓存基础数据结构，包含缓存大小以及各种回调函数；</li>
-<li><input disabled type="checkbox"> items 是一个 map 类型，可以在 O(1) 时间内找到指定键值对，值为 lruItem；</li>
-<li><input disabled type="checkbox"> freqList 是一个双向链表，用来淘汰最近未使用的键值对，是实现 LRU 策略的关键结构；</li>
+<li><input disabled="" type="checkbox"> baseCache 为缓存基础数据结构，包含缓存大小以及各种回调函数；</li>
+<li><input disabled="" type="checkbox"> items 是一个 map 类型，可以在 O(1) 时间内找到指定键值对，值为 lruItem；</li>
+<li><input disabled="" type="checkbox"> freqList 是一个双向链表，用来淘汰最近未使用的键值对，是实现 LRU 策略的关键结构；</li>
 </ul>
 <p>LFUCache 中 freqEntry 由 lfu.go/freqEntry 结构表示：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> freqEntry <span class="keyword">struct</span> &#123;</span><br><span class="line">	freq  <span class="keyword">uint</span></span><br><span class="line">	items <span class="keyword">map</span>[*lfuItem]<span class="keyword">struct</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>LFUCache 中 lfuItem 由 lfu.go/lfuItem 结构表示：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> lfuItem <span class="keyword">struct</span> &#123;</span><br><span class="line">	clock       Clock</span><br><span class="line">	key         <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">	value       <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">	freqElement *list.Element</span><br><span class="line">	expiration  *time.Time</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>如图，展示了未设置任何键值对时 LFUCache 的状态：<br><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191009194655.png" alt="20191009194655"></p>
 <h4 id="设置键值对-2"><a href="#设置键值对-2" class="headerlink" title="设置键值对"></a>设置键值对</h4><p>同样，我们通过 SET 方法为 LFUCache 设置键值对：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gc := gcache.New(<span class="number">3</span>).</span><br><span class="line">    LFU().</span><br><span class="line">    Build()</span><br><span class="line"></span><br><span class="line">gc.Set(<span class="string">"k1"</span>, <span class="string">"v1"</span>)</span><br><span class="line">gc.Set(<span class="string">"k2"</span>, <span class="string">"v2"</span>)</span><br><span class="line">gc.Set(<span class="string">"k3"</span>, <span class="string">"v3"</span>)</span><br></pre></td></tr></table></figure>
@@ -660,7 +657,6 @@
 
 <h4 id="读取键值对-3"><a href="#读取键值对-3" class="headerlink" title="读取键值对"></a>读取键值对</h4><p>执行 <code>GET(&quot;k1&quot;)</code> 操作（第 1 次读），ARCCache 会将键值对从 <code>t1</code> 移到 <code>t2</code>。或者从 <code>Ghost list</code> 中捞回。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gc.Get(<span class="string">"k1"</span>)</span><br><span class="line">gc.Get(<span class="string">"k2"</span>)</span><br><span class="line">gc.Get(<span class="string">"k3"</span>)</span><br></pre></td></tr></table></figure>
-
 <ol>
 <li><p>假如在访问的过程中键值对 k1 过期了，则会被移到 b1 中：<br><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191025003420.png" alt="20191025003420"></p>
 </li>
@@ -717,7 +713,7 @@ hljs.initHighlightingOnLoad();
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://leunggeorge.github.io/2019/10/07/gcache-源码分析/" title="gcache 源码分析">https://leunggeorge.github.io/2019/10/07/gcache-源码分析/</a>
+      <a href="https://leunggeorge.github.io/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="gcache 源码分析">https://leunggeorge.github.io/2019/10/07/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -735,7 +731,7 @@ hljs.initHighlightingOnLoad();
           
             <a href="/tags/golang/" rel="tag"># golang</a>
           
-            <a href="/tags/源码/" rel="tag"># 源码</a>
+            <a href="/tags/%E6%BA%90%E7%A0%81/" rel="tag"># 源码</a>
           
             <a href="/tags/gcache/" rel="tag"># gcache</a>
           
@@ -750,7 +746,7 @@ hljs.initHighlightingOnLoad();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/07/npm-一键更新-package-json-依赖模块版本/" rel="next" title="npm 一键更新 package.json 依赖模块版本">
+              <a href="/2019/10/07/npm-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0-package-json-%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9D%97%E7%89%88%E6%9C%AC/" rel="next" title="npm 一键更新 package.json 依赖模块版本">
                 <i class="fa fa-chevron-left"></i> npm 一键更新 package.json 依赖模块版本
               </a>
             
@@ -760,7 +756,7 @@ hljs.initHighlightingOnLoad();
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/20/SELECT-COUNT-那些事儿/" rel="prev" title="SELECT COUNT 那些事儿">
+              <a href="/2019/10/20/SELECT-COUNT-%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" rel="prev" title="SELECT COUNT 那些事儿">
                 SELECT COUNT 那些事儿 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -791,7 +787,7 @@ hljs.initHighlightingOnLoad();
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript">
+<script type="text/javascript" >
   var jiathis_config={
     hideMore:false
   }
@@ -829,7 +825,7 @@ hljs.initHighlightingOnLoad();
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -840,7 +836,9 @@ hljs.initHighlightingOnLoad();
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140" alt="七点一刻">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
           <p class="site-author-name" itemprop="name">七点一刻</p>
            
               <p class="site-description motion-element" itemprop="description">day day up</p>
@@ -851,7 +849,7 @@ hljs.initHighlightingOnLoad();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -873,7 +871,7 @@ hljs.initHighlightingOnLoad();
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -975,10 +973,10 @@ hljs.initHighlightingOnLoad();
       <div class="footer-inner">
         <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<div class="copyright">
+<div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -987,12 +985,12 @@ hljs.initHighlightingOnLoad();
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>
