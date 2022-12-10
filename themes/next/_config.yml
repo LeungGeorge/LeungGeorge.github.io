@@ -256,7 +256,7 @@ post_meta:
 post_wordcount:
   item_text: true
   wordcount: true
-  min2read: false
+  min2read: true
   separated_meta: true
 
 # Wechat Subscriber
@@ -647,6 +647,7 @@ vendors:
 css: css
 js: js
 images: images
+
 
 # Theme version
 version: 5.1.1

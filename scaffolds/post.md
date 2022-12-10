@@ -7,6 +7,7 @@ categories:
   - essay   
 comments: false
 description:  
+keywords: {{ title }}  
 ---
 
 

@@ -214,6 +214,10 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 ```
+## 【搜索优化】
+### Hexo-next百度和谷歌搜索优化
+[【搜索优化】Hexo-next百度和谷歌搜索优化](http://www.ehcoo.com/seo.html)
+
 ## 搜索插件
 ### 集成Algolia
 **1.注册Algolia，创建Index  **
