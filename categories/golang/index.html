@@ -105,7 +105,7 @@
 <meta name="description" content="书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务">
 <meta property="og:type" content="website">
 <meta property="og:title" content="七点一刻的魔法书">
-<meta property="og:url" content="https://leunggeorge.github.io/categories/golang/index.html">
+<meta property="og:url" content="https://liangyuanzheng.com/categories/golang/index.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
 <meta property="og:description" content="书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务">
 <meta property="article:author" content="七点一刻">
@@ -137,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="https://leunggeorge.github.io/categories/golang/"/>
+  <link rel="canonical" href="https://liangyuanzheng.com/categories/golang/"/>
 
 
 
@@ -295,26 +295,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -498,7 +494,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -962,7 +958,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('1');
+                  var upperBound = parseInt('10');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
@@ -1073,19 +1069,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
 
 
 

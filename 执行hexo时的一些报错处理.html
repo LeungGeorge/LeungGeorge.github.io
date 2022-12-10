@@ -105,7 +105,7 @@
 <meta name="description" content="执行hexo时的一些报错处理,罗列一下，以备后用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="执行hexo时的一些报错处理">
-<meta property="og:url" content="https://leunggeorge.github.io/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html">
+<meta property="og:url" content="https://liangyuanzheng.com/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
 <meta property="og:description" content="执行hexo时的一些报错处理,罗列一下，以备后用。">
 <meta property="article:published_time" content="2017-07-09T03:49:15.000Z">
@@ -141,7 +141,7 @@
 
 
 
-  <link rel="canonical" href="https://leunggeorge.github.io/执行hexo时的一些报错处理.html"/>
+  <link rel="canonical" href="https://liangyuanzheng.com/执行hexo时的一些报错处理.html"/>
 
 
 
@@ -299,26 +299,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -347,7 +343,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七点一刻">
@@ -526,7 +522,7 @@ hljs.initHighlightingOnLoad();
 </script>
 
 
-<p>来源：<a href="http://leunggeorge.github.io/">http://leunggeorge.github.io/</a>  </p>
+<p>来源：<a href="http://leunggeorge.github.io/" target="_blank" rel="noopener">http://leunggeorge.github.io/</a>  </p>
 
       
     </div>
@@ -551,7 +547,7 @@ hljs.initHighlightingOnLoad();
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://leunggeorge.github.io/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html" title="执行hexo时的一些报错处理">https://leunggeorge.github.io/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html</a>
+      <a href="https://liangyuanzheng.com/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html" title="执行hexo时的一些报错处理">https://liangyuanzheng.com/%E6%89%A7%E8%A1%8Chexo%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -685,7 +681,7 @@ hljs.initHighlightingOnLoad();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1165,7 +1161,7 @@ hljs.initHighlightingOnLoad();
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('1');
+                  var upperBound = parseInt('10');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
@@ -1276,19 +1272,6 @@ hljs.initHighlightingOnLoad();
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
 
 
 

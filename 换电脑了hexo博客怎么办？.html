@@ -105,7 +105,7 @@
 <meta name="description" content="换电脑了hexo博客怎么办？本文介绍了换机后的搭建流程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="换电脑了hexo博客怎么办？">
-<meta property="og:url" content="https://leunggeorge.github.io/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html">
+<meta property="og:url" content="https://liangyuanzheng.com/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
 <meta property="og:description" content="换电脑了hexo博客怎么办？本文介绍了换机后的搭建流程。">
 <meta property="article:published_time" content="2017-04-23T03:48:24.000Z">
@@ -142,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="https://leunggeorge.github.io/换电脑了hexo博客怎么办？.html"/>
+  <link rel="canonical" href="https://liangyuanzheng.com/换电脑了hexo博客怎么办？.html"/>
 
 
 
@@ -300,26 +300,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -348,7 +344,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://leunggeorge.github.io/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七点一刻">
@@ -468,14 +464,14 @@
 
       
         <h1 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h1><ol>
-<li>创建仓库，<a href="https://leunggeorge.github.io/">leunggeorge.github.io</a></li>
+<li>创建仓库，<a href="https://leunggeorge.github.io/" target="_blank" rel="noopener">leunggeorge.github.io</a></li>
 <li>创建两个分支：master 与 hexo；</li>
 <li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</li>
 <li>使用git clone <a href="mailto:git@github.com">git@github.com</a>:LeungGeorge/LeungGeorge.github.io.git拷贝仓库；</li>
-<li>在本地<a href="https://leunggeorge.github.io/">leunggeorge.github.io</a>文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
+<li>在本地<a href="https://leunggeorge.github.io/" target="_blank" rel="noopener">leunggeorge.github.io</a>文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
 <li>修改_config.yml中的deploy参数，分支应为master；<br>具体如下:<br>deploy:<br>type: git<br>repository: <a href="https://github.com/LeungGeorge/LeungGeorge.github.io.git" target="_blank" rel="noopener">https://github.com/LeungGeorge/LeungGeorge.github.io.git</a><br>branch: master</li>
 <li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
-<li>执行hexo g -d生成网站并部署到GitHub上。<br>这样一来，在GitHub上的<a href="https://leunggeorge.github.io/仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美">https://leunggeorge.github.io/仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美</a>( •̀ ω •́ )y！</li>
+<li>执行hexo g -d生成网站并部署到GitHub上。<br>这样一来，在GitHub上的<a href="https://leunggeorge.github.io/仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美" target="_blank" rel="noopener">https://leunggeorge.github.io/仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美</a>( •̀ ω •́ )y！</li>
 </ol>
 <h1 id="改进流程"><a href="#改进流程" class="headerlink" title="改进流程"></a>改进流程</h1><ol>
 <li>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。<br>依次执行指令将改动推送到GitHub（此时当前分支应为hexo）；：<br>git add .<br>git commit -m “…”<br>git push origin hexo  </li>
@@ -483,7 +479,7 @@
 </ol>
 <h1 id="本地资料恢复流程"><a href="#本地资料恢复流程" class="headerlink" title="本地资料恢复流程"></a>本地资料恢复流程</h1><ol>
 <li>使用git clone <a href="mailto:git@github.com">git@github.com</a>:LeungGeorge/LeungGeorge.github.io.git拷贝仓库（默认分支为hexo）；  </li>
-<li>在本地新拷贝的<a href="https://leunggeorge.github.io/">LeungGeorge.github.io</a>文件夹下通过Git bash依次执行下列指令：<br>npm install hexo<br>npm install<br>npm install hexo-deployer-git<br>【记得，不需要hexo init这条指令】  </li>
+<li>在本地新拷贝的<a href="https://leunggeorge.github.io/" target="_blank" rel="noopener">LeungGeorge.github.io</a>文件夹下通过Git bash依次执行下列指令：<br>npm install hexo<br>npm install<br>npm install hexo-deployer-git<br>【记得，不需要hexo init这条指令】  </li>
 </ol>
 <h2 id="常见错误处理"><a href="#常见错误处理" class="headerlink" title="常见错误处理"></a>常见错误处理</h2><ol>
 <li>ERROR Deployer not found: git <a href="https://www.v2ex.com/t/175940" target="_blank" rel="noopener">参考</a><br>运行以下命令即可：<br>npm install hexo-deployer-git –save  </li>
@@ -498,7 +494,7 @@ hljs.initHighlightingOnLoad();
 </script>
 
 
-<p>来源：<a href="http://leunggeorge.github.io/">http://leunggeorge.github.io/</a>  </p>
+<p>来源：<a href="http://leunggeorge.github.io/" target="_blank" rel="noopener">http://leunggeorge.github.io/</a>  </p>
 
       
     </div>
@@ -523,7 +519,7 @@ hljs.initHighlightingOnLoad();
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://leunggeorge.github.io/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html" title="换电脑了hexo博客怎么办？">https://leunggeorge.github.io/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html</a>
+      <a href="https://liangyuanzheng.com/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html" title="换电脑了hexo博客怎么办？">https://liangyuanzheng.com/%E6%8D%A2%E7%94%B5%E8%84%91%E4%BA%86hexo%E5%8D%9A%E5%AE%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -659,7 +655,7 @@ hljs.initHighlightingOnLoad();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1139,7 +1135,7 @@ hljs.initHighlightingOnLoad();
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('1');
+                  var upperBound = parseInt('10');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
@@ -1250,19 +1246,6 @@ hljs.initHighlightingOnLoad();
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
 
 
 
