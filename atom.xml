@@ -152,9 +152,9 @@
       <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
     
     
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
       <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
     
       <category term="内存泄露" scheme="https://liangyuanzheng.com/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/"/>
     
@@ -504,11 +504,11 @@
     
       <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
     
+      <category term="设计与实现" scheme="https://liangyuanzheng.com/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
+    
       <category term="源码" scheme="https://liangyuanzheng.com/tags/%E6%BA%90%E7%A0%81/"/>
     
       <category term="slice" scheme="https://liangyuanzheng.com/tags/slice/"/>
-    
-      <category term="设计与实现" scheme="https://liangyuanzheng.com/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
     
   </entry>
   
