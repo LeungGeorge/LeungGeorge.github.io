@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>魔法书</title>
+  <title>七点一刻的魔法书</title>
   
   <subtitle>书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leunggeorge.github.io/"/>
-  <updated>2022-12-10T09:07:30.451Z</updated>
+  <updated>2022-12-10T09:26:11.126Z</updated>
   <id>https://leunggeorge.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生死疲劳</title>
+    <link href="https://leunggeorge.github.io/%E7%94%9F%E6%AD%BB%E7%96%B2%E5%8A%B3.html"/>
+    <id>https://leunggeorge.github.io/生死疲劳.html</id>
+    <published>2022-12-10T09:13:01.000Z</published>
+    <updated>2022-12-10T09:26:11.126Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/images/leunggeorge.github.io-image-9.png&quot; a
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
+    
+    
+      <category term="writing" scheme="https://leunggeorge.github.io/tags/writing/"/>
+    
+  </entry>
   
   <entry>
     <title>《生死疲劳》人物关系</title>
@@ -152,9 +182,9 @@
       <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
     
     
-      <category term="writing" scheme="https://leunggeorge.github.io/tags/writing/"/>
-    
       <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
+    
+      <category term="writing" scheme="https://leunggeorge.github.io/tags/writing/"/>
     
       <category term="内存泄露" scheme="https://leunggeorge.github.io/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/"/>
     
@@ -509,33 +539,6 @@
       <category term="源码" scheme="https://leunggeorge.github.io/tags/%E6%BA%90%E7%A0%81/"/>
     
       <category term="slice" scheme="https://leunggeorge.github.io/tags/slice/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Go 开发者路线图</title>
-    <link href="https://leunggeorge.github.io/Go-%E5%BC%80%E5%8F%91%E8%80%85%E8%B7%AF%E7%BA%BF%E5%9B%BE.html"/>
-    <id>https://leunggeorge.github.io/Go-开发者路线图.html</id>
-    <published>2019-10-03T08:34:06.000Z</published>
-    <updated>2022-12-10T08:39:15.818Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;在 2019 成为一名 &lt;a href=&quot;https://golang.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Go&lt;/a&gt; 开发者的路线图：&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
-    
-      <category term="文摘" scheme="https://leunggeorge.github.io/tags/%E6%96%87%E6%91%98/"/>
-    
-      <category term="学习路线" scheme="https://leunggeorge.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
     
   </entry>
   
