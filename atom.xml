@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leunggeorge.github.io/"/>
-  <updated>2022-12-10T08:22:40.486Z</updated>
+  <updated>2022-12-10T08:45:05.895Z</updated>
   <id>https://leunggeorge.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《西厢记》摘录</title>
+    <link href="https://leunggeorge.github.io/%E3%80%8A%E8%A5%BF%E5%8E%A2%E8%AE%B0%E3%80%8B%E6%91%98%E5%BD%95.html"/>
+    <id>https://leunggeorge.github.io/《西厢记》摘录.html</id>
+    <published>2022-12-10T08:45:02.000Z</published>
+    <updated>2022-12-10T08:45:05.895Z</updated>
+    
+    <summary type="html">
+    
+      摘要
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>代码评审</title>
@@ -504,29 +521,6 @@
       <category term="必知必会" scheme="https://leunggeorge.github.io/tags/%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
     
       <category term="速查表" scheme="https://leunggeorge.github.io/tags/%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Golang 新手可能会踩的坑</title>
-    <link href="https://leunggeorge.github.io/Golang-%E6%96%B0%E6%89%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E8%B8%A9%E7%9A%84%E5%9D%91.html"/>
-    <id>https://leunggeorge.github.io/Golang-新手可能会踩的坑.html</id>
-    <published>2019-09-15T12:40:09.000Z</published>
-    <updated>2020-04-07T01:59:14.520Z</updated>
-    
-    <summary type="html">
-    
-      Go 是一门简单有趣的编程语言，与其他语言一样，在使用时不免会遇到很多坑，不过它们大多不是 Go 本身的设计缺陷。如果你刚从其他语言转到 Go，那这篇文章里的坑多半会踩到。本文是从 github 上摘录的一篇文章（不记得是哪位兄弟翻译的了，后续遇到了再补上）
-    
-    </summary>
-    
-    
-      <category term="转载" scheme="https://leunggeorge.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
-    
-      <category term="必知必会" scheme="https://leunggeorge.github.io/tags/%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
     
   </entry>
   
