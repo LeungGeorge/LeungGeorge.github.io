@@ -15,7 +15,7 @@ avatar: https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d212
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://leunggeorge.github.io/
+url: https://liangyuanzheng.com/
 root: /
 # permalink: :year/:month/:day/:title/
 permalink: :title.html
@@ -86,21 +86,21 @@ deploy:
   branch: master
 
 # Algolia Search API Key
-algolia:
-  applicationID: FWXTLLN24O
-  apiKey: 9fe78ed368d4c017f33c16a170ce10a0
-  indexName: dev_jobbymsblog
-  adminApiKey: 8497682cec675ee57e29c86c41956994
-  chunkSize: 5000
-  fields:
-    # - content:strip:truncate,0,500
-    - excerpt:strip
-    - title
-    # - tags
-    # - gallery
-    # - permalink
-    # - photos
-    - slug
+# algolia:
+#   applicationID: FWXTLLN24O
+#   apiKey: 9fe78ed368d4c017f33c16a170ce10a0
+#   indexName: dev_jobbymsblog
+#   adminApiKey: 8497682cec675ee57e29c86c41956994
+#   chunkSize: 5000
+#   fields:
+#     # - content:strip:truncate,0,500
+#     # - excerpt:strip
+#     - title
+#     # - tags
+#     # - gallery
+#     # - permalink
+#     # - photos
+#     # - slug
 
 #search: true
 search: 

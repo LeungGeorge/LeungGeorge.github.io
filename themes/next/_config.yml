@@ -470,7 +470,7 @@ calendar:
   singleEvents: true
   maxResults: 250
 
-algolia: true
+algolia: false
 # algolia:
 #   enable: true
 #   applicationID: "FWXTLLN24O"
@@ -490,7 +490,7 @@ algolia: true
 
 # Algolia Search
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 10
   labels:
@@ -505,7 +505,12 @@ local_search:
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
   # show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  top_n_per_article: 10
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 # External URL with BASE64 encrypt & decrypt
 # Usage: {% exturl text url "title" %}
@@ -652,4 +657,6 @@ images: images
 # Theme version
 version: 5.1.1
 
-
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax: true
