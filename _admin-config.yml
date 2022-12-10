@@ -3,6 +3,7 @@ options:
   imagePrefix: liangyuanzheng.com-
   askImageFilename: false
   spellcheck: true
+  imagePath: images
 editor:
   lineNumbers: true
   inputStyle: contenteditable
