@@ -660,3 +660,13 @@ version: 5.1.1
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
 pjax: true
+
+# Gitment
+# Introduction: https://imsun.net/posts/gitment-introduction/
+gitment:
+    enable: true                                             # gitment评论系统开关
+    owner: LeungGeorge                                       # GitHub用户名
+    repo: LeungGeorge.github.io                              # 存储评论数据的GitHub仓库的仓库名
+    client_id: 361746d54b71d47ab0c1                          # OAuth Application的Client ID
+    client_secret: c4b823c0073aebd2a67dad04a7b7e94c1bb6f02b  # OAuth Application的Client Secret
+    lazy: true                                               # 评论懒加载开关
