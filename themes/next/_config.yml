@@ -670,3 +670,4 @@ gitment:
     client_id: afb2ddcfa1c423c0b81c                          # OAuth Application的Client ID
     client_secret: 2c6b322148ba4acb14080cac0d46529d519fea9c  # OAuth Application的Client Secret
     lazy: true                                               # 评论懒加载开关
+    redirect_uri: https//liangyuanzheng.com
