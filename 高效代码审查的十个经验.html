@@ -108,14 +108,14 @@
 <meta property="og:url" content="https://leunggeorge.github.io/%E9%AB%98%E6%95%88%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%E7%9A%84%E5%8D%81%E4%B8%AA%E7%BB%8F%E9%AA%8C.html">
 <meta property="og:site_name" content="魔法书">
 <meta property="og:description" content="代码审查（Code Review)是软件开发中常用的手段，和QA测试相比，它更容易发现和架构以及时序相关等较难发现的问题，还可以帮助团队成员提高编程技能，统一编程风格等。">
-<meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907083734.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907083750.png">
+<meta property="og:image" content="https://leunggeorge.github.io/images/20190907083734.png">
+<meta property="og:image" content="https://leunggeorge.github.io/images/20190907083750.png">
 <meta property="article:published_time" content="2017-07-09T08:23:38.000Z">
-<meta property="article:modified_time" content="2020-04-07T01:59:14.524Z">
+<meta property="article:modified_time" content="2022-12-10T08:39:35.355Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="代码审查">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907083734.png">
+<meta name="twitter:image" content="https://leunggeorge.github.io/images/20190907083734.png">
 
 
 
@@ -456,10 +456,10 @@
 <a id="more"></a>
 
 <h1 id="代码审查要求团队有良好的文化"><a href="#代码审查要求团队有良好的文化" class="headerlink" title="代码审查要求团队有良好的文化"></a>代码审查要求团队有良好的文化</h1><p>团队需要认识到代码审查是为了提高整个团队的能力，而不是针对个体设置的检查“关卡”。<br>“A的代码有个bug被B发现，所以A能力不行，B能力更好”，这一类的陷阱很容易被扩散从而影响团队内部的协作，因此需要避免。<br>另外，代码审查本身可以提高开发者的能力，让其从自身犯过的错误中学习，从他人的思路中学习。如果开发者对这个流程有抵触或者反感，这个目的就达不到。</p>
-<h1 id="谨慎的使用审查中问题的发现率作为考评标准"><a href="#谨慎的使用审查中问题的发现率作为考评标准" class="headerlink" title="谨慎的使用审查中问题的发现率作为考评标准"></a>谨慎的使用审查中问题的发现率作为考评标准</h1><p><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907083734.png" alt="20190907083734.png"></p>
+<h1 id="谨慎的使用审查中问题的发现率作为考评标准"><a href="#谨慎的使用审查中问题的发现率作为考评标准" class="headerlink" title="谨慎的使用审查中问题的发现率作为考评标准"></a>谨慎的使用审查中问题的发现率作为考评标准</h1><p><img src="/images/20190907083734.png" alt="20190907083734.png"></p>
 <p>在代码审查中如果发现问题，对于问题的发现者来说这是好事，应该予以鼓励。但对于被发现者，我们不主张使用这个方式予以惩罚。软件开发中bug在所难免，过度苛求本身有悖常理。更糟的是，如果造成参与者怕承担责任，不愿意在审查中指出问题，代码审查就没有任何的价值和意义。</p>
 <h1 id="控制每次审查的代码数量"><a href="#控制每次审查的代码数量" class="headerlink" title="控制每次审查的代码数量"></a>控制每次审查的代码数量</h1><p>根据smartbear在思科所作的调查，每次审查200行-400行的代码效果最好。每次试图审查的代码过多，发现问题的能力就会下降，具体的比例关系如下图所示：</p>
-<p><img src="https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20190907083750.png" alt="20190907083750.png"></p>
+<p><img src="/images/20190907083750.png" alt="20190907083750.png"></p>
 <p>我们在实践中发现，随着开发平台和开发语言的不同，最优的代码审查量有所不同。但是限制每次审查的数量确实非常必要，因为这个过程是高强度的脑力密集型活动。时间一长，代码在审查者眼里只是字母，无任何逻辑联系，自然不会有太多的产出。</p>
 <h1 id="带着问题去进行审查"><a href="#带着问题去进行审查" class="headerlink" title="带着问题去进行审查"></a>带着问题去进行审查</h1><p>我们在每次代码审查中，要求审查者利用自身的经验先思考可能会碰到的问题，然后通过审查工作验证这些问题是否已经解决。一个窍门是，从用户可见的功能出发，假设一个比较复杂的使用场景，在代码阅读中验证这个使用场景是否能够正确工作。<br>使用这个技巧，可以让审查者有代入感，真正的沉浸入代码中，提高效率。大家都知道看武侠小说不容易瞌睡，而看专业书容易瞌睡，原因就是武侠小说更容易产生代入感。<br>有的研究建议每次树立目标，控制单位时间内审核的代码数量。这个方法在我们的实践中显得很机械和流程化，不如上面的方法效果好。</p>
 <h1 id="所有的问题和修改，必须由原作者进行确认"><a href="#所有的问题和修改，必须由原作者进行确认" class="headerlink" title="所有的问题和修改，必须由原作者进行确认"></a>所有的问题和修改，必须由原作者进行确认</h1><p>如果在审查中发现问题，务必由原作者进行确认。<br>这样做有两个目的：<br>(1)确认问题确实存在，保证问题被解决<br>(2)让原作者了解问题和不足，帮助其成长<br>有些时候为了追求效率，有经验的审查者更倾向于直接修改代码乃至重构所有代码，但这样不利于提高团队效率，并且会增加因为重构引入新bug的几率，通常情况下我们不予鼓励。</p>
