@@ -11,7 +11,7 @@ description: markdown常用语法
 ---
 # Mou
 
-![20200129230716.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200129230716.png)
+![20200129230716.png](/images/20200129230716.png)
 
 ## Overview
 

@@ -35,7 +35,7 @@ description: 关于 SELECT COUNT 那些事儿，这篇博客总结的很好，�
 返回结果可能不同：  
 COUNT(字段名) 会过滤掉为 NULL 的值。  
 COUNT(*)返回行数。  
-![20191021151939.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191021151939.png)
+![20191021151939.png](/images/20191021151939.png)
 
 ## COUNT(1)和COUNT(*)之间有什么不同？
 

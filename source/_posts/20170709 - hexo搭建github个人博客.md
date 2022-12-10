@@ -27,7 +27,7 @@ sudo npm install hexo -g
 ```
 
 <!--more-->
-<!-- https://raw.githubusercontent.com/LeungGeorge/assets/master/images/blog/hexo/ -->
+<!-- /images/hexo/ -->
 
 # Hexo命令
 ## 写博客常用命令
