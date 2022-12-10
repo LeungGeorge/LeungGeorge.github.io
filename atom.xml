@@ -70,9 +70,9 @@
       <category term="essay" scheme="https://leunggeorge.github.io/categories/essay/"/>
     
     
-      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
-    
       <category term="writing" scheme="https://leunggeorge.github.io/tags/writing/"/>
+    
+      <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
     
       <category term="内存泄露" scheme="https://leunggeorge.github.io/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/"/>
     
@@ -422,11 +422,11 @@
     
       <category term="golang" scheme="https://leunggeorge.github.io/tags/golang/"/>
     
-      <category term="设计与实现" scheme="https://leunggeorge.github.io/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
-    
       <category term="源码" scheme="https://leunggeorge.github.io/tags/%E6%BA%90%E7%A0%81/"/>
     
       <category term="slice" scheme="https://leunggeorge.github.io/tags/slice/"/>
+    
+      <category term="设计与实现" scheme="https://leunggeorge.github.io/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
     
   </entry>
   
