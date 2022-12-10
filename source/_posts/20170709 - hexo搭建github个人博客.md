@@ -96,7 +96,7 @@ git clone https://github.com/iissnan/hexo-theme-next themes/next
 ### 修改站点配置文件
 配置theme为：<font color=red>next</font>
 
-```
+```yaml
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -115,7 +115,7 @@ theme: next
 ### 修改主题配置
 修改Scheme：<font color=red>Mist</font>
 
-```
+```yaml
 # Schemes
 # scheme: Muse
 scheme: Mist
@@ -125,16 +125,16 @@ scheme: Mist
 #### TOC设置成全部展开
 
 修改 next 主题样式，`themes/next/source/css/_common/components/sidebar/sidebar-toc.styl`：
-```html
+```yaml
 .post-toc .nav .nav-child { display: none; }
 ```
 修改为：
-```html
+```yaml
 .post-toc .nav .nav-child { display: block; }
 ```
 
 效果如图：
-![20191029152851.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191029152851.png)
+![20191029152851.png](/images/20191029152851.png)
 
 #### 添加阅读进度
 
