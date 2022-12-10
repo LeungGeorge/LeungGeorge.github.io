@@ -152,7 +152,7 @@ scheme: Mist
 
 ```
 
-![20190915093130.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/blog/hexo/love-heart.png)
+![20190915093130.png](/images//love-heart.png)
 
 
 #### 添加文章阅读数
@@ -355,7 +355,7 @@ post_asset_folder: true #是否启动资源文件夹
 
 效果预览：
 
-![image](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/blog/hexo/pic-404.png)
+![image](/images//pic-404.png)
 
 # 统计
 ## 百度统计

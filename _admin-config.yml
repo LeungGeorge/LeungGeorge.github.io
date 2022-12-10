@@ -1,6 +1,6 @@
 options:
   lineNumbers: true
-  imagePrefix: liangyuanzheng.com.image
+  imagePrefix: liangyuanzheng.com-
   askImageFilename: false
   spellcheck: true
 editor:
