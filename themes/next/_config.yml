@@ -665,7 +665,7 @@ pjax: true
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
     enable: true                                             # gitment评论系统开关
-    owner: leunggeorge                                       # GitHub用户名
+    owner: LeungGeorge                                       # GitHub用户名
     repo: leunggeorge.github.io                              # 存储评论数据的GitHub仓库的仓库名
     client_id: 361746d54b71d47ab0c1                          # OAuth Application的Client ID
     client_secret: c4b823c0073aebd2a67dad04a7b7e94c1bb6f02b  # OAuth Application的Client Secret
