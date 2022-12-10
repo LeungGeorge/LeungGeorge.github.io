@@ -14,7 +14,7 @@ description: 本文介绍了一些主流的 Golang Web 框架，并从流行度�
 <!--more-->
 
 ## 按 star 排序
-![20191102110939.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20191102110939.png)
+![20191102110939.png](/images/20191102110939.png)
 > 详细对比参考原文：[Awesome Web Frameworks for Gophers](https://github.com/speedwheel/awesome-go-web-frameworks/blob/master/README.md#popularity)  
 
 ## 性能对比
@@ -28,7 +28,7 @@ description: 本文介绍了一些主流的 Golang Web 框架，并从流行度�
 > [6 款最棒的 Go 语言 Web 框架简介](https://studygolang.com/articles/11897)
 
 ---
-![20200131220947.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200131220947.png)
+![20200131220947.png](/images/20200131220947.png)
 
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>

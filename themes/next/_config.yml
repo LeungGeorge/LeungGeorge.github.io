@@ -6,7 +6,7 @@
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "七点一刻, 魔法书"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -30,6 +30,7 @@ copyright: true
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remember set up your URL in hexo _config.yml ( ex. url: http://yourdomain.com )
 canonical: true
+url: https://liangyuanzheng.com
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
 seo: false
@@ -49,7 +50,7 @@ menu:
   categories: /categories/
   tags: /tags/
   about: /about/
-  # sitemap: /sitemap.xml
+  sitemap: /sitemap.xml
   # commonweal: /404.html
 
 
@@ -71,6 +72,10 @@ menu_icons:
   commonweal: heartbeat
 
 
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 
 # ---------------------------------------------------------------

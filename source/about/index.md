@@ -15,7 +15,7 @@ date: 2016-08-28 23:05:50
 ## 关于作者
 
 ​闲来无事，喜欢码字，欢迎关注，[七点一刻](https://leunggeorge.github.io/) 。   
-![20200131220947.png](https://raw.githubusercontent.com/LeungGeorge/assets/master/images/20200131220947.png)   
+![20200131220947.png](/images/20200131220947.png)   
 
 ## 贡献
 
