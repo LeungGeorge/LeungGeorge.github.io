@@ -548,7 +548,7 @@
 <h2 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h2><p><strong>Marxico</strong> was first built upon <a href="http://dillinger.io" target="_blank" rel="noopener">Dillinger</a>, and the newest version is almost based on the awesome <a href="http://stackedit.io" target="_blank" rel="noopener">StackEdit</a>. Acknowledgments to them and other incredible open source projects!</p>
 <h2 id="Feedback-amp-Bug-Report"><a href="#Feedback-amp-Bug-Report" class="headerlink" title="Feedback &amp; Bug Report"></a>Feedback &amp; Bug Report</h2><ul>
 <li>Twitter: <a href="https://twitter.com/gock2" target="_blank" rel="noopener">@gock2</a></li>
-<li>Email: <a href="mailto:&#x68;&#117;&#115;&#116;&#x67;&#111;&#x63;&#x6b;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#x68;&#117;&#115;&#116;&#x67;&#111;&#x63;&#x6b;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></li>
+<li>Email: <a href="mailto:&#x68;&#117;&#115;&#x74;&#x67;&#x6f;&#99;&#x6b;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#x68;&#117;&#115;&#x74;&#x67;&#x6f;&#99;&#x6b;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a></li>
 </ul>
 <hr>
 <p>Thank you for reading this manual. Now please press <code>Ctrl + M</code> and click <code>Link with Evernote</code>. Enjoy your <strong>Marxico</strong> journey!</p>
@@ -667,6 +667,10 @@
           
   <div class="comments" id="comments">
     
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示Gitment评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
   </div>
 
 
@@ -982,6 +986,31 @@
 
 
 
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    
+        <script type="text/javascript">
+            function showGitment(){
+                document.getElementById("gitment-display-button").style.display = "none";
+                document.getElementById("gitment-container").style.display = "block";
+                var gitment = new Gitment({
+                        id: window.location.pathname, 
+                        owner: 'LeungGeorge',
+                        repo: 'LeungGeorge.github.io',
+                        oauth: {
+                            client_id: '361746d54b71d47ab0c1',
+                            client_secret: 'c4b823c0073aebd2a67dad04a7b7e94c1bb6f02b',
+                        }});
+                gitment.render('gitment-container');
+            }
+        </script>
+    
 
 
   

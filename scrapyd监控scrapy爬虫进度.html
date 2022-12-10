@@ -617,7 +617,6 @@ hljs.initHighlightingOnLoad();
 
 
           
-
         </div>
         
           
@@ -930,6 +929,31 @@ hljs.initHighlightingOnLoad();
 
 
 
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    
+        <script type="text/javascript">
+            function showGitment(){
+                document.getElementById("gitment-display-button").style.display = "none";
+                document.getElementById("gitment-container").style.display = "block";
+                var gitment = new Gitment({
+                        id: window.location.pathname, 
+                        owner: 'LeungGeorge',
+                        repo: 'LeungGeorge.github.io',
+                        oauth: {
+                            client_id: '361746d54b71d47ab0c1',
+                            client_secret: 'c4b823c0073aebd2a67dad04a7b7e94c1bb6f02b',
+                        }});
+                gitment.render('gitment-container');
+            }
+        </script>
+    
 
 
   
