@@ -417,18 +417,6 @@
 
           
           
-             <span id="/Golang-%E9%80%9F%E6%9F%A5%E8%A1%A8.html" class="leancloud_visitors" data-flag-title="Golang 速查表">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
 
           
 
@@ -544,7 +532,7 @@
 <li>内置并发原语：<code>goroutine</code> 和 <code>channel</code></li>
 </ul>
 <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>文件 <code>hello.go</code>：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"Hello Go"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">truefmt.Println(<span class="string">"Hello Go"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行：<code>$ go run hello.go</code></p>
 <h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><table>
@@ -600,7 +588,7 @@
 </tr>
 </tbody></table>
 <p><code>&amp;^</code> 即是 <code>AND NOT(x, y) = AND(x, NOT(Y))</code>，如：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	x := <span class="number">0xDC</span>	<span class="comment">// 11011100</span></span><br><span class="line">	y := <span class="number">0xF0</span>	<span class="comment">// 11110000</span></span><br><span class="line">	z := x &amp;^ y	<span class="comment">// 00001100	// y 中为 1 的位全部被清除为 0</span></span><br><span class="line">	fmt.Printf(<span class="string">"%08b"</span>, z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">truex := <span class="number">0xDC</span>	<span class="comment">// 11011100</span></span><br><span class="line">truey := <span class="number">0xF0</span>	<span class="comment">// 11110000</span></span><br><span class="line">truez := x &amp;^ y	<span class="comment">// 00001100	// y 中为 1 的位全部被清除为 0</span></span><br><span class="line">truefmt.Printf(<span class="string">"%08b"</span>, z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -689,7 +677,7 @@
 
 
 
-<h3 id="可变参数函数"><a href="#可变参数函数" class="headerlink" title="可变参数函数"></a>可变参数函数</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(adder(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)) 	<span class="comment">// 6</span></span><br><span class="line">	fmt.Println(adder(<span class="number">9</span>, <span class="number">9</span>))	<span class="comment">// 18</span></span><br><span class="line">	</span><br><span class="line">	nums := []<span class="keyword">int</span>&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line">	fmt.Println(adder(nums...))	<span class="comment">// 60</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在函数的最后一个参数类型前，使用 ... 可表明函数还能接收 0 到多个此种类型的参数</span></span><br><span class="line"><span class="comment">// 下边的函数在调用时传多少个参数都可以</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">adder</span><span class="params">(args ...<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	total := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> _, v := <span class="keyword">range</span> args &#123;	<span class="comment">// 使用迭代器逐个访问参数</span></span><br><span class="line">		total += v</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> total</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="可变参数函数"><a href="#可变参数函数" class="headerlink" title="可变参数函数"></a>可变参数函数</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">truefmt.Println(adder(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)) 	<span class="comment">// 6</span></span><br><span class="line">truefmt.Println(adder(<span class="number">9</span>, <span class="number">9</span>))	<span class="comment">// 18</span></span><br><span class="line">true</span><br><span class="line">truenums := []<span class="keyword">int</span>&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line">truefmt.Println(adder(nums...))	<span class="comment">// 60</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在函数的最后一个参数类型前，使用 ... 可表明函数还能接收 0 到多个此种类型的参数</span></span><br><span class="line"><span class="comment">// 下边的函数在调用时传多少个参数都可以</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">adder</span><span class="params">(args ...<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">truetotal := <span class="number">0</span></span><br><span class="line">true<span class="keyword">for</span> _, v := <span class="keyword">range</span> args &#123;	<span class="comment">// 使用迭代器逐个访问参数</span></span><br><span class="line">truetruetotal += v</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> total</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -710,7 +698,7 @@
 <li>大写开头的标识符（变量名、函数名…）：对其他 package 是可访问的</li>
 <li>小写开头的标识符：对其他 package 是不可见的</li>
 </ol>
-<h2 id="流程控制结构"><a href="#流程控制结构" class="headerlink" title="流程控制结构"></a>流程控制结构</h2><h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// 一般的条件判断</span></span><br><span class="line">	<span class="keyword">if</span> x &gt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> x</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> -x</span><br><span class="line">	&#125;</span><br><span class="line">    	</span><br><span class="line">	<span class="comment">// 在条件判断语句前可塞一条语句，使代码更简洁</span></span><br><span class="line">	<span class="keyword">if</span> a := b + c; a &lt; <span class="number">42</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> a - <span class="number">42</span></span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 使用 if 做类型断言</span></span><br><span class="line">	<span class="keyword">var</span> val <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">	val = <span class="string">"foo"</span></span><br><span class="line">	<span class="keyword">if</span> str, ok := val.(<span class="keyword">string</span>); ok &#123;</span><br><span class="line">		fmt.Println(str)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="流程控制结构"><a href="#流程控制结构" class="headerlink" title="流程控制结构"></a>流程控制结构</h2><h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">true<span class="comment">// 一般的条件判断</span></span><br><span class="line">true<span class="keyword">if</span> x &gt; <span class="number">0</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> x</span><br><span class="line">true&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> -x</span><br><span class="line">true&#125;</span><br><span class="line">    	</span><br><span class="line">true<span class="comment">// 在条件判断语句前可塞一条语句，使代码更简洁</span></span><br><span class="line">true<span class="keyword">if</span> a := b + c; a &lt; <span class="number">42</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> a</span><br><span class="line">true&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> a - <span class="number">42</span></span><br><span class="line">true&#125;</span><br><span class="line">    </span><br><span class="line">true<span class="comment">// 使用 if 做类型断言</span></span><br><span class="line">true<span class="keyword">var</span> val <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">trueval = <span class="string">"foo"</span></span><br><span class="line">true<span class="keyword">if</span> str, ok := val.(<span class="keyword">string</span>); ok &#123;</span><br><span class="line">truetruefmt.Println(str)</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -744,7 +732,7 @@
 
 
 <h3 id="匿名结构体"><a href="#匿名结构体" class="headerlink" title="匿名结构体"></a>匿名结构体</h3><p>使用 <code>map[string]interface{}</code> 开销更小且更为安全。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">point := <span class="keyword">struct</span> &#123;</span><br><span class="line">	X, Y <span class="keyword">int</span></span><br><span class="line">&#125;&#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">point := <span class="keyword">struct</span> &#123;</span><br><span class="line">trueX, Y <span class="keyword">int</span></span><br><span class="line">&#125;&#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -779,7 +767,7 @@
 
 
 
-<h2 id="Channels"><a href="#Channels" class="headerlink" title="Channels"></a>Channels</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) 	<span class="comment">// 创建类型为 int 的 channel</span></span><br><span class="line">ch &lt;- <span class="number">42</span>             	<span class="comment">// 向 channel ch 写数据 42</span></span><br><span class="line">v := &lt;-ch            	<span class="comment">// 从 channel ch 读数据，此时 v 的值为 42</span></span><br><span class="line">			<span class="comment">// 无缓冲的 channel 此时会阻塞</span></span><br><span class="line">			<span class="comment">// 如果 channel 中无数据，则读操作会被阻塞，直到有数据可读</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建带缓冲的 channel</span></span><br><span class="line"><span class="comment">// 向带缓冲的 channel 写数据不会被阻塞，除非该缓冲区已满</span></span><br><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">close</span>(ch) <span class="comment">// 发送者主动关闭 channel</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在从 channel 读数据的同时检测其是否已关闭</span></span><br><span class="line"><span class="comment">// 如果 ok 为 false，则 ch 已被关闭</span></span><br><span class="line">v, ok := &lt;-ch	</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从 channel 中读数据直到它被关闭</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    fmt.Println(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// select 语句中 任一 channel 不阻塞则自动执行对应的 case</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">doStuff</span><span class="params">(channelOut, channelIn <span class="keyword">chan</span> <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">select</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> channelOut &lt;- <span class="number">42</span>:</span><br><span class="line">            fmt.Println(<span class="string">"We could write to channelOut!"</span>)</span><br><span class="line">        <span class="keyword">case</span> x := &lt;- channelIn:</span><br><span class="line">            fmt.Println(<span class="string">"We could read from channelIn"</span>)</span><br><span class="line">        <span class="keyword">case</span> &lt;-time.After(time.Second * <span class="number">1</span>):</span><br><span class="line">            fmt.Println(<span class="string">"timeout"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Channels"><a href="#Channels" class="headerlink" title="Channels"></a>Channels</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) 	<span class="comment">// 创建类型为 int 的 channel</span></span><br><span class="line">ch &lt;- <span class="number">42</span>             	<span class="comment">// 向 channel ch 写数据 42</span></span><br><span class="line">v := &lt;-ch            	<span class="comment">// 从 channel ch 读数据，此时 v 的值为 42</span></span><br><span class="line">truetruetrue<span class="comment">// 无缓冲的 channel 此时会阻塞</span></span><br><span class="line">truetruetrue<span class="comment">// 如果 channel 中无数据，则读操作会被阻塞，直到有数据可读</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建带缓冲的 channel</span></span><br><span class="line"><span class="comment">// 向带缓冲的 channel 写数据不会被阻塞，除非该缓冲区已满</span></span><br><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">close</span>(ch) <span class="comment">// 发送者主动关闭 channel</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在从 channel 读数据的同时检测其是否已关闭</span></span><br><span class="line"><span class="comment">// 如果 ok 为 false，则 ch 已被关闭</span></span><br><span class="line">v, ok := &lt;-ch	</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从 channel 中读数据直到它被关闭</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    fmt.Println(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// select 语句中 任一 channel 不阻塞则自动执行对应的 case</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">doStuff</span><span class="params">(channelOut, channelIn <span class="keyword">chan</span> <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">select</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> channelOut &lt;- <span class="number">42</span>:</span><br><span class="line">            fmt.Println(<span class="string">"We could write to channelOut!"</span>)</span><br><span class="line">        <span class="keyword">case</span> x := &lt;- channelIn:</span><br><span class="line">            fmt.Println(<span class="string">"We could read from channelIn"</span>)</span><br><span class="line">        <span class="keyword">case</span> &lt;-time.After(time.Second * <span class="number">1</span>):</span><br><span class="line">            fmt.Println(<span class="string">"timeout"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -789,13 +777,13 @@
 <li><p>从 nil channel 读数据将卡死，一直阻塞<img src="http://p7f8yck57.bkt.clouddn.com/2018-06-11-104239.png" width=60%></p>
 </li>
 <li><p>向已关闭的 channel 写数据将造成 panic</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> c = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">string</span>, <span class="number">1</span>)</span><br><span class="line">	c &lt;- <span class="string">"Hello, World!"</span></span><br><span class="line">	<span class="built_in">close</span>(c)</span><br><span class="line">	c &lt;- <span class="string">"Hello, Panic!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">true<span class="keyword">var</span> c = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">string</span>, <span class="number">1</span>)</span><br><span class="line">truec &lt;- <span class="string">"Hello, World!"</span></span><br><span class="line">true<span class="built_in">close</span>(c)</span><br><span class="line">truec &lt;- <span class="string">"Hello, Panic!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行：</p>
 <img src="http://p7f8yck57.bkt.clouddn.com/2018-06-11-104657.png" width=60%> 
 </li>
 <li><p>从已关闭的 channel 读数据将返回零值</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> c = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">2</span>)</span><br><span class="line">	c &lt;- <span class="number">1</span></span><br><span class="line">	c &lt;- <span class="number">2</span></span><br><span class="line">	<span class="built_in">close</span>(c)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">		<span class="built_in">println</span>(&lt;-c)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">true<span class="keyword">var</span> c = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">2</span>)</span><br><span class="line">truec &lt;- <span class="number">1</span></span><br><span class="line">truec &lt;- <span class="number">2</span></span><br><span class="line">true<span class="built_in">close</span>(c)</span><br><span class="line">true<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">truetrue<span class="built_in">println</span>(&lt;-c)</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行：</p>
 <img src="http://p7f8yck57.bkt.clouddn.com/2018-06-11-104956.png" width=60%> 
@@ -1598,113 +1586,6 @@ hljs.initHighlightingOnLoad();
 
 
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("", "");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
   
 <script>
