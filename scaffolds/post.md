@@ -5,7 +5,7 @@ tags:
   - writing  
 categories: 
   - essay   
-comments: false
+comments: true
 description:  
 keywords: {{ title }}  
 ---
