@@ -84,7 +84,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,blog," />
+  <meta name="keywords" content="blog,hexo," />
 
 
 
@@ -111,8 +111,8 @@
 <meta property="article:published_time" content="2017-07-09T03:49:15.000Z">
 <meta property="article:modified_time" content="2020-04-07T01:59:14.501Z">
 <meta property="article:author" content="七点一刻">
-<meta property="article:tag" content="hexo">
 <meta property="article:tag" content="blog">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 
 
@@ -575,9 +575,9 @@ hljs.initHighlightingOnLoad();
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
             <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -692,7 +692,7 @@ hljs.initHighlightingOnLoad();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -793,7 +793,7 @@ hljs.initHighlightingOnLoad();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Uncaught-TypeError-Cannot-read-property-‘addEventListener’-of-null"><span class="nav-number">1.</span> <span class="nav-text">Uncaught TypeError: Cannot read property ‘addEventListener’ of null</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行hexo-algolia时报TypeError-Cannot-read-property-‘filter’-of-undefined"><span class="nav-number">2.</span> <span class="nav-text">执行hexo algolia时报TypeError: Cannot read property ‘filter’ of undefined</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行hexo-algolia时报Error-AlgoliaSearchNodeJS-AlgoliaSearchCore"><span class="nav-number">3.</span> <span class="nav-text">执行hexo algolia时报Error AlgoliaSearchNodeJS.AlgoliaSearchCore</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行hexo-g时报Error-Cannot-find-module-DTraceProviderBindings"><span class="nav-number">4.</span> <span class="nav-text">执行hexo g时报Error: Cannot find module DTraceProviderBindings</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Uncaught-TypeError-Cannot-read-property-‘addEventListener’-of-null"><span class="nav-text">Uncaught TypeError: Cannot read property ‘addEventListener’ of null</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行hexo-algolia时报TypeError-Cannot-read-property-‘filter’-of-undefined"><span class="nav-text">执行hexo algolia时报TypeError: Cannot read property ‘filter’ of undefined</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行hexo-algolia时报Error-AlgoliaSearchNodeJS-AlgoliaSearchCore"><span class="nav-text">执行hexo algolia时报Error AlgoliaSearchNodeJS.AlgoliaSearchCore</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行hexo-g时报Error-Cannot-find-module-DTraceProviderBindings"><span class="nav-text">执行hexo g时报Error: Cannot find module DTraceProviderBindings</span></a></li></ol></div>
             
 
           </div>
@@ -964,8 +964,8 @@ hljs.initHighlightingOnLoad();
     });
     new Valine({
         el: '#comments' ,
-        verify: true,
-        notify: false,
+        verify: false,
+        notify: true,
         appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
         appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
         placeholder: '写下你的想法 ^_^',
