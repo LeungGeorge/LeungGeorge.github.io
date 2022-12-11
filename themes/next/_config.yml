@@ -676,13 +676,13 @@ valine:
   avatar: monsterid # 头像风格，默认为mm，可进入网址：https://valine.js.org/visitor.html 查看头像设置，这里有许多头像风格，进行设置
   guest_info: nick,mail,link # 自定义评论标题
   pageSize: 10 # 分页大小，10页就自动分页
-  visitor: false # 是否允许游客评论 ，进入官网查看设置：https://valine.js.org/visitor.html
+  visitor: true # 是否允许游客评论 ，进入官网查看设置：https://valine.js.org/visitor.html
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: true # Whether to record the commenter IP
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   appid: CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz
   appkey: bHikuasaTpYy6LWbcaW8JAiF
