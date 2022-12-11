@@ -20,7 +20,7 @@ since: 2017
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -33,11 +33,11 @@ canonical: true
 url: https://liangyuanzheng.com
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
-index_with_subtitle: false
+index_with_subtitle: true
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -416,14 +416,6 @@ rating:
   id:     #<app_id>
   color:  fc6423
 
-
-# Show number of visitors to each article.
-# You can visit https://leancloud.cn get AppID and AppKey.
-leancloud_visitors:
-  enable: false
-  app_id: mKfzfMPBFU4kNOQRwVnAziVg-gzGzoHsz
-  app_key: 6t4P3ILBwvJF2hgBHGrGSG1T
-
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
@@ -664,10 +656,33 @@ pjax: true
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
-    enable: true                                             # gitment评论系统开关
+    enable: false                                             # gitment评论系统开关
     owner: LeungGeorge                                       # GitHub用户名
     repo: leunggeorge.github.io                              # 存储评论数据的GitHub仓库的仓库名
     client_id: afb2ddcfa1c423c0b81c                          # OAuth Application的Client ID
     client_secret: 2c6b322148ba4acb14080cac0d46529d519fea9c  # OAuth Application的Client Secret
     lazy: true                                               # 评论懒加载开关
     redirect_uri: https//liangyuanzheng.com
+
+# Valine
+# For more information: https://valine.js.org, https://github.com/xCss/Valine
+valine:
+  enable: true # 设置为true，默认为false
+  appid: CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz # 将应用key的App ID设置在这里
+  appkey: bHikuasaTpYy6LWbcaW8JAiF # 将应用key的App Key设置在这里
+  notify: false # 邮箱通知 , https://github.com/xCss/Valine/wiki，默认为false
+  verify: true # 验证码 默认为false
+  placeholder: 写下你的想法 ^_^ # 初始化评论显示，根据自己修改，这里默认，
+  avatar: monsterid # 头像风格，默认为mm，可进入网址：https://valine.js.org/visitor.html查看头像设置，这里有许多头像风格，进行设置
+  guest_info: nick,mail,link # 自定义评论标题
+  pageSize: 10 # 分页大小，10页就自动分页
+  visitor: true # 是否允许游客评论 ，进入官网查看设置：https://valine.js.org/visitor.html
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  recordIP: true # Whether to record the commenter IP
+
+# Show number of visitors to each article.
+# You can visit https://leancloud.cn get AppID and AppKey.
+leancloud_visitors:
+  enable: true
+  appid: CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz
+  appkey: bHikuasaTpYy6LWbcaW8JAiF
