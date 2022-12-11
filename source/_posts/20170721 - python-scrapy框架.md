@@ -7,7 +7,7 @@ tags:
   - scrapy
 categories:
   - python
-comments: false
+comments: true
 date: 2017-07-21 23:59:15
 description: 本文主要介绍了scrapy框架的使用，并给出了scrapy框架的安装教程（官方指南）。 
  

@@ -7,7 +7,7 @@ tags:
   - gin
 categories:
   - golang
-comments: false
+comments: true
 description:
 ---
 

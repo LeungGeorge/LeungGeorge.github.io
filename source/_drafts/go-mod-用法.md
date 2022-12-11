@@ -6,7 +6,7 @@ tags:
   - writing
 categories:
   - golang
-comments: false
+comments: true
 description:
 ---
 

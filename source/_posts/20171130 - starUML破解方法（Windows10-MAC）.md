@@ -5,7 +5,7 @@ tags:
   - staruml
 categories:
   - 工具
-comments: false
+comments: true
 date: 2017-11-30 10:00:55
 description: 
 

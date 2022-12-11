@@ -6,7 +6,7 @@ tags:
   - 版本升级
 categories:
   - 工具
-comments: false
+comments: true
 date: 2019-10-07 09:56:53
 description: github 报 We found potential security vulnerabilities in your dependencies，遂升级依赖包版本。记录 package.json 升级方法。
 ---

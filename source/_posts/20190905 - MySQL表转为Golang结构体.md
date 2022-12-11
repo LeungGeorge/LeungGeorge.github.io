@@ -7,7 +7,7 @@ tags:
   - mysql
 categories:
   - 工具
-comments: false
+comments: true
 date: 2019-09-05 20:40:10
 description:
 ---

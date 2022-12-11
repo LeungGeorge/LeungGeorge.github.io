@@ -8,7 +8,7 @@ tags:
   - linux
 categories:
   - linux
-comments: false
+comments: true
 description:
 ---
 

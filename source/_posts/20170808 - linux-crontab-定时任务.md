@@ -5,7 +5,7 @@ tags:
   - crontab
 categories:
   - linux
-comments: false
+comments: true
 date: 2017-08-08 19:47:47
 description: 
 

@@ -5,7 +5,7 @@ tags:
   - hexo
 categories:
   - 工具
-comments: false
+comments: true
 date: 2017-07-09 09:48:42
 ---
 使用 hexo 搭建 github个人博客。

@@ -6,7 +6,7 @@ tags:
   - golang
 categories:
   - 工具
-comments: false
+comments: true
 description: 本文介绍了一些主流的 Golang Web 框架，并从流行度、社区、功能等多个角度做了对比。
 ---
 

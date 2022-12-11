@@ -8,7 +8,7 @@ tags:
   - 设计与实现
 categories:
   - golang
-comments: false
+comments: true
 date: 2019-10-04 21:02:51
 description:
 ---

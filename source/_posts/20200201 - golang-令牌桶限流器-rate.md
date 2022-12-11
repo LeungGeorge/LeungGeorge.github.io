@@ -7,7 +7,7 @@ tags:
   - rate
 categories:
   - golang
-comments: false
+comments: true
 description: golang 实现的令牌桶限流器。
 date: 2020-02-01 22:22:04
 ---

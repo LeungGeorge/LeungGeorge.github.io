@@ -6,7 +6,7 @@ tags:
   - select count
 categories:
   - mysql
-comments: false
+comments: true
 date: 2019-10-20 14:58:28
 description: 关于 SELECT COUNT 那些事儿，这篇博客总结的很好，感谢博主。COUNT(column), COUNT(*), COUNT(1)。
 ---

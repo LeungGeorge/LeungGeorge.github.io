@@ -6,7 +6,7 @@ tags:
   - 单元测试
 categories:
   - golang
-comments: false
+comments: true
 description: go test 使用总结
 ---
 

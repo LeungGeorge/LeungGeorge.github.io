@@ -9,7 +9,7 @@ tags:
   - php
 categories: 
   - linux
-comments: false
+comments: true
 date: 2016-09-12 21:14:24
 description: ubuntu LNMP Mac
 
