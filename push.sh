@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+cp -r source/_posts/local.assets/ source/local.assets/
+
 hexo clean
 hexo g
 hexo d
