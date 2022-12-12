@@ -114,7 +114,7 @@
 <meta property="og:image" content="https://liangyuanzheng.com/images/leunggeorge.github.io-image-6.png">
 <meta property="og:image" content="https://liangyuanzheng.com/images/20200131220947.png">
 <meta property="article:published_time" content="2020-02-01T14:22:04.000Z">
-<meta property="article:modified_time" content="2022-12-11T13:41:27.313Z">
+<meta property="article:modified_time" content="2022-12-12T01:23:35.845Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="golang">
 <meta property="article:tag" content="令牌桶">
@@ -475,7 +475,7 @@
         <a id="more"></a>
 
 <h2 id="令牌桶算法"><a href="#令牌桶算法" class="headerlink" title="令牌桶算法"></a>令牌桶算法</h2><p>令牌桶算法(Token Bucket)随着时间流逝, 系统会按恒定1/QPS时间间隔(如果QPS=100, 则间隔是10ms)往桶里加入Token, 如果桶已经满了就不再加了。新请求来临时, 会各自拿走一个Token, 如果没有Token可拿了就阻塞或者拒绝服务.</p>
-<p><img src="/images/leunggeorge.github.io-image-4.png" alt="upload successful"></p>
+<p><img src="images/leunggeorge.github.io-image-4.png" alt="upload successful"></p>
 <blockquote>
 <p>限流器 rate 原理与上图的令牌桶类似。</p>
 </blockquote>
@@ -487,7 +487,7 @@
 <li><code>r</code> : 令牌桶每秒可以产生 <code>r</code> 个 token。  </li>
 <li><code>b</code> : 令牌桶的大小。</li>
 </ul>
-<p><img src="/images/leunggeorge.github.io-image-8.png" alt="upload successful"></p>
+<p><img src="images/leunggeorge.github.io-image-8.png" alt="upload successful"></p>
 <h3 id="Reserve-ReserveN"><a href="#Reserve-ReserveN" class="headerlink" title="Reserve/ReserveN"></a>Reserve/ReserveN</h3><ul>
 <li>获取一个预定对象 <code>r</code>，表示调用者需要等待的相关信息（如，是否可以处理、何时可以处理等等），调用者可根据 <code>r</code> 自行决定处理逻辑。</li>
 <li>如下 case 返回 false：<br>1). 请求令牌数 <code>n</code> 超过桶容量   </li>
@@ -497,7 +497,7 @@
 <p><strong>用法：</strong></p>
 <figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Usage example:</span></span><br><span class="line">r := lim.ReserveN(<span class="built_in">time</span>.Now(), <span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> !r.OK() &#123;</span><br><span class="line">    <span class="comment">// Not allowed to act! Did you remember to set lim.burst to be &gt; 0 ?</span></span><br><span class="line">    return</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">time</span>.<span class="built_in">Sleep</span>(r.Delay())</span><br><span class="line"><span class="comment">// Act()</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h4><p><img src="/images/leunggeorge.github.io-image-5.png" alt="upload successful"></p>
+<h4 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h4><p><img src="images/leunggeorge.github.io-image-5.png" alt="upload successful"></p>
 <h3 id="Allow-AllowN"><a href="#Allow-AllowN" class="headerlink" title="Allow/AllowN"></a>Allow/AllowN</h3><ul>
 <li>截止到某一时刻，是否可以从桶中获取 N 个令牌。如果可以，消费 n 个 token 并返回 true；否则返回 false。 </li>
 <li>按照频率限制执行，超过频率限制时丢弃或者跳过</li>
@@ -519,14 +519,14 @@
 <blockquote>
 <p>Wait 是 WaitN(ctx, 1) 的简写。</p>
 </blockquote>
-<h4 id="实现逻辑-2"><a href="#实现逻辑-2" class="headerlink" title="实现逻辑"></a>实现逻辑</h4><p><img src="/images/leunggeorge.github.io-image-6.png" alt="upload successful"></p>
+<h4 id="实现逻辑-2"><a href="#实现逻辑-2" class="headerlink" title="实现逻辑"></a>实现逻辑</h4><p><img src="images/leunggeorge.github.io-image-6.png" alt="upload successful"></p>
 <h3 id="SetLimit-SetLimitAt"><a href="#SetLimit-SetLimitAt" class="headerlink" title="SetLimit/SetLimitAt"></a>SetLimit/SetLimitAt</h3><p>令牌桶限流频率设置。</p>
 <h3 id="SetBurst-SetBurstAt"><a href="#SetBurst-SetBurstAt" class="headerlink" title="SetBurst/SetBurstAt"></a>SetBurst/SetBurstAt</h3><p>令牌桶容量设置。</p>
 <blockquote>
 <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a href="https://blog.csdn.net/skiof007/article/details/81302566" target="_blank" rel="noopener">限流算法之漏桶算法、令牌桶算法</a>  </p>
 </blockquote>
 <hr>
-<p><img src="/images/20200131220947.png" alt="20200131220947.png"></p>
+<p><img src="images/20200131220947.png" alt="20200131220947.png"></p>
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
 <script>
