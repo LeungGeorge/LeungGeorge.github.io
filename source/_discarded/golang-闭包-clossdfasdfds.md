@@ -20,7 +20,7 @@ date: 2020-07-11 18:55:00
 
 
 ---
-![20200131220947.png](/images/leunggeorge.github.io-image-9.png)
+![20200131220947.png](images/leunggeorge.github.io-image-9.png)
 
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>

@@ -27,7 +27,7 @@ sudo npm install hexo -g
 ```
 
 <!--more-->
-<!-- /images/hexo/ -->
+<!-- images/hexo/ -->
 
 # Hexo命令
 ## 写博客常用命令
@@ -132,7 +132,7 @@ scheme: Mist
 ```
 
 效果如图：
-![20191029152851.png](/images/20191029152851.png)
+![20191029152851.png](images/20191029152851.png)
 
 #### 添加阅读进度
 
@@ -152,7 +152,7 @@ scheme: Mist
 
 ```
 
-![20190915093130.png](/images//love-heart.png)
+![20190915093130.png](images//love-heart.png)
 
 
 #### 添加文章阅读数
@@ -224,7 +224,7 @@ baidusitemap:
 
 前往 [Algolia](https://www.algolia.com/) 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。  
     
-![image](/images/algolia_index.png)
+![image](images/algolia_index.png)
 
 **2.安装hexo algolia**
 
@@ -238,7 +238,7 @@ npm install --save hexo-algolia
 
 在 Algolia 服务站点上找到需要使用的一些配置的值，包括 ApplicationID、Search API Key、 Admin API Key。注意，Admin API Key 需要保密保存。  
 
-![image](/images/api_keys.png)  
+![image](images/api_keys.png)  
 编辑 站点配置文件，新增以下配置(替换除了 chunkSize 以外的其他字段为在 Algolia 获取到的值)：
 
 ```
@@ -257,7 +257,7 @@ algolia:
 
 当配置完成，在站点根目录下执行 hexo algolia 来更新 Index。请注意观察命令的输出。
 
-![image](/images/update_index-4.png)  
+![image](images/update_index-4.png)  
 
 **5.主题集成**
 
@@ -359,14 +359,14 @@ post_asset_folder: true #是否启动资源文件夹
 
 效果预览：
 
-![image](/images//pic-404.png)
+![image](images//pic-404.png)
 
 # 统计
 ## 百度统计
 ### 注册百度统计
 获取统计串：
 
-![image](/images/baidu-tongji.png)
+![image](images/baidu-tongji.png)
 
 ### 修改主题配置
 主题配置文件中增加baidu_analytics配置。
@@ -379,20 +379,32 @@ baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 
 ### 检查安装效果：
 大概过20分钟，就可以去[百度统计](https://tongji.baidu.com/)看到效果了。  
-![image](/images/jian-cha-an-zhuang-xiao-guo.png)
+![image](images/jian-cha-an-zhuang-xiao-guo.png)
 
 
 
 # 更新
 
 
+
 # 总结
 
-> # 引用  
+
+
+# 引用  
+
 > [安装Hexo](http://www.jianshu.com/p/35e197cb1273)  
+>
 > [hexo.io](https://hexo.io/)  
+>
 > [hexo](http://blog.sina.com.cn/s/blog_617ccc0c0101h84p.html)  
+>
 > [安装 blog-admin 博客插件](http://keychar.com/2016/05/28/install-blog-admin/)  
+>
 > [Hexo的Next主题配置](http://blog.csdn.net/zuoziji416/article/details/53204478)
+>
 > [Hexo(Pages)—优化博客](http://plainboiledwaterln.cn/HexoBlog/HexoPagesOptimize.html)
+>
 > [Hexo 插件](https://hexo.io/plugins/)
+>
+> [基于 Hexo 从零开始搭建个人博客（五）](https://tzy1997.com/articles/hexo1605)

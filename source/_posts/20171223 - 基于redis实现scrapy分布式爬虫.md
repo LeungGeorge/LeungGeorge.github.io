@@ -44,7 +44,7 @@ pip install scrapy-redis
 
 # 新建分布式爬虫
 
-![20190907082159.png](/images/20190907082159.png)
+![20190907082159.png](images/20190907082159.png)
 
 ## 新建项目
 
@@ -130,17 +130,17 @@ REDIS_PORT = 6379
 ## 运行
 ### 启动redis
 
-![20190907082348.png](/images/20190907082348.png)
+![20190907082348.png](images/20190907082348.png)
 
 ### 运行spider1
-![20190907082407.png](/images/20190907082407.png)
+![20190907082407.png](images/20190907082407.png)
 
 ### 运行spider2
-![20190907082428.png](/images/20190907082428.png)
+![20190907082428.png](images/20190907082428.png)
 
 ### 添加start_urls
 方式一（手动添加）：
-![20190907082458.png](/images/20190907082458.png)
+![20190907082458.png](images/20190907082458.png)
 
 方式二（执行脚本添加）：
 
@@ -151,9 +151,9 @@ scrapy crawl mycrawler_redis
 ### 结论
 可以看到spider1、spider2在并行处理请求
 
-![20190907082524.png](/images/20190907082524.png)
+![20190907082524.png](images/20190907082524.png)
 
-![20190907082541.png](/images/20190907082541.png)
+![20190907082541.png](images/20190907082541.png)
 
 ---
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
