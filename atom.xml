@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2022-12-12T01:23:35.845Z</updated>
+  <updated>2022-12-13T01:07:05.665Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>燕京八景</title>
+    <link href="https://liangyuanzheng.com/%E7%87%95%E4%BA%AC%E5%85%AB%E6%99%AF.html"/>
+    <id>https://liangyuanzheng.com/燕京八景.html</id>
+    <published>2022-12-13T01:02:23.000Z</published>
+    <updated>2022-12-13T01:07:05.665Z</updated>
+    
+    <summary type="html">
+    
+      “燕京八景”又称“燕山八景”或“燕台八景”等，得名于金代明昌间，后代文人纷纷题诗，遂名闻遐迩。
+    
+    </summary>
+    
+    
+      <category term="游玩" scheme="https://liangyuanzheng.com/categories/%E6%B8%B8%E7%8E%A9/"/>
+    
+    
+      <category term="北京" scheme="https://liangyuanzheng.com/tags/%E5%8C%97%E4%BA%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>从零开始搭建一个通用的业务技术架构</title>
@@ -283,7 +304,7 @@
     <link href="https://liangyuanzheng.com/%E4%BB%80%E4%B9%88%E8%AF%BB%E4%B9%A6%E6%96%B9%E6%B3%95%E6%95%88%E6%9E%9C%E6%9C%80%E5%A5%BD%EF%BC%9F.html"/>
     <id>https://liangyuanzheng.com/什么读书方法效果最好？.html</id>
     <published>2021-02-03T01:56:38.000Z</published>
-    <updated>2022-12-11T13:41:27.352Z</updated>
+    <updated>2022-12-12T11:09:26.102Z</updated>
     
     <summary type="html">
     
@@ -510,33 +531,6 @@
       <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
     
       <category term="热加载" scheme="https://liangyuanzheng.com/tags/%E7%83%AD%E5%8A%A0%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang 设计与实现 slice</title>
-    <link href="https://liangyuanzheng.com/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice.html"/>
-    <id>https://liangyuanzheng.com/golang-设计与实现-slice.html</id>
-    <published>2019-10-04T13:02:51.000Z</published>
-    <updated>2022-12-11T13:41:27.329Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Golang 动态数组 slice。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/categories/golang/"/>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
-    
-      <category term="设计与实现" scheme="https://liangyuanzheng.com/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
-    
-      <category term="源码" scheme="https://liangyuanzheng.com/tags/%E6%BA%90%E7%A0%81/"/>
-    
-      <category term="slice" scheme="https://liangyuanzheng.com/tags/slice/"/>
     
   </entry>
   
