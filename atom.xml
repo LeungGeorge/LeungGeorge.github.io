@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2022-12-13T01:07:05.665Z</updated>
+  <updated>2022-12-14T13:35:34.084Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,426 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>effective-go chapter15</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter15.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter15.html</id>
+    <published>2022-12-14T13:13:07.000Z</published>
+    <updated>2022-12-14T13:35:34.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;A-web-server&quot;&gt;&lt;a href=&quot;#A-web-server&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter14</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter14.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter14.html</id>
+    <published>2022-12-14T13:03:32.000Z</published>
+    <updated>2022-12-14T13:11:52.738Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;Errors&quot;&gt;&lt;a href=&quot;#Errors&quot; class=&quot;headerlink&quot; title=&quot;Err
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter13</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter13.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter13.html</id>
+    <published>2022-12-14T13:03:29.000Z</published>
+    <updated>2022-12-14T13:06:26.658Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;Concurrency&quot;&gt;&lt;a href=&quot;#Concurrency&quot; class=&quot;headerlink&quot; 
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter12</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter12.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter12.html</id>
+    <published>2022-12-14T13:03:25.000Z</published>
+    <updated>2022-12-14T13:06:29.763Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;Embedding&quot;&gt;&lt;a href=&quot;#Embedding&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter11</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter11.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter11.html</id>
+    <published>2022-12-14T13:03:22.000Z</published>
+    <updated>2022-12-14T13:06:33.268Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;The-blank-identifier&quot;&gt;&lt;a href=&quot;#The-blank-identifier&quot; c
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter10</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter10.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter10.html</id>
+    <published>2022-12-14T13:03:19.000Z</published>
+    <updated>2022-12-14T13:06:37.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;Interfaces-and-other-types-124-接口与其他类型&quot;&gt;&lt;a href=&quot;#Inter
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter9</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter9.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter9.html</id>
+    <published>2022-12-14T13:03:15.000Z</published>
+    <updated>2022-12-14T13:06:43.128Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;Methods-124-方法&quot;&gt;&lt;a href=&quot;#Methods-124-方法&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter8</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter8.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter8.html</id>
+    <published>2022-12-14T13:03:12.000Z</published>
+    <updated>2022-12-14T13:06:46.768Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h2 id=&quot;Initialization-124-初始化&quot;&gt;&lt;a href=&quot;#Initialization-124-初始
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter7</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter7.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter7.html</id>
+    <published>2022-12-14T13:03:07.000Z</published>
+    <updated>2022-12-14T13:06:49.804Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h1 id=&quot;数据（Data）&quot;&gt;&lt;a href=&quot;#数据（Data）&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter6</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter6.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter6.html</id>
+    <published>2022-12-14T12:58:08.000Z</published>
+    <updated>2022-12-14T13:02:18.504Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h3 id=&quot;多个返回值&quot;&gt;&lt;a href=&quot;#多个返回值&quot; class=&quot;headerlink&quot; title=&quot;多个返回值
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter5</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter5.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter5.html</id>
+    <published>2022-12-14T12:54:23.000Z</published>
+    <updated>2022-12-14T13:02:22.205Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;Go的控制结构与C相关，但是在重要的方面存在差异。Go中没有 &lt;code&gt;do&lt;/code&gt; 、 &lt;code&gt;while
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter4</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter4.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter4.html</id>
+    <published>2022-12-14T07:34:59.000Z</published>
+    <updated>2022-12-14T13:33:15.626Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;跟C一样，Go 的正式语法使用分号结束语句，但与C不同的是，这些分号在源码中不可见。取而代之的是，词法分析器会使用一个简
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter3</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter3.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter3.html</id>
+    <published>2022-12-14T07:34:49.000Z</published>
+    <updated>2022-12-14T13:32:59.527Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;和其他语言一样，名字在Go中同样重要。它们甚至有着一样的语义：一个包内的名字是否对外可见，取决于其首字母是否大写。因此，
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter2</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter2.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter2.html</id>
+    <published>2022-12-14T07:34:40.000Z</published>
+    <updated>2022-12-14T13:02:35.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h1 id=&quot;格式&quot;&gt;&lt;a href=&quot;#格式&quot; class=&quot;headerlink&quot; title=&quot;格式&quot;&gt;&lt;/a&gt;格式&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>effective-go chapter1 前言</title>
+    <link href="https://liangyuanzheng.com/effective-go%20chapter1.html"/>
+    <id>https://liangyuanzheng.com/effective-go chapter1.html</id>
+    <published>2022-12-14T07:34:35.000Z</published>
+    <updated>2022-12-14T13:31:40.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;格式问题是最具争议但影响最小的问题。人们可以适应不同的格式风格，但如果他们不必这样做就更好了（鬼知道有没有强迫症），这样
+      
+    
+    </summary>
+    
+    
+      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
   
   <entry>
     <title>燕京八景</title>
@@ -142,395 +562,6 @@
     
     
       <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代码评审</title>
-    <link href="https://liangyuanzheng.com/%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1.html"/>
-    <id>https://liangyuanzheng.com/代码评审.html</id>
-    <published>2022-12-08T02:18:00.000Z</published>
-    <updated>2022-12-12T01:23:35.845Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-
-
-&lt;h2 id=&quot;代码评审的流程&quot;&gt;&lt;a href=&quot;#代码评审的流程&quot; class=&quot;headerlink&quot; title=
-      
-    
-    </summary>
-    
-    
-      <category term="软件工程" scheme="https://liangyuanzheng.com/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
-    
-    
-      <category term="代码评审" scheme="https://liangyuanzheng.com/tags/%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1/"/>
-    
-      <category term="Google 软件工程" scheme="https://liangyuanzheng.com/tags/google-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次 Golang 内存泄露问题分析</title>
-    <link href="https://liangyuanzheng.com/%E8%AE%B0%E4%B8%80%E6%AC%A1-golang-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.html"/>
-    <id>https://liangyuanzheng.com/记一次-golang-内存泄露问题分析.html</id>
-    <published>2021-08-29T08:22:42.000Z</published>
-    <updated>2022-12-12T01:23:35.698Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;h2 id=&quot;pprof&quot;&gt;&lt;a href=&quot;#pprof&quot; class=&quot;headerlink&quot; title=&quot;pprof
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-      <category term="内存泄露" scheme="https://liangyuanzheng.com/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>敬畏生命, 敬畏规章, 敬畏职责！</title>
-    <link href="https://liangyuanzheng.com/%E6%95%AC%E7%95%8F%E7%94%9F%E5%91%BD-%E6%95%AC%E7%95%8F%E8%A7%84%E7%AB%A0-%E6%95%AC%E7%95%8F%E8%81%8C%E8%B4%A3%EF%BC%81.html"/>
-    <id>https://liangyuanzheng.com/敬畏生命-敬畏规章-敬畏职责！.html</id>
-    <published>2021-04-04T02:52:35.000Z</published>
-    <updated>2022-12-12T01:23:35.845Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;images/leunggeorge.github.io-image-9.png&quot; al
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>梦想就是&#39;那种让你感到坚持就是幸福的东西&#39;</title>
-    <link href="https://liangyuanzheng.com/%E6%A2%A6%E6%83%B3%E5%B0%B1%E6%98%AF-%E9%82%A3%E7%A7%8D%E8%AE%A9%E4%BD%A0%E6%84%9F%E5%88%B0%E5%9D%9A%E6%8C%81%E5%B0%B1%E6%98%AF%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%B8%9C%E8%A5%BF.html"/>
-    <id>https://liangyuanzheng.com/梦想就是-那种让你感到坚持就是幸福的东西.html</id>
-    <published>2021-04-04T02:45:16.000Z</published>
-    <updated>2022-12-12T01:23:35.698Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;images/leunggeorge.github.io-image-9.png&quot; al
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>行有不得, 反求诸己</title>
-    <link href="https://liangyuanzheng.com/%E8%A1%8C%E6%9C%89%E4%B8%8D%E5%BE%97-%E5%8F%8D%E6%B1%82%E8%AF%B8%E5%B7%B1.html"/>
-    <id>https://liangyuanzheng.com/行有不得-反求诸己.html</id>
-    <published>2021-04-03T02:44:25.000Z</published>
-    <updated>2022-12-12T01:23:35.698Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;images/leunggeorge.github.io-image-9.png&quot; al
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>什么读书方法效果最好？</title>
-    <link href="https://liangyuanzheng.com/%E4%BB%80%E4%B9%88%E8%AF%BB%E4%B9%A6%E6%96%B9%E6%B3%95%E6%95%88%E6%9E%9C%E6%9C%80%E5%A5%BD%EF%BC%9F.html"/>
-    <id>https://liangyuanzheng.com/什么读书方法效果最好？.html</id>
-    <published>2021-02-03T01:56:38.000Z</published>
-    <updated>2022-12-12T11:09:26.102Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;苏轼在被贬黄州期间，一位朋友前来拜访，等了很长时间才得以见面。苏轼不好意思地说，自己刚才在做每天功课，耽误了时间才有失远迎。这位朋友很惊讶，询问每天做的是什么功课。苏轼回答，自己正在学习《汉书》，每天边读边手抄。朋友更加震惊，当时苏轼已颇具盛名，为何还用手抄这种费时费力的方
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="reading" scheme="https://liangyuanzheng.com/tags/reading/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何创建一个npm包</title>
-    <link href="https://liangyuanzheng.com/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAnpm%E5%8C%85.html"/>
-    <id>https://liangyuanzheng.com/如何创建一个npm包.html</id>
-    <published>2020-02-04T06:58:00.000Z</published>
-    <updated>2022-12-12T01:23:35.698Z</updated>
-    
-    <summary type="html">
-    
-      如何创建一个npm包
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://liangyuanzheng.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="npm" scheme="https://liangyuanzheng.com/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang 令牌桶限流器 rate</title>
-    <link href="https://liangyuanzheng.com/golang-%E4%BB%A4%E7%89%8C%E6%A1%B6%E9%99%90%E6%B5%81%E5%99%A8-rate.html"/>
-    <id>https://liangyuanzheng.com/golang-令牌桶限流器-rate.html</id>
-    <published>2020-02-01T14:22:04.000Z</published>
-    <updated>2022-12-12T01:23:35.845Z</updated>
-    
-    <summary type="html">
-    
-      golang 实现的令牌桶限流器。
-    
-    </summary>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/categories/golang/"/>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
-    
-      <category term="令牌桶" scheme="https://liangyuanzheng.com/tags/%E4%BB%A4%E7%89%8C%E6%A1%B6/"/>
-    
-      <category term="限流器" scheme="https://liangyuanzheng.com/tags/%E9%99%90%E6%B5%81%E5%99%A8/"/>
-    
-      <category term="rate" scheme="https://liangyuanzheng.com/tags/rate/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你应该知道的伟大程序架构</title>
-    <link href="https://liangyuanzheng.com/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%BC%9F%E5%A4%A7%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84.html"/>
-    <id>https://liangyuanzheng.com/你应该知道的伟大程序架构.html</id>
-    <published>2019-11-02T13:59:06.000Z</published>
-    <updated>2022-12-12T01:23:35.845Z</updated>
-    
-    <summary type="html">
-    
-      重要的是要知道最好的几种可能的架构，这样您可以轻松地创建一个适合所有要求的优化方案。
-    
-    </summary>
-    
-    
-      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="cqrs" scheme="https://liangyuanzheng.com/tags/cqrs/"/>
-    
-      <category term="微服务" scheme="https://liangyuanzheng.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-      <category term="架构" scheme="https://liangyuanzheng.com/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>12306是如何支撑百万qps的？</title>
-    <link href="https://liangyuanzheng.com/12306%E6%98%AF%E5%A6%82%E4%BD%95%E6%94%AF%E6%92%91%E7%99%BE%E4%B8%87qps%E7%9A%84%EF%BC%9F.html"/>
-    <id>https://liangyuanzheng.com/12306是如何支撑百万qps的？.html</id>
-    <published>2019-10-27T04:48:32.000Z</published>
-    <updated>2022-12-11T13:41:27.332Z</updated>
-    
-    <summary type="html">
-    
-      本文介绍模拟了一下单机如何优化到高性能，集群如何避免单点故障，保证订单不超卖、不少卖的一些策略，完整的订单系统还有订单进度的查看，每台服务器上都有一个任务，定时的从总库存同步余票和库存信息展示给用户，还有用户在订单有效期内不支付，释放订单，补充到库存等等。
-    
-    </summary>
-    
-    
-      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="12306" scheme="https://liangyuanzheng.com/tags/12306/"/>
-    
-      <category term="高并发" scheme="https://liangyuanzheng.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PyRadio-用于Ubuntu命令行的网络电台播放器</title>
-    <link href="https://liangyuanzheng.com/PyRadio-%E7%94%A8%E4%BA%8EUbuntu%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E7%94%B5%E5%8F%B0%E6%92%AD%E6%94%BE%E5%99%A8.html"/>
-    <id>https://liangyuanzheng.com/PyRadio-用于Ubuntu命令行的网络电台播放器.html</id>
-    <published>2019-10-26T19:16:23.000Z</published>
-    <updated>2022-12-12T01:23:35.698Z</updated>
-    
-    <summary type="html">
-    
-      PyRadio是一个基于开放源代码的基于网络的电台播放器，在命令控制台中运行。 该软件以Python实现，并使用mplayer或VLC媒体进行播放。
-    
-    </summary>
-    
-    
-      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="pyradio" scheme="https://liangyuanzheng.com/tags/pyradio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SELECT COUNT 那些事儿</title>
-    <link href="https://liangyuanzheng.com/SELECT-COUNT-%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF.html"/>
-    <id>https://liangyuanzheng.com/SELECT-COUNT-那些事儿.html</id>
-    <published>2019-10-20T06:58:28.000Z</published>
-    <updated>2022-12-12T01:23:35.845Z</updated>
-    
-    <summary type="html">
-    
-      关于 SELECT COUNT 那些事儿，这篇博客总结的很好，感谢博主。COUNT(column), COUNT(*), COUNT(1)。
-    
-    </summary>
-    
-    
-      <category term="mysql" scheme="https://liangyuanzheng.com/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="https://liangyuanzheng.com/tags/mysql/"/>
-    
-      <category term="select count" scheme="https://liangyuanzheng.com/tags/select-count/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gcache 源码分析</title>
-    <link href="https://liangyuanzheng.com/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html"/>
-    <id>https://liangyuanzheng.com/gcache-源码分析.html</id>
-    <published>2019-10-07T07:02:00.000Z</published>
-    <updated>2022-12-12T01:23:35.845Z</updated>
-    
-    <summary type="html">
-    
-      首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想，然后再从源码解读 gcache 的实现。
-    
-    </summary>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/categories/golang/"/>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
-    
-      <category term="源码" scheme="https://liangyuanzheng.com/tags/%E6%BA%90%E7%A0%81/"/>
-    
-      <category term="gcache" scheme="https://liangyuanzheng.com/tags/gcache/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm 一键更新 package.json 依赖模块版本</title>
-    <link href="https://liangyuanzheng.com/npm-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0-package-json-%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9D%97%E7%89%88%E6%9C%AC.html"/>
-    <id>https://liangyuanzheng.com/npm-一键更新-package-json-依赖模块版本.html</id>
-    <published>2019-10-07T01:56:53.000Z</published>
-    <updated>2022-12-11T13:41:27.152Z</updated>
-    
-    <summary type="html">
-    
-      github 报 We found potential security vulnerabilities in your dependencies，遂升级依赖包版本。记录 package.json 升级方法。
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://liangyuanzheng.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="npm" scheme="https://liangyuanzheng.com/tags/npm/"/>
-    
-      <category term="版本升级" scheme="https://liangyuanzheng.com/tags/%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Golang 配置文件热加载</title>
-    <link href="https://liangyuanzheng.com/Golang-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%83%AD%E5%8A%A0%E8%BD%BD.html"/>
-    <id>https://liangyuanzheng.com/Golang-配置文件热加载.html</id>
-    <published>2019-10-06T08:13:27.000Z</published>
-    <updated>2022-12-11T13:41:27.247Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用 &lt;code&gt;github.com/fsnotify/fsnotify&lt;/code&gt;，监听 &lt;code&gt;Create&lt;/code&gt;、&lt;code&gt;Remove&lt;/code&gt;、&lt;code&gt;Write&lt;/code&gt;、&lt;code&gt;Chmod&lt;/code&gt;、&lt;code&gt;Rename&lt;/code&gt; 等事件，实现对文件状态的实时监听，当文件有变化时执行已注册的回调函数（如下），实现对配置的重新加载。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/categories/golang/"/>
-    
-    
-      <category term="golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
-    
-      <category term="热加载" scheme="https://liangyuanzheng.com/tags/%E7%83%AD%E5%8A%A0%E8%BD%BD/"/>
     
   </entry>
   

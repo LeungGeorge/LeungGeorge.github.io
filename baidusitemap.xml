@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter15.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter4.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter3.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter1.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter14.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter7.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter8.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter9.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter10.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter11.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter12.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter13.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter2.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter5.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://liangyuanzheng.com/effective-go%20chapter6.html</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
     <loc>https://liangyuanzheng.com/%E7%87%95%E4%BA%AC%E5%85%AB%E6%99%AF.html</loc>
     <lastmod>2022-12-13</lastmod>
   </url>
@@ -37,6 +97,10 @@
     <lastmod>2022-12-12</lastmod>
   </url>
   <url>
+    <loc>https://liangyuanzheng.com/golang-%E4%BB%A4%E7%89%8C%E6%A1%B6%E9%99%90%E6%B5%81%E5%99%A8-rate.html</loc>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
     <loc>https://liangyuanzheng.com/%E6%95%AC%E7%95%8F%E7%94%9F%E5%91%BD-%E6%95%AC%E7%95%8F%E8%A7%84%E7%AB%A0-%E6%95%AC%E7%95%8F%E8%81%8C%E8%B4%A3%EF%BC%81.html</loc>
     <lastmod>2022-12-12</lastmod>
   </url>
@@ -45,15 +109,11 @@
     <lastmod>2022-12-12</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%80%9A%E7%94%A8%E7%9A%84%E4%B8%9A%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.html</loc>
-    <lastmod>2022-12-12</lastmod>
-  </url>
-  <url>
     <loc>https://liangyuanzheng.com/%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1.html</loc>
     <lastmod>2022-12-12</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/golang-%E4%BB%A4%E7%89%8C%E6%A1%B6%E9%99%90%E6%B5%81%E5%99%A8-rate.html</loc>
+    <loc>https://liangyuanzheng.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%80%9A%E7%94%A8%E7%9A%84%E4%B8%9A%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.html</loc>
     <lastmod>2022-12-12</lastmod>
   </url>
   <url>
@@ -113,11 +173,11 @@
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/HTTP%E4%BD%BF%E7%94%A8POST%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%B8%B8%E8%A7%81%E6%96%B9%E5%BC%8F.html</loc>
+    <loc>https://liangyuanzheng.com/%E5%AE%89%E8%A3%85pip.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/%E5%AE%89%E8%A3%85pip.html</loc>
+    <loc>https://liangyuanzheng.com/HTTP%E4%BD%BF%E7%94%A8POST%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%B8%B8%E8%A7%81%E6%96%B9%E5%BC%8F.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
@@ -169,11 +229,11 @@
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/%E7%BA%BF%E4%B8%8A%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83.html</loc>
+    <loc>https://liangyuanzheng.com/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6.html</loc>
+    <loc>https://liangyuanzheng.com/%E7%BA%BF%E4%B8%8A%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
@@ -181,11 +241,11 @@
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/Golang-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%83%AD%E5%8A%A0%E8%BD%BD.html</loc>
+    <loc>https://liangyuanzheng.com/Golang-%E6%96%B0%E6%89%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E8%B8%A9%E7%9A%84%E5%9D%91.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/Golang-%E6%96%B0%E6%89%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E8%B8%A9%E7%9A%84%E5%9D%91.html</loc>
+    <loc>https://liangyuanzheng.com/Golang-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%83%AD%E5%8A%A0%E8%BD%BD.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
@@ -205,11 +265,11 @@
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/npm-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0-package-json-%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9D%97%E7%89%88%E6%9C%AC.html</loc>
+    <loc>https://liangyuanzheng.com/Golang-%E9%80%9F%E6%9F%A5%E8%A1%A8.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
-    <loc>https://liangyuanzheng.com/Golang-%E9%80%9F%E6%9F%A5%E8%A1%A8.html</loc>
+    <loc>https://liangyuanzheng.com/npm-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0-package-json-%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9D%97%E7%89%88%E6%9C%AC.html</loc>
     <lastmod>2022-12-11</lastmod>
   </url>
   <url>
