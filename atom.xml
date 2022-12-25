@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2022-12-14T13:35:34.084Z</updated>
+  <updated>2022-12-25T13:29:59.225Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>京剧经典节目</title>
+    <link href="https://liangyuanzheng.com/%E4%BA%AC%E5%89%A7%E7%BB%8F%E5%85%B8%E8%8A%82%E7%9B%AE.html"/>
+    <id>https://liangyuanzheng.com/京剧经典节目.html</id>
+    <published>2022-12-25T13:28:14.000Z</published>
+    <updated>2022-12-25T13:29:59.225Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h1 id=&quot;现代经典&quot;&gt;&lt;a href=&quot;#现代经典&quot; class=&quot;headerlink&quot; title=&quot;现代经典&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
   
   <entry>
     <title>effective-go chapter15</title>
@@ -541,27 +569,6 @@
       <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
     
       <category term="git" scheme="https://liangyuanzheng.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《西厢记》摘录</title>
-    <link href="https://liangyuanzheng.com/%E3%80%8A%E8%A5%BF%E5%8E%A2%E8%AE%B0%E3%80%8B%E6%91%98%E5%BD%95.html"/>
-    <id>https://liangyuanzheng.com/《西厢记》摘录.html</id>
-    <published>2022-12-10T08:52:18.000Z</published>
-    <updated>2022-12-12T01:23:35.698Z</updated>
-    
-    <summary type="html">
-    
-      碧云天，黄花地，西风紧。北雁南飞。晓来谁染霜林醉？总是离人泪。
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
     
   </entry>
   
