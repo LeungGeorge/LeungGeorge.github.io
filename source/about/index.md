@@ -4,16 +4,17 @@ date: 2016-08-28 23:05:50
 # 七点一刻
 
 闲暇时记得一二句
-> 
 > 没有什么事儿是一句话讲不明白的。  
+> 
 > 如果有，那就写篇博客！ 
 > 
 > 【[留言](https://github.com/LeungGeorge/LeungGeorge.github.io/issues/new)】  
 
 ## 关于作者
 
-​闲来无事，喜欢码字，欢迎关注，[七点一刻](https://leunggeorge.github.io/) 。   
-![20200131220947.png](images/20200131220947.png)   
+闲来无事，喜欢码字，欢迎关注，[七点一刻](https://leunggeorge.github.io/) 。   
+
+![image-20221228093442872](local.assets/images/image-20221228093442872.png)
 
 ## 贡献
 
