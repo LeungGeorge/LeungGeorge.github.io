@@ -694,7 +694,7 @@ valine:
   pageSize: 10 # 分页大小，10页就自动分页
   visitor: true # 是否允许游客评论 ，进入官网查看设置：https://valine.js.org/visitor.html
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
-  recordIP: false # Whether to record the commenter IP
+  recordIP: true # Whether to record the commenter IP
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
@@ -702,3 +702,5 @@ leancloud_visitors:
   enable: true
   appid: CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz
   appkey: bHikuasaTpYy6LWbcaW8JAiF
+  server_url: https://liangyuanzheng.com
+#  security: true
