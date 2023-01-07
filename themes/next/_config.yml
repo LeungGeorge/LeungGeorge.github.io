@@ -500,7 +500,7 @@ search:
   path: search.xml
   field: post
   format: html
-  limit: 10000
+  limit: 100000
 
 # External URL with BASE64 encrypt & decrypt
 # Usage: {% exturl text url "title" %}
@@ -699,6 +699,6 @@ valine:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
+  enable: true
   appid: CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz
   appkey: bHikuasaTpYy6LWbcaW8JAiF
