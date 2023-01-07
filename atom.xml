@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2022-12-25T13:48:53.382Z</updated>
+  <updated>2023-01-07T03:58:50.114Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《吴军阅读与写作讲义》读书笔记</title>
+    <link href="https://liangyuanzheng.com/%E3%80%8A%E5%90%B4%E5%86%9B%E9%98%85%E8%AF%BB%E4%B8%8E%E5%86%99%E4%BD%9C%E8%AE%B2%E4%B9%89%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://liangyuanzheng.com/《吴军阅读与写作讲义》读书笔记.html</id>
+    <published>2023-01-07T03:55:30.000Z</published>
+    <updated>2023-01-07T03:58:50.114Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;阅读的意义，写作的技巧，有道亦有术。有理有据，很有启发。&lt;/p&gt;
+&lt;/blockquote&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://liangyuanzheng.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何写读书笔记</title>
+    <link href="https://liangyuanzheng.com/%E5%A6%82%E4%BD%95%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://liangyuanzheng.com/如何写读书笔记.html</id>
+    <published>2023-01-07T03:50:03.000Z</published>
+    <updated>2023-01-07T03:57:56.801Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+
+
+&lt;p&gt;写读书笔记是一种好习惯，可以加强对书的内容的理解，取得很好的学习效果。写读书笔记一般有以下方法：&lt;/p&gt;
+&lt;p&gt;  
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://liangyuanzheng.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
   
   <entry>
     <title>京剧经典节目</title>
@@ -512,65 +574,6 @@
     
     
       <category term="架构" scheme="https://liangyuanzheng.com/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《生死疲劳》人物关系</title>
-    <link href="https://liangyuanzheng.com/%E3%80%8A%E7%94%9F%E6%AD%BB%E7%96%B2%E5%8A%B3%E3%80%8B%E4%BA%BA%E7%89%A9%E5%85%B3%E7%B3%BB.html"/>
-    <id>https://liangyuanzheng.com/《生死疲劳》人物关系.html</id>
-    <published>2022-12-10T08:59:56.000Z</published>
-    <updated>2022-12-12T01:23:35.826Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-
-&lt;p&gt;&lt;img src=&quot;images/liangyuanzheng.com-0.png&quot; alt=&quot;upload succ
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>同时配置多个 git 账号</title>
-    <link href="https://liangyuanzheng.com/%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%20git%20%E8%B4%A6%E5%8F%B7.html"/>
-    <id>https://liangyuanzheng.com/同时配置多个 git 账号.html</id>
-    <published>2022-12-10T08:54:39.000Z</published>
-    <updated>2022-12-12T01:23:35.698Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
-&lt;h2 id=&quot;多个账号配置-ssh&quot;&gt;&lt;a href=&quot;#多个账号配置-ssh&quot; class=&quot;headerlink&quot; title=&quot;多个账号配置 ssh&quot;&gt;&lt;/a&gt;多个账号配置 ssh&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;生成公私钥&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-      <category term="git" scheme="https://liangyuanzheng.com/tags/git/"/>
     
   </entry>
   
