@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2023-01-08T09:37:07.105Z</updated>
+  <updated>2023-02-09T01:44:48.133Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何提高写作能力</title>
+    <link href="https://liangyuanzheng.com/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E5%86%99%E4%BD%9C%E8%83%BD%E5%8A%9B.html"/>
+    <id>https://liangyuanzheng.com/如何提高写作能力.html</id>
+    <published>2023-02-09T01:40:46.000Z</published>
+    <updated>2023-02-09T01:44:48.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;1.多读书：阅读其他计算机专业技术文章，以获得灵感，培养写作技巧和思维方式；&lt;/p&gt;
+&lt;p&gt;2.参加社区讨论：参加一些技
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知其要者，一言而终</title>
+    <link href="https://liangyuanzheng.com/%E7%9F%A5%E5%85%B6%E8%A6%81%E8%80%85%EF%BC%8C%E4%B8%80%E8%A8%80%E8%80%8C%E7%BB%88.html"/>
+    <id>https://liangyuanzheng.com/知其要者，一言而终.html</id>
+    <published>2023-01-29T06:25:34.000Z</published>
+    <updated>2023-01-29T06:27:12.845Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+
+
+&lt;p&gt;知其要者，一言而终，不知其要者，流散无穷。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《黄帝内经》&lt;/p&gt;
+&lt;/blo
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
   
   <entry>
     <title>阅读与写作讲义</title>
@@ -527,55 +589,6 @@
     
     
       <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>燕京八景</title>
-    <link href="https://liangyuanzheng.com/%E7%87%95%E4%BA%AC%E5%85%AB%E6%99%AF.html"/>
-    <id>https://liangyuanzheng.com/燕京八景.html</id>
-    <published>2022-12-13T01:02:23.000Z</published>
-    <updated>2022-12-13T01:07:05.665Z</updated>
-    
-    <summary type="html">
-    
-      “燕京八景”又称“燕山八景”或“燕台八景”等，得名于金代明昌间，后代文人纷纷题诗，遂名闻遐迩。
-    
-    </summary>
-    
-    
-      <category term="游玩" scheme="https://liangyuanzheng.com/categories/%E6%B8%B8%E7%8E%A9/"/>
-    
-    
-      <category term="北京" scheme="https://liangyuanzheng.com/tags/%E5%8C%97%E4%BA%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零开始搭建一个通用的业务技术架构</title>
-    <link href="https://liangyuanzheng.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%80%9A%E7%94%A8%E7%9A%84%E4%B8%9A%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.html"/>
-    <id>https://liangyuanzheng.com/从零开始搭建一个通用的业务技术架构.html</id>
-    <published>2022-12-11T14:11:36.000Z</published>
-    <updated>2022-12-12T01:23:35.845Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;h1 id=&quot;1、通用架构概述&quot;&gt;&lt;a href=&quot;#1、通用架构概述&quot; class=&quot;headerlink&quot; title=
-      
-    
-    </summary>
-    
-    
-      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="架构" scheme="https://liangyuanzheng.com/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
