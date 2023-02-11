@@ -699,8 +699,8 @@ valine:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
-  appid: CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz
-  appkey: bHikuasaTpYy6LWbcaW8JAiF
+  enable: false
+  app_id: CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz
+  app_key: bHikuasaTpYy6LWbcaW8JAiF
   server_url: https://liangyuanzheng.com
 #  security: true
