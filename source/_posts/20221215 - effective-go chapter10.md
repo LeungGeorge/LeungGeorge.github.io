@@ -15,7 +15,7 @@ description:
 <!-- 1. 发布前：删除草稿的 uuid -->
 <!-- 2. 发布后：补充tag，category -->
 
-## Interfaces and other types<font color=silver>&#124; </font> 接口与其他类型
+## Interfaces and other types <font color=silver>&#124; </font> 接口与其他类型
 
 ### Interfaces <font color=silver>&#124; </font> 接口
 
@@ -98,7 +98,6 @@ Now, instead of having `Sequence` implement multiple interfaces \(sorting and pr
 
 > 类型选择是一种转换形式，他们接收一个接口，在选择语句中转换为条件对应的类型。以下是`fmt.Printf`的简化代码，它使用类型转换将值转换成一个字符串。如果它已经是一个字符串，我们需要接口中的实际字符串值，而如果它有一个`String`方法，我们需要调用该方法的结果。
 >
-> 条件（case）中接收一个接口，
 
 ```go
 type Stringer interface {
@@ -116,9 +115,11 @@ case Stringer:
 
 The first case finds a concrete value; the second converts the interface into another interface. It's perfectly fine to mix types this way.
 
-> 第一种情况获取具体值；第二种将接口转为另一接口，
+> 第一种情况是获取具体值；第二种则转换为一个新接口。对于混合类型这种方式非常好。
 
 What if there's only one type we care about? If we know the value holds a `string` and we just want to extract it? A one-case type switch would do, but so would a_type assertion_. A type assertion takes an interface value and extracts from it a value of the specified explicit type. The syntax borrows from the clause opening a type switch, but with an explicit type rather than the `type` keyword:
+
+> 如果我们只关心一种类型呢？如果我们知道它的值是个字符串，而我们只想提取它呢？一个 case 的 switch 可以实现，类型断言也可以。类型断言采用接口值并从中提取指定显式类型的值。该语法借鉴了一个 case 的 switch 子句，但使用了显式类型而不是`type`关键字：
 
 ```go
 value.(typeName)
@@ -126,11 +127,15 @@ value.(typeName)
 
 and the result is a new value with the static type `typeName` . That type must either be the concrete type held by the interface, or a second interface type that the value can be converted to. To extract the string we know is in the value, we could write:
 
+> 结果是一个静态类型为 `typeName` 的新值。该类型必须是接口持有的具体类型，或者是值可以转换的第二种接口类型。要提取其中的字符串，我们可以这样写：
+
 ```go
 str := value.(string)
 ```
 
 But if it turns out that the value does not contain a string, the program will crash with a run-time error. To guard against that, use the "comma, ok" idiom to test, safely, whether the value is a string:
+
+> 如果事实上值中不包含字符串，程序就会崩溃并报运行时错误。为防止这种情况，使用"逗号, ok"习语来安全地测试值是否为字符串：
 
 ```go
 str, ok := value.(string)
@@ -143,7 +148,11 @@ if ok {
 
 If the type assertion fails, `str` will still exist and be of type string, but it will have the zero value, an empty string.
 
+> 如果类型断言失败了， `str` 仍然存在并且是一个字符串类开，但它将是零值，一个空字符串。
+
 As an illustration of the capability, here's an `if` - `else` statement that's equivalent to the type switch that opened this section.
+
+> 为了说明这个功能，来看下这个`if-else`语句，它等同于前面的swith
 
 ```go
 if str, ok := value.(string); ok {
