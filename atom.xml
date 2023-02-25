@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2023-02-09T01:44:48.133Z</updated>
+  <updated>2023-02-15T02:06:20.882Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无头浏览器</title>
+    <link href="https://liangyuanzheng.com/%E6%97%A0%E5%A4%B4%E6%B5%8F%E8%A7%88%E5%99%A8.html"/>
+    <id>https://liangyuanzheng.com/无头浏览器.html</id>
+    <published>2023-02-15T01:59:46.000Z</published>
+    <updated>2023-02-15T02:06:20.882Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;h1 id=&quot;无头浏览器Selenium的使用要点&quot;&gt;&lt;a href=&quot;#无头浏览器Selenium的使用要点&quot; class
+      
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>了凡四训</title>
+    <link href="https://liangyuanzheng.com/%E4%BA%86%E5%87%A1%E5%9B%9B%E8%AE%AD.html"/>
+    <id>https://liangyuanzheng.com/了凡四训.html</id>
+    <published>2023-02-15T01:55:14.000Z</published>
+    <updated>2023-02-15T01:57:01.551Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;《了凡四训》是古代著名劝善书，作者是&lt;a href=&quot;https://baike.baidu.com/item/明朝/1
+      
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+    
+  </entry>
   
   <entry>
     <title>如何提高写作能力</title>
@@ -524,62 +580,6 @@
 &lt;!-- 2. 发布后：补充tag，category --&gt;
 
 &lt;p&gt;和其他语言一样，名字在Go中同样重要。它们甚至有着一样的语义：一个包内的名字是否对外可见，取决于其首字母是否大写。因此，
-      
-    
-    </summary>
-    
-    
-      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>effective-go chapter2</title>
-    <link href="https://liangyuanzheng.com/effective-go%20chapter2.html"/>
-    <id>https://liangyuanzheng.com/effective-go chapter2.html</id>
-    <published>2022-12-14T07:34:40.000Z</published>
-    <updated>2022-12-14T13:02:35.750Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;h1 id=&quot;格式&quot;&gt;&lt;a href=&quot;#格式&quot; class=&quot;headerlink&quot; title=&quot;格式&quot;&gt;&lt;/a&gt;格式&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>effective-go chapter1 前言</title>
-    <link href="https://liangyuanzheng.com/effective-go%20chapter1.html"/>
-    <id>https://liangyuanzheng.com/effective-go chapter1.html</id>
-    <published>2022-12-14T07:34:35.000Z</published>
-    <updated>2022-12-14T13:31:40.462Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;p&gt;格式问题是最具争议但影响最小的问题。人们可以适应不同的格式风格，但如果他们不必这样做就更好了（鬼知道有没有强迫症），这样
       
     
     </summary>
