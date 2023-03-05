@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2023-02-15T02:06:20.882Z</updated>
+  <updated>2023-03-05T10:26:08.463Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI+应用</title>
+    <link href="https://liangyuanzheng.com/ai-%E5%BA%94%E7%94%A8.html"/>
+    <id>https://liangyuanzheng.com/ai-应用.html</id>
+    <published>2023-03-05T10:23:20.000Z</published>
+    <updated>2023-03-05T10:26:08.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;可以先介绍下图灵的伟大成就。&lt;/p&gt;
+&lt;h1 id=&quot;图灵测试&quot;&gt;&lt;a href=&quot;#图灵测试&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="https://liangyuanzheng.com/categories/ai/"/>
+    
+    
+      <category term="ChatGPT" scheme="https://liangyuanzheng.com/tags/chatgpt/"/>
+    
+      <category term="图灵测试" scheme="https://liangyuanzheng.com/tags/%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>缓存淘汰策略</title>
+    <link href="https://liangyuanzheng.com/%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5.html"/>
+    <id>https://liangyuanzheng.com/缓存淘汰策略.html</id>
+    <published>2023-02-18T09:10:57.000Z</published>
+    <updated>2023-02-25T10:19:36.198Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
+&lt;!-- 2. 发布后：补充tag，category --&gt;
+
+&lt;p&gt;LRU 与 LFU 缓存策略及其实现。&lt;/p&gt;
+&lt;h2 id=&quot;应用层缓存&quot;&gt;&lt;a href=&quot;#应用层缓存&quot; clas
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="转载" scheme="https://liangyuanzheng.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="缓存" scheme="https://liangyuanzheng.com/tags/%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
   
   <entry>
     <title>无头浏览器</title>
@@ -106,7 +168,7 @@
     <link href="https://liangyuanzheng.com/%E7%9F%A5%E5%85%B6%E8%A6%81%E8%80%85%EF%BC%8C%E4%B8%80%E8%A8%80%E8%80%8C%E7%BB%88.html"/>
     <id>https://liangyuanzheng.com/知其要者，一言而终.html</id>
     <published>2023-01-29T06:25:34.000Z</published>
-    <updated>2023-01-29T06:27:12.845Z</updated>
+    <updated>2023-02-25T10:19:36.198Z</updated>
     
     <summary type="html">
     
@@ -116,12 +178,9 @@
 &lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
 &lt;!-- 2. 发布后：补充tag，category --&gt;
 
-
-
 &lt;p&gt;知其要者，一言而终，不知其要者，流散无穷。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;《黄帝内经》&lt;/p&gt;
-&lt;/blo
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;images/leunggeor
       
     
     </summary>
@@ -170,7 +229,7 @@
     <link href="https://liangyuanzheng.com/%E5%A6%82%E4%BD%95%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
     <id>https://liangyuanzheng.com/如何写读书笔记.html</id>
     <published>2023-01-07T03:50:03.000Z</published>
-    <updated>2023-01-08T09:35:36.539Z</updated>
+    <updated>2023-02-25T10:19:36.197Z</updated>
     
     <summary type="html">
     
@@ -189,12 +248,10 @@
     </summary>
     
     
-      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-      <category term="读书笔记" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://liangyuanzheng.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
+      <category term="转载" scheme="https://liangyuanzheng.com/tags/%E8%BD%AC%E8%BD%BD/"/>
     
   </entry>
   
@@ -373,7 +430,7 @@
     <link href="https://liangyuanzheng.com/effective-go%20chapter10.html"/>
     <id>https://liangyuanzheng.com/effective-go chapter10.html</id>
     <published>2022-12-14T13:03:19.000Z</published>
-    <updated>2022-12-14T13:06:37.183Z</updated>
+    <updated>2023-02-25T10:19:36.197Z</updated>
     
     <summary type="html">
     
@@ -524,62 +581,6 @@
 &lt;!-- 2. 发布后：补充tag，category --&gt;
 
 &lt;p&gt;Go的控制结构与C相关，但是在重要的方面存在差异。Go中没有 &lt;code&gt;do&lt;/code&gt; 、 &lt;code&gt;while
-      
-    
-    </summary>
-    
-    
-      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>effective-go chapter4</title>
-    <link href="https://liangyuanzheng.com/effective-go%20chapter4.html"/>
-    <id>https://liangyuanzheng.com/effective-go chapter4.html</id>
-    <published>2022-12-14T07:34:59.000Z</published>
-    <updated>2022-12-14T13:33:15.626Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;p&gt;跟C一样，Go 的正式语法使用分号结束语句，但与C不同的是，这些分号在源码中不可见。取而代之的是，词法分析器会使用一个简
-      
-    
-    </summary>
-    
-    
-      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>effective-go chapter3</title>
-    <link href="https://liangyuanzheng.com/effective-go%20chapter3.html"/>
-    <id>https://liangyuanzheng.com/effective-go chapter3.html</id>
-    <published>2022-12-14T07:34:49.000Z</published>
-    <updated>2022-12-14T13:32:59.527Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;p&gt;和其他语言一样，名字在Go中同样重要。它们甚至有着一样的语义：一个包内的名字是否对外可见，取决于其首字母是否大写。因此，
       
     
     </summary>
