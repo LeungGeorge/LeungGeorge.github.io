@@ -137,14 +137,10 @@
 <meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/image-20230305173724831.png">
 <meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/image-20230305173416752.png">
 <meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/image-20230305173716257.png">
-<meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/image-20230305111656719.png">
-<meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/640-20230302231242434.png">
-<meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/640-20230302231244078.png">
-<meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/image-20230305181021795.png">
 <meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/574e9258d109b3de4141855c6791a68a810a4cc6.png">
 <meta property="og:image" content="https://liangyuanzheng.com/local.assets/images/37d3d539b6003af3099c5a0299040c571038b66c.png">
 <meta property="article:published_time" content="2023-03-05T10:23:20.000Z">
-<meta property="article:modified_time" content="2023-03-06T02:39:54.888Z">
+<meta property="article:modified_time" content="2023-03-06T02:48:30.604Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="AI+应用">
 <meta name="twitter:card" content="summary">
@@ -423,7 +419,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-03-06T10:39:54+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2023-03-06T10:48:30+08:00">
                 2023-03-06
               </time>
             
@@ -473,7 +469,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  9.8k
+                  9.2k
                 </span>
               
 
@@ -489,7 +485,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  33
+                  31
                 </span>
               
             </div>
@@ -704,32 +700,6 @@
 <p><img src="local.assets/images/image-20230305173416752.png" alt="image-20230305173416752"></p>
 <h3 id="技术革命"><a href="#技术革命" class="headerlink" title="技术革命"></a>技术革命</h3><p>我们将AGI看作一个新的技术革命，可能对传统产业格局带来冲击。类比云计算时代，Salesforce等新兴SaaS厂商把握“上云”新趋势，异军突起“超车”SAP等老牌软件厂商；而Oracle、微软等传统厂商的云转型成效也直接影响其市场影响力演变趋势。事实上，目前已有一批AIGC相关独角兽正快速发展，在未来的AI融合应用时代，我们认为原生于AI的新兴厂商的出现及传统厂商AI转型效果都可能给现有的竞争格局带来改变。</p>
 <p><img src="local.assets/images/image-20230305173716257.png" alt="image-20230305173716257"></p>
-<h3 id="业务拓展，借鉴和使用ChatGPT"><a href="#业务拓展，借鉴和使用ChatGPT" class="headerlink" title="业务拓展，借鉴和使用ChatGPT"></a>业务拓展，借鉴和使用ChatGPT</h3><p><img src="local.assets/images/image-20230305111656719.png" alt="image-20230305111656719"></p>
-<p>对于ChatGPT的借鉴和使用，大致可以归类以下四个方向：</p>
-<ul>
-<li><strong>直接使用层面</strong></li>
-</ul>
-<p>此层面为复用API中效果极佳的部分，直接使用的优势是可以快速实现多粒度多层级功能需求。在很多需求难以定义清晰、数据难以获得的情况下，复用并包装这样的功能一本万利。</p>
-<p>当然其缺点也很明显。直接调用成本是极高的，根据GPT3.5(Davinci)的成本推测:1k tokens≈700 words为0.02美元。换算后，一篇2k字的文章直接调用需要0.4人民币。若保守按照日活1w用户、人均10篇文章计算，则每日调用成本为：10000<em>10</em>0.4=40000元。虽成本过于高昂，但实现时间最少。</p>
-<p><img src="local.assets/images/640-20230302231242434.png" alt="图片"></p>
-<p>另外，根据Musk Twitter上与OpenAI工作人员的对话，也可以<strong>看到每次聊天过程需要几美分的成本，所以ChatGPT直接调用成本极高。</strong></p>
-<p><img src="local.assets/images/640-20230302231244078.png" alt="图片"></p>
-<p><img src="local.assets/images/image-20230305181021795.png" alt="image-20230305181021795"></p>
-<ul>
-<li><strong>间接使用层面</strong></li>
-</ul>
-<p>此层面核心思想是利用OpenAI接口，按照不同需求生成高质量数据，克服现有数据难获得的瓶颈；进而利用现有开源大模型进行数据扩增，这是目前比较切实，实现时间较少，是在时间成本和效果上折中的方式。</p>
-<ul>
-<li><strong>思想借鉴</strong></li>
-</ul>
-<p>首先，组内目前有初步尝试参考RLHF的方法，如对多候选进行标注、利用得到的标注结果重新微调生成模型、或者增加排序阶段加入RL学习。其次，我们也尝试一些高效调参的方法微调现有大模型。但此条受限于资源尚需评估和确认。</p>
-<p><strong>总的来说，将改写从最初的seq2seq，拓展到GPT+Instruction Tuning路径。</strong></p>
-<p>实现时间：（1）&lt; (2) &lt; (3)</p>
-<p>资源成本：（1）&gt; (3) &gt; (2)</p>
-<ul>
-<li><strong>交互升级</strong></li>
-</ul>
-<p>将写作整体打造为ChatBot的形式，此核心思想见另一篇关于对话系统报告中的介绍，涉及到交互层面的变革。但ChatGPT的出现和核心技术让形式升级成为可能。随着深度学习和多智能体系统的发展，未来会有多种、多样、多功能的X-Bot出现。</p>
 <h2 id="个人篇"><a href="#个人篇" class="headerlink" title="个人篇"></a>个人篇</h2><h3 id="专业"><a href="#专业" class="headerlink" title="专业"></a>专业</h3><h3 id="思辩"><a href="#思辩" class="headerlink" title="思辩"></a>思辩</h3><ul>
 <li>无法理解人类语言和文化；</li>
 <li>不能展现人性，感到人的温暖；</li>
@@ -1033,7 +1003,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图灵测试"><span class="nav-number">1.</span> <span class="nav-text">图灵测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器能思考么？"><span class="nav-number">1.1.</span> <span class="nav-text">机器能思考么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#70年后，仿佛它来了？"><span class="nav-number">1.2.</span> <span class="nav-text">70年后，仿佛它来了？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ChatGPT"><span class="nav-number">2.</span> <span class="nav-text">ChatGPT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#令人惊艳的能力"><span class="nav-number">2.1.</span> <span class="nav-text">令人惊艳的能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帮你安慰女友"><span class="nav-number">2.1.1.</span> <span class="nav-text">帮你安慰女友</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写电影故事"><span class="nav-number">2.1.2.</span> <span class="nav-text">写电影故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有逻辑地回答文史问题"><span class="nav-number">2.1.3.</span> <span class="nav-text">有逻辑地回答文史问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协助程序员工作"><span class="nav-number">2.1.4.</span> <span class="nav-text">协助程序员工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哲学思考，我们如何过好这一生？"><span class="nav-number">2.1.5.</span> <span class="nav-text">哲学思考，我们如何过好这一生？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么这么牛？"><span class="nav-number">2.2.</span> <span class="nav-text">为什么这么牛？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.2.2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Transformer"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Transformer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RLHF技术"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">RLHF技术</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AI-应用软件结合"><span class="nav-number">3.</span> <span class="nav-text">AI+应用软件结合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AI-工具类软件：文字、图片、音频、视频、3D模型"><span class="nav-number">3.1.</span> <span class="nav-text">AI+工具类软件：文字、图片、音频、视频、3D模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI-搜索引擎：借助自然语言处理将传统的搜索点击转变为互动问答形式，并生成个性化结果"><span class="nav-number">3.2.</span> <span class="nav-text">AI+搜索引擎：借助自然语言处理将传统的搜索点击转变为互动问答形式，并生成个性化结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机遇与挑战"><span class="nav-number">4.</span> <span class="nav-text">机遇与挑战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务篇"><span class="nav-number">4.1.</span> <span class="nav-text">业务篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产品结构"><span class="nav-number">4.1.1.</span> <span class="nav-text">产品结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商业逻辑"><span class="nav-number">4.1.2.</span> <span class="nav-text">商业逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术革命"><span class="nav-number">4.1.3.</span> <span class="nav-text">技术革命</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务拓展，借鉴和使用ChatGPT"><span class="nav-number">4.1.4.</span> <span class="nav-text">业务拓展，借鉴和使用ChatGPT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人篇"><span class="nav-number">4.2.</span> <span class="nav-text">个人篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#专业"><span class="nav-number">4.2.1.</span> <span class="nav-text">专业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思辩"><span class="nav-number">4.2.2.</span> <span class="nav-text">思辩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#来自神学的反对意见"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">来自神学的反对意见</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#所谓”鸵鸟政策”式的异议"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">所谓”鸵鸟政策”式的异议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自数学的异议"><span class="nav-number">4.2.2.3.</span> <span class="nav-text">来自数学的异议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自意识的论点"><span class="nav-number">4.2.2.4.</span> <span class="nav-text">来自意识的论点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自种种能力限制的论证"><span class="nav-number">4.2.2.5.</span> <span class="nav-text">来自种种能力限制的论证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#洛夫莱斯夫人的异议"><span class="nav-number">4.2.2.6.</span> <span class="nav-text">洛夫莱斯夫人的异议</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语：ChatGPT-通过图灵测试了么？"><span class="nav-number">5.</span> <span class="nav-text">结语：ChatGPT 通过图灵测试了么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图灵测试"><span class="nav-number">1.</span> <span class="nav-text">图灵测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器能思考么？"><span class="nav-number">1.1.</span> <span class="nav-text">机器能思考么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#70年后，仿佛它来了？"><span class="nav-number">1.2.</span> <span class="nav-text">70年后，仿佛它来了？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ChatGPT"><span class="nav-number">2.</span> <span class="nav-text">ChatGPT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#令人惊艳的能力"><span class="nav-number">2.1.</span> <span class="nav-text">令人惊艳的能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帮你安慰女友"><span class="nav-number">2.1.1.</span> <span class="nav-text">帮你安慰女友</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写电影故事"><span class="nav-number">2.1.2.</span> <span class="nav-text">写电影故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有逻辑地回答文史问题"><span class="nav-number">2.1.3.</span> <span class="nav-text">有逻辑地回答文史问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协助程序员工作"><span class="nav-number">2.1.4.</span> <span class="nav-text">协助程序员工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哲学思考，我们如何过好这一生？"><span class="nav-number">2.1.5.</span> <span class="nav-text">哲学思考，我们如何过好这一生？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么这么牛？"><span class="nav-number">2.2.</span> <span class="nav-text">为什么这么牛？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.2.2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Transformer"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Transformer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RLHF技术"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">RLHF技术</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AI-应用软件结合"><span class="nav-number">3.</span> <span class="nav-text">AI+应用软件结合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AI-工具类软件：文字、图片、音频、视频、3D模型"><span class="nav-number">3.1.</span> <span class="nav-text">AI+工具类软件：文字、图片、音频、视频、3D模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI-搜索引擎：借助自然语言处理将传统的搜索点击转变为互动问答形式，并生成个性化结果"><span class="nav-number">3.2.</span> <span class="nav-text">AI+搜索引擎：借助自然语言处理将传统的搜索点击转变为互动问答形式，并生成个性化结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机遇与挑战"><span class="nav-number">4.</span> <span class="nav-text">机遇与挑战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务篇"><span class="nav-number">4.1.</span> <span class="nav-text">业务篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产品结构"><span class="nav-number">4.1.1.</span> <span class="nav-text">产品结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商业逻辑"><span class="nav-number">4.1.2.</span> <span class="nav-text">商业逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术革命"><span class="nav-number">4.1.3.</span> <span class="nav-text">技术革命</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人篇"><span class="nav-number">4.2.</span> <span class="nav-text">个人篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#专业"><span class="nav-number">4.2.1.</span> <span class="nav-text">专业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思辩"><span class="nav-number">4.2.2.</span> <span class="nav-text">思辩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#来自神学的反对意见"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">来自神学的反对意见</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#所谓”鸵鸟政策”式的异议"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">所谓”鸵鸟政策”式的异议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自数学的异议"><span class="nav-number">4.2.2.3.</span> <span class="nav-text">来自数学的异议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自意识的论点"><span class="nav-number">4.2.2.4.</span> <span class="nav-text">来自意识的论点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自种种能力限制的论证"><span class="nav-number">4.2.2.5.</span> <span class="nav-text">来自种种能力限制的论证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#洛夫莱斯夫人的异议"><span class="nav-number">4.2.2.6.</span> <span class="nav-text">洛夫莱斯夫人的异议</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语：ChatGPT-通过图灵测试了么？"><span class="nav-number">5.</span> <span class="nav-text">结语：ChatGPT 通过图灵测试了么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
