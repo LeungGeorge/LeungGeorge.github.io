@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2023-03-06T02:54:56.307Z</updated>
+  <updated>2023-08-16T11:09:08.703Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>方法论</title>
+    <link href="https://liangyuanzheng.com/%E6%96%B9%E6%B3%95%E8%AE%BA.html"/>
+    <id>https://liangyuanzheng.com/方法论.html</id>
+    <published>2023-08-16T11:02:05.000Z</published>
+    <updated>2023-08-16T11:09:08.703Z</updated>
+    
+    <summary type="html">
+    
+      本文从做事方法、思维方式、目标管理、数据分析、用户增长几方面介绍了相关的方法论，希望能给读者带来一些帮助！
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="养成计划" scheme="https://liangyuanzheng.com/tags/%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>AI+应用</title>
@@ -256,7 +277,7 @@
     <link href="https://liangyuanzheng.com/%E4%BA%AC%E5%89%A7%E7%BB%8F%E5%85%B8%E8%8A%82%E7%9B%AE.html"/>
     <id>https://liangyuanzheng.com/京剧经典节目.html</id>
     <published>2022-12-25T13:28:14.000Z</published>
-    <updated>2022-12-25T13:48:53.382Z</updated>
+    <updated>2023-03-15T01:59:27.886Z</updated>
     
     <summary type="html">
     
@@ -454,7 +475,7 @@
     <link href="https://liangyuanzheng.com/effective-go%20chapter9.html"/>
     <id>https://liangyuanzheng.com/effective-go chapter9.html</id>
     <published>2022-12-14T13:03:15.000Z</published>
-    <updated>2022-12-14T13:06:43.128Z</updated>
+    <updated>2023-03-07T01:55:50.916Z</updated>
     
     <summary type="html">
     
@@ -549,34 +570,6 @@
 &lt;!-- 2. 发布后：补充tag，category --&gt;
 
 &lt;h3 id=&quot;多个返回值&quot;&gt;&lt;a href=&quot;#多个返回值&quot; class=&quot;headerlink&quot; title=&quot;多个返回值
-      
-    
-    </summary>
-    
-    
-      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>effective-go chapter5</title>
-    <link href="https://liangyuanzheng.com/effective-go%20chapter5.html"/>
-    <id>https://liangyuanzheng.com/effective-go chapter5.html</id>
-    <published>2022-12-14T12:54:23.000Z</published>
-    <updated>2022-12-14T13:02:22.205Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;p&gt;Go的控制结构与C相关，但是在重要的方面存在差异。Go中没有 &lt;code&gt;do&lt;/code&gt; 、 &lt;code&gt;while
       
     
     </summary>
