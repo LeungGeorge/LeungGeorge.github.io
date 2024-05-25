@@ -10,7 +10,6 @@ description: markdown常用语法
 share: "true"
 ---
 # Welcome to Marxico
-ddd56
 
 @(Sample notebook)[Marxico|Manual|Markdown]
 
