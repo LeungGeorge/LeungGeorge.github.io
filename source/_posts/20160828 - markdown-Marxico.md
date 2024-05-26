@@ -1,15 +1,18 @@
 ---
 uuid: e316c9a1-31d4-11e9-b40e-e5de14f70114
-title: markdownMarxico
+title: markdown-Marxico
 tags:
   - markdown
 date: 2016-08-28 23:01:41
-categories: 
-  - 工具  
+categories:
+  - 工具
 description: markdown常用语法
-
+share: "true"
 ---
-# Welcome to Marxico
+# Welcome to Marxico-2
+
+![](source/images/Pasted%20image%2020240526110548.png)
+
 
 @(Sample notebook)[Marxico|Manual|Markdown]
 
