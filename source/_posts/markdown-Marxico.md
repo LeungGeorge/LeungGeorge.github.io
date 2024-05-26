@@ -9,9 +9,9 @@ categories:
 description: markdown常用语法
 share: "true"
 ---
-# Welcome to Marxico-x
+# Welcome to Marxico-2
 
-![](Pasted%20image%2020240526105642.png)
+![](source/images/Pasted%20image%2020240526110548.png)
 
 
 @(Sample notebook)[Marxico|Manual|Markdown]
