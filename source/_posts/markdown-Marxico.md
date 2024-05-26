@@ -11,6 +11,9 @@ share: "true"
 ---
 # Welcome to Marxico-x
 
+![](Pasted%20image%2020240526105642.png)
+
+
 @(Sample notebook)[Marxico|Manual|Markdown]
 
 **Marxico** is a delicate Markdown editor for Evernote. With reliable storage and sync powered by Evernote, **Marxico** offers greate writing experience. 
