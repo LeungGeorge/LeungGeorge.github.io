@@ -22,8 +22,18 @@ share: "true"
 
 
 1,2,3
-1,2
--====
+1,2\\\\
+
+345908ujk
+
+====
+
+![](source/_posts/images/Pasted%20image%2020240526113729.png)
+
+
+
+29,30
+29,
 
 @(Sample notebook)[Marxico|Manual|Markdown]
 
