@@ -9,7 +9,7 @@ categories:
 description: markdown常用语法
 share: "true"
 ---
-# Welcome to Marxico
+# Welcome to Marxico-x
 
 @(Sample notebook)[Marxico|Manual|Markdown]
 
