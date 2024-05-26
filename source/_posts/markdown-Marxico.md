@@ -9,31 +9,7 @@ categories:
 description: markdown常用语法
 share: "true"
 ---
-# Welcome to Marxico-2eee
-
-![](source/images/Pasted%20image%2020240526110548.png)
-![](source/_posts/images/Pasted%20image%2020240526112521.png)
-
-
-![](source/_posts/images/Pasted%20image%2020240526113200.png)
-
-
-![](source/_posts/images/Pasted%20image%2020240526113201.png)
-
-
-1,2,3
-1,2\\\\
-
-345908ujk
-
-====
-
-![](source/_posts/images/Pasted%20image%2020240526113729.png)
-
-
-
-29,30
-29,
+# Welcome to Marxico
 
 @(Sample notebook)[Marxico|Manual|Markdown]
 
