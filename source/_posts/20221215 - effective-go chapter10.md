@@ -300,4 +300,4 @@ In this section we have made an HTTP server from a struct, an integer, a channel
 
 
 ---
-![20200131220947.png](source/_posts/assets/images/leunggeorge.github.io-image-9%201.png)
+![20200131220947.png](source/assets/images/leunggeorge.github.io-image-9%201%201.png)

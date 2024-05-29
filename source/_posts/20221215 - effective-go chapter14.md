@@ -188,4 +188,4 @@ By the way, this re-panic idiom changes the panic value if an actual error occur
 
 
 ---
-![20200131220947.png](source/_posts/assets/images/leunggeorge.github.io-image-9%201.png)
+![20200131220947.png](source/assets/images/leunggeorge.github.io-image-9%201%201.png)

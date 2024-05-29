@@ -35,7 +35,7 @@ Spider进度查看地址：http://localhost:6800/
 
 <!--more-->
 
-![20190905235045.png](source/_posts/assets/images/20190905235045.png)
+![20190905235045 2.png](source/assets/images/20190905235045%202.png)
 
 # 部署scrapy项目
 ## 部署scrapy项目（修改Spider之后需要重新部署哦）
