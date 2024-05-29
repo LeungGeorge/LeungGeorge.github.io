@@ -79,5 +79,5 @@ type T struct {
 
 
 ---
-![20200131220947.png](images/leunggeorge.github.io-image-9.png)
+![20200131220947.png](source/_posts/images/leunggeorge.github.io-image-9.png)
 

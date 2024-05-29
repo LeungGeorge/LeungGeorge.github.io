@@ -17,4 +17,4 @@ keywords: {{ title }}
 
 
 ---  
-![20200131220947.png](images/leunggeorge.github.io-image-9.png)
+![20200131220947.png](public/images/leunggeorge.github.io-image-9.png)
