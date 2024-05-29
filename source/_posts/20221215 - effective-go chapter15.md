@@ -84,4 +84,4 @@ And there you have it: a useful web server in a few lines of code plus some data
 
 
 ---
-![20200131220947.png](source/_posts/images/leunggeorge.github.io-image-9.png)
+![20200131220947.png](source/_posts/assets/images/leunggeorge.github.io-image-9%201.png)

@@ -62,7 +62,7 @@ ok      command-line-arguments  (cached)
 
 
 ---
-![20200131220947.png](images/20200131220947.png)
+![20200131220947.png](public/images/20200131220947.png)
 
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>

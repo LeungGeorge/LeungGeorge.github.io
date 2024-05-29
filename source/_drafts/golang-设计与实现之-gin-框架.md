@@ -23,7 +23,7 @@ description:
 > [源码解析之:gin](https://www.kancloud.cn/liuqing_will/the_source_code_analysis_of_gin/616920)
 
 ---
-![20200131220947.png](images/20200131220947.png)
+![20200131220947.png](public/images/20200131220947.png)
 
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>

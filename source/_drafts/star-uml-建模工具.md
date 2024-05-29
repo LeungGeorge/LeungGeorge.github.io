@@ -12,7 +12,7 @@ date: 2020-07-11 18:44:54
 
 
 **我们分析问题的一个常见模型：**
-![20200202213109.png](images/20200202213109.png)
+![20200202213109.png](public/images/20200202213109.png)
 
 - 建模的目的：    
   1）分析设计阶段定义软件功能、结构和对外接口。      
@@ -56,27 +56,27 @@ MAC应用无法打开或文件损坏的处理方法：https://xclient.info/a/745
 - Actor
 - Use Case
 
-![20200203165132.png](images/20200203165132.png)
+![20200203165132.png](public/images/20200203165132.png)
 
 ### Sequence Case（时序图）
 对象之间动态合作的关系，体现的是对象间消息的次序。
 
-![20200203170221.png](images/20200203170221.png)
+![20200203170221.png](public/images/20200203170221.png)
 
 ### Class Diagram（类图）
 静态结构，描述类的内部结构以及类之间的关系。
 
-![20200203195911.png](images/20200203195911.png)
+![20200203195911.png](public/images/20200203195911.png)
 
 ### Activity Diagram（活动图）
 系统中操作或者方法的执行逻辑流程，描述各种活动的执行顺序。
 
-![20200203204352.png](images/20200203204352.png)
+![20200203204352.png](public/images/20200203204352.png)
 
 ### State Diagram（状态图）
 实体对象的动态行为，实体根据当前状态对不同事件作出的反应。
 
-![20200203202927.png](images/20200203202927.png)
+![20200203202927.png](public/images/20200203202927.png)
 
 ### Object Diagram（对象图）
 对象图是类图的一个具体实例，描述了对象及对象间的相互关系。
@@ -101,7 +101,7 @@ UML 有 9 种图。
 
 
 ---
-![20200131220947.png](images/20200131220947.png)
+![20200131220947.png](public/images/20200131220947.png)
 
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>

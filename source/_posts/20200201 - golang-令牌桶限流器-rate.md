@@ -17,7 +17,7 @@ date: 2020-02-01 22:22:04
 
 令牌桶算法(Token Bucket)随着时间流逝, 系统会按恒定1/QPS时间间隔(如果QPS=100, 则间隔是10ms)往桶里加入Token, 如果桶已经满了就不再加了。新请求来临时, 会各自拿走一个Token, 如果没有Token可拿了就阻塞或者拒绝服务.
 
-![upload successful](images/leunggeorge.github.io-image-4.png)
+![upload successful](source/_posts/assets/images/leunggeorge.github.io-image-4.png)
 
 > 限流器 rate 原理与上图的令牌桶类似。
 
@@ -34,7 +34,7 @@ func NewLimiter(r Limit, b int) *Limiter
 * `r` : 令牌桶每秒可以产生 `r` 个 token。  
 * `b` : 令牌桶的大小。
 
-![upload successful](images/leunggeorge.github.io-image-8.png)
+![upload successful](source/_posts/assets/images/leunggeorge.github.io-image-8.png)
 
 ### Reserve/ReserveN
 
@@ -62,7 +62,7 @@ time.Sleep(r.Delay())
 
 #### 实现逻辑
 
-![upload successful](images/leunggeorge.github.io-image-5.png)
+![upload successful](source/_posts/assets/images/leunggeorge.github.io-image-5.png)
 
 ### Allow/AllowN
 
@@ -101,7 +101,7 @@ func (lim *Limiter) WaitN(ctx context.Context, n int) (err error)
 
 #### 实现逻辑
 
-![upload successful](images/leunggeorge.github.io-image-6.png)
+![upload successful](source/_posts/assets/images/leunggeorge.github.io-image-6.png)
 
 ### SetLimit/SetLimitAt
 
@@ -116,7 +116,7 @@ func (lim *Limiter) WaitN(ctx context.Context, n int) (err error)
 
 ---
 
-![20200131220947.png](images/20200131220947.png)
+![20200131220947.png](source/_posts/assets/images/20200131220947.png)
 
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
