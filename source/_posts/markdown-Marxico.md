@@ -12,6 +12,8 @@ share: "true"
 
 # Welcome to Marxico
 好像不能实时更新？
+好像不能实时更新？
+好像不能实时更新？
 
 @(Sample notebook)[Marxico|Manual|Markdown]
 
