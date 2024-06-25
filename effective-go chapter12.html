@@ -108,13 +108,13 @@
 <meta property="og:url" content="https://liangyuanzheng.com/effective-go%20chapter12.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
 <meta property="og:description" content="EmbeddingGo does not provide the typical, type-driven notion of subclassing, but it does have the ability to “borrow” pieces of an implementation by_embedding_types within a struct or interface. I">
-<meta property="og:image" content="https://liangyuanzheng.com/images/leunggeorge.github.io-image-9.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/leunggeorge.github.io-image-9%201%201.png">
 <meta property="article:published_time" content="2022-12-14T13:03:25.000Z">
-<meta property="article:modified_time" content="2022-12-14T13:06:29.763Z">
+<meta property="article:modified_time" content="2024-05-29T01:46:56.713Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="post">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://liangyuanzheng.com/images/leunggeorge.github.io-image-9.png">
+<meta name="twitter:image" content="https://liangyuanzheng.com/source/assets/images/leunggeorge.github.io-image-9%201%201.png">
 
 
 
@@ -389,8 +389,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-12-14T21:06:29+08:00">
-                2022-12-14
+              <time title="更新于" itemprop="dateModified" datetime="2024-05-29T09:46:56+08:00">
+                2024-05-29
               </time>
             
           </span>
@@ -514,7 +514,7 @@
 <p>Embedding types introduces the problem of name conflicts but the rules to resolve them are simple. First, a field or method<code>X</code>hides any other item<code>X</code>in a more deeply nested part of the type. If<code>log.Logger</code>contained a field or method called<code>Command</code>, the<code>Command</code>field of<code>Job</code>would dominate it.</p>
 <p>Second, if the same name appears at the same nesting level, it is usually an error; it would be erroneous to embed<code>log.Logger</code>if the<code>Job</code>struct contained another field or method called<code>Logger</code>. However, if the duplicate name is never mentioned in the program outside the type definition, it is OK. This qualification provides some protection against changes made to types embedded from outside; there is no problem if a field is added that conflicts with another field in another subtype if neither field is ever used.</p>
 <hr>
-<p><img src="images/leunggeorge.github.io-image-9.png" alt="20200131220947.png"></p>
+<p><img src="source/assets/images/leunggeorge.github.io-image-9%201%201.png" alt="20200131220947.png"></p>
 
       
     </div>
@@ -677,7 +677,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">80</span>
+                <span class="site-state-item-count">81</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
