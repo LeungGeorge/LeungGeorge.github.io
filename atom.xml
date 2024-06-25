@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2024-05-29T01:49:11.887Z</updated>
+  <updated>2024-06-25T11:26:49.722Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>酱牛肉</title>
+    <link href="https://liangyuanzheng.com/%E9%85%B1%E7%89%9B%E8%82%89.html"/>
+    <id>https://liangyuanzheng.com/酱牛肉.html</id>
+    <published>2024-06-25T11:26:49.371Z</published>
+    <updated>2024-06-25T11:26:49.722Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-配方&quot;&gt;&lt;a href=&quot;#1-配方&quot; class=&quot;headerlink&quot; title=&quot;1 配方&quot;&gt;&lt;/a&gt;1 配方&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/LeungGeorge/assets
+      
+    
+    </summary>
+    
+    
+    
+      <category term="随笔" scheme="https://liangyuanzheng.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="美食" scheme="https://liangyuanzheng.com/tags/%E7%BE%8E%E9%A3%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>什么是字幕、有哪些格式？</title>
@@ -535,34 +559,6 @@
 &lt;!-- 2. 发布后：补充tag，category --&gt;
 
 &lt;h2 id=&quot;Initialization-124-初始化&quot;&gt;&lt;a href=&quot;#Initialization-124-初始
-      
-    
-    </summary>
-    
-    
-      <category term="effective-go" scheme="https://liangyuanzheng.com/categories/effective-go/"/>
-    
-    
-      <category term="writing" scheme="https://liangyuanzheng.com/tags/writing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>effective-go chapter7</title>
-    <link href="https://liangyuanzheng.com/effective-go%20chapter7.html"/>
-    <id>https://liangyuanzheng.com/effective-go chapter7.html</id>
-    <published>2022-12-14T13:03:07.000Z</published>
-    <updated>2024-05-29T01:46:56.970Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- 1. 发布前：删除草稿的 uuid --&gt;
-&lt;!-- 2. 发布后：补充tag，category --&gt;
-
-&lt;h1 id=&quot;数据（Data）&quot;&gt;&lt;a href=&quot;#数据（Data）&quot; class=&quot;headerlink&quot; title=
       
     
     </summary>
