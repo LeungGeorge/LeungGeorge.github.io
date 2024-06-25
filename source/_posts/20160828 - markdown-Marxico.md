@@ -9,7 +9,11 @@ categories:
 description: markdown常用语法 6.25
 share: "true"
 ---
+
 # Welcome to Marxico
+dddd
+asd
+测试上传
 
 @(Sample notebook)[Marxico|Manual|Markdown]
 
