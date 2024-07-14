@@ -4,6 +4,8 @@
 # cp -r source/_posts/local.assets/ source/local.assets/
 # cp -r source/_posts/assets/ source/assets/
 
+git pull
+
 hexo clean
 hexo g
 hexo d
