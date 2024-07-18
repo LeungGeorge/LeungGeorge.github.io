@@ -6,6 +6,8 @@ cd /Users/yuanzhengliang/home/go/src/github.com/LeungGeorge/LeungGeorge.github.i
 # cp -r source/_posts/local.assets/ source/local.assets/
 # cp -r source/_posts/assets/ source/assets/
 
+git status
+
 git pull
 
 hexo clean
