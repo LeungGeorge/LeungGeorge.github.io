@@ -8,9 +8,9 @@
 
 git status
 
-/usr/local/bin/hexo clean
-/usr/local/bin/hexo g
-/usr/local/bin/hexo d
+/usr/local/lib/node_modules/hexo/bin/hexo clean
+/usr/local/lib/node_modules/hexo/bin/hexo g
+/usr/local/lib/node_modules/hexo/bin/hexo d
 
 # hexo algolia
 
