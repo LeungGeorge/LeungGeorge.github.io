@@ -12,61 +12,41 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v2
-        # with:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+        with:
+          ref: hexo
         #   submodules: true
         #   fetch-depth: 0
-      # 每个name表示一个步骤:step
       - name: Use Node.js 19.x
         uses: actions/setup-node@v2
         with:
           node-version: '19.3.0' # 自己正在使用的node版本即可
-      # - run: node -v # 查看node版本号
-      # 缓存依赖项: https://docs.github.com/cn/actions/using-workflows/caching-dependencies-to-speed-up-workflows
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          # path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
-      # 查看路径 : /home/runner/work/blog/blog
-      # - name: Look Path
-      #   run: pwd
-      # 查看文件
-      - name: Look Dir List
-        run: tree -L 3 -a
-      # 第一次或者依赖发生变化的时候执行 Install Dependencies，其它构建的时候不需要这一步
-      - name: Install Dependencies
-        run: npm install
-      - name: Look Dir List
-        run: tree -L 3 -a
-      # - name: clean theme cache
-      #   run: git rm -f --cached themes/tenacity
-        # run: git submodule deinit themes/tenacity && git rm themes/tenacity
-      # 安装主题
-      #- name: Install Theme
-      #  run: git submodule add https://github.com/iissnan/hexo-theme-next.git themes/next
-      - name: Clean
-        run: npm run clean
-      - name: Build
-        run: npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY  }}
-          user_name: LeungGeorge
-          user_email: liangyzteam@163.com
-          # 获取提交文章源码时的commit message，作为发布gh-pages分支的信息
-          commit_message: ${{ github.event.head_commit.message }}
-          full_commit_message: ${{ github.event.head_commit.message }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # GITHUB_TOKEN不是个人访问令牌，GitHub Actions 运行器会自动创建一个GITHUB_TOKEN密钥以在您的工作流程中进行身份验证。因此，您无需任何配置即可立即开始部​​署
-          publish_dir: ./public
-          allow_empty_commit: true # 允许空提交
-      # Use the output from the `deploy` step(use for test action)
-      - name: Get the output
+      - name: Install hexo
         run: |
-          echo "${{ steps.deploy.outputs.notify }}"
+          export TZ='Asia/Shanghai'
+          npm install hexo-cli -g
+      - name: 缓存 Hexo
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+      - name: 安装依赖
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm install --save
+      - name: 生成静态文件
+        run: |
+          hexo clean
+          hexo g
+          hexo d
+
+      - name: 部署 #此处master:master 指从本地的master分支提交到远程仓库的master分支(不是博客的分支写master即可)，若远程仓库没有对应分支则新建一个。如有其他需要，可以根据自己的需求更改。
+        run: |
+          git init
+          git config --global user.name '${{ secrets.GITHUBUSERNAME }}'
+          git config --global user.email '${{ secrets.GITHUBEMAIL }}'
+          git add .
+          git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") Updated By Github Actions"
+          git push --force --quiet "https://${{ secrets.GITHUBUSERNAME }}:${{ secrets.GITHUBTOKEN }}@github.com/${{ secrets.GITHUBUSERNAME }}/${{ secrets.GITHUBUSERNAME }}.github.io.git" origin hexo
