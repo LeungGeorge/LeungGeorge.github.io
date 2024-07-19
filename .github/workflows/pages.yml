@@ -4,7 +4,7 @@ name: Pages
 on:
   push:
     branches:
-      - master  # default branch
+      - hexo  # default branch
 jobs:
   # 子任务
   pages:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: hexo
         #   submodules: true
         #   fetch-depth: 0
       - name: Use Node.js 19.x
