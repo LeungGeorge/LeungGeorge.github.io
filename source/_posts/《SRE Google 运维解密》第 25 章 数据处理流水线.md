@@ -4,7 +4,7 @@ tags:
   - blog
 share: "true"
 categories:
-  - essay
+  - 软件工程
 title: 《SRE Google 运维解密》第 25 章 数据处理流水线
 date: 2024-07-20
 ---
