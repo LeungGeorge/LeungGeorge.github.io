@@ -1,3 +1,4 @@
+---
 uuid: ae7a5640-4410-11ea-be26-5f58b99d11f6
 title: golang 令牌桶限流器 rate
 tags:
@@ -11,6 +12,7 @@ comments: true
 description: golang 实现的令牌桶限流器。
 date: 2020-02-01 22:22:04
 ---
+
 <!--more-->
 
 ## 令牌桶算法

@@ -15,7 +15,8 @@ description: github 报 We found potential security vulnerabilities in your depe
 
 
 github 提示：
-<img src="/images/20191007095849.png" width="100%">
+
+![image-20221208105140450](source/assets/images/20191007095849.png)
 
 ## 安装 npm-check-updates
 
@@ -24,23 +25,28 @@ step 1： 执行 `npm install -g npm-check-updates` 安装升级工具。
 ## 检查更新
 
 step 2： 执行 `npm-check-updates -u` 检查是否有更新。
-<img src="/images/20191007100530.png" width="60%">
+
+![image-20221208105140450](source/assets/images/20191007100530.png)
 
 ## 升级更新
 
 step 3： 执行 `npm-check-updates -u` 进行升级。
-<img src="/images/20191007100431.png" width="60%">
+
+![image-20221208105140450](source/assets/images/20191007100431.png)
 
 再次执行 `npm-check-updates -u` 会发现已更新到最新版本：
-<img src="/images/20191007100813.png" width="60%">
 
-<!-- ## 更新 package-lock.json
+![image-20221208105140450](source/assets/images/20191007100813.png)
+
+<!-- 
+## 更新 package-lock.json
 
 使用 `npm install xxx@1.0.0 --save` 更新 `package-lock.json` 文件，例如：
 
 ```shell
 npm install braces@2.3.1 --save
-``` -->
+```
+-->
 
 
 ---
