@@ -44,7 +44,7 @@ pip install scrapy-redis
 
 # 新建分布式爬虫
 
-![20190907082159 2.png](source/assets/images/20190907082159%202.png)
+![20190907082159.png](source/assets/images/20190907082159.png)
 
 ## 新建项目
 
@@ -130,17 +130,17 @@ REDIS_PORT = 6379
 ## 运行
 ### 启动redis
 
-![20190907082348 2.png](source/assets/images/20190907082348%202.png)
+![20190907082348.png](source/assets/images/20190907082348.png)
 
 ### 运行spider1
-![20190907082407 2.png](source/assets/images/20190907082407%202.png)
+![20190907082407.png](source/assets/images/20190907082407.png)
 
 ### 运行spider2
-![20190907082428 2.png](source/assets/images/20190907082428%202.png)
+![20190907082428.png](source/assets/images/20190907082428.png)
 
 ### 添加start_urls
 方式一（手动添加）：
-![20190907082458 2.png](source/assets/images/20190907082458%202.png)
+![20190907082458.png](source/assets/images/20190907082458.png)
 
 方式二（执行脚本添加）：
 
