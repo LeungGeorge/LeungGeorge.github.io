@@ -118,7 +118,7 @@ func (lim *Limiter) WaitN(ctx context.Context, n int) (err error)
 
 ---
 
-![20200131220947 2.png](source/assets/images/20200131220947%202.png)
+![20200131220947.png](source/assets/images/20200131220947.png)
 
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
