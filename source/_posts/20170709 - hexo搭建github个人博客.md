@@ -227,7 +227,7 @@ baidusitemap:
 
 前往 [Algolia](https://www.algolia.com/) 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。  
     
-![image](source/assets/images/algolia_index%202.png)
+![image](source/assets/images/algolia_index2.png)
 
 **2.安装hexo algolia**
 
@@ -241,7 +241,7 @@ npm install --save hexo-algolia
 
 在 Algolia 服务站点上找到需要使用的一些配置的值，包括 ApplicationID、Search API Key、 Admin API Key。注意，Admin API Key 需要保密保存。  
 
-![image](source/assets/images/api_keys%202.png)  
+![image](source/assets/images/api_keys2.png)  
 编辑 站点配置文件，新增以下配置(替换除了 chunkSize 以外的其他字段为在 Algolia 获取到的值)：
 
 ```
@@ -369,7 +369,7 @@ post_asset_folder: true #是否启动资源文件夹
 ### 注册百度统计
 获取统计串：
 
-![image](source/assets/images/baidu-tongji%202.png)
+![image](source/assets/images/baidu-tongji2.png)
 
 ### 修改主题配置
 主题配置文件中增加baidu_analytics配置。
