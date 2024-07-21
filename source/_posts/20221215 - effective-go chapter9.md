@@ -83,4 +83,4 @@ By the way, the idea of using `Write` on a slice of bytes is central to the impl
 
 
 ---
-![20200131220947.png](source/assets/images/leunggeorge.github.io-image-9%201%201.png)
+![20200131220947.png](source/assets/images/leunggeorge.github.io-image-9o2i34.png)

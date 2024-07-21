@@ -260,7 +260,7 @@ algolia:
 
 当配置完成，在站点根目录下执行 hexo algolia 来更新 Index。请注意观察命令的输出。
 
-![image](source/assets/images/update_index-4%202.png)  
+![image](source/assets/images/update_index-48982.png)  
 
 **5.主题集成**
 
@@ -382,7 +382,7 @@ baidu_analytics: 85c063245825f8a02c40f450c05f5d86
 
 ### 检查安装效果：
 大概过20分钟，就可以去[百度统计](https://tongji.baidu.com/)看到效果了。  
-![image](source/assets/images/jian-cha-an-zhuang-xiao-guo%202.png)
+![image](source/assets/images/jian-cha-an-zhuang-xiao-guo423322.png)
 
 
 
