@@ -135,7 +135,7 @@ scheme: Mist
 ```
 
 效果如图：
-![20191029152851 2.png](source/assets/images/20191029152851%202.png)
+![201910291528512.png](source/assets/images/201910291528512.png)
 
 #### 添加阅读进度
 

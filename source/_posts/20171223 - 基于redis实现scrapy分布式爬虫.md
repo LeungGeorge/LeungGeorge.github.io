@@ -151,9 +151,9 @@ scrapy crawl mycrawler_redis
 ### 结论
 可以看到spider1、spider2在并行处理请求
 
-![20190907082524 2.png](source/assets/images/20190907082524%202.png)
+![201909070825242.png](source/assets/images/201909070825242.png)
 
-![20190907082541 2.png](source/assets/images/20190907082541%202.png)
+![201909070825412.png](source/assets/images/201909070825412.png)
 
 ---
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
