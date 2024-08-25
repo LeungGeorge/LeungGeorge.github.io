@@ -1,24 +1,24 @@
 ---
 uuid: e316c9a5-31d4-11e9-b40e-e5de14f70114
 title: ubuntu LNMP Mac
-tags: 
+tags:
   - lnmp
   - linux
   - nginx
   - mysql
   - php
-categories: 
+categories:
   - linux
 comments: true
 date: 2016-09-12 21:14:24
 description: ubuntu LNMP Mac
-
+share: "true"
 ---
 
-# 安装homebrew
+# 安装 homebrew
 
+# 安装 Nginx
 
-# 安装Nginx
 安装
 
 ```
@@ -29,7 +29,7 @@ brew install nginx
 启动、关闭 nginx
 
 ```
-nginx -s reload|reopen|stop|quit 
+nginx -s reload|reopen|stop|quit
 ```
 
 配置
@@ -41,7 +41,7 @@ vim nginx.conf
 vim ./conf.d/default.conf
 ```
 
-nginx.conf内容
+nginx.conf 内容
 
 ```
 worker_processes  1;
@@ -59,7 +59,7 @@ events {
 http {
     include       mime.types;
     default_type  application/octet-stream;
-    
+
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
@@ -77,7 +77,8 @@ http {
 
 ```
 
-default.conf文件内容
+default.conf 文件内容
+
 ```
 server {
     listen       80;
@@ -104,34 +105,25 @@ server {
 }
 ```
 
-
-# 安装MYSQL
-
+# 安装 MYSQL
 
 # 测试
-Nginx配置文件root对应目录下新建index.php
+
+Nginx 配置文件 root 对应目录下新建 index.php
 
 ```
-<? 
-	phpinfo(); 
+<?
+	phpinfo();
 ?>
 ```
 
-# 安装php
-
+# 安装 php
 
 # 参考资料
-[Mac下安装LNMP(Nginx+PHP5.6)环境](http://www.tuicool.com/articles/2yM7Z3)
-[Mac OSX 10.9搭建nginx+mysql+php-fpm环境](http://my.oschina.net/chen0dgax/blog/190161)
 
+[Mac 下安装 LNMP(Nginx+PHP5.6)环境](http://www.tuicool.com/articles/2yM7Z3)
+[Mac OSX 10.9 搭建 nginx+mysql+php-fpm 环境](http://my.oschina.net/chen0dgax/blog/190161)
 
 ---
-<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
-<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
-<script>
-hljs.tabReplace = ' ';
-hljs.initHighlightingOnLoad();
-</script>
 
-
-来源：[http://leunggeorge.github.io/](http://leunggeorge.github.io/)  
+来源：[http://leunggeorge.github.io/](http://leunggeorge.github.io/)
