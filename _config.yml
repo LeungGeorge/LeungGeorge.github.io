@@ -153,3 +153,17 @@ post_wordcount:
 # hexo-admin authentification
 admin:
   deployCommand: './push.sh'
+
+
+# Reward (Donate)
+reward_settings:
+  # 如果为true，则默认会在每篇文章底部显示打赏.
+  # 你可以通过在 Front-matter 中设置 `reward: true | false` 在特定文章中显示或隐藏打赏.
+  enable: true
+  animation: true
+  comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+
+reward:
+  wechatpay: /images/wechatpay.png
+  alipay: 
+  #bitcoin: /images/bitcoin.png
