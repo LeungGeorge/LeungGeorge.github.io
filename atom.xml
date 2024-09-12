@@ -90,6 +90,35 @@
   </entry>
   
   <entry>
+    <title>解耦：消息队列</title>
+    <link href="https://liangyuanzheng.com/9-%E8%A7%A3%E8%80%A6%EF%BC%9A%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97.html"/>
+    <id>https://liangyuanzheng.com/9-解耦：消息队列.html</id>
+    <published>2024-08-22T04:27:00.000Z</published>
+    <updated>2024-09-05T01:30:20.842Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;解耦：消息队列&quot;&gt;&lt;a href=&quot;#解耦：消息队列&quot; class=&quot;headerlink&quot; title=&quot;解耦：消息队列&quot;&gt;&lt;/a&gt;解耦：消息队列&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;业务场景：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;消息队列是重要的分布式系统组件，在高性能
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>压缩：节省时间</title>
     <link href="https://liangyuanzheng.com/8-%E5%8E%8B%E7%BC%A9%EF%BC%9A%E8%8A%82%E7%9C%81%E6%97%B6%E9%97%B4.html"/>
     <id>https://liangyuanzheng.com/8-压缩：节省时间.html</id>
@@ -110,11 +139,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -123,7 +152,7 @@
     <link href="https://liangyuanzheng.com/202405241816-%E3%80%90%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%E3%80%91%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%88MQ%EF%BC%89%E9%80%89%E5%9E%8B%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html"/>
     <id>https://liangyuanzheng.com/202405241816-【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了.html</id>
     <published>2024-08-20T08:05:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
+    <updated>2024-09-04T01:55:55.445Z</updated>
     
     <summary type="html">
     
@@ -183,11 +212,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -211,11 +240,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -239,11 +268,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -268,11 +297,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -296,11 +325,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -324,11 +353,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -353,11 +382,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -382,11 +411,11 @@
       <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
     
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
       <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -613,34 +642,6 @@
       <category term="笔记" scheme="https://liangyuanzheng.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="历史" scheme="https://liangyuanzheng.com/tags/%E5%8E%86%E5%8F%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>青岛旅行行程攻略</title>
-    <link href="https://liangyuanzheng.com/202408-%E9%9D%92%E5%B2%9B%E6%97%85%E8%A1%8C%E8%A1%8C%E7%A8%8B%E6%94%BB%E7%95%A5.html"/>
-    <id>https://liangyuanzheng.com/202408-青岛旅行行程攻略.html</id>
-    <published>2024-07-20T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;小红书攻略&quot;&gt;&lt;a href=&quot;#小红书攻略&quot; class=&quot;headerlink&quot; title=&quot;小红书攻略&quot;&gt;&lt;/a&gt;小红书攻略&lt;/h1&gt;&lt;h2 id=&quot;青岛攻略第一次来的宝子必看&quot;&gt;&lt;a href=&quot;#青岛攻略第一次来的宝子必看&quot; class=&quot;header
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-      <category term="随笔" scheme="https://liangyuanzheng.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="旅游" scheme="https://liangyuanzheng.com/tags/%E6%97%85%E6%B8%B8/"/>
     
   </entry>
   
