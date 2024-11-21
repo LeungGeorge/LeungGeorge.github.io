@@ -1,0 +1,1867 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="blog,note,深度学习的数学,LLM,NLP,TODO," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="时间 备忘录    2024-11-11 开始阅读《深度学习的数学》   2024-11-19 第 1 章都是一些概念，每个概念都见过，组合在一起就看不太明白了。   2024-11-20 第 2 章的数学基础部分还好，很多知识点大学时都学过，也都知道。今天把第 4 章看完了，信息量很大，大部分是浅尝辄止。           1 第 1 章：神经网络的思想1.1 深度学习里的“深度”是什么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习的数学">
+<meta property="og:url" content="https://liangyuanzheng.com/01-%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="时间 备忘录    2024-11-11 开始阅读《深度学习的数学》   2024-11-19 第 1 章都是一些概念，每个概念都见过，组合在一起就看不太明白了。   2024-11-20 第 2 章的数学基础部分还好，很多知识点大学时都学过，也都知道。今天把第 4 章看完了，信息量很大，大部分是浅尝辄止。           1 第 1 章：神经网络的思想1.1 深度学习里的“深度”是什么">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/7daf74d7beeb14a0f22a8285a010602e_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/07bf99eea13563a206b85fbe0be471bc_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/5f3a4903c78383b881b3a0c10c47385f_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/51616d0e23a62d8964ec0d4aae01278e_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/8a05ce9af6ed3aee6e2834912fbff3c5_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/de7817833bed3544aacb62c8572b5062_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/d373b2758035b1a02a1f265bc93f6ad3_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/9026eb1d57b432a91870d905579d84f7_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/f2b0014038c32f680d824585470cdaca_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/54a13e39e47048032d9f2e02dbba94f8_MD5.svg">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/d81d543f424edb4d90a768b2b057c495_MD5.svg">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/97ad73fb9c122ee2462d3fca3548cb04_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/db58a2669679152f87a740e893d74351_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/79d0e9df7528b94fc6db45ee8392b998_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/81976edca9cf8d9c1c101535f1658eee_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/fb4a3e9624661040874e8f4f07a31d24_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/7692ecc71d03e2e80b96e8ba782a179c_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/dda8899150681105af5cd0e98ed9ba76_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/056b94377c408764169b8589908667df_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/eccaca8f7eed68052e09a56708d100d3_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/dca5744f1efb73b4c03403e0b4935cbf_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/ffa498a270e27e02f0c9a6de71a760d8_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/6fd9d451456d6b1d88b81723c6ec247c_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/c542f19dcd124393cdded20d0394db1d_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/a01ef2af1c8234344ef8faa32b73b752_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/d9224ba747ed217621e2b16238b3c832_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/8feed7029853223fda8b4c27208b1056_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/bd8e4ea0b19ecb904f5ee6f3dae10029_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/76aa8646165fe13881431f213a24a4d8_MD5.svg">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/941a6fa34e0ab406fd1754637ec723e3_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/97483ca20402c510cab1db48e362857d_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/c6f1d4777b8e89135c4da67982e406a2_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/e52bd9e2cca003ba76676d3e376d9f57_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/eb1d027b4ac66604669bf1738b4ecf79_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/b09221e5c5fd86b6b77b4a194c967d15_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/e6175cc0f521cc1aee13c6fd012ab9bf_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/50cdf09c329f4dfbf78e598f9949bae6_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/44d4b7e33f5f865fad945aecda61919a_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/4d78e1e1dbcd2b96beb7518b4f073137_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/b2606cbd59db5d2b67e060f3f9ccf162_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/c4eb0bca3d4f32e6628a77667144ece6_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/2ff26a3f53e89f24254400b5ae16a203_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/cb892479eee0b177867b85649eb89ffd_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/23717427dd9c4c6f52746042e9e35398_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/31c1abc40e968c9f864d02640456aebc_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/41d9d5a86281b4740086afd0d8906058_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/1f5509ef836a32990cce0729dfac8615_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/276ba43b74e4b2f5e588d16358788faa_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/93e2fb82ef689d321eb439571f7319ef_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/0982d89f6325b072bfae1a719225a494_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/ef349a07937a6f72cff8e0e7e7fd53d0_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/1ac8e5655821d53cd21784f1995537a2_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/0a604288d3992aba9e6e9189594db8fb_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/f32a6cf8c05d68189f55de01cc238ce6_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/5c89c60e99231da03b67f5e6c27e9213_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/a5c2a16cd908d59ae047fbc6433ee161_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/cde35a35aa46600cc99148faec28c414_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/0c2e4552df47d6b0593daeb0b086f7fb_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/802147798b277592d0aab8f619af54b4_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/dea493bd9e7a7f15147334fd4a08e286_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/7da342e5bc0ec95193bc937fa0a3a96c_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/2fec34449ff36c40b766e85b77b762f6_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/f45c49f8c554f2d50abddfa713e56f51_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/b04aa04f4096bf82f5aa4120cc565dbd_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/45d40764ee4b23a2bc9a57a84660237d_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/82730074f5c3eed96bc0c2395817f491_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/9410ba9309c1c45e40ec7787004f8527_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/89dd21a7f8bb57278ba3844ad1637857_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/77a44c594f7337bcb8ecdb120226792b_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/925cc77ca4beba1e058a7f59b203e8f3_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/0981c916b9ab69f6f68e7963ba155bb3_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/85f83b89b4b573a67f3ef5bf916bc898_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/d46b383ed312d939e7ea947584347ddc_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/7a73aa0ed0f41c713e32c730544c21e7_MD5.png">
+<meta property="article:published_time" content="2024-11-11T09:29:00.000Z">
+<meta property="article:modified_time" content="2024-11-21T02:29:41.099Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="深度学习的数学">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="NLP">
+<meta property="article:tag" content="TODO">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/assets/images/7daf74d7beeb14a0f22a8285a010602e_MD5.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/01-《深度学习的数学》读书笔记.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>深度学习的数学 | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/01-%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">深度学习的数学</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-11-11T17:29:00+08:00">
+                2024-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/llm/" itemprop="url" rel="index">
+                    <span itemprop="name">LLM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  5.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  20
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <table>
+<thead>
+<tr>
+<th>时间</th>
+<th>备忘录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2024-11-11</td>
+<td>开始阅读《深度学习的数学》</td>
+</tr>
+<tr>
+<td>2024-11-19</td>
+<td>第 1 章都是一些概念，每个概念都见过，组合在一起就看不太明白了。</td>
+</tr>
+<tr>
+<td>2024-11-20</td>
+<td>第 2 章的数学基础部分还好，很多知识点大学时都学过，也都知道。<br>今天把第 4 章看完了，信息量很大，大部分是浅尝辄止。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="1-第-1-章：神经网络的思想"><a href="#1-第-1-章：神经网络的思想" class="headerlink" title="1 第 1 章：神经网络的思想"></a>1 第 1 章：神经网络的思想</h1><h2 id="1-1-深度学习里的“深度”是什么意思呢？"><a href="#1-1-深度学习里的“深度”是什么意思呢？" class="headerlink" title="1.1 深度学习里的“深度”是什么意思呢？"></a>1.1 深度学习里的“深度”是什么意思呢？</h2><h2 id="1-2-神经网络的基本原理？"><a href="#1-2-神经网络的基本原理？" class="headerlink" title="1.2 神经网络的基本原理？"></a>1.2 神经网络的基本原理？</h2><p>从数学上来说，其原理十分容易。本书的目的就是阐明它的原理。可能后面会解答清楚。</p>
+<h2 id="1-3-单位阶跃函数"><a href="#1-3-单位阶跃函数" class="headerlink" title="1.3 单位阶跃函数"></a>1.3 单位阶跃函数</h2><p><a href="https://zh.wikipedia.org/zh-hans/%E5%8D%95%E4%BD%8D%E9%98%B6%E8%B7%83%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">单位阶跃函数</a>，又称赫维赛德阶跃函数，通常用 H 或 θ 表记，有时也会用 u、 1 或 𝟙 表记，<strong>是一个由奥利弗·亥维赛提出的阶跃函数，参数为负时值为 0，参数为正时值为 1</strong>。分段函数形式的定义如下： 另一种定义为： 它是个不连续函数，其微分是狄拉克 δ 函数。</p>
+<blockquote>
+<p>(<a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=23&selection=275,0,275,6&color=yellow">深度学习的数学.pdf, p.10</a>)<br>单位阶跃函数</p>
+</blockquote>
+<p><img src="/assets/images/7daf74d7beeb14a0f22a8285a010602e_MD5.png"></p>
+<p>单位阶跃函数的图形如下所示：</p>
+<p><img src="/assets/images/07bf99eea13563a206b85fbe0be471bc_MD5.png"></p>
+<h2 id="1-4-Sigmoid-函数"><a href="#1-4-Sigmoid-函数" class="headerlink" title="1.4 Sigmoid 函数"></a>1.4 Sigmoid 函数</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=24&selection=310,11,310,21&color=yellow">深度学习的数学.pdf, p.11</a></p>
+<blockquote>
+<p>Sigmoid 函数</p>
+</blockquote>
+</blockquote>
+<p>S 型生长曲线。</p>
+<p><a href="https://baike.baidu.com/item/Sigmoid%E5%87%BD%E6%95%B0/7981407" target="_blank" rel="noopener">Sigmoid 函数</a> 也叫 <a href="https://baike.baidu.com/item/Logistic%E5%87%BD%E6%95%B0/3520384?fromModule=lemma_inlink" target="_blank" rel="noopener">Logistic 函数</a>，用于隐层神经元输出，取值范围为 (0,1)，它可以将一个实数映射到 (0,1) 的区间，可以用来做二分类。在特征相差比较复杂或是相差不是特别大时效果比较好。Sigmoid 函数为神经网络中的激励函数，是一种光滑且严格单调的饱和函数，其表达式为：</p>
+<p><img src="/assets/images/5f3a4903c78383b881b3a0c10c47385f_MD5.png"></p>
+<p><img src="/assets/images/51616d0e23a62d8964ec0d4aae01278e_MD5.png"></p>
+<h2 id="1-5-激活函数"><a href="#1-5-激活函数" class="headerlink" title="1.5 激活函数"></a>1.5 激活函数</h2><p>在计算机网络中，一个节点的激活函数定义了该节点在给定的输入或输入的集合下的输出。</p>
+<p>sigmoid 函数和 tanh 函数是研究早期被广泛使用的 2 种<a href="https://baike.baidu.com/item/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/2520792?fromModule=lemma_inlink" target="_blank" rel="noopener">激活函数</a>。两者都为 S 型饱和函数。当 sigmoid 函数输入的值趋于正无穷或负无穷时，梯度会趋近零，从而发生梯度弥散现象。Sigmoid 函数的输出恒为正值，不是以零为中心的，这会导致权值更新时只能朝一个方向更新，从而影响收敛速度。Tanh 激活函数是 sigmoid 函数的改进版，是以零为中心的对称函数，收敛速度快，不容易出现 loss 值晃动，但是无法解决梯度弥散的问题。2 个函数的计算量都是指数级的，计算相对复杂。Softsign 函数是 tanh 函数的改进版，为 S 型饱和函数，以零为中心，值域为（−1，1）。</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=25&selection=6,0,7,10&color=yellow">深度学习的数学.pdf, p.12</a></p>
+<blockquote>
+<p>激活函数：将神经元的工作一般化</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/8a05ce9af6ed3aee6e2834912fbff3c5_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=27&selection=140,0,150,0&color=yellow">深度学习的数学.pdf, p.14</a></p>
+<blockquote>
+<p>激活函数的代表性例子是 Sigmoid 函数 σ(z)</p>
+</blockquote>
+</blockquote>
+<h2 id="1-6-权重"><a href="#1-6-权重" class="headerlink" title="1.6 权重"></a>1.6 权重</h2><p>激活函数中对应的输入信号的系数。</p>
+<p><img src="/assets/images/de7817833bed3544aacb62c8572b5062_MD5.png"></p>
+<p>对应到神经网络中就量，每层神经元传递信号时的系数。</p>
+<p><img src="/assets/images/d373b2758035b1a02a1f265bc93f6ad3_MD5.png"></p>
+<h2 id="1-7-权重的大小如何确定呢？"><a href="#1-7-权重的大小如何确定呢？" class="headerlink" title="1.7 权重的大小如何确定呢？"></a>1.7 权重的大小如何确定呢？</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=49&selection=28,29,31,10&color=yellow">深度学习的数学.pdf, p.36</a></p>
+<blockquote>
+<p>神经网络中比较重要的一点就是利用网络自学习算法来确定权重大小。</p>
+</blockquote>
+</blockquote>
+<h2 id="1-8-逻辑回归"><a href="#1-8-逻辑回归" class="headerlink" title="1.8 逻辑回归"></a>1.8 逻辑回归</h2><p><a href="https://baike.baidu.com/item/logistic%E5%9B%9E%E5%BD%92/2981575?fromModule=lemma_inlink" target="_blank" rel="noopener">logistic 回归</a>是一种广义线性回归（generalized linear model），因此与<a href="https://baike.baidu.com/item/%E5%A4%9A%E9%87%8D%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/4029155?fromModule=lemma_inlink" target="_blank" rel="noopener">多重线性回归</a>分析有很多相同之处。</p>
+<h2 id="1-9-自变量、因变量"><a href="#1-9-自变量、因变量" class="headerlink" title="1.9 自变量、因变量"></a>1.9 自变量、因变量</h2><p>广义解释任何一个系统（或模型）都是由各种变量构成的，<strong>当分析这些系统（或模型）时，可以选择研究其中一些变量对另一些变量的影响，那么选择的这些变量就称为自变量，而被影响的量就被称为因变量</strong>。例如：分析人体这个系统中，呼吸对于维持生命的影响，那么呼吸就是自变量，而生命维持的状态被认为是因变量。</p>
+<h2 id="1-10-偏置"><a href="#1-10-偏置" class="headerlink" title="1.10 偏置"></a>1.10 偏置</h2><p>我们将 - θ 替换为 b。</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=29&selection=62,0,72,0&color=yellow">深度学习的数学.pdf, p.16</a></p>
+<blockquote>
+<p>经过这样处理，式子变漂亮了，也不容易发生计算错误。这个 b 称为偏置（bias）</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/9026eb1d57b432a91870d905579d84f7_MD5.png"></p>
+<blockquote>
+<p>卧槽，为了变漂亮搞这么一手？</p>
+</blockquote>
+<p><img src="/assets/images/f2b0014038c32f680d824585470cdaca_MD5.png"></p>
+<h2 id="1-11-内积"><a href="#1-11-内积" class="headerlink" title="1.11 内积"></a>1.11 内积</h2><p>在<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6" target="_blank" rel="noopener" title="数学">数学</a> 中，<strong>点积</strong>（德语：Punktprodukt；英语：dot product）又称<strong>数量积</strong>或<strong>标量积</strong>（德语：Skalarprodukt；英语：scalar product），是一种接受两串等长的数字序列（通常是<a href="https://zh.wikipedia.org/wiki/%E5%9D%90%E6%A0%87" target="_blank" rel="noopener" title="坐标">坐标</a><a href="https://zh.wikipedia.org/wiki/%E5%90%91%E9%87%8F" target="_blank" rel="noopener" title="向量">向量</a>）、返回单一数字的<a href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E6%95%B0" target="_blank" rel="noopener" title="代数">代数</a><a href="https://zh.wikipedia.org/wiki/%E8%BF%90%E7%AE%97" target="_blank" rel="noopener" title="运算">运算</a>。</p>
+<p>在<a href="https://zh.wikipedia.org/wiki/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E5%87%A0%E4%BD%95" target="_blank" rel="noopener" title="欧几里得几何">欧几里得几何</a> 里，两条<a href="https://zh.wikipedia.org/wiki/%E7%AC%9B%E5%8D%A1%E5%B0%94%E5%9D%90%E6%A0%87%E7%B3%BB" target="_blank" rel="noopener" title="笛卡尔坐标系">笛卡尔坐标</a> 向量的点积常称为<strong>内积</strong>（德语：inneres Produkt；英语：inner product）。点积是<strong>内积</strong>的一种特殊形式：内积是点积的抽象，内积是一种双线性函数，点积是欧几里得空间（<a href="https://zh.wikipedia.org/wiki/%E5%86%85%E7%A7%AF%E7%A9%BA%E9%97%B4" target="_blank" rel="noopener" title="内积空间">内积空间</a>）的度量。</p>
+<p>从代数角度看，先求两数字序列中每组对应元素的<a href="https://zh.wikipedia.org/wiki/%E7%A7%AF" target="_blank" rel="noopener" title="积">积</a>，再求所有积之和，结果即为点积。从几何角度看，点积则是两向量的<a href="https://zh.wikipedia.org/wiki/%E5%90%91%E9%87%8F#%E5%A4%A7%E5%B0%8F" target="_blank" rel="noopener" title="向量">长度</a> 与它们夹角<a href="https://zh.wikipedia.org/wiki/%E4%BD%99%E5%BC%A6" target="_blank" rel="noopener" title="余弦">余弦</a> 的积。这两种定义在笛卡尔坐标系中等价。</p>
+<p><strong>点积</strong>的名称源自表示点乘运算的<a href="https://zh.wikipedia.org/wiki/%E2%8B%85" target="_blank" rel="noopener" title="⋅">点号</a>（a⋅b <img src="/assets/images/54a13e39e47048032d9f2e02dbba94f8_MD5.svg" alt="{\displaystyle \mathbf {a} \cdot \mathbf {b} }">），读作 <code>a dot b</code>，<strong>标量积</strong>的叫法则是在强调其运算结果为<a href="https://zh.wikipedia.org/wiki/%E6%A0%87%E9%87%8F_(%E6%95%B0%E5%AD%A6)" target="_blank" rel="noopener" title="标量 (数学)">标量</a> 而非<a href="https://zh.wikipedia.org/wiki/%E5%90%91%E9%87%8F" target="_blank" rel="noopener" title="向量">向量</a>。向量的另一种乘法是**<a href="https://zh.wikipedia.org/wiki/%E5%8F%89%E7%A7%AF" target="_blank" rel="noopener" title="叉积">叉乘</a><strong>（a×b <img src="/assets/images/d81d543f424edb4d90a768b2b057c495_MD5.svg" alt="{\displaystyle \mathbf {a} \times \mathbf {b} }">），读作 <code>a cross b</code>，其结果为向量，称为</strong><a href="https://zh.wikipedia.org/wiki/%E5%8F%89%E7%A7%AF" target="_blank" rel="noopener" title="叉积">叉积</a><strong>或</strong>向量积**。</p>
+<p><img src="/assets/images/97ad73fb9c122ee2462d3fca3548cb04_MD5.png"></p>
+<h2 id="1-12-什么是神经网络？"><a href="#1-12-什么是神经网络？" class="headerlink" title="1.12 什么是神经网络？"></a>1.12 什么是神经网络？</h2><p>神经元连接成网络。神经网络是将神经单元部署成网络状而形成的。</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=31&selection=160,0,162,1&color=yellow">深度学习的数学.pdf, p.18</a></p>
+<blockquote>
+<p>将这样的神经单元连接为网络状，就形成了神经网络。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/db58a2669679152f87a740e893d74351_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=32&selection=8,0,13,1&color=yellow">深度学习的数学.pdf, p.19</a></p>
+<blockquote>
+<p>网络的连接方法多种多样，本书将主要考察作为基础的阶层型神经网络以及由其发展而来的卷积神经网络。</p>
+</blockquote>
+</blockquote>
+<h2 id="1-13-神经网络各层的职责"><a href="#1-13-神经网络各层的职责" class="headerlink" title="1.13 神经网络各层的职责"></a>1.13 神经网络各层的职责</h2><p>主要针对阶层型神经网络。输入层、隐藏层、输出层。其中</p>
+<p><img src="/assets/images/79d0e9df7528b94fc6db45ee8392b998_MD5.png"></p>
+<p>其中，（1）（2）对应：</p>
+<p><img src="/assets/images/81976edca9cf8d9c1c101535f1658eee_MD5.png"></p>
+<h2 id="1-14-什么是深度学习？"><a href="#1-14-什么是深度学习？" class="headerlink" title="1.14 什么是深度学习？"></a>1.14 什么是深度学习？</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=33&selection=8,0,10,6&color=yellow">深度学习的数学.pdf, p.20</a></p>
+<blockquote>
+<p>深度学习，顾名思义，是叠加了很多层的神经网络。叠加层有各种各样的方法，其中著名的是卷积神经网络</p>
+</blockquote>
+</blockquote>
+<h2 id="1-15-全连接层（fully-connected-layer）"><a href="#1-15-全连接层（fully-connected-layer）" class="headerlink" title="1.15 全连接层（fully connected layer）"></a>1.15 全连接层（fully connected layer）</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=34&selection=15,14,22,0&color=yellow">深度学习的数学.pdf, p.21</a></p>
+<blockquote>
+<p>前一层的神经单元与下一层的所有神经单元都有箭头连接，这样的层构造称为全连接层（fully connected layer）</p>
+</blockquote>
+</blockquote>
+<h2 id="1-16-隐藏层的作用？"><a href="#1-16-隐藏层的作用？" class="headerlink" title="1.16 隐藏层的作用？"></a>1.16 隐藏层的作用？</h2><ul>
+<li>为何能够提取输入图像的特征呢？</li>
+<li>隐藏层设置为几层比较好？</li>
+</ul>
+<p>它很重要，这是多层神经网络中最维的部分。支撑整个神经网络工作的就是这个隐藏层。</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=35&selection=31,0,31,18&color=yellow">深度学习的数学.pdf, p.22</a></p>
+<blockquote>
+<p>隐藏层具有提取输入图像的特征的作用。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=36&selection=12,4,16,6&color=yellow">深度学习的数学.pdf, p.23</a></p>
+<blockquote>
+<p>隐藏层肩负着特征提取（feature extraction）的重要职责</p>
+</blockquote>
+</blockquote>
+<h2 id="1-17-消除噪声处理？"><a href="#1-17-消除噪声处理？" class="headerlink" title="1.17 消除噪声处理？"></a>1.17 消除噪声处理？</h2><p>就是前面提到的偏置。</p>
+<ul>
+<li><input disabled="" type="checkbox"> 大家说的调参，是它么？</li>
+</ul>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=42&selection=61,20,64,0&color=yellow">深度学习的数学.pdf, p.29</a></p>
+<blockquote>
+<p>具体来说，将偏置放在恶魔的心中，以忽略少量的噪声。这个“心的偏置”是各个恶魔固有的值 （也就是个性）</p>
+</blockquote>
+</blockquote>
+<h2 id="1-18-恶魔之间的“交情”表示权重。心的偏置？恶魔的工作？"><a href="#1-18-恶魔之间的“交情”表示权重。心的偏置？恶魔的工作？" class="headerlink" title="1.18 恶魔之间的“交情”表示权重。心的偏置？恶魔的工作？"></a>1.18 恶魔之间的“交情”表示权重。心的偏置？恶魔的工作？</h2><p><font color="#ff0000">这就是 “由神经网络中的关系得出答案”的思想。</font></p>
+<p><img src="/assets/images/fb4a3e9624661040874e8f4f07a31d24_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=46&selection=73,7,75,0&color=yellow">深度学习的数学.pdf, p.33</a></p>
+<blockquote>
+<p>因此需要禁止这样的信号并使信号变清晰，这样的功能就是偏置，在恶魔组织中表现为“心的偏置”</p>
+</blockquote>
+</blockquote>
+<h2 id="1-19-模型的合理性"><a href="#1-19-模型的合理性" class="headerlink" title="1.19 模型的合理性"></a>1.19 模型的合理性</h2><p>求解出多层神经网络实现工作权重和偏置。</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=47&selection=8,21,10,10&color=yellow">深度学习的数学.pdf, p.34</a></p>
+<blockquote>
+<p>并能够充分地解释所给出的数据，就能够验证以上话题的合理性。这需要数学计算，必须将语言描述转换为数学式。</p>
+</blockquote>
+</blockquote>
+<h2 id="1-20-隐藏层需要多少个神经元？"><a href="#1-20-隐藏层需要多少个神经元？" class="headerlink" title="1.20 隐藏层需要多少个神经元？"></a>1.20 隐藏层需要多少个神经元？</h2><p>书中说，存在某种预估？</p>
+<blockquote>
+<p>这个就有有点玄学了啊！规模大的时候如何估呢！？</p>
+</blockquote>
+<ul>
+<li><input disabled="" type="checkbox"> 关于具体的确认方法，将在第 3 章解答。</li>
+</ul>
+<h2 id="1-21-人工智能研究中的几次热潮"><a href="#1-21-人工智能研究中的几次热潮" class="headerlink" title="1.21 人工智能研究中的几次热潮"></a>1.21 人工智能研究中的几次热潮</h2><p><img src="/assets/images/7692ecc71d03e2e80b96e8ba782a179c_MD5.png"></p>
+<h2 id="1-22-神经网络参数确定的方法"><a href="#1-22-神经网络参数确定的方法" class="headerlink" title="1.22 神经网络参数确定的方法"></a>1.22 神经网络参数确定的方法</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=49&selection=35,0,35,25&color=yellow">深度学习的数学.pdf, p.36</a></p>
+<blockquote>
+<p>神经网络的参数确定方法分为有监督学习和无监督学习。</p>
+</blockquote>
+</blockquote>
+<h2 id="1-23-学习数据"><a href="#1-23-学习数据" class="headerlink" title="1.23 学习数据"></a>1.23 学习数据</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=49&selection=36,7,38,4&color=yellow">深度学习的数学.pdf, p.36</a></p>
+<blockquote>
+<p>有监督学习是指，为了确定神经网络的权重和偏置，事先给予数据，这些数据称为学习数据</p>
+</blockquote>
+</blockquote>
+<h2 id="1-24-学习"><a href="#1-24-学习" class="headerlink" title="1.24 学习"></a>1.24 学习</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=49&selection=39,1,44,14&color=yellow">深度学习的数学.pdf, p.36</a></p>
+<blockquote>
+<p>根据给定的学习数据确定权重和偏置，称为学习。注：学习数据也称为训练数据。</p>
+</blockquote>
+</blockquote>
+<h2 id="1-25-最优化"><a href="#1-25-最优化" class="headerlink" title="1.25 最优化"></a>1.25 最优化</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=49&selection=46,3,50,0&color=yellow">深度学习的数学.pdf, p.36</a></p>
+<blockquote>
+<p>神经网络是怎样学习的呢？思路极其简单：计算神经网络得出的预测值与正解的误差，确定使得误差总和达到最小的权重和偏置。这在数学上称为模型的最优化</p>
+</blockquote>
+</blockquote>
+<h2 id="1-26-代价函数（cost-function）"><a href="#1-26-代价函数（cost-function）" class="headerlink" title="1.26 代价函数（cost function）"></a>1.26 代价函数（cost function）</h2><p>用符号 CT 表示（T 是 Total 的首字母）。</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=49&selection=52,0,61,0&color=yellow">深度学习的数学.pdf, p.36</a></p>
+<blockquote>
+<p>关于预测值与正解的误差总和，有各种各样的定义。本书采用的是最古典的定义：针对全部学习数据，计算预测值与正解的误差的平方（称为平方误差），然后再相加。这个误差的总和称为代价函数（cost function）</p>
+</blockquote>
+</blockquote>
+<h2 id="1-27-最小二乘法"><a href="#1-27-最小二乘法" class="headerlink" title="1.27 最小二乘法"></a>1.27 最小二乘法</h2><ul>
+<li><input disabled="" type="checkbox"> 我们将在 2 - 12 节以回归分析为例来具体考察什么是最小二乘法。</li>
+</ul>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=49&selection=75,0,80,6&color=yellow">深度学习的数学.pdf, p.36</a></p>
+<blockquote>
+<p>利用平方误差确定参数的方法在数学上称为最小二乘法，它在统计学中是回归分析的常规手段。</p>
+</blockquote>
+</blockquote>
+<h1 id="2-第-2-章：神经网络的数学基础"><a href="#2-第-2-章：神经网络的数学基础" class="headerlink" title="2 第 2 章：神经网络的数学基础"></a>2 第 2 章：神经网络的数学基础</h1><h2 id="2-1-一次函数"><a href="#2-1-一次函数" class="headerlink" title="2.1 一次函数"></a>2.1 一次函数</h2><p><img src="/assets/images/dda8899150681105af5cd0e98ed9ba76_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=54&selection=71,17,72,8&color=yellow">深度学习的数学.pdf, p.41</a></p>
+<blockquote>
+<p>神经单元的加权输入可以表示为一次函数关系</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/056b94377c408764169b8589908667df_MD5.png"></p>
+<h2 id="2-2-二次函数"><a href="#2-2-二次函数" class="headerlink" title="2.2 二次函数"></a>2.2 二次函数</h2><p><img src="/assets/images/eccaca8f7eed68052e09a56708d100d3_MD5.png"></p>
+<h2 id="2-3-单位阶跃函数"><a href="#2-3-单位阶跃函数" class="headerlink" title="2.3 单位阶跃函数"></a>2.3 单位阶跃函数</h2><p><img src="/assets/images/dca5744f1efb73b4c03403e0b4935cbf_MD5.png"></p>
+<h2 id="2-4-指数函数与-Sigmoid-函数"><a href="#2-4-指数函数与-Sigmoid-函数" class="headerlink" title="2.4 指数函数与 Sigmoid 函数"></a>2.4 指数函数与 Sigmoid 函数</h2><p><img src="/assets/images/ffa498a270e27e02f0c9a6de71a760d8_MD5.png"></p>
+<h2 id="2-5-正态分布的概率密度函数"><a href="#2-5-正态分布的概率密度函数" class="headerlink" title="2.5 正态分布的概率密度函数"></a>2.5 正态分布的概率密度函数</h2><p><img src="/assets/images/6fd9d451456d6b1d88b81723c6ec247c_MD5.png"></p>
+<h2 id="2-6-数列"><a href="#2-6-数列" class="headerlink" title="2.6 数列"></a>2.6 数列</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=59&selection=70,0,75,1&color=yellow">深度学习的数学.pdf, p.46</a></p>
+<blockquote>
+<p>在神经网络的世界中出现的数列是有限项的数列。这样的数列称为有穷数列。在有穷数列中，数列的最后一项称为末项。</p>
+</blockquote>
+</blockquote>
+<h2 id="2-7-数列的通项公式"><a href="#2-7-数列的通项公式" class="headerlink" title="2.7 数列的通项公式"></a>2.7 数列的通项公式</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=60&selection=16,0,27,1&color=yellow">深度学习的数学.pdf, p.47</a></p>
+<blockquote>
+<p>将数列的第 n 项用一个关于 n 的式子表示出来，这个式子就称为该数列的通项公式。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/c542f19dcd124393cdded20d0394db1d_MD5.png"></p>
+<p><img src="/assets/images/a01ef2af1c8234344ef8faa32b73b752_MD5.png"></p>
+<h2 id="2-8-递推关系式"><a href="#2-8-递推关系式" class="headerlink" title="2.8 递推关系式"></a>2.8 递推关系式</h2><p>即，数列的递推公式。</p>
+<h2 id="2-9-向量"><a href="#2-9-向量" class="headerlink" title="2.9 向量"></a>2.9 向量</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=67&selection=8,0,12,1&color=yellow">深度学习的数学.pdf, p.54</a></p>
+<blockquote>
+<p>把向量的箭头放在坐标平面上，就可以用坐标的形式表示向量。把箭头的起点放在原点，用箭头终点的坐标表示向量，这叫作向量的坐标表示。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=68&selection=10,0,13,1&color=yellow">深度学习的数学.pdf, p.55</a></p>
+<blockquote>
+<p>从直观上来讲，表示向量的箭头的长度称为这个向量的大小。</p>
+</blockquote>
+</blockquote>
+<p>向量的内积：<br><img src="/assets/images/d9224ba747ed217621e2b16238b3c832_MD5.png"></p>
+<h2 id="2-10-柯西-施瓦茨不等式"><a href="#2-10-柯西-施瓦茨不等式" class="headerlink" title="2.10 柯西-施瓦茨不等式"></a>2.10 柯西-施瓦茨不等式</h2><p><img src="/assets/images/8feed7029853223fda8b4c27208b1056_MD5.png"></p>
+<p><img src="/assets/images/bd8e4ea0b19ecb904f5ee6f3dae10029_MD5.png"></p>
+<ul>
+<li><input disabled="" type="checkbox"> 性质 ① 就是后述的梯度下降法的基本原理。</li>
+<li><input disabled="" type="checkbox"> 后面我们考察卷积神经网络时，这个观点就变得十分重要（附录 C）。</li>
+</ul>
+<h2 id="2-11-矩阵"><a href="#2-11-矩阵" class="headerlink" title="2.11 矩阵"></a>2.11 矩阵</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=76&selection=338,11,338,22&color=yellow">深度学习的数学.pdf, p.63</a></p>
+<blockquote>
+<p>矩阵的乘法不满足交换律</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=76&selection=347,0,355,11&color=yellow">深度学习的数学.pdf, p.63</a></p>
+<blockquote>
+<p>而单位矩阵 E 与任意矩阵 A 的乘积都满足以下交换律</p>
+</blockquote>
+</blockquote>
+<p>转置矩阵。</p>
+<h2 id="2-12-Hadamard-乘积"><a href="#2-12-Hadamard-乘积" class="headerlink" title="2.12 Hadamard 乘积"></a>2.12 Hadamard 乘积</h2><p>在<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6" target="_blank" rel="noopener" title="数学">数学</a>中，**<a href="https://zh.wikipedia.org/zh-cn/%E9%98%BF%E8%BE%BE%E9%A9%AC%E7%9F%A9%E9%98%B5" target="_blank" rel="noopener">阿达马矩阵</a><strong>（英语：</strong>Hadamard matrix**）是一种特殊的正交矩阵，具有一些重要的性质和应用。它的特点是每个元素只能是+1 或-1，并且每行（或每列）之间的内积为 0，表示彼此正交。Hadamard 矩阵的大小为 2 的幂次方，即维度为 <img src="/assets/images/76aa8646165fe13881431f213a24a4d8_MD5.svg" alt="{\displaystyle 2^{n}\times 2^{n}}">。</p>
+<p>阿达马矩阵常用于<a href="https://zh.wikipedia.org/wiki/%E7%BA%A0%E9%94%99%E7%A0%81" target="_blank" rel="noopener" title="纠错码">纠错码</a>，如  <a href="https://zh.wikipedia.org/w/index.php?title=Reed-Muller%E7%A0%81&action=edit&redlink=1" target="_blank" rel="noopener">Reed-Muller 码</a>。阿达马矩阵的命名来自于法国数学家<a href="https://zh.wikipedia.org/wiki/%E9%9B%85%E5%85%8B%C2%B7%E9%98%BF%E8%BE%BE%E9%A9%AC" target="_blank" rel="noopener" title="雅克·阿达马">雅克·阿达马</a>。</p>
+<h2 id="2-13-导数"><a href="#2-13-导数" class="headerlink" title="2.13 导数"></a>2.13 导数</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=82&selection=170,0,195,0&color=yellow">深度学习的数学.pdf, p.69</a></p>
+<blockquote>
+<p>当函数 f (x) 在 x &#x3D; a 处取得最小值时，f’ (a) &#x3D; 0。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=82&selection=258,0,283,12&color=yellow">深度学习的数学.pdf, p.69</a></p>
+<blockquote>
+<p>f’ (a) &#x3D; 0 是函数 f (x) 在 x &#x3D; a 处取得最小值的必要条件。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/941a6fa34e0ab406fd1754637ec723e3_MD5.png"></p>
+<h2 id="2-14-偏导数基础"><a href="#2-14-偏导数基础" class="headerlink" title="2.14 偏导数基础"></a>2.14 偏导数基础</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=85&selection=44,30,48,1&color=yellow">深度学习的数学.pdf, p.72</a></p>
+<blockquote>
+<p>本节我们来考察有两个以上的自变量的函数。有两个以上的自变量的函数称为多变量函数。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=86&selection=82,25,88,0&color=yellow">深度学习的数学.pdf, p.73</a></p>
+<blockquote>
+<p>关于某个特定变量的导数就称为偏导数（partial derivative）</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/97483ca20402c510cab1db48e362857d_MD5.png"></p>
+<h2 id="2-15-多变量函数的最小值条件"><a href="#2-15-多变量函数的最小值条件" class="headerlink" title="2.15 多变量函数的最小值条件"></a>2.15 多变量函数的最小值条件</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=87&selection=89,0,109,0&color=yellow">深度学习的数学.pdf, p.74</a></p>
+<blockquote>
+<p>光滑的单变量函数 y &#x3D; f (x) 在点 x 处取得最小值的必要条件是导函数在该点取值 0</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/c6f1d4777b8e89135c4da67982e406a2_MD5.png"></p>
+<h2 id="2-16-拉格朗日乘数法"><a href="#2-16-拉格朗日乘数法" class="headerlink" title="2.16 拉格朗日乘数法"></a>2.16 拉格朗日乘数法</h2><p>λ：拉姆达</p>
+<p><img src="/assets/images/e52bd9e2cca003ba76676d3e376d9f57_MD5.png"></p>
+<h2 id="2-17-复合函数"><a href="#2-17-复合函数" class="headerlink" title="2.17 复合函数"></a>2.17 复合函数</h2><p><img src="/assets/images/eb1d027b4ac66604669bf1738b4ecf79_MD5.png"></p>
+<h2 id="2-18-复合函数求导公式"><a href="#2-18-复合函数求导公式" class="headerlink" title="2.18 复合函数求导公式"></a>2.18 复合函数求导公式</h2><p><img src="/assets/images/b09221e5c5fd86b6b77b4a194c967d15_MD5.png"></p>
+<h2 id="2-19-多变量函数的近似公式"><a href="#2-19-多变量函数的近似公式" class="headerlink" title="2.19 多变量函数的近似公式"></a>2.19 多变量函数的近似公式</h2><p><img src="/assets/images/e6175cc0f521cc1aee13c6fd012ab9bf_MD5.png"><br><img src="/assets/images/50cdf09c329f4dfbf78e598f9949bae6_MD5.png"></p>
+<h2 id="2-20-梯度下降法的含义与公式"><a href="#2-20-梯度下降法的含义与公式" class="headerlink" title="2.20 梯度下降法的含义与公式"></a>2.20 梯度下降法的含义与公式</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=97&selection=77,0,79,1&color=yellow">深度学习的数学.pdf, p.84</a></p>
+<blockquote>
+<p>在数值分析领域，梯度下降法也称为最速下降法。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/44d4b7e33f5f865fad945aecda61919a_MD5.png"></p>
+<p><img src="/assets/images/4d78e1e1dbcd2b96beb7518b4f073137_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=101&selection=26,19,40,1&color=yellow">深度学习的数学.pdf, p.88</a></p>
+<blockquote>
+<p>这种寻找函数 f (x, y) 的最小值点的方法称为二变量函数的梯度下降法。</p>
+</blockquote>
+</blockquote>
+<h2 id="2-21-哈密顿算子-∇"><a href="#2-21-哈密顿算子-∇" class="headerlink" title="2.21 哈密顿算子 ∇"></a>2.21 哈密顿算子 ∇</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=102&selection=157,0,162,0&color=yellow">深度学习的数学.pdf, p.89</a></p>
+<blockquote>
+<p>∇ 称为哈密顿算子</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/b2606cbd59db5d2b67e060f3f9ccf162_MD5.png"></p>
+<h2 id="2-22-梯度下降法的要点"><a href="#2-22-梯度下降法的要点" class="headerlink" title="2.22 梯度下降法的要点"></a>2.22 梯度下降法的要点</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=103&selection=135,0,142,7&color=yellow">深度学习的数学.pdf, p.90</a></p>
+<blockquote>
+<p>η 只是简单地表示正的微小常数。而在实际使用计算机进行计算时，如何恰当地确定这个 η 是一个大问题。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=103&selection=172,0,178,22&color=yellow">深度学习的数学.pdf, p.90</a></p>
+<blockquote>
+<p>在神经网络的世界中，η 称为学习率。遗憾的是，它的确定方法没有明确的标准，只能通过反复试验来寻找恰当的值。</p>
+</blockquote>
+</blockquote>
+<h2 id="2-23-最优化问题"><a href="#2-23-最优化问题" class="headerlink" title="2.23 最优化问题"></a>2.23 最优化问题</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=107&selection=9,0,18,1&color=yellow">深度学习的数学.pdf, p.94</a></p>
+<blockquote>
+<p>在为了分析数据而建立数学模型时，通常模型是由参数确定的。在数学世界中，最优化问题就是如何确定这些参数。</p>
+<p>从数学上来说，确定神经网络的参数是一个最优化问题，具体就是对神经网络的参数（即权重和偏置）进行拟合，使得神经网络的输出与实际数据相吻合。</p>
+<p>为了理解最优化问题，最浅显的例子就是回归分析。</p>
+</blockquote>
+</blockquote>
+<h2 id="2-24-回归分析"><a href="#2-24-回归分析" class="headerlink" title="2.24 回归分析"></a>2.24 回归分析</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=107&selection=23,0,26,1&color=yellow">深度学习的数学.pdf, p.94</a></p>
+<blockquote>
+<p>由多个变量组成的数据中，着眼于其中一个特定的变量，用其余的变量来解释这个特定的变量，这样的方法称为回归分析。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/c4eb0bca3d4f32e6628a77667144ece6_MD5.png"></p>
+<p><img src="/assets/images/2ff26a3f53e89f24254400b5ae16a203_MD5.png"></p>
+<p><img src="/assets/images/cb892479eee0b177867b85649eb89ffd_MD5.png"></p>
+<p>回归分析认为，p、q 是使误差总和式 (6) 最小的解。接下来求偏导就行了。</p>
+<h2 id="2-25-代价函数（损失函数）"><a href="#2-25-代价函数（损失函数）" class="headerlink" title="2.25 代价函数（损失函数）"></a>2.25 代价函数（损失函数）</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=111&selection=106,0,118,6&color=yellow">深度学习的数学.pdf, p.98</a></p>
+<blockquote>
+<p>在最优化方面，误差总和 CT 可以称为“误差函数”“损失函数”“代价函数”等。本书采用代价函数（cost function）这个名称。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=111&selection=131,14,144,7&color=yellow">深度学习的数学.pdf, p.98</a></p>
+<blockquote>
+<p>利用平方误差的总和 CT 进行最优化的方法称为最小二乘法。本书中我们只考虑将平方误差的总和 CT 作为代价函数。</p>
+</blockquote>
+</blockquote>
+<h2 id="2-26-模型参数的个数"><a href="#2-26-模型参数的个数" class="headerlink" title="2.26 模型参数的个数"></a>2.26 模型参数的个数</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=112&selection=98,6,121,15&color=yellow">深度学习的数学.pdf, p.99</a></p>
+<blockquote>
+<p>回归方程是根据大量的条件所得到的折中结果。这里所说的“折中”是指，理想中应该取值 0 的代价函数式 (6) 只能取最小值。因此，模型与数据的误差 CT 不为 0 也无须担心。不过，只要误差接近 0，就可以说这是合乎数据的模型。</p>
+</blockquote>
+</blockquote>
+<h1 id="3-神经网络的最优化"><a href="#3-神经网络的最优化" class="headerlink" title="3 神经网络的最优化"></a>3 神经网络的最优化</h1><h2 id="3-1-参数和变量"><a href="#3-1-参数和变量" class="headerlink" title="3.1 参数和变量"></a>3.1 参数和变量</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=115&selection=28,1,31,1&color=yellow">深度学习的数学.pdf, p.102</a></p>
+<blockquote>
+<p>像权重和偏置这种确定数学模型的常数称为模型的参数。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/23717427dd9c4c6f52746042e9e35398_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=116&selection=117,0,139,1&color=yellow">深度学习的数学.pdf, p.103</a></p>
+<blockquote>
+<p>首先，我们对层进行编号，如下图所示，最左边的输入层为层 1，隐藏层（中间层）为层 2、层 3……最右边的输出层为层 l（这里的 l 指 last 的首字母，表示层的总数）。</p>
+</blockquote>
+</blockquote>
+<p>注意：权重 w 的下标表示。</p>
+<p><img src="/assets/images/31c1abc40e968c9f864d02640456aebc_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=120&selection=158,0,158,8&color=yellow">深度学习的数学.pdf, p.107</a></p>
+<blockquote>
+<p>变量值的表示方法</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/41d9d5a86281b4740086afd0d8906058_MD5.png"></p>
+<h2 id="3-2-神经网络的变量的关系式"><a href="#3-2-神经网络的变量的关系式" class="headerlink" title="3.2 神经网络的变量的关系式"></a>3.2 神经网络的变量的关系式</h2><p><img src="/assets/images/1f5509ef836a32990cce0729dfac8615_MD5.png"></p>
+<p><img src="/assets/images/276ba43b74e4b2f5e588d16358788faa_MD5.png"></p>
+<p><img src="/assets/images/93e2fb82ef689d321eb439571f7319ef_MD5.png"></p>
+<p><img src="/assets/images/0982d89f6325b072bfae1a719225a494_MD5.png"></p>
+<p><img src="/assets/images/ef349a07937a6f72cff8e0e7e7fd53d0_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=126&selection=217,0,217,12&color=yellow">深度学习的数学.pdf, p.113</a></p>
+<blockquote>
+<p>神经网络的变量的矩阵表示</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/1ac8e5655821d53cd21784f1995537a2_MD5.png"></p>
+<h2 id="3-3-神经网络的学习数据和正解"><a href="#3-3-神经网络的学习数据和正解" class="headerlink" title="3.3 神经网络的学习数据和正解"></a>3.3 神经网络的学习数据和正解</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=127&selection=14,0,28,22&color=yellow">深度学习的数学.pdf, p.114</a></p>
+<blockquote>
+<p>利用事先提供的数据（学习数据）来确定权重和偏置，这在神经网络中称为学习（1 - 7 节）。学习的逻辑非常简单，使得神经网络算出的预测值与学习数据的正解的总体误差达到最小即可。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=128&selection=104,20,105,17&color=yellow">深度学习的数学.pdf, p.115</a></p>
+<blockquote>
+<p>经网络的情况下，则通常无法将预测值和正解整合在一张表里。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=129&selection=20,3,20,18&color=yellow">深度学习的数学.pdf, p.116</a></p>
+<blockquote>
+<p>如何将这些正解教给神经网络呢？</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=129&selection=25,0,25,25&color=yellow">深度学习的数学.pdf, p.116</a></p>
+<blockquote>
+<p>神经网络的预测值用输出层神经单元的输出变量来表示。</p>
+</blockquote>
+</blockquote>
+<p>加正解变量：</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=130&selection=40,1,48,11&color=yellow">深度学习的数学.pdf, p.117</a></p>
+<blockquote>
+<p>那么如何将 1 个正解和 2 个输出变量对应起来呢？</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/0a604288d3992aba9e6e9189594db8fb_MD5.png"></p>
+<h2 id="3-4-交叉熵"><a href="#3-4-交叉熵" class="headerlink" title="3.4 交叉熵"></a>3.4 交叉熵</h2><p><img src="/assets/images/f32a6cf8c05d68189f55de01cc238ce6_MD5.png"></p>
+<h2 id="3-5-最优化"><a href="#3-5-最优化" class="headerlink" title="3.5 最优化"></a>3.5 最优化</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=132&selection=17,0,41,1&color=yellow">深度学习的数学.pdf, p.119</a></p>
+<blockquote>
+<p>用于数据分析的数学模型是由参数确定的。在神经网络中，权重和偏置就是这样的参数。通过调整这些参数，使模型的输出符合实际的数据（在神经网络中就是学习数据），从而确定数学模型，这个过程在数学上称为最优化（2 - 12 节），在神经网络的世界中则称为学习（1 - 7 节）。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=132&selection=42,3,44,10&color=yellow">深度学习的数学.pdf, p.119</a></p>
+<blockquote>
+<p>参数是怎样确定的呢？其原理非常简单，具体方法就是，对于全部数据，使得从数学模型得出的理论值（本书中称为预测值）与实际值的误差达到最小。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/5c89c60e99231da03b67f5e6c27e9213_MD5.png"></p>
+<h1 id="4-第-4-章：神经网络和误差所向传播法"><a href="#4-第-4-章：神经网络和误差所向传播法" class="headerlink" title="4 第 4 章：神经网络和误差所向传播法"></a>4 第 4 章：神经网络和误差所向传播法</h1><h2 id="4-1-函数最小值"><a href="#4-1-函数最小值" class="headerlink" title="4.1 函数最小值"></a>4.1 函数最小值</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=147&selection=28,0,28,27&color=yellow">深度学习的数学.pdf, p.134</a></p>
+<blockquote>
+<p>求函数最小值的通用方法中，最有名的就是利用最小值条件。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/a5c2a16cd908d59ae047fbc6433ee161_MD5.png"></p>
+<p>但是，在规模比较大的时候方程会很多，求解方程极其困难。于是，<font color="#ff0000">梯度下降法应运而生。</font></p>
+<h2 id="4-2-在神经网络中应用梯度下降法"><a href="#4-2-在神经网络中应用梯度下降法" class="headerlink" title="4.2 在神经网络中应用梯度下降法"></a>4.2 在神经网络中应用梯度下降法</h2><p><img src="/assets/images/cde35a35aa46600cc99148faec28c414_MD5.png"></p>
+<p><img src="/assets/images/0c2e4552df47d6b0593daeb0b086f7fb_MD5.png"></p>
+<p>梯度下降虽然香，但是对平方误差求导却很麻烦。于是，<font color="#ff0000">有了误差所向传播法</font>。</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=152&selection=453,7,456,6&color=yellow">深度学习的数学.pdf, p.139</a></p>
+<blockquote>
+<p>用具体的式子来求梯度分量是一件非常困难的工作。虽然单个的计算比较简单，但是会被导数的复杂与繁多所压倒，进入所谓“导数地狱”的世界。为了解决这个问题，人们研究出了误差反向传播法。</p>
+</blockquote>
+</blockquote>
+<p>先求导再求和：</p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=152&selection=476,0,476,19&color=yellow">深度学习的数学.pdf, p.139</a></p>
+<blockquote>
+<p>梯度分量是一个一个学习实例的简单的和。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/802147798b277592d0aab8f619af54b4_MD5.png"></p>
+<h2 id="4-3-误差反向传播法（BP-法）"><a href="#4-3-误差反向传播法（BP-法）" class="headerlink" title="4.3 误差反向传播法（BP 法）"></a>4.3 误差反向传播法（BP 法）</h2><p><img src="/assets/images/dea493bd9e7a7f15147334fd4a08e286_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=154&selection=18,0,20,17&color=yellow">深度学习的数学.pdf, p.141</a></p>
+<blockquote>
+<p>梯度下降法对于寻找多变量函数的最小值的问题是有效的。然而在神经网络的世界中，变量、参数和函数错综复杂，无法直接使用梯度下降法，于是就出现了误差反向传播法。</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/7da342e5bc0ec95193bc937fa0a3a96c_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=159&selection=144,0,145,2&color=yellow">深度学习的数学.pdf, p.146</a></p>
+<blockquote>
+<p>误差反向传播法的特点是将繁杂的导数计算替换为数列的递推关系式。</p>
+</blockquote>
+</blockquote>
+<h2 id="4-4-神经单元误差"><a href="#4-4-神经单元误差" class="headerlink" title="4.4 神经单元误差"></a>4.4 神经单元误差</h2><p><img src="/assets/images/2fec34449ff36c40b766e85b77b762f6_MD5.png"></p>
+<p><img src="/assets/images/f45c49f8c554f2d50abddfa713e56f51_MD5.png"></p>
+<blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=161&selection=134,4,139,15&color=yellow">深度学习的数学.pdf, p.148</a></p>
+<blockquote>
+<p>如果给出平方误差 C 和激活函数，就可以具体地求出相当于“末项”的输出层神经单元误差</p>
+</blockquote>
+</blockquote>
+<p><img src="/assets/images/b04aa04f4096bf82f5aa4120cc565dbd_MD5.png"></p>
+<p><img src="/assets/images/45d40764ee4b23a2bc9a57a84660237d_MD5.png"></p>
+<p><img src="/assets/images/82730074f5c3eed96bc0c2395817f491_MD5.png"></p>
+<h2 id="4-5-反向传播算法计算神经网络的权重和偏置"><a href="#4-5-反向传播算法计算神经网络的权重和偏置" class="headerlink" title="4.5 反向传播算法计算神经网络的权重和偏置"></a>4.5 反向传播算法计算神经网络的权重和偏置</h2><p><img src="/assets/images/9410ba9309c1c45e40ec7787004f8527_MD5.png"></p>
+<p><img src="/assets/images/89dd21a7f8bb57278ba3844ad1637857_MD5.png"></p>
+<ul>
+<li>4-1 节式（2）：</li>
+</ul>
+<p><img src="/assets/images/77a44c594f7337bcb8ecdb120226792b_MD5.png"></p>
+<ul>
+<li>4-1 节式（3）：</li>
+</ul>
+<p><img src="/assets/images/925cc77ca4beba1e058a7f59b203e8f3_MD5.png"></p>
+<ul>
+<li>层的神经网络误差计算：</li>
+</ul>
+<p><img src="/assets/images/0981c916b9ab69f6f68e7963ba155bb3_MD5.png"></p>
+<ul>
+<li>4-3 节式（16）：</li>
+</ul>
+<p><img src="/assets/images/85f83b89b4b573a67f3ef5bf916bc898_MD5.png"></p>
+<ul>
+<li>4-1 节式（9）：</li>
+</ul>
+<p><img src="/assets/images/d46b383ed312d939e7ea947584347ddc_MD5.png"></p>
+<ul>
+<li>4-2 节式（11）：</li>
+</ul>
+<p><img src="/assets/images/7a73aa0ed0f41c713e32c730544c21e7_MD5.png"></p>
+<h1 id="5-第-5-章：深度学习和卷积神经网络"><a href="#5-第-5-章：深度学习和卷积神经网络" class="headerlink" title="5 第 5 章：深度学习和卷积神经网络"></a>5 第 5 章：深度学习和卷积神经网络</h1><h2 id="5-1-神经网络的结构"><a href="#5-1-神经网络的结构" class="headerlink" title="5.1 神经网络的结构"></a>5.1 神经网络的结构</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=181&selection=43,0,51,9&color=yellow">深度学习的数学.pdf, p.168</a></p>
+<blockquote>
+<p>图中用圆圈将变量名圈起来的就是神经单元，从这个图中我们可以了解到卷积神经网络的特点。隐藏层由多个具有结构的层组成。具体来说，隐藏层是多个由卷积层和池化层构成的层组成的。它不仅“深”，而且含有内置的结构。</p>
+</blockquote>
+</blockquote>
+<h2 id="5-2-卷积层"><a href="#5-2-卷积层" class="headerlink" title="5.2 卷积层"></a>5.2 卷积层</h2><blockquote>
+<p>[!PDF|yellow] <a href="2%20Aera/IT/LLM/99.%20%E8%B5%84%E6%96%99/%E4%B9%A6%E7%B1%8D/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6.pdf.pdf#page=181&selection=53,2,53,28&color=yellow">深度学习的数学.pdf, p.168</a></p>
+<blockquote>
+<p>卷积层的英文是 convolution layer。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><input disabled="" type="checkbox"> 什么是卷积？</li>
+</ul>
+<h2 id="5-3-神经网络的设计思想"><a href="#5-3-神经网络的设计思想" class="headerlink" title="5.3 神经网络的设计思想"></a>5.3 神经网络的设计思想</h2><h2 id="5-4-TODO"><a href="#5-4-TODO" class="headerlink" title="5.4 TODO"></a>5.4 TODO</h2><h2 id="5-5-TODO"><a href="#5-5-TODO" class="headerlink" title="5.5 TODO"></a>5.5 TODO</h2><h2 id="5-6-TODO"><a href="#5-6-TODO" class="headerlink" title="5.6 TODO"></a>5.6 TODO</h2><h2 id="5-7-TODO"><a href="#5-7-TODO" class="headerlink" title="5.7 TODO"></a>5.7 TODO</h2><h2 id="5-8-TODO"><a href="#5-8-TODO" class="headerlink" title="5.8 TODO"></a>5.8 TODO</h2><h2 id="5-9-TODO"><a href="#5-9-TODO" class="headerlink" title="5.9 TODO"></a>5.9 TODO</h2><h1 id="6-附录"><a href="#6-附录" class="headerlink" title="6 附录"></a>6 附录</h1><h2 id="6-1-TODO"><a href="#6-1-TODO" class="headerlink" title="6.1 TODO"></a>6.1 TODO</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%B0%E5%AD%A6/" rel="tag"># 深度学习的数学</a>
+          
+            <a href="/tags/llm/" rel="tag"># LLM</a>
+          
+            <a href="/tags/nlp/" rel="tag"># NLP</a>
+          
+            <a href="/tags/todo/" rel="tag"># TODO</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.html" rel="next" title="索引下推">
+                <i class="fa fa-chevron-left"></i> 索引下推
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Awesome-LLM.html" rel="prev" title="Awesome-LLM">
+                Awesome-LLM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">96</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-第-1-章：神经网络的思想"><span class="nav-number">1.</span> <span class="nav-text">1 第 1 章：神经网络的思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-深度学习里的“深度”是什么意思呢？"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 深度学习里的“深度”是什么意思呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-神经网络的基本原理？"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 神经网络的基本原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-单位阶跃函数"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 单位阶跃函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Sigmoid-函数"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Sigmoid 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-激活函数"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 激活函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-权重"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 权重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-权重的大小如何确定呢？"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 权重的大小如何确定呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-逻辑回归"><span class="nav-number">1.8.</span> <span class="nav-text">1.8 逻辑回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-自变量、因变量"><span class="nav-number">1.9.</span> <span class="nav-text">1.9 自变量、因变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-10-偏置"><span class="nav-number">1.10.</span> <span class="nav-text">1.10 偏置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-11-内积"><span class="nav-number">1.11.</span> <span class="nav-text">1.11 内积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-12-什么是神经网络？"><span class="nav-number">1.12.</span> <span class="nav-text">1.12 什么是神经网络？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-13-神经网络各层的职责"><span class="nav-number">1.13.</span> <span class="nav-text">1.13 神经网络各层的职责</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-14-什么是深度学习？"><span class="nav-number">1.14.</span> <span class="nav-text">1.14 什么是深度学习？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-15-全连接层（fully-connected-layer）"><span class="nav-number">1.15.</span> <span class="nav-text">1.15 全连接层（fully connected layer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-16-隐藏层的作用？"><span class="nav-number">1.16.</span> <span class="nav-text">1.16 隐藏层的作用？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-17-消除噪声处理？"><span class="nav-number">1.17.</span> <span class="nav-text">1.17 消除噪声处理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-18-恶魔之间的“交情”表示权重。心的偏置？恶魔的工作？"><span class="nav-number">1.18.</span> <span class="nav-text">1.18 恶魔之间的“交情”表示权重。心的偏置？恶魔的工作？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-19-模型的合理性"><span class="nav-number">1.19.</span> <span class="nav-text">1.19 模型的合理性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-20-隐藏层需要多少个神经元？"><span class="nav-number">1.20.</span> <span class="nav-text">1.20 隐藏层需要多少个神经元？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-21-人工智能研究中的几次热潮"><span class="nav-number">1.21.</span> <span class="nav-text">1.21 人工智能研究中的几次热潮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-22-神经网络参数确定的方法"><span class="nav-number">1.22.</span> <span class="nav-text">1.22 神经网络参数确定的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-23-学习数据"><span class="nav-number">1.23.</span> <span class="nav-text">1.23 学习数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-24-学习"><span class="nav-number">1.24.</span> <span class="nav-text">1.24 学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-25-最优化"><span class="nav-number">1.25.</span> <span class="nav-text">1.25 最优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-26-代价函数（cost-function）"><span class="nav-number">1.26.</span> <span class="nav-text">1.26 代价函数（cost function）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-27-最小二乘法"><span class="nav-number">1.27.</span> <span class="nav-text">1.27 最小二乘法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-第-2-章：神经网络的数学基础"><span class="nav-number">2.</span> <span class="nav-text">2 第 2 章：神经网络的数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-一次函数"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 一次函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-二次函数"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 二次函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-单位阶跃函数"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 单位阶跃函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-指数函数与-Sigmoid-函数"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 指数函数与 Sigmoid 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-正态分布的概率密度函数"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 正态分布的概率密度函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-数列"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-数列的通项公式"><span class="nav-number">2.7.</span> <span class="nav-text">2.7 数列的通项公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-递推关系式"><span class="nav-number">2.8.</span> <span class="nav-text">2.8 递推关系式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-向量"><span class="nav-number">2.9.</span> <span class="nav-text">2.9 向量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-10-柯西-施瓦茨不等式"><span class="nav-number">2.10.</span> <span class="nav-text">2.10 柯西-施瓦茨不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-11-矩阵"><span class="nav-number">2.11.</span> <span class="nav-text">2.11 矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-12-Hadamard-乘积"><span class="nav-number">2.12.</span> <span class="nav-text">2.12 Hadamard 乘积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-13-导数"><span class="nav-number">2.13.</span> <span class="nav-text">2.13 导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-14-偏导数基础"><span class="nav-number">2.14.</span> <span class="nav-text">2.14 偏导数基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-15-多变量函数的最小值条件"><span class="nav-number">2.15.</span> <span class="nav-text">2.15 多变量函数的最小值条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-16-拉格朗日乘数法"><span class="nav-number">2.16.</span> <span class="nav-text">2.16 拉格朗日乘数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-17-复合函数"><span class="nav-number">2.17.</span> <span class="nav-text">2.17 复合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-18-复合函数求导公式"><span class="nav-number">2.18.</span> <span class="nav-text">2.18 复合函数求导公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-19-多变量函数的近似公式"><span class="nav-number">2.19.</span> <span class="nav-text">2.19 多变量函数的近似公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-20-梯度下降法的含义与公式"><span class="nav-number">2.20.</span> <span class="nav-text">2.20 梯度下降法的含义与公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-21-哈密顿算子-∇"><span class="nav-number">2.21.</span> <span class="nav-text">2.21 哈密顿算子 ∇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-22-梯度下降法的要点"><span class="nav-number">2.22.</span> <span class="nav-text">2.22 梯度下降法的要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-23-最优化问题"><span class="nav-number">2.23.</span> <span class="nav-text">2.23 最优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-24-回归分析"><span class="nav-number">2.24.</span> <span class="nav-text">2.24 回归分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-25-代价函数（损失函数）"><span class="nav-number">2.25.</span> <span class="nav-text">2.25 代价函数（损失函数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-26-模型参数的个数"><span class="nav-number">2.26.</span> <span class="nav-text">2.26 模型参数的个数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-神经网络的最优化"><span class="nav-number">3.</span> <span class="nav-text">3 神经网络的最优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-参数和变量"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 参数和变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-神经网络的变量的关系式"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 神经网络的变量的关系式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-神经网络的学习数据和正解"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 神经网络的学习数据和正解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-交叉熵"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 交叉熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-最优化"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 最优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-第-4-章：神经网络和误差所向传播法"><span class="nav-number">4.</span> <span class="nav-text">4 第 4 章：神经网络和误差所向传播法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-函数最小值"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 函数最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-在神经网络中应用梯度下降法"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 在神经网络中应用梯度下降法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-误差反向传播法（BP-法）"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 误差反向传播法（BP 法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-神经单元误差"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 神经单元误差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-反向传播算法计算神经网络的权重和偏置"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 反向传播算法计算神经网络的权重和偏置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-第-5-章：深度学习和卷积神经网络"><span class="nav-number">5.</span> <span class="nav-text">5 第 5 章：深度学习和卷积神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-神经网络的结构"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 神经网络的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-卷积层"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-神经网络的设计思想"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 神经网络的设计思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-TODO"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-TODO"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-TODO"><span class="nav-number">5.6.</span> <span class="nav-text">5.6 TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-7-TODO"><span class="nav-number">5.7.</span> <span class="nav-text">5.7 TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-TODO"><span class="nav-number">5.8.</span> <span class="nav-text">5.8 TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-9-TODO"><span class="nav-number">5.9.</span> <span class="nav-text">5.9 TODO</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-附录"><span class="nav-number">6.</span> <span class="nav-text">6 附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-TODO"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 TODO</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>
