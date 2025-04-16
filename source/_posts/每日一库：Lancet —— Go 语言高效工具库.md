@@ -1,7 +1,6 @@
 ---
 tags:
   - note
-  - TODO
   - 每日一库
   - blog
 categories:
