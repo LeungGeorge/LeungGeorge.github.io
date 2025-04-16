@@ -1,4 +1,5 @@
 ---
+uuid: 0c957dd0-1a68-11f0-b65e-2d145289379e
 tags:
   - note
   - blog
