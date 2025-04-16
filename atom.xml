@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2024-11-01T02:22:37.048Z</updated>
+  <updated>2025-04-16T01:58:07.951Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一库：Lancet-——-Go-语言高效工具库</title>
+    <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9ALancet-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E9%AB%98%E6%95%88%E5%B7%A5%E5%85%B7%E5%BA%93.html"/>
+    <id>https://liangyuanzheng.com/每日一库：Lancet-——-Go-语言高效工具库.html</id>
+    <published>2025-04-16T01:53:00.000Z</published>
+    <updated>2025-04-16T01:58:07.951Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;项目简介&quot;&gt;&lt;a href=&quot;#项目简介&quot; class=&quot;headerlink&quot; title=&quot;项目简介&quot;&gt;&lt;/a&gt;项目简介&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Lancet&lt;/strong&gt; 是一个全面、高效且可复用的 Go 语言工具库，灵感来源于 Java 的 Ap
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="每日一库" scheme="https://liangyuanzheng.com/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Awesome-LLM</title>
+    <link href="https://liangyuanzheng.com/Awesome-LLM.html"/>
+    <id>https://liangyuanzheng.com/Awesome-LLM.html</id>
+    <published>2024-11-15T01:52:00.000Z</published>
+    <updated>2024-11-19T10:33:08.273Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Awesome-LLM&quot;&gt;&lt;a href=&quot;#Awesome-LLM&quot; class=&quot;headerlink&quot; title=&quot;Awesome-LLM&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/Hannibal046/Awesome-LLM&quot; 
+      
+    
+    </summary>
+    
+    
+      <category term="LLM" scheme="https://liangyuanzheng.com/categories/llm/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>索引下推</title>
+    <link href="https://liangyuanzheng.com/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.html"/>
+    <id>https://liangyuanzheng.com/索引下推.html</id>
+    <published>2024-10-31T11:50:00.000Z</published>
+    <updated>2024-11-01T02:28:16.670Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;mysql-架构&quot;&gt;&lt;a href=&quot;#mysql-架构&quot; class=&quot;headerlink&quot; title=&quot;mysql 架构&quot;&gt;&lt;/a&gt;mysql 架构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;assets/images/0b2d7d040f82be5852d9fd
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://liangyuanzheng.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
   
   <entry>
     <title>IT技术社区</title>
@@ -105,7 +185,7 @@
     <link href="https://liangyuanzheng.com/01-%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B%E3%80%8A%E5%90%88%E8%BE%91%E3%80%8B.html"/>
     <id>https://liangyuanzheng.com/01-诗词歌赋《合辑》.html</id>
     <published>2024-08-27T16:00:00.000Z</published>
-    <updated>2024-10-21T03:41:02.925Z</updated>
+    <updated>2024-11-19T10:33:08.273Z</updated>
     
     <summary type="html">
     
@@ -124,9 +204,9 @@
     
       <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
     
-      <category term="诗词" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E8%AF%8D/"/>
-    
       <category term="古文" scheme="https://liangyuanzheng.com/tags/%E5%8F%A4%E6%96%87/"/>
+    
+      <category term="诗词" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E8%AF%8D/"/>
     
       <category term="诗歌" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E6%AD%8C/"/>
     
@@ -174,6 +254,34 @@
   </entry>
   
   <entry>
+    <title>压缩：提速提效</title>
+    <link href="https://liangyuanzheng.com/8-%E5%8E%8B%E7%BC%A9%EF%BC%9A%E6%8F%90%E9%80%9F%E6%8F%90%E6%95%88.html"/>
+    <id>https://liangyuanzheng.com/8-压缩：提速提效.html</id>
+    <published>2024-08-22T04:27:00.000Z</published>
+    <updated>2024-10-21T03:41:02.925Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;压缩：提速提效&quot;&gt;&lt;a href=&quot;#压缩：提速提效&quot; class=&quot;headerlink&quot; title=&quot;压缩：提速提效&quot;&gt;&lt;/a&gt;压缩：提速提效&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解耦：消息队列</title>
     <link href="https://liangyuanzheng.com/9-%E8%A7%A3%E8%80%A6%EF%BC%9A%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97.html"/>
     <id>https://liangyuanzheng.com/9-解耦：消息队列.html</id>
@@ -200,34 +308,6 @@
       <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
       <category term="消息队列" scheme="https://liangyuanzheng.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>压缩：提速提效</title>
-    <link href="https://liangyuanzheng.com/8-%E5%8E%8B%E7%BC%A9%EF%BC%9A%E6%8F%90%E9%80%9F%E6%8F%90%E6%95%88.html"/>
-    <id>https://liangyuanzheng.com/8-压缩：提速提效.html</id>
-    <published>2024-08-22T04:27:00.000Z</published>
-    <updated>2024-10-21T03:41:02.925Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;压缩：提速提效&quot;&gt;&lt;a href=&quot;#压缩：提速提效&quot; class=&quot;headerlink&quot; title=&quot;压缩：提速提效&quot;&gt;&lt;/a&gt;压缩：提速提效&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-    
-      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
@@ -530,109 +610,6 @@
       <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
     
       <category term="诗词" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《大秦帝国》</title>
-    <link href="https://liangyuanzheng.com/%E3%80%8A%E5%A4%A7%E7%A7%A6%E5%B8%9D%E5%9B%BD%E3%80%8B.html"/>
-    <id>https://liangyuanzheng.com/《大秦帝国》.html</id>
-    <published>2024-07-31T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;日期&lt;/th&gt;
-&lt;th&gt;备注&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;2022&lt;/td&gt;
-&lt;td&gt;忘记是从哪天开始看了的，大概是 2022 年吧。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2024-
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《增广贤文》</title>
-    <link href="https://liangyuanzheng.com/20240730-%E3%80%8A%E5%A2%9E%E5%B9%BF%E8%B4%A4%E6%96%87%E3%80%8B.html"/>
-    <id>https://liangyuanzheng.com/20240730-《增广贤文》.html</id>
-    <published>2024-07-29T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;日期&lt;/th&gt;
-&lt;th&gt;备注&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;2024-07-30&lt;/td&gt;
-&lt;td&gt;空闲时间手抄&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2024-08-01&lt;/td&gt;
-&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="诗词歌赋" scheme="https://liangyuanzheng.com/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/"/>
-    
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
-    
-      <category term="古文" scheme="https://liangyuanzheng.com/tags/%E5%8F%A4%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>热爱生活</title>
-    <link href="https://liangyuanzheng.com/20240727-%E7%83%AD%E7%88%B1%E7%94%9F%E6%B4%BB.html"/>
-    <id>https://liangyuanzheng.com/20240727-热爱生活.html</id>
-    <published>2024-07-26T16:00:00.000Z</published>
-    <updated>2024-07-27T05:46:30.807Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;生活中只有一种英雄主义，那就是在认清生活真相之后依然热爱生活。&lt;/p&gt;
-&lt;p align=&quot;right&quot;&gt;——罗曼罗兰&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
-    
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
   </entry>
   
