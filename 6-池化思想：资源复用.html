@@ -102,15 +102,16 @@
 
 
 
-<meta name="description" content="连接池：资源复用连接池（Connection Pool）是创建和管理连接的缓冲池技术。 常见的连接池有：数据库连接池（redis、mysql）、线程池（Golang 协程池 ant）、HTTP 连接池等。 连接池的原理是通过预先创建一定数量的连接对象，并将其保存在池中。当需要使用连接时，从池中获取一个可用的连接对象，使用完毕后归还给池，而不是每次都创建和销毁连接对象。这样可以避免频繁地创建和销毁连">
+<meta name="description" content="池化思想：资源复用业务场景连接池（Connection Pool）是创建和管理连接的缓冲池技术。 连接池的原理是通过预先创建一定数量的连接对象，并将其保存在池中。当需要使用连接时，从池中获取一个可用的连接对象，使用完毕后归还给池，而不是每次都创建和销毁连接对象。这样可以避免频繁地创建和销毁连接对象，提高系统性能和资源利用率。 常见的连接池有：数据库连接池（ go-redis 连接池、go-orm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="池化思想：资源复用">
 <meta property="og:url" content="https://liangyuanzheng.com/6-%E6%B1%A0%E5%8C%96%E6%80%9D%E6%83%B3%EF%BC%9A%E8%B5%84%E6%BA%90%E5%A4%8D%E7%94%A8.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
-<meta property="og:description" content="连接池：资源复用连接池（Connection Pool）是创建和管理连接的缓冲池技术。 常见的连接池有：数据库连接池（redis、mysql）、线程池（Golang 协程池 ant）、HTTP 连接池等。 连接池的原理是通过预先创建一定数量的连接对象，并将其保存在池中。当需要使用连接时，从池中获取一个可用的连接对象，使用完毕后归还给池，而不是每次都创建和销毁连接对象。这样可以避免频繁地创建和销毁连">
+<meta property="og:description" content="池化思想：资源复用业务场景连接池（Connection Pool）是创建和管理连接的缓冲池技术。 连接池的原理是通过预先创建一定数量的连接对象，并将其保存在池中。当需要使用连接时，从池中获取一个可用的连接对象，使用完毕后归还给池，而不是每次都创建和销毁连接对象。这样可以避免频繁地创建和销毁连接对象，提高系统性能和资源利用率。 常见的连接池有：数据库连接池（ go-redis 连接池、go-orm">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/Pasted%20image%2020240314102315.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/e1be7be262cc3ec77245b3d424f60f79_MD5.png">
 <meta property="article:published_time" content="2024-08-15T08:41:00.000Z">
-<meta property="article:modified_time" content="2024-09-02T11:19:44.553Z">
+<meta property="article:modified_time" content="2025-04-16T02:11:06.266Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="性能优化">
 <meta property="article:tag" content="总结">
@@ -434,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  487
+                  606
                 </span>
               
 
@@ -450,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -468,9 +469,9 @@
       
 
       
-        <h2 id="连接池：资源复用"><a href="#连接池：资源复用" class="headerlink" title="连接池：资源复用"></a>连接池：资源复用</h2><p><strong>连接池（Connection Pool）是创建和管理连接的缓冲池技术。</strong></p>
-<p>常见的连接池有：数据库连接池（<a href="https://github.com/gomodule/redigo?tab=readme-ov-file" target="_blank" rel="noopener">redis</a>、<a href="https://github.com/go-sql-driver/mysql" target="_blank" rel="noopener">mysql</a>）、线程池（<a href="https://github.com/panjf2000/ants" target="_blank" rel="noopener">Golang 协程池 ant</a>）、HTTP 连接池等。</p>
+        <h1 id="池化思想：资源复用"><a href="#池化思想：资源复用" class="headerlink" title="池化思想：资源复用"></a>池化思想：资源复用</h1><h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p><strong>连接池（Connection Pool）是创建和管理连接的缓冲池技术。</strong></p>
 <p>连接池的原理是通过预先创建一定数量的连接对象，并将其保存在池中。当需要使用连接时，从池中获取一个可用的连接对象，使用完毕后归还给池，而不是每次都创建和销毁连接对象。这样可以避免频繁地创建和销毁连接对象，提高系统性能和资源利用率。</p>
+<p>常见的连接池有：数据库连接池（ <a href="https://github.com/go-redis/redis/tree/master/internal/pool" target="_blank" rel="noopener">go-redis 连接池</a>、<a href="https://github.com/go-xorm/manual-zh-CN/blob/master/chapter-01/1.engine.md" target="_blank" rel="noopener">go-orm 连接池</a>）、线程池（<a href="https://github.com/panjf2000/ants" target="_blank" rel="noopener">Go 协程池 ants</a>）、HTTP 连接池等。</p>
 <p>通常，连接池包含以下几个关键组件：</p>
 <ol>
 <li>连接池管理器：负责创建、初始化和管理连接池。</li>
@@ -486,7 +487,18 @@
 <li>销毁连接：当连接池不再需要时，可以销毁连接对象，释放资源。</li>
 </ol>
 <p><img src="assets/images/Pasted%20image%2020240314102315.png" alt=""></p>
-<p>总的来说，连接池是一种有效管理和复用连接的技术，它可以提高性能、节省资源、控制连接数、提高可靠性，并简化应用程序的编程。在高并发的场景下，使用连接池是一种常见的优化手段。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-go-redis-连接池"><a href="#⓵-go-redis-连接池" class="headerlink" title="⓵ go-redis 连接池"></a><strong>⓵ <a href="https://github.com/go-redis/redis/tree/master/internal/pool" target="_blank" rel="noopener">go-redis 连接池</a></strong></h3><p>总览下连接池的核心<a href="https://github.com/go-redis/redis/blob/master/internal/pool/pool.go" target="_blank" rel="noopener">代码结构</a>，go-redis 的连接池实现分为如下几个部分：</p>
+<ol>
+<li>连接池初始化、管理连接</li>
+<li>建立与关闭连接</li>
+<li>获取与放回连接，核心实现 <a href="https://github.com/go-redis/redis/blob/master/internal/pool/pool.go#L259" target="_blank" rel="noopener">Get</a>、<a href="https://github.com/go-redis/redis/blob/master/internal/pool/pool.go#L366" target="_blank" rel="noopener">Put</a></li>
+<li>监控统计 &amp;&amp; 连接保活配置</li>
+</ol>
+<p><img src="assets/images/e1be7be262cc3ec77245b3d424f60f79_MD5.png" alt=""></p>
+<center><font color="#7f7f7f">图：go-redis连接池的基本流程</font></center>
+
+<p>原理可参考：<a href="https://pandaychen.github.io/2020/02/22/A-REDIS-POOL-ANALYSIS/" target="_blank" rel="noopener">《Go-Redis 连接池（Pool）源码分析》</a></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>总的来说，连接池是一种有效管理和复用连接的技术，它可以提高性能、节省资源、控制连接数、提高可靠性，并简化应用程序的编程。在高并发的场景下，使用连接池是一种常见的优化手段。</p>
 
       
     </div>
@@ -539,7 +551,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/7-%E5%AE%89%E5%85%A8%E6%80%9D%E6%83%B3%EF%BC%9A%E6%BC%8F%E6%B4%9E%E9%98%B2%E6%8A%A4.html" rel="prev" title="安全思想：漏洞防护">
+              <a href="/99-%E5%85%B6%E4%BB%96.html" rel="prev" title="安全思想：漏洞防护">
                 安全思想：漏洞防护 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -638,7 +650,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -649,7 +661,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -660,7 +672,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -713,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接池：资源复用"><span class="nav-number">1.</span> <span class="nav-text">连接池：资源复用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#池化思想：资源复用"><span class="nav-number">1.</span> <span class="nav-text">池化思想：资源复用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务场景"><span class="nav-number">1.1.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.2.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#⓵-go-redis-连接池"><span class="nav-number">1.2.1.</span> <span class="nav-text">⓵ go-redis 连接池</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>

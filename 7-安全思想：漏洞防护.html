@@ -102,15 +102,15 @@
 
 
 
-<meta name="description" content="安全思想：漏洞防护OWASP 是一个开源的、非盈利的全球性安全组织，致力于应用软件的安全研究。 Go 安全编码实践指南采用安全编码实践，可以提高应用程序的安全性，减少潜在的安全风险，并为用户提供更可靠和安全的体验。 本节内容摘自 《Go-安全编码实践指南》  其他：  《OWASP 安全编码规范 快速参考指南》 《十大关键 API 安全风险》 CSRF 防御手册 RE2 《OWASP 低代码十大安">
+<meta name="description" content="安全思想：漏洞防护业务场景安全思想是指在设计、开发和维护计算机系统和网络时，将安全性作为首要考虑的原则和理念。它强调在整个系统生命周期中，从设计阶段到实施和运行阶段，都要考虑安全性，并采取相应的措施来保护系统免受恶意攻击和数据泄露的威胁。 案例⓵ Go 安全编码实践指南采用安全编码实践，可以提高应用程序的安全性，减少潜在的安全风险，并为用户提供更可靠和安全的体验。 本节内容摘自 OWASP 的 《">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安全思想：漏洞防护">
 <meta property="og:url" content="https://liangyuanzheng.com/7-%E5%AE%89%E5%85%A8%E6%80%9D%E6%83%B3%EF%BC%9A%E6%BC%8F%E6%B4%9E%E9%98%B2%E6%8A%A4.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
-<meta property="og:description" content="安全思想：漏洞防护OWASP 是一个开源的、非盈利的全球性安全组织，致力于应用软件的安全研究。 Go 安全编码实践指南采用安全编码实践，可以提高应用程序的安全性，减少潜在的安全风险，并为用户提供更可靠和安全的体验。 本节内容摘自 《Go-安全编码实践指南》  其他：  《OWASP 安全编码规范 快速参考指南》 《十大关键 API 安全风险》 CSRF 防御手册 RE2 《OWASP 低代码十大安">
+<meta property="og:description" content="安全思想：漏洞防护业务场景安全思想是指在设计、开发和维护计算机系统和网络时，将安全性作为首要考虑的原则和理念。它强调在整个系统生命周期中，从设计阶段到实施和运行阶段，都要考虑安全性，并采取相应的措施来保护系统免受恶意攻击和数据泄露的威胁。 案例⓵ Go 安全编码实践指南采用安全编码实践，可以提高应用程序的安全性，减少潜在的安全风险，并为用户提供更可靠和安全的体验。 本节内容摘自 OWASP 的 《">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/21f9faba441126a2ba22d49be4625b2c_MD5.png">
 <meta property="article:published_time" content="2024-08-20T03:49:00.000Z">
-<meta property="article:modified_time" content="2024-09-02T11:19:44.553Z">
+<meta property="article:modified_time" content="2025-04-16T02:11:06.266Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="性能优化">
 <meta property="article:tag" content="总结">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  897
+                  1.1k
                 </span>
               
 
@@ -468,9 +468,9 @@
       
 
       
-        <h2 id="安全思想：漏洞防护"><a href="#安全思想：漏洞防护" class="headerlink" title="安全思想：漏洞防护"></a>安全思想：漏洞防护</h2><p><a href="http://www.owasp.org.cn/OWASP-CHINA/" target="_blank" rel="noopener">OWASP</a> 是一个开源的、非盈利的全球性安全组织，致力于应用软件的安全研究。</p>
-<h3 id="Go-安全编码实践指南"><a href="#Go-安全编码实践指南" class="headerlink" title="Go 安全编码实践指南"></a>Go 安全编码实践指南</h3><p>采用安全编码实践，可以提高应用程序的安全性，减少潜在的安全风险，并为用户提供更可靠和安全的体验。</p>
-<p>本节内容摘自 <a href="http://www.owasp.org.cn/OWASP-CHINA/go-webapp-scp-cn.pdf" target="_blank" rel="noopener">《Go-安全编码实践指南》</a></p>
+        <h1 id="安全思想：漏洞防护"><a href="#安全思想：漏洞防护" class="headerlink" title="安全思想：漏洞防护"></a>安全思想：漏洞防护</h1><h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>安全思想是指在设计、开发和维护计算机系统和网络时，将安全性作为首要考虑的原则和理念。它强调在整个系统生命周期中，从设计阶段到实施和运行阶段，都要考虑安全性，并采取相应的措施来保护系统免受恶意攻击和数据泄露的威胁。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-Go-安全编码实践指南"><a href="#⓵-Go-安全编码实践指南" class="headerlink" title="⓵ Go 安全编码实践指南"></a><strong>⓵ Go 安全编码实践指南</strong></h3><p>采用安全编码实践，可以提高应用程序的安全性，减少潜在的安全风险，并为用户提供更可靠和安全的体验。</p>
+<p>本节内容摘自 <a href="http://www.owasp.org.cn/OWASP-CHINA/" target="_blank" rel="noopener">OWASP</a> 的 <a href="http://www.owasp.org.cn/OWASP-CHINA/go-webapp-scp-cn.pdf" target="_blank" rel="noopener">《Go-安全编码实践指南》</a></p>
 <p><img src="assets/images/21f9faba441126a2ba22d49be4625b2c_MD5.png" alt=""></p>
 <p>其他：</p>
 <ul>
@@ -481,7 +481,7 @@
 <li><a href="1%20Project/腾讯/智影/浅析服务端优化/智影：浅析后端接口优化实战（20240331）/资料/OWASP低代码十大安全风险.pdf">《OWASP 低代码十大安全风险》</a></li>
 <li><a href="http://www.owasp.org.cn/OWASP-CHINA/owasp-project/OWASP-TOP10-2021%E4%B8%AD%E6%96%87%E7%89%88V1.0%E5%8F%91%E5%B8%83.pdf" target="_blank" rel="noopener">《2021 OWASP TOP 10》</a></li>
 </ul>
-<h3 id="业界安全事件分析与借鉴"><a href="#业界安全事件分析与借鉴" class="headerlink" title="业界安全事件分析与借鉴"></a>业界安全事件分析与借鉴</h3><table>
+<h3 id="⓶-业界安全事件分析与借鉴"><a href="#⓶-业界安全事件分析与借鉴" class="headerlink" title="⓶ 业界安全事件分析与借鉴"></a><strong>⓶ 业界安全事件分析与借鉴</strong></h3><table>
 <thead>
 <tr>
 <th><strong>时间</strong></th>
@@ -527,6 +527,9 @@
 <td>1、业务程序中<strong>不利用漏洞</strong>实现业务目的，不违规收集用户隐私数据</td>
 </tr>
 </tbody></table>
+<p>更多安全指引，请参考 <a href="https://iwiki.woa.com/p/1024607317" target="_blank" rel="noopener">《漏洞防护》</a></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><strong>谚云：防患于未然</strong></p>
+<p>安全思想和漏洞防护是保护计算机系统和网络安全的重要方面。通过将安全性纳入系统设计和开发的早期阶段，并采取相应的漏洞防护措施，我们可以降低系统遭受攻击的风险，保护用户的数据和隐私，确保系统的正常运行。</p>
 
       
     </div>
@@ -569,8 +572,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/6-%E6%B1%A0%E5%8C%96%E6%80%9D%E6%83%B3%EF%BC%9A%E8%B5%84%E6%BA%90%E5%A4%8D%E7%94%A8.html" rel="next" title="池化思想：资源复用">
-                <i class="fa fa-chevron-left"></i> 池化思想：资源复用
+              <a href="/99-%E5%85%B6%E4%BB%96.html" rel="next" title="安全思想：漏洞防护">
+                <i class="fa fa-chevron-left"></i> 安全思想：漏洞防护
               </a>
             
           </div>
@@ -678,7 +681,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -689,7 +692,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -700,7 +703,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -753,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全思想：漏洞防护"><span class="nav-number">1.</span> <span class="nav-text">安全思想：漏洞防护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-安全编码实践指南"><span class="nav-number">1.1.</span> <span class="nav-text">Go 安全编码实践指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业界安全事件分析与借鉴"><span class="nav-number">1.2.</span> <span class="nav-text">业界安全事件分析与借鉴</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安全思想：漏洞防护"><span class="nav-number">1.</span> <span class="nav-text">安全思想：漏洞防护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务场景"><span class="nav-number">1.1.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.2.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#⓵-Go-安全编码实践指南"><span class="nav-number">1.2.1.</span> <span class="nav-text">⓵ Go 安全编码实践指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#⓶-业界安全事件分析与借鉴"><span class="nav-number">1.2.2.</span> <span class="nav-text">⓶ 业界安全事件分析与借鉴</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -102,17 +102,17 @@
 
 
 
-<meta name="description" content="异步思想：解决长耗时问题异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后台进行，不阻塞主线程或其他任务的执行，从而提高系统的响应性能和并发处理能力。 业务场景： 在处理一些复杂的业务场景时，对于部分操作考虑使用异步，可以大幅降低接口耗时。 比如，在做服务性能优化时，可以将如数据上报、流水日志等做异步处理，以降低接口时延。用户上传图片后的审核，音视频的合成等等。 案例 1： 以文本配音（">
+<meta name="description" content="异步思想：解决长耗时问题异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后台进行，不阻塞主线程或其他任务的执行，从而提高系统的响应性能和并发处理能力。 业务场景在处理一些复杂的业务场景时，对于部分操作考虑使用异步，可以大幅降低接口耗时。 比如，在做服务性能优化时，可以将如数据上报、流水日志等做异步处理，以降低接口时延。用户上传图片后的审核，音视频的合成等等。 案例⓵ 子过程改异步、协程以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="异步思想：解决长耗时的问题">
 <meta property="og:url" content="https://liangyuanzheng.com/3-%E5%BC%82%E6%AD%A5%E6%80%9D%E6%83%B3%EF%BC%9A%E8%A7%A3%E5%86%B3%E9%95%BF%E8%80%97%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
-<meta property="og:description" content="异步思想：解决长耗时问题异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后台进行，不阻塞主线程或其他任务的执行，从而提高系统的响应性能和并发处理能力。 业务场景： 在处理一些复杂的业务场景时，对于部分操作考虑使用异步，可以大幅降低接口耗时。 比如，在做服务性能优化时，可以将如数据上报、流水日志等做异步处理，以降低接口时延。用户上传图片后的审核，音视频的合成等等。 案例 1： 以文本配音（">
+<meta property="og:description" content="异步思想：解决长耗时问题异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后台进行，不阻塞主线程或其他任务的执行，从而提高系统的响应性能和并发处理能力。 业务场景在处理一些复杂的业务场景时，对于部分操作考虑使用异步，可以大幅降低接口耗时。 比如，在做服务性能优化时，可以将如数据上报、流水日志等做异步处理，以降低接口时延。用户上传图片后的审核，音视频的合成等等。 案例⓵ 子过程改异步、协程以">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/8f6ddfe0832db6b1d7ea0f9e76ddeb77_MD5.png">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/d4a2d43f6bff5383e547c2366f5240ff_MD5.png">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/38d2fb76c1e1baf507a3ac2d27c8a10b_MD5.png">
 <meta property="article:published_time" content="2024-08-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-09-02T11:19:44.553Z">
+<meta property="article:modified_time" content="2025-04-16T02:11:06.266Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="性能优化">
 <meta property="article:tag" content="总结">
@@ -470,20 +470,17 @@
       
 
       
-        <h2 id="异步思想：解决长耗时问题"><a href="#异步思想：解决长耗时问题" class="headerlink" title="异步思想：解决长耗时问题"></a>异步思想：解决长耗时问题</h2><p>异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后台进行，不阻塞主线程或其他任务的执行，从而提高系统的响应性能和并发处理能力。</p>
-<p><strong>业务场景：</strong></p>
-<p>在处理一些复杂的业务场景时，对于部分操作考虑使用<strong>异步</strong>，可以大幅降低接口耗时。</p>
+        <h1 id="异步思想：解决长耗时问题"><a href="#异步思想：解决长耗时问题" class="headerlink" title="异步思想：解决长耗时问题"></a>异步思想：解决长耗时问题</h1><p>异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后台进行，不阻塞主线程或其他任务的执行，从而提高系统的响应性能和并发处理能力。</p>
+<h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>在处理一些复杂的业务场景时，对于部分操作考虑使用<strong>异步</strong>，可以大幅降低接口耗时。</p>
 <p>比如，在做服务性能优化时，可以将如数据上报、流水日志等做异步处理，以降低接口时延。用户上传图片后的审核，音视频的合成等等。</p>
-<p><strong>案例 1：</strong></p>
-<p>以<a href="https://kf.zenvideo.qq.com/help/doc?id=dcccf9045b50dca3" target="_blank" rel="noopener">文本配音（TTS）</a>为例，【合成音频】和【添加音效】这两个子过程耗耗时比较长：</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-子过程改异步、协程"><a href="#⓵-子过程改异步、协程" class="headerlink" title="⓵ 子过程改异步、协程"></a><strong>⓵ 子过程改异步、协程</strong></h3><p>以<a href="https://kf.zenvideo.qq.com/help/doc?id=dcccf9045b50dca3" target="_blank" rel="noopener">文本配音（TTS）</a>为例，【合成音频】和【添加音效】这两个子过程耗耗时比较长：</p>
 <p><img src="assets/images/8f6ddfe0832db6b1d7ea0f9e76ddeb77_MD5.png" alt=""></p>
 <p>我们可以把耗时长的部分封装到一个异步任务中，并生成一个任务 ID，后续可以查询处理进度和结果。音频生成部分改为异步任务是因为该子过程是文本配音的关键路径（主流程、耗时长），对非关键路径如【数据埋点】直接改为协程处理即可：</p>
 <p><img src="assets/images/d4a2d43f6bff5383e547c2366f5240ff_MD5.png" alt=""></p>
-<p><strong>案例 2：</strong></p>
-<p>异步处理在数据库中同样应用广泛，例如  Redis  的 bgsave，bgrewriteof 就是分别用来异步保存 RDB 跟 AOF 文件的命令，bgsave 执行后会立刻返回成功，主线程 fork 出一个线程用来将内存中数据生成快照保存到磁盘，而主线程继续执行客户端命令；Redis  删除 key 的方式有 del 跟 unlink 两种，对于 del 命令是同步删除，直接释放内存，当遇到大 key 时，删除操作会让  Redis  出现卡顿的问题，而 unlink 是异步删除的方式，执行后对于 key 只做不可达的标识，对于内存的回收由异步线程回收，不阻塞主线程。</p>
+<h3 id="⓶-异步在数据库、消息队列的应用"><a href="#⓶-异步在数据库、消息队列的应用" class="headerlink" title="⓶ 异步在数据库、消息队列的应用"></a><strong>⓶ 异步在数据库、消息队列的应用</strong></h3><p>异步处理在数据库中同样应用广泛，例如  Redis  的 bgsave，bgrewriteof 就是分别用来异步保存 RDB 跟 AOF 文件的命令，bgsave 执行后会立刻返回成功，主线程 fork 出一个线程用来将内存中数据生成快照保存到磁盘，而主线程继续执行客户端命令；Redis  删除 key 的方式有 del 跟 unlink 两种，对于 del 命令是同步删除，直接释放内存，当遇到大 key 时，删除操作会让  Redis  出现卡顿的问题，而 unlink 是异步删除的方式，执行后对于 key 只做不可达的标识，对于内存的回收由异步线程回收，不阻塞主线程。</p>
 <p>MySQL  的主从同步支持异步复制、同步复制跟半同步复制。异步复制是指主库执行完提交的事务后立刻将结果返回给客户端，并不关心从库是否已经同步了数据；同步复制是指主库执行完提交的事务，所有的从库都执行了该事务才将结果返回给客户端；半同步复制指主库执行完后，至少一个从库接收并执行了事务才返回给客户端。有多种主要是因为异步复制客户端写入性能高，但是存在丢数据的风险，在数据一致性要求不高的场景下可以采用，同步方式写入性能差，适合在数据一致性要求高的场景使用。</p>
 <p>此外，对 Kafka 的生产者跟消费者都可以采用异步的方式进行发送跟消费消息，但是采用异步的方式有可能会导致出现丢消息的问题。对于异步发送消息可以采用带有回调函数的方式，当发送失败后通过回调函数进行感知，后续进行消息补偿。</p>
-<p><strong>一些常见的异步编程方式有：</strong></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><strong>一些常见的异步编程方式有：</strong></p>
 <p><img src="assets/images/38d2fb76c1e1baf507a3ac2d27c8a10b_MD5.png" alt=""></p>
 <p>需要注意的是，异步并没有缩短整体的响应时间，反而可能有所增加。异步编程有优点也有缺点，可根据自身业务选型：</p>
 <p><strong>优点：</strong></p>
@@ -498,10 +495,10 @@
 <p><strong>缺点：</strong></p>
 <ol>
 <li>复杂性增加：异步编程涉及到回调函数、Promise、异步/等待等概念和技术，对于初学者来说可能会增加学习和理解的难度。</li>
-<li>错误处理复杂：异步编程中的错误处理可能会更加复杂，需要处理回调函数中的错误、Promise链中的异常等情况，增加了代码的复杂性。</li>
+<li>错误处理复杂：异步编程中的错误处理可能会更加复杂，需要处理回调函数中的错误、Promise 链中的异常等情况，增加了代码的复杂性。</li>
 <li>可能引发竞态条件：在并发环境下，异步编程可能会引发竞态条件（Race Condition）和数据一致性的问题，需要额外的并发控制和数据同步机制来解决。</li>
 <li>调试困难：由于异步编程中任务的执行顺序和时间不确定，调试异步代码可能会更加困难，需要使用适当的调试工具和技术。</li>
-<li>可能导致回调地狱：在复杂的异步操作中，使用回调函数可能会导致回调地狱（Callback Hell），使代码难以理解和维护。这可以通过使用Promise、异步/等待等技术来缓解。</li>
+<li>可能导致回调地狱：在复杂的异步操作中，使用回调函数可能会导致回调地狱（Callback Hell），使代码难以理解和维护。这可以通过使用 Promise、异步/等待等技术来缓解。</li>
 </ol>
 <p>综上所述，异步编程具有许多优点，可以提高系统的性能和响应能力。然而，它也存在一些缺点，需要在设计和实现中注意解决相关的问题。合理地应用异步编程，可以最大程度地发挥其优点，减少其缺点的影响。</p>
 
@@ -655,7 +652,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -666,7 +663,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -677,7 +674,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -730,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#异步思想：解决长耗时问题"><span class="nav-number">1.</span> <span class="nav-text">异步思想：解决长耗时问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异步思想：解决长耗时问题"><span class="nav-number">1.</span> <span class="nav-text">异步思想：解决长耗时问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务场景"><span class="nav-number">1.1.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.2.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#⓵-子过程改异步、协程"><span class="nav-number">1.2.1.</span> <span class="nav-text">⓵ 子过程改异步、协程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#⓶-异步在数据库、消息队列的应用"><span class="nav-number">1.2.2.</span> <span class="nav-text">⓶ 异步在数据库、消息队列的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>

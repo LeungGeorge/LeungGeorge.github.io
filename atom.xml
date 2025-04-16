@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2025-04-16T01:58:07.951Z</updated>
+  <updated>2025-04-16T02:11:04.200Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9ALancet-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E9%AB%98%E6%95%88%E5%B7%A5%E5%85%B7%E5%BA%93.html"/>
     <id>https://liangyuanzheng.com/每日一库：Lancet-——-Go-语言高效工具库.html</id>
     <published>2025-04-16T01:53:00.000Z</published>
-    <updated>2025-04-16T01:58:07.951Z</updated>
+    <updated>2025-04-16T02:11:04.200Z</updated>
     
     <summary type="html">
     
@@ -45,11 +45,47 @@
   </entry>
   
   <entry>
+    <title>搞懂异地多活，看这篇就够了</title>
+    <link href="https://liangyuanzheng.com/%E6%90%9E%E6%87%82%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%B4%BB%EF%BC%8C%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html"/>
+    <id>https://liangyuanzheng.com/搞懂异地多活，看这篇就够了.html</id>
+    <published>2024-12-09T11:34:00.000Z</published>
+    <updated>2025-04-16T02:11:06.267Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;本文系外部转贴，&lt;a href=&quot;https://cloud.tencent.com/developer/article/1891235&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;查看原文&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquo
+      
+    
+    </summary>
+    
+    
+      <category term="软件工程" scheme="https://liangyuanzheng.com/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="转载" scheme="https://liangyuanzheng.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="收藏" scheme="https://liangyuanzheng.com/tags/%E6%94%B6%E8%97%8F/"/>
+    
+      <category term="review" scheme="https://liangyuanzheng.com/tags/review/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Awesome-LLM</title>
     <link href="https://liangyuanzheng.com/Awesome-LLM.html"/>
     <id>https://liangyuanzheng.com/Awesome-LLM.html</id>
     <published>2024-11-15T01:52:00.000Z</published>
-    <updated>2024-11-19T10:33:08.273Z</updated>
+    <updated>2025-04-16T02:11:04.200Z</updated>
     
     <summary type="html">
     
@@ -75,7 +111,7 @@
     <link href="https://liangyuanzheng.com/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.html"/>
     <id>https://liangyuanzheng.com/索引下推.html</id>
     <published>2024-10-31T11:50:00.000Z</published>
-    <updated>2024-11-01T02:28:16.670Z</updated>
+    <updated>2025-04-16T02:11:04.200Z</updated>
     
     <summary type="html">
     
@@ -181,11 +217,70 @@
   </entry>
   
   <entry>
+    <title>分布式事务</title>
+    <link href="https://liangyuanzheng.com/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1.html"/>
+    <id>https://liangyuanzheng.com/分布式事务.html</id>
+    <published>2024-10-23T02:17:00.000Z</published>
+    <updated>2025-04-16T02:11:06.267Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;assets/images/54c5e6889bc641e7006ae8d49e58f892_MD5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://liangyuanzheng.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>复用：设计模式</title>
+    <link href="https://liangyuanzheng.com/10-%E5%A4%8D%E7%94%A8%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html"/>
+    <id>https://liangyuanzheng.com/10-复用：设计模式.html</id>
+    <published>2024-09-05T06:46:00.000Z</published>
+    <updated>2025-04-16T02:11:06.263Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;复用：设计模式&quot;&gt;&lt;a href=&quot;#复用：设计模式&quot; class=&quot;headerlink&quot; title=&quot;复用：设计模式&quot;&gt;&lt;/a&gt;复用：设计模式&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="随笔" scheme="https://liangyuanzheng.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="DOING" scheme="https://liangyuanzheng.com/tags/doing/"/>
+    
+  </entry>
+  
+  <entry>
     <title>诗词歌赋《合辑》</title>
     <link href="https://liangyuanzheng.com/01-%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B%E3%80%8A%E5%90%88%E8%BE%91%E3%80%8B.html"/>
     <id>https://liangyuanzheng.com/01-诗词歌赋《合辑》.html</id>
     <published>2024-08-27T16:00:00.000Z</published>
-    <updated>2024-11-19T10:33:08.273Z</updated>
+    <updated>2025-04-16T02:11:04.200Z</updated>
     
     <summary type="html">
     
@@ -204,9 +299,9 @@
     
       <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
     
-      <category term="古文" scheme="https://liangyuanzheng.com/tags/%E5%8F%A4%E6%96%87/"/>
-    
       <category term="诗词" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="古文" scheme="https://liangyuanzheng.com/tags/%E5%8F%A4%E6%96%87/"/>
     
       <category term="诗歌" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E6%AD%8C/"/>
     
@@ -217,7 +312,7 @@
     <link href="https://liangyuanzheng.com/%E8%B7%9F%E5%A4%A7%E5%B8%88%E5%AD%A6%E8%AF%AD%E6%96%87-%E6%96%87%E7%AB%A0%E4%BD%9C%E6%B3%95.html"/>
     <id>https://liangyuanzheng.com/跟大师学语文-文章作法.html</id>
     <published>2024-08-22T11:50:00.000Z</published>
-    <updated>2024-10-21T03:41:02.925Z</updated>
+    <updated>2025-04-16T02:11:06.268Z</updated>
     
     <summary type="html">
     
@@ -234,7 +329,8 @@
 &lt;td&gt;2024-08-22&lt;/td&gt;
 &lt;td&gt;第一次阅读。一本指导如何写作的好书。&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/tabl
+&lt;tr&gt;
+&lt;td&gt;2024-
       
     
     </summary>
@@ -249,8 +345,6 @@
     
       <category term="写作" scheme="https://liangyuanzheng.com/tags/%E5%86%99%E4%BD%9C/"/>
     
-      <category term="doing" scheme="https://liangyuanzheng.com/tags/doing/"/>
-    
   </entry>
   
   <entry>
@@ -258,7 +352,7 @@
     <link href="https://liangyuanzheng.com/8-%E5%8E%8B%E7%BC%A9%EF%BC%9A%E6%8F%90%E9%80%9F%E6%8F%90%E6%95%88.html"/>
     <id>https://liangyuanzheng.com/8-压缩：提速提效.html</id>
     <published>2024-08-22T04:27:00.000Z</published>
-    <updated>2024-10-21T03:41:02.925Z</updated>
+    <updated>2025-04-16T02:11:06.267Z</updated>
     
     <summary type="html">
     
@@ -286,7 +380,7 @@
     <link href="https://liangyuanzheng.com/9-%E8%A7%A3%E8%80%A6%EF%BC%9A%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97.html"/>
     <id>https://liangyuanzheng.com/9-解耦：消息队列.html</id>
     <published>2024-08-22T04:27:00.000Z</published>
-    <updated>2024-10-21T03:41:02.925Z</updated>
+    <updated>2025-04-16T02:11:06.267Z</updated>
     
     <summary type="html">
     
@@ -334,11 +428,11 @@
     
       <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
+      <category term="随笔" scheme="https://liangyuanzheng.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
     
       <category term="架构" scheme="https://liangyuanzheng.com/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="随笔" scheme="https://liangyuanzheng.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
       <category term="消息队列" scheme="https://liangyuanzheng.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
@@ -361,13 +455,44 @@
     <link href="https://liangyuanzheng.com/7-%E5%AE%89%E5%85%A8%E6%80%9D%E6%83%B3%EF%BC%9A%E6%BC%8F%E6%B4%9E%E9%98%B2%E6%8A%A4.html"/>
     <id>https://liangyuanzheng.com/7-安全思想：漏洞防护.html</id>
     <published>2024-08-20T03:49:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
+    <updated>2025-04-16T02:11:06.266Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;安全思想：漏洞防护&quot;&gt;&lt;a href=&quot;#安全思想：漏洞防护&quot; class=&quot;headerlink&quot; title=&quot;安全思想：漏洞防护&quot;&gt;&lt;/a&gt;安全思想：漏洞防护&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.owasp.org.cn/OWASP-CHI
+        &lt;h1 id=&quot;安全思想：漏洞防护&quot;&gt;&lt;a href=&quot;#安全思想：漏洞防护&quot; class=&quot;headerlink&quot; title=&quot;安全思想：漏洞防护&quot;&gt;&lt;/a&gt;安全思想：漏洞防护&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安全思想：漏洞防护</title>
+    <link href="https://liangyuanzheng.com/99-%E5%85%B6%E4%BB%96.html"/>
+    <id>https://liangyuanzheng.com/99-其他.html</id>
+    <published>2024-08-20T03:49:00.000Z</published>
+    <updated>2025-04-16T02:11:06.267Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- ⓵⓶⓷⓸⓹⓺⓻⓼⓽⓾ --&gt;
+
+&lt;h1 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;1%20Project/腾讯/智影/浅析服务端优化/智影：浅析后端接
       
     
     </summary>
@@ -389,13 +514,13 @@
     <link href="https://liangyuanzheng.com/6-%E6%B1%A0%E5%8C%96%E6%80%9D%E6%83%B3%EF%BC%9A%E8%B5%84%E6%BA%90%E5%A4%8D%E7%94%A8.html"/>
     <id>https://liangyuanzheng.com/6-池化思想：资源复用.html</id>
     <published>2024-08-15T08:41:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
+    <updated>2025-04-16T02:11:06.266Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;连接池：资源复用&quot;&gt;&lt;a href=&quot;#连接池：资源复用&quot; class=&quot;headerlink&quot; title=&quot;连接池：资源复用&quot;&gt;&lt;/a&gt;连接池：资源复用&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;连接池（Connection Pool）是创建和管理连接的缓冲池技术。&lt;/s
+        &lt;h1 id=&quot;池化思想：资源复用&quot;&gt;&lt;a href=&quot;#池化思想：资源复用&quot; class=&quot;headerlink&quot; title=&quot;池化思想：资源复用&quot;&gt;&lt;/a&gt;池化思想：资源复用&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerli
       
     
     </summary>
@@ -417,13 +542,13 @@
     <link href="https://liangyuanzheng.com/5-%E7%A9%BA%E9%97%B4%E6%8D%A2%E6%97%B6%E9%97%B4%E6%80%9D%E6%83%B3%EF%BC%9A%E9%99%8D%E4%BD%8E%E8%80%97%E6%97%B6.html"/>
     <id>https://liangyuanzheng.com/5-空间换时间思想：降低耗时.html</id>
     <published>2024-08-14T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
+    <updated>2025-04-16T02:11:06.266Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;空间换时间思想：降低耗时&quot;&gt;&lt;a href=&quot;#空间换时间思想：降低耗时&quot; class=&quot;headerlink&quot; title=&quot;空间换时间思想：降低耗时&quot;&gt;&lt;/a&gt;空间换时间思想：降低耗时&lt;/h2&gt;&lt;p&gt;空间换时间思想是一种常见的优化策略，它通过增加额外的空间（内
+        &lt;h1 id=&quot;空间换时间思想：降低耗时&quot;&gt;&lt;a href=&quot;#空间换时间思想：降低耗时&quot; class=&quot;headerlink&quot; title=&quot;空间换时间思想：降低耗时&quot;&gt;&lt;/a&gt;空间换时间思想：降低耗时&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; cla
       
     
     </summary>
@@ -445,14 +570,13 @@
     <link href="https://liangyuanzheng.com/4-%E5%B9%B6%E8%A1%8C%E6%80%9D%E6%83%B3%EF%BC%9A%E6%8F%90%E5%8D%87%E5%A4%84%E7%90%86%E6%95%88%E7%8E%87.html"/>
     <id>https://liangyuanzheng.com/4-并行思想：提升处理效率.html</id>
     <published>2024-08-07T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
+    <updated>2025-04-16T02:11:06.266Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;并行思想：提升处理效率&quot;&gt;&lt;a href=&quot;#并行思想：提升处理效率&quot; class=&quot;headerlink&quot; title=&quot;并行思想：提升处理效率&quot;&gt;&lt;/a&gt;并行思想：提升处理效率&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;业务场景：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;并行思想
+        &lt;h1 id=&quot;并行思想：提升处理效率&quot;&gt;&lt;a href=&quot;#并行思想：提升处理效率&quot; class=&quot;headerlink&quot; title=&quot;并行思想：提升处理效率&quot;&gt;&lt;/a&gt;并行思想：提升处理效率&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;
       
     
     </summary>
@@ -474,13 +598,13 @@
     <link href="https://liangyuanzheng.com/3-%E5%BC%82%E6%AD%A5%E6%80%9D%E6%83%B3%EF%BC%9A%E8%A7%A3%E5%86%B3%E9%95%BF%E8%80%97%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98.html"/>
     <id>https://liangyuanzheng.com/3-异步思想：解决长耗时的问题.html</id>
     <published>2024-08-06T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.553Z</updated>
+    <updated>2025-04-16T02:11:06.266Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;异步思想：解决长耗时问题&quot;&gt;&lt;a href=&quot;#异步思想：解决长耗时问题&quot; class=&quot;headerlink&quot; title=&quot;异步思想：解决长耗时问题&quot;&gt;&lt;/a&gt;异步思想：解决长耗时问题&lt;/h2&gt;&lt;p&gt;异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后
+        &lt;h1 id=&quot;异步思想：解决长耗时问题&quot;&gt;&lt;a href=&quot;#异步思想：解决长耗时问题&quot; class=&quot;headerlink&quot; title=&quot;异步思想：解决长耗时问题&quot;&gt;&lt;/a&gt;异步思想：解决长耗时问题&lt;/h1&gt;&lt;p&gt;异步思想是一种解决长耗时问题的方法，它通过将耗时的操作放在后
       
     
     </summary>
@@ -494,122 +618,6 @@
       <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
     
       <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>批量思想：解决 N+1 问题</title>
-    <link href="https://liangyuanzheng.com/2-%E6%89%B9%E9%87%8F%E6%80%9D%E6%83%B3%EF%BC%9A%E8%A7%A3%E5%86%B3-N-1-%E9%97%AE%E9%A2%98.html"/>
-    <id>https://liangyuanzheng.com/2-批量思想：解决-N-1-问题.html</id>
-    <published>2024-08-06T08:25:00.000Z</published>
-    <updated>2024-09-02T11:19:44.552Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;批量思想：解决-N-1-问题&quot;&gt;&lt;a href=&quot;#批量思想：解决-N-1-问题&quot; class=&quot;headerlink&quot; title=&quot;批量思想：解决 N+1 问题&quot;&gt;&lt;/a&gt;批量思想：解决 &lt;code&gt;N+1&lt;/code&gt; 问题&lt;/h2&gt;&lt;p&gt;&lt;code&gt;N+1
-      
-    
-    </summary>
-    
-    
-      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>防御性设计：验证</title>
-    <link href="https://liangyuanzheng.com/1-%E9%98%B2%E5%BE%A1%E6%80%A7%E8%AE%BE%E8%AE%A1%EF%BC%9A%E9%AA%8C%E8%AF%81.html"/>
-    <id>https://liangyuanzheng.com/1-防御性设计：验证.html</id>
-    <published>2024-08-06T07:04:00.000Z</published>
-    <updated>2024-09-02T11:19:44.554Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;防御性设计：验证&quot;&gt;&lt;a href=&quot;#防御性设计：验证&quot; class=&quot;headerlink&quot; title=&quot;防御性设计：验证&quot;&gt;&lt;/a&gt;防御性设计：验证&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;业务场景：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在日常开发中，尤其是在 web 
-      
-    
-    </summary>
-    
-    
-      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅析服务端优化-前言</title>
-    <link href="https://liangyuanzheng.com/0-%E5%89%8D%E8%A8%80.html"/>
-    <id>https://liangyuanzheng.com/0-前言.html</id>
-    <published>2024-08-05T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.554Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;assets/images/0d75eb6ae4c9774e40bea34839daadfb_MD5.webp&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在
-      
-    
-    </summary>
-    
-    
-      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《三字经》章炳麟·清</title>
-    <link href="https://liangyuanzheng.com/20240727-%E3%80%8A%E4%B8%89%E5%AD%97%E7%BB%8F%E3%80%8B.html"/>
-    <id>https://liangyuanzheng.com/20240727-《三字经》.html</id>
-    <published>2024-08-02T16:00:00.000Z</published>
-    <updated>2024-09-02T11:19:44.554Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;《三字经》&lt;/p&gt;
-&lt;p&gt;章炳麟·清&lt;/p&gt;
-&lt;p&gt;人之初，性本善。性相近，习相远。&lt;br&gt;苟不教，性乃迁。教之道，贵以专。&lt;br&gt;昔孟母，择邻处。子不学，断机杼。&lt;br&gt;窦燕山，有义方。教五子，名具扬。&lt;br&gt;养不教，父之过。教不严，师之惰。&lt;br&gt;子不学，非所宜。幼不学
-      
-    
-    </summary>
-    
-    
-      <category term="诗词歌赋" scheme="https://liangyuanzheng.com/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/"/>
-    
-    
-      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
-    
-      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
-    
-      <category term="诗词" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E8%AF%8D/"/>
     
   </entry>
   

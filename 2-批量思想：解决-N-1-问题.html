@@ -102,14 +102,14 @@
 
 
 
-<meta name="description" content="批量思想：解决 N+1 问题N+1 查询问题指的是当查询一个对象的列表数据的时候，会首先查询列表中的对象的 ID，然后循环生成单独的 SQL&#x2F;RPC 去查询对象的详细数据。这会导致 SQL&#x2F;RPC 查询过多问题。 业务场景： 在一个循环内多次执行 RPC 调用或者数据库操作。数据量小的时候问题不大，能跑起来。 随着业务的发展，数据量越来越大，或者要查询的 id 越来越多（特别是未加限制的时候），耗">
+<meta name="description" content="批量思想：解决 N+1 问题业务场景N+1 查询问题指的是当查询一个对象的列表数据的时候，会首先查询列表中的对象的 ID，然后循环生成单独的 SQL&#x2F;RPC 去查询对象的详细数据。这会导致 SQL&#x2F;RPC 查询过多问题。 在一个循环内多次执行 RPC 调用或者数据库操作。数据量小的时候问题不大，能跑起来。随着业务的发展，数据量越来越大，或者要查询的 id 越来越多（特别是未加限制的时候），耗时部题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="批量思想：解决 N+1 问题">
 <meta property="og:url" content="https://liangyuanzheng.com/2-%E6%89%B9%E9%87%8F%E6%80%9D%E6%83%B3%EF%BC%9A%E8%A7%A3%E5%86%B3-N-1-%E9%97%AE%E9%A2%98.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
-<meta property="og:description" content="批量思想：解决 N+1 问题N+1 查询问题指的是当查询一个对象的列表数据的时候，会首先查询列表中的对象的 ID，然后循环生成单独的 SQL&#x2F;RPC 去查询对象的详细数据。这会导致 SQL&#x2F;RPC 查询过多问题。 业务场景： 在一个循环内多次执行 RPC 调用或者数据库操作。数据量小的时候问题不大，能跑起来。 随着业务的发展，数据量越来越大，或者要查询的 id 越来越多（特别是未加限制的时候），耗">
+<meta property="og:description" content="批量思想：解决 N+1 问题业务场景N+1 查询问题指的是当查询一个对象的列表数据的时候，会首先查询列表中的对象的 ID，然后循环生成单独的 SQL&#x2F;RPC 去查询对象的详细数据。这会导致 SQL&#x2F;RPC 查询过多问题。 在一个循环内多次执行 RPC 调用或者数据库操作。数据量小的时候问题不大，能跑起来。随着业务的发展，数据量越来越大，或者要查询的 id 越来越多（特别是未加限制的时候），耗时部题">
 <meta property="article:published_time" content="2024-08-06T08:25:00.000Z">
-<meta property="article:modified_time" content="2024-09-02T11:19:44.552Z">
+<meta property="article:modified_time" content="2025-04-16T02:11:06.264Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="性能优化">
 <meta property="article:tag" content="总结">
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  356
+                  362
                 </span>
               
 
@@ -466,19 +466,15 @@
       
 
       
-        <h2 id="批量思想：解决-N-1-问题"><a href="#批量思想：解决-N-1-问题" class="headerlink" title="批量思想：解决 N+1 问题"></a>批量思想：解决 <code>N+1</code> 问题</h2><p><code>N+1</code> 查询问题指的是当查询一个对象的列表数据的时候，会首先查询列表中的对象的 <code>ID</code>，然后循环生成单独的 <code>SQL/RPC</code> 去查询对象的详细数据。这会导致 <code>SQL/RPC</code> 查询过多问题。</p>
-<p><strong>业务场景：</strong></p>
-<p>在一个循环内多次执行 <code>RPC</code> 调用或者数据库操作。数据量小的时候问题不大，能跑起来。</p>
-<p>随着业务的发展，数据量越来越大，或者要查询的 <code>id</code> 越来越多（特别是未加限制的时候），耗时部题可想而知，长尾会越来越多。</p>
-<p><strong>案例 1：</strong></p>
-<p>读取多条记录时在 <code>for</code> 循环中去分别读取单行。</p>
+        <h1 id="批量思想：解决-N-1-问题"><a href="#批量思想：解决-N-1-问题" class="headerlink" title="批量思想：解决 N+1 问题"></a>批量思想：解决 <code>N+1</code> 问题</h1><h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p><code>N+1</code> 查询问题指的是当查询一个对象的列表数据的时候，会首先查询列表中的对象的 <code>ID</code>，然后循环生成单独的 <code>SQL/RPC</code> 去查询对象的详细数据。这会导致 <code>SQL/RPC</code> 查询过多问题。</p>
+<p>在一个循环内多次执行 <code>RPC</code> 调用或者数据库操作。数据量小的时候问题不大，能跑起来。随着业务的发展，数据量越来越大，或者要查询的 <code>id</code> 越来越多（特别是未加限制的时候），耗时部题可想而知，长尾会越来越多。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-循环中的-RPC"><a href="#⓵-循环中的-RPC" class="headerlink" title="⓵ 循环中的 RPC"></a><strong>⓵ 循环中的 RPC</strong></h3><p>读取多条记录时在 <code>for</code> 循环中去分别读取单行。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> _, id := <span class="keyword">range</span> ids &#123;</span><br><span class="line">    record := GetDetail(id)</span><br><span class="line">    <span class="comment">// do something ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>解决方案：</strong></p>
-<p>改批量（一次从存储中取出所有 id 的结果）</p>
+<p>解决方案：改批量（一次从存储中取出所有 id 的结果）</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">records := GetDetails(ids)</span><br><span class="line"><span class="comment">// do something ...</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>谚云：积羽沉舟，群轻折轴</strong></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><strong>谚云：积羽沉舟，群轻折轴</strong></p>
 <p>上述场景是一个典型的 <code>N+1</code> 问题，不限于读取，写入亦然。它可能导致性能问题和增加数据库负载。</p>
 <p>为了解决 <code>N+1</code> 问题，开发人员可以使用一些技术，如批量加载（batch loading)、批量更新（Bulk Updates），从而减少请求次数。通过优化数据库查询和加载策略，开发人员可以避免 <code>N+1</code> 问题，并提高应用程序的效率。</p>
 
@@ -632,7 +628,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -643,7 +639,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -654,7 +650,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -707,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#批量思想：解决-N-1-问题"><span class="nav-number">1.</span> <span class="nav-text">批量思想：解决 N+1 问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#批量思想：解决-N-1-问题"><span class="nav-number">1.</span> <span class="nav-text">批量思想：解决 N+1 问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务场景"><span class="nav-number">1.1.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.2.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#⓵-循环中的-RPC"><span class="nav-number">1.2.1.</span> <span class="nav-text">⓵ 循环中的 RPC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>

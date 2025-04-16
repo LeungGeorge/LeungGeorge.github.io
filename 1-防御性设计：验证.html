@@ -102,15 +102,15 @@
 
 
 
-<meta name="description" content="防御性设计：验证业务场景： 在日常开发中，尤其是在 web 应用开发中，我们经常需要对数据的合法性进行验证。为了实现这一目的，我们通常会对参数进行一些前置验证。这些验证规则可以包括必填项、范围、格式、正则表达式、安全性以及自定义规则等。 通常，为简化业务逻辑，我们会借助一些第三方工具来进行这些通用性的检测。 案例 1： 如果是基于 pb 协议，可以启用 protoc-gen-validate (P">
+<meta name="description" content="防御性设计：验证业务场景在日常开发中，尤其是在 web 应用开发中，我们经常需要对数据的合法性进行验证。为了实现这一目的，我们通常会对参数进行一些前置验证。这些验证规则可以包括必填项、范围、格式、正则表达式、安全性以及自定义规则等。 通常，为简化业务逻辑，我们会借助一些第三方工具来进行这些通用性的检测。 案例⓵ Protocol Buffer Validation如果是基于 pb 协议，可以启用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="防御性设计：验证">
 <meta property="og:url" content="https://liangyuanzheng.com/1-%E9%98%B2%E5%BE%A1%E6%80%A7%E8%AE%BE%E8%AE%A1%EF%BC%9A%E9%AA%8C%E8%AF%81.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
-<meta property="og:description" content="防御性设计：验证业务场景： 在日常开发中，尤其是在 web 应用开发中，我们经常需要对数据的合法性进行验证。为了实现这一目的，我们通常会对参数进行一些前置验证。这些验证规则可以包括必填项、范围、格式、正则表达式、安全性以及自定义规则等。 通常，为简化业务逻辑，我们会借助一些第三方工具来进行这些通用性的检测。 案例 1： 如果是基于 pb 协议，可以启用 protoc-gen-validate (P">
+<meta property="og:description" content="防御性设计：验证业务场景在日常开发中，尤其是在 web 应用开发中，我们经常需要对数据的合法性进行验证。为了实现这一目的，我们通常会对参数进行一些前置验证。这些验证规则可以包括必填项、范围、格式、正则表达式、安全性以及自定义规则等。 通常，为简化业务逻辑，我们会借助一些第三方工具来进行这些通用性的检测。 案例⓵ Protocol Buffer Validation如果是基于 pb 协议，可以启用">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/Pasted%20image%2020240206162835.png">
 <meta property="article:published_time" content="2024-08-06T07:04:00.000Z">
-<meta property="article:modified_time" content="2024-09-02T11:19:44.554Z">
+<meta property="article:modified_time" content="2025-04-16T02:11:06.263Z">
 <meta property="article:author" content="七点一刻">
 <meta property="article:tag" content="性能优化">
 <meta property="article:tag" content="总结">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  417
+                  471
                 </span>
               
 
@@ -468,24 +468,23 @@
       
 
       
-        <h2 id="防御性设计：验证"><a href="#防御性设计：验证" class="headerlink" title="防御性设计：验证"></a>防御性设计：验证</h2><p><strong>业务场景：</strong></p>
-<p>在日常开发中，尤其是在 web 应用开发中，我们经常需要对数据的合法性进行验证。为了实现这一目的，我们通常会对参数进行一些前置验证。这些验证规则可以包括必填项、范围、格式、正则表达式、安全性以及自定义规则等。</p>
+        <h1 id="防御性设计：验证"><a href="#防御性设计：验证" class="headerlink" title="防御性设计：验证"></a>防御性设计：验证</h1><h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>在日常开发中，尤其是在 web 应用开发中，我们经常需要对数据的合法性进行验证。为了实现这一目的，我们通常会对参数进行一些前置验证。这些验证规则可以包括必填项、范围、格式、正则表达式、安全性以及自定义规则等。</p>
 <p>通常，为简化业务逻辑，我们会借助一些第三方工具来进行这些通用性的检测。</p>
-<p><strong>案例 1：</strong></p>
-<p>如果是基于 pb 协议，可以启用 <a href="https://github.com/bufbuild/protoc-gen-validate" target="_blank" rel="noopener">protoc-gen-validate (PGV) </a> 自动化数据校验插件。配置规则如：<br><img src="assets/images/Pasted%20image%2020240206162835.png" alt=""><br>强校验 <code>title</code> 字段长度在 1 ～ 100 个字符：</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-Protocol-Buffer-Validation"><a href="#⓵-Protocol-Buffer-Validation" class="headerlink" title="⓵ Protocol Buffer Validation"></a><strong>⓵ Protocol Buffer Validation</strong></h3><p>如果是基于 pb 协议，可以启用 <a href="https://github.com/bufbuild/protoc-gen-validate" target="_blank" rel="noopener">protoc-gen-validate (PGV) </a> 自动化数据校验插件。配置规则如：<br><img src="assets/images/Pasted%20image%2020240206162835.png" alt=""><br>强校验 <code>title</code> 字段长度在 1 ～ 100 个字符：</p>
 <figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> title = <span class="number">1</span> [(validate.rules).<span class="built_in">string</span> = &#123;min_len: <span class="number">1</span>, max_len: <span class="number">100</span> &#125;];</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>一般地，保存数据库之前，为防止溢出，可对其长度做前置检查。</p>
 </blockquote>
-<p><strong>案例 2：</strong></p>
-<p>对于非 pb 定义的结构，也有一些类似的组件实现自动化校验。如 <a href="https://github.com/go-playground/validator" target="_blank" rel="noopener">Go Struct and Field validation</a> ，基本用法如下：</p>
+<p><a href="https://github.com/bufbuild/protoc-gen-validate?tab=readme-ov-file#constraint-rules" target="_blank" rel="noopener">《约束规则》</a>支持的类型有 Numerics、Bools、Strings、Bytes、Enums、Messages、Repeated、Maps 等。</p>
+<blockquote>
+<p>tRPC 服务时，请参考<a href="http://km.oa.com/articles/view/438840" target="_blank" rel="noopener">《tRPC Validation，让 RPC 框架自动做数据校验》</a></p>
+</blockquote>
+<h3 id="⓶-Go-Struct-and-Field-validation"><a href="#⓶-Go-Struct-and-Field-validation" class="headerlink" title="⓶ Go Struct and Field validation"></a><strong>⓶ Go Struct and Field validation</strong></h3><p>对于非 pb 定义的结构，也有一些类似的组件实现自动化校验。如 <a href="https://github.com/go-playground/validator" target="_blank" rel="noopener">Go Struct and Field validation</a> ，基本用法如下：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// User contains user information</span></span><br><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">trueFirstName      <span class="keyword">string</span>     <span class="string">`validate:"required"`</span></span><br><span class="line">trueLastName       <span class="keyword">string</span>     <span class="string">`validate:"required"`</span></span><br><span class="line">trueAge            <span class="keyword">uint8</span>      <span class="string">`validate:"gte=0,lte=130"`</span></span><br><span class="line">trueEmail          <span class="keyword">string</span>     <span class="string">`validate:"required,email"`</span></span><br><span class="line">trueGender         <span class="keyword">string</span>     <span class="string">`validate:"oneof=male female prefer_not_to"`</span></span><br><span class="line">trueFavouriteColor <span class="keyword">string</span>     <span class="string">`validate:"iscolor"`</span>                <span class="comment">// alias for 'hexcolor|rgb|rgba|hsl|hsla'</span></span><br><span class="line">trueAddresses      []*Address <span class="string">`validate:"required,dive,required"`</span> <span class="comment">// a person can have a home and cottage...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>如果预置的 <code>valadator</code> 不满足需求，也可以自定义 <code>validator</code>。</p>
-</blockquote>
-<p><strong>谚云：防御不到位，上线跑断腿</strong></p>
+<p>详细参考 <a href="https://github.com/go-playground/validator?tab=readme-ov-file#baked-in-validations" target="_blank" rel="noopener">《常用的验证》</a>。如果预置的 <code>valadator</code> 不满足需求，也可以自定义 <code>validator</code>。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><strong>谚云：防御不到位，上线跑断腿</strong></p>
 <p>防御性设计是考虑使用者可能会错误使用的情况，从设计上避免错误使用，或是降低错误使用的机会。防御性设计可以让软件更安全、可靠，更方便地找到使用者的错误。</p>
 
       
@@ -638,7 +637,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">109</span>
+                <span class="site-state-item-count">115</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -649,7 +648,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -660,7 +659,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -713,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#防御性设计：验证"><span class="nav-number">1.</span> <span class="nav-text">防御性设计：验证</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#防御性设计：验证"><span class="nav-number">1.</span> <span class="nav-text">防御性设计：验证</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务场景"><span class="nav-number">1.1.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.2.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#⓵-Protocol-Buffer-Validation"><span class="nav-number">1.2.1.</span> <span class="nav-text">⓵ Protocol Buffer Validation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#⓶-Go-Struct-and-Field-validation"><span class="nav-number">1.2.2.</span> <span class="nav-text">⓶ Go Struct and Field validation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
