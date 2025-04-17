@@ -15,7 +15,8 @@ comments: true
 
 ## 1. 简介
 **dig**（Dependency Injection for Go）是 Uber 开源的一款基于反射的依赖注入工具，专为 Go 语言设计。它通过自动管理对象间的依赖关系，简化代码结构，适用于构建应用框架（如 Uber 的 [Fx](https://github.com/uber-go/fx)）或初始化复杂依赖图。
-• **GitHub 地址**: [uber-go/dig](https://github.com/uber-go/dig)
+
+-  [GitHub - uber-go/dig: A reflection based dependency injection toolkit for Go.](https://github.com/uber-go/dig)
 
 ---
 
