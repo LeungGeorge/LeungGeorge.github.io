@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>七点一刻的魔法书</title>
+  
+  <subtitle>书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://liangyuanzheng.com/"/>
+  <updated>2025-04-19T06:33:00.171Z</updated>
+  <id>https://liangyuanzheng.com/</id>
+  
+  <author>
+    <name>七点一刻</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一库：retry-go-——-Go-语言轻量级重试库</title>
+    <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Aretry-go-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E8%BD%BB%E9%87%8F%E7%BA%A7%E9%87%8D%E8%AF%95%E5%BA%93.html"/>
+    <id>https://liangyuanzheng.com/每日一库：retry-go-——-Go-语言轻量级重试库.html</id>
+    <published>2025-04-19T16:00:00.000Z</published>
+    <updated>2025-04-19T06:33:00.171Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;retry-go&lt;/strong&gt; 是一个简单易用的 Go 语言重试库，由 Avast 开源。它提供灵活的重试策略和丰富的配
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="Golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
+    
+      <category term="每日一库" scheme="https://liangyuanzheng.com/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>千字文注</title>
+    <link href="https://liangyuanzheng.com/%E5%8D%83%E5%AD%97%E6%96%87%E6%B3%A8.html"/>
+    <id>https://liangyuanzheng.com/千字文注.html</id>
+    <published>2025-04-19T06:13:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qianziwen.5000yan.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《千字文》全文拼音及解读&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;注解&quot;&gt;&lt;a href=&quot;#注解&quot; class
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="DOING" scheme="https://liangyuanzheng.com/tags/doing/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="古文" scheme="https://liangyuanzheng.com/tags/%E5%8F%A4%E6%96%87/"/>
+    
+      <category term="经典" scheme="https://liangyuanzheng.com/tags/%E7%BB%8F%E5%85%B8/"/>
+    
+      <category term="启蒙" scheme="https://liangyuanzheng.com/tags/%E5%90%AF%E8%92%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一库：Govalidator-——-Go-语言的强大验证与清理工具​</title>
+    <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AGovalidator-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E7%9A%84%E5%BC%BA%E5%A4%A7%E9%AA%8C%E8%AF%81%E4%B8%8E%E6%B8%85%E7%90%86%E5%B7%A5%E5%85%B7%E2%80%8B.html"/>
+    <id>https://liangyuanzheng.com/每日一库：Govalidator-——-Go-语言的强大验证与清理工具​.html</id>
+    <published>2025-04-18T16:00:00.000Z</published>
+    <updated>2025-04-19T06:33:00.171Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Govalidator&lt;/strong&gt; 是一个 Go 语言库，专注于数据验证与清理，支持字符串、数字、切片、结构体及嵌套数
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="Golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
+    
+      <category term="每日一库" scheme="https://liangyuanzheng.com/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一库：Expr-Go-语言的高性能动态表达式引擎</title>
+    <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AExpr-Go-%E8%AF%AD%E8%A8%80%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E5%8A%A8%E6%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%95%E6%93%8E.html"/>
+    <id>https://liangyuanzheng.com/每日一库：Expr-Go-语言的高性能动态表达式引擎.html</id>
+    <published>2025-04-17T16:00:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Expr&lt;/strong&gt; 是一个专为 Go 语言设计的表达式求值库，旨在通过简洁的语法实现动态配置、业务规则和条件判断。它
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="Golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
+    
+      <category term="每日一库" scheme="https://liangyuanzheng.com/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一库：Uber-开源的-Go-依赖注入库-dig​</title>
+    <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AUber-%E5%BC%80%E6%BA%90%E7%9A%84-Go-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E5%BA%93-dig%E2%80%8B.html"/>
+    <id>https://liangyuanzheng.com/每日一库：Uber-开源的-Go-依赖注入库-dig​.html</id>
+    <published>2025-04-16T16:00:00.000Z</published>
+    <updated>2025-04-19T06:33:00.171Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;dig&lt;/strong&gt;（Dependency Injection for Go）是 Uber 开源的一
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="Golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
+    
+      <category term="每日一库" scheme="https://liangyuanzheng.com/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一库：Lancet-——-Go-语言高效工具库</title>
+    <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9ALancet-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E9%AB%98%E6%95%88%E5%B7%A5%E5%85%B7%E5%BA%93.html"/>
+    <id>https://liangyuanzheng.com/每日一库：Lancet-——-Go-语言高效工具库.html</id>
+    <published>2025-04-16T01:53:00.000Z</published>
+    <updated>2025-04-19T06:33:00.171Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;项目简介&quot;&gt;&lt;a href=&quot;#项目简介&quot; class=&quot;headerlink&quot; title=&quot;项目简介&quot;&gt;&lt;/a&gt;项目简介&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Lancet&lt;/strong&gt; 是一个全面、高效且可复用的 Go 语言工具库，灵感来源于 Java 的 Ap
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="每日一库" scheme="https://liangyuanzheng.com/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搞懂异地多活，看这篇就够了</title>
+    <link href="https://liangyuanzheng.com/%E6%90%9E%E6%87%82%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%B4%BB%EF%BC%8C%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html"/>
+    <id>https://liangyuanzheng.com/搞懂异地多活，看这篇就够了.html</id>
+    <published>2024-12-09T11:34:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;本文系外部转贴，&lt;a href=&quot;https://cloud.tencent.com/developer/article/1891235&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;查看原文&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquo
+      
+    
+    </summary>
+    
+    
+      <category term="软件工程" scheme="https://liangyuanzheng.com/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="转载" scheme="https://liangyuanzheng.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="收藏" scheme="https://liangyuanzheng.com/tags/%E6%94%B6%E8%97%8F/"/>
+    
+      <category term="review" scheme="https://liangyuanzheng.com/tags/review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Awesome-LLM</title>
+    <link href="https://liangyuanzheng.com/Awesome-LLM.html"/>
+    <id>https://liangyuanzheng.com/Awesome-LLM.html</id>
+    <published>2024-11-15T01:52:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Awesome-LLM&quot;&gt;&lt;a href=&quot;#Awesome-LLM&quot; class=&quot;headerlink&quot; title=&quot;Awesome-LLM&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/Hannibal046/Awesome-LLM&quot; 
+      
+    
+    </summary>
+    
+    
+      <category term="LLM" scheme="https://liangyuanzheng.com/categories/llm/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>索引下推</title>
+    <link href="https://liangyuanzheng.com/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.html"/>
+    <id>https://liangyuanzheng.com/索引下推.html</id>
+    <published>2024-10-31T11:50:00.000Z</published>
+    <updated>2025-04-19T06:33:00.171Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;mysql-架构&quot;&gt;&lt;a href=&quot;#mysql-架构&quot; class=&quot;headerlink&quot; title=&quot;mysql 架构&quot;&gt;&lt;/a&gt;mysql 架构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/assets/images/0b2d7d040f82be5852d9f
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://liangyuanzheng.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IT技术社区</title>
+    <link href="https://liangyuanzheng.com/IT%E6%8A%80%E6%9C%AF%E7%A4%BE%E5%8C%BA.html"/>
+    <id>https://liangyuanzheng.com/IT技术社区.html</id>
+    <published>2024-10-29T10:32:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;传统-IT-技术社区&quot;&gt;&lt;a href=&quot;#传统-IT-技术社区&quot; class=&quot;headerlink&quot; title=&quot;传统 IT 技术社区&quot;&gt;&lt;/a&gt;传统 IT 技术社区&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.csdn.net/&quot; 
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域名系统（DNS）</title>
+    <link href="https://liangyuanzheng.com/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F%EF%BC%88DNS%EF%BC%89.html"/>
+    <id>https://liangyuanzheng.com/域名系统（DNS）.html</id>
+    <published>2024-10-24T06:18:00.000Z</published>
+    <updated>2025-04-19T06:33:00.169Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;域名系统&quot;&gt;&lt;a href=&quot;#域名系统&quot; class=&quot;headerlink&quot; title=&quot;域名系统&quot;&gt;&lt;/a&gt;域名系统&lt;/h1&gt;&lt;p&gt;域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和 IP 地址相互映射的
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="TODO" scheme="https://liangyuanzheng.com/tags/todo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux dig 命令：查询单个域名的 DNS 信息</title>
+    <link href="https://liangyuanzheng.com/20241023115736-Linux-dig-%E5%91%BD%E4%BB%A4.html"/>
+    <id>https://liangyuanzheng.com/20241023115736-Linux-dig-命令.html</id>
+    <published>2024-10-23T03:57:00.000Z</published>
+    <updated>2025-04-19T06:33:00.169Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;本文系外部转帖，&lt;a href=&quot;https://www.cnblogs.com/sparkdev/p/7777871.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;查看原文&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://liangyuanzheng.com/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分布式事务</title>
+    <link href="https://liangyuanzheng.com/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1.html"/>
+    <id>https://liangyuanzheng.com/分布式事务.html</id>
+    <published>2024-10-23T02:17:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/assets/images/54c5e6889bc641e7006ae8d49e58f892_MD5.png&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://liangyuanzheng.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>复用：设计模式</title>
+    <link href="https://liangyuanzheng.com/10-%E5%A4%8D%E7%94%A8%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html"/>
+    <id>https://liangyuanzheng.com/10-复用：设计模式.html</id>
+    <published>2024-09-05T06:46:00.000Z</published>
+    <updated>2025-04-19T06:33:00.163Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;复用：设计模式&quot;&gt;&lt;a href=&quot;#复用：设计模式&quot; class=&quot;headerlink&quot; title=&quot;复用：设计模式&quot;&gt;&lt;/a&gt;复用：设计模式&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="随笔" scheme="https://liangyuanzheng.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="DOING" scheme="https://liangyuanzheng.com/tags/doing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>诗词歌赋《合辑》</title>
+    <link href="https://liangyuanzheng.com/01-%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B%E3%80%8A%E5%90%88%E8%BE%91%E3%80%8B.html"/>
+    <id>https://liangyuanzheng.com/01-诗词歌赋《合辑》.html</id>
+    <published>2024-08-27T16:00:00.000Z</published>
+    <updated>2025-04-19T06:33:00.163Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;《前出师表》——诸葛亮&quot;&gt;&lt;a href=&quot;#《前出师表》——诸葛亮&quot; class=&quot;headerlink&quot; title=&quot;《前出师表》——诸葛亮&quot;&gt;&lt;/a&gt;《前出师表》——诸葛亮&lt;/h2&gt;&lt;p&gt;先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然
+      
+    
+    </summary>
+    
+    
+      <category term="诗词歌赋" scheme="https://liangyuanzheng.com/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="诗词" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="古文" scheme="https://liangyuanzheng.com/tags/%E5%8F%A4%E6%96%87/"/>
+    
+      <category term="诗歌" scheme="https://liangyuanzheng.com/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>跟大师学语文-文章作法</title>
+    <link href="https://liangyuanzheng.com/%E8%B7%9F%E5%A4%A7%E5%B8%88%E5%AD%A6%E8%AF%AD%E6%96%87-%E6%96%87%E7%AB%A0%E4%BD%9C%E6%B3%95.html"/>
+    <id>https://liangyuanzheng.com/跟大师学语文-文章作法.html</id>
+    <published>2024-08-22T11:50:00.000Z</published>
+    <updated>2025-04-19T06:33:00.171Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;时间&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;2024-08-22&lt;/td&gt;
+&lt;td&gt;第一次阅读。一本指导如何写作的好书。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2024-
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://liangyuanzheng.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="写作" scheme="https://liangyuanzheng.com/tags/%E5%86%99%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>压缩：提速提效</title>
+    <link href="https://liangyuanzheng.com/8-%E5%8E%8B%E7%BC%A9%EF%BC%9A%E6%8F%90%E9%80%9F%E6%8F%90%E6%95%88.html"/>
+    <id>https://liangyuanzheng.com/8-压缩：提速提效.html</id>
+    <published>2024-08-22T04:27:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;压缩：提速提效&quot;&gt;&lt;a href=&quot;#压缩：提速提效&quot; class=&quot;headerlink&quot; title=&quot;压缩：提速提效&quot;&gt;&lt;/a&gt;压缩：提速提效&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解耦：消息队列</title>
+    <link href="https://liangyuanzheng.com/9-%E8%A7%A3%E8%80%A6%EF%BC%9A%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97.html"/>
+    <id>https://liangyuanzheng.com/9-解耦：消息队列.html</id>
+    <published>2024-08-22T04:27:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;解耦：消息队列&quot;&gt;&lt;a href=&quot;#解耦：消息队列&quot; class=&quot;headerlink&quot; title=&quot;解耦：消息队列&quot;&gt;&lt;/a&gt;解耦：消息队列&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="消息队列" scheme="https://liangyuanzheng.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了</title>
+    <link href="https://liangyuanzheng.com/202405241816-%E3%80%90%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%E3%80%91%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%88MQ%EF%BC%89%E9%80%89%E5%9E%8B%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html"/>
+    <id>https://liangyuanzheng.com/202405241816-【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了.html</id>
+    <published>2024-08-20T08:05:00.000Z</published>
+    <updated>2025-04-19T06:33:00.169Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;消息队列是重要的分布式系统组件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。可用于异步通信、削峰填谷、解耦系统、数据缓存等多种业务场景。&lt;br&gt;本文系消息队列（MQ）选型和常见问题的精心整理。在这篇文章中，我们将详细介绍消息队列的概念、作用
+      
+    
+    </summary>
+    
+    
+      <category term="软件工程" scheme="https://liangyuanzheng.com/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+      <category term="随笔" scheme="https://liangyuanzheng.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="架构" scheme="https://liangyuanzheng.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="消息队列" scheme="https://liangyuanzheng.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="km" scheme="https://liangyuanzheng.com/tags/km/"/>
+    
+      <category term="系统设计" scheme="https://liangyuanzheng.com/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="kafka" scheme="https://liangyuanzheng.com/tags/kafka/"/>
+    
+      <category term="后台" scheme="https://liangyuanzheng.com/tags/%E5%90%8E%E5%8F%B0/"/>
+    
+      <category term="分布式系统" scheme="https://liangyuanzheng.com/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="pulsar" scheme="https://liangyuanzheng.com/tags/pulsar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安全思想：漏洞防护</title>
+    <link href="https://liangyuanzheng.com/7-%E5%AE%89%E5%85%A8%E6%80%9D%E6%83%B3%EF%BC%9A%E6%BC%8F%E6%B4%9E%E9%98%B2%E6%8A%A4.html"/>
+    <id>https://liangyuanzheng.com/7-安全思想：漏洞防护.html</id>
+    <published>2024-08-20T03:49:00.000Z</published>
+    <updated>2025-04-19T06:33:00.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安全思想：漏洞防护&quot;&gt;&lt;a href=&quot;#安全思想：漏洞防护&quot; class=&quot;headerlink&quot; title=&quot;安全思想：漏洞防护&quot;&gt;&lt;/a&gt;安全思想：漏洞防护&lt;/h1&gt;&lt;h2 id=&quot;业务场景&quot;&gt;&lt;a href=&quot;#业务场景&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="系统优化" scheme="https://liangyuanzheng.com/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="https://liangyuanzheng.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="总结" scheme="https://liangyuanzheng.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
+    
+  </entry>
+  
+</feed>
