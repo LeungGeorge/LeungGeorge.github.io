@@ -1,9 +1,10 @@
 ---
-uuid: 0c95a4e1-1a68-11f0-b65e-2d145289379e
 tags:
   - note
   - 每日一库
   - blog
+  - Golang
+  - 工具箱
 categories:
   - essay
 date: 2025-04-16,09:53
