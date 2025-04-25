@@ -24,6 +24,8 @@ number headings: auto, first-level 1, max 6, 1.1
 - **项目地址**：[GitHub - robfig/cron](https://github.com/robfig/cron)
 - **项目定位**：Go 语言的定时任务调度库，支持标准 Cron 表达式解析、时区处理、任务链拦截等功能，适用于构建需要定时执行任务的应用程序（如批处理、数据同步、监控等）。
 
+![](assets/images/IMG-AF12944F8BAD125BB187855B722B3E8A.png)
+
 ---
 
 # 2 核心特性
