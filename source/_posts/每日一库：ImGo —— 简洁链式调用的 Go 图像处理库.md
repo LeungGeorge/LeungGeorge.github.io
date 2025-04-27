@@ -62,7 +62,7 @@ imgo.Load("input.jpg").Blur(10).Save("blurred.jpg")
 ```
 
 
-**⓷ 像素化效果​**​：
+**⓷ 像素化效果​**​
 
 ```go
 mgo.Load("input.jpg").Pixelate(20).Save("pixelated.jpg")
