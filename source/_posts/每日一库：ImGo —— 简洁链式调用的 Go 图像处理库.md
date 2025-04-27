@@ -15,13 +15,13 @@ comments: true
 number headings: auto, first-level 1, max 6, 1.1
 ---
 
-![](assets/images/IMG-8D84F9E08F0EC078A40C254481A8510A.png)
-
 # 1 项目简介
 
 ImGo 是一个基于 Go 语言的开源图像处理库，旨在提供类似 PHP 中 **Intervention Image** 的链式调用体验，让开发者能够通过简洁的代码实现复杂的图像操作，例如加载、调整尺寸、叠加图片、保存等。其命名来源于 "Image Golang" 的缩写，设计灵感源于弥补 Go 生态中缺乏直观链式调用图像处理工具的空白。
 
 - [GitHub - fishtailstudio/imgo: Golang image handling and manipulation library. Golang 图片处理库。](https://github.com/fishtailstudio/imgo)
+
+![](assets/images/IMG-8D84F9E08F0EC078A40C254481A8510A.png)
 
 # 2 核心特性
 
