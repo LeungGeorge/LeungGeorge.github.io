@@ -60,3 +60,17 @@ jobs:
           git add .
           git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") Updated By Github Actions"
           git push --force --quiet "https://${{ secrets.GITHUBUSERNAME }}:${{ secrets.GITHUBTOKEN }}@github.com/${{ secrets.GITHUBUSERNAME }}/${{ secrets.GITHUBUSERNAME }}.github.io.git" master:master
+      - name: deploy to server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        # 使用rsync同步文件（确保服务器已安装rsync）
+        rsync -avz -e "ssh -p $SERVER_PORT -o StrictHostKeyChecking=no" public/ $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
+        # 或使用scp
+        # scp -P $SERVER_PORT -o StrictHostKeyChecking=no -r public/* $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
