@@ -1,0 +1,41 @@
+name: Deploy to Tencent Cloud
+
+on:
+  push:
+    branches: [ master ]  # 触发分支，根据你的仓库调整
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    # - name: Install Hexo dependencies
+    #   run: |
+    #     npm install -g hexo-cli
+    #     npm install
+
+    # - name: Generate static files
+    #   run: hexo clean && hexo generate
+
+    - name: Deploy to Server
+      env:
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
+        SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        # 使用rsync同步文件（确保服务器已安装rsync）
+        rsync -avz -e "ssh -p $SERVER_PORT -o StrictHostKeyChecking=no" public/ $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
+        # 或使用scp
+        # scp -P $SERVER_PORT -o StrictHostKeyChecking=no -r public/* $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
