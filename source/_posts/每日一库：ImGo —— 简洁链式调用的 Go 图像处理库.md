@@ -1,4 +1,5 @@
 ---
+uuid: f7003bc0-23f6-11f0-a666-ed7ffcfaaa45
 tags:
   - note
   - Golang

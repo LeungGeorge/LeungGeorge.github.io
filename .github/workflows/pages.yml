@@ -21,7 +21,7 @@ jobs:
       - name: Use Node.js 19.x
         uses: actions/setup-node@v4
         with:
-          node-version: '19.3.0' # 自己正在使用的node版本即可
+          node-version: '18'
       - name: Install hexo
         run: |
           export TZ='Asia/Shanghai'
