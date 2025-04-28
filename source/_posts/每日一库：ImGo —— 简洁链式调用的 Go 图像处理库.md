@@ -1,5 +1,4 @@
 ---
-uuid: 151f4cd5-233f-11f0-b969-2d2358f21799
 tags:
   - note
   - Golang
@@ -121,4 +120,16 @@ ImGo 凭借链式调用和简洁 API，成为 Go 生态中图像处理的轻量�
 **参考源码与文档**：  
 - [GitHub 仓库](https://github.com/fishtailstudio/imgo)
 - [快速入门示例](https://www.codeleading.com/article/59596651895/)
+
+
+
+
+
+
+
+
+![](assets/images/5723b75e61abd931b3f426c56da787f3_MD5.png)
+
+
+![](assets/images/Pasted%20image%2020250428125523.png)
 
