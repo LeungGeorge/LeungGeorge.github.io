@@ -13,13 +13,13 @@ jobs:
       contents: write
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: hexo
         #   submodules: true
         #   fetch-depth: 0
       - name: Use Node.js 19.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '19.3.0' # 自己正在使用的node版本即可
       - name: Install hexo
