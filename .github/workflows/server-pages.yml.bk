@@ -32,9 +32,9 @@ jobs:
         SERVER_PORT: ${{ secrets.SERVER_PORT }}
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+        # mkdir -p ~/.ssh
+        # echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        # chmod 600 ~/.ssh/id_rsa
         # 使用rsync同步文件（确保服务器已安装rsync）
         rsync -avz -e "ssh -p $SERVER_PORT -o StrictHostKeyChecking=no" public/ $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
         # 或使用scp
