@@ -60,9 +60,9 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           # 使用rsync同步文件（确保服务器已安装rsync）
-          # rsync -avz --no-times -e "ssh -p $SERVER_PORT -o StrictHostKeyChecking=no" public/ $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
+          rsync -avz --no-times -e "ssh -p $SERVER_PORT -o StrictHostKeyChecking=no" public/ $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
           # 或使用scp
-          scp -P $SERVER_PORT -o StrictHostKeyChecking=no -r public/* $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
+          # scp -P $SERVER_PORT -o StrictHostKeyChecking=no -r public/* $SERVER_USERNAME@$SERVER_IP:/var/www/html/blog/
       - name: 更新 master 分支 #此处master:master 指从本地的master分支提交到远程仓库的master分支(不是博客的分支写master即可)，若远程仓库没有对应分支则新建一个。如有其他需要，可以根据自己的需求更改。
         run: |
           cd ./public
