@@ -102,12 +102,12 @@
 
 
 
-<meta name="description" content="本章关注数据处理流水线在实际应用中面临的复杂问题。讨论了周期性运行的数据流水线与持续运行永不停止的数据处理流水线面临的共同问题，也讨论了它们的不同点。本章提出了一个崭新的、更可靠的、更易扩展的领头人、追随者模式（即 Master&#x2F;Slave 模式），可以用来替代处理海量数据的周期性流水线模型。 周期性流水线模式的挑战周期性的数据流水线模型是非常脆弱易坏的。初期调试后，整个流水线的性能可能很稳定。随">
+<meta name="description" content="本章关注数据处理流水线在实际应用中面临的复杂问题。讨论了周期性运行的数据流水线与持续运行永不停止的数据处理流水线面临的共同问题，也讨论了它们的不同点。本章提出了一个崭新的、更可靠的、更易扩展的领头人、追随者模式（即 Master&#x2F;Slave 模式），可以用来替代处理海量数据的周期性流水线模型。 周期性流水线模式的挑战周期性的数据流水线模型是非常脆弱易坏的。初期调试后，整个流水线的性能可能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《SRE Google 运维解密》第 25 章 数据处理流水线">
 <meta property="og:url" content="https://liangyuanzheng.com/%E7%AC%AC-25-%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B5%81%E6%B0%B4%E7%BA%BF.html">
 <meta property="og:site_name" content="七点一刻的魔法书">
-<meta property="og:description" content="本章关注数据处理流水线在实际应用中面临的复杂问题。讨论了周期性运行的数据流水线与持续运行永不停止的数据处理流水线面临的共同问题，也讨论了它们的不同点。本章提出了一个崭新的、更可靠的、更易扩展的领头人、追随者模式（即 Master&#x2F;Slave 模式），可以用来替代处理海量数据的周期性流水线模型。 周期性流水线模式的挑战周期性的数据流水线模型是非常脆弱易坏的。初期调试后，整个流水线的性能可能很稳定。随">
+<meta property="og:description" content="本章关注数据处理流水线在实际应用中面临的复杂问题。讨论了周期性运行的数据流水线与持续运行永不停止的数据处理流水线面临的共同问题，也讨论了它们的不同点。本章提出了一个崭新的、更可靠的、更易扩展的领头人、追随者模式（即 Master&#x2F;Slave 模式），可以用来替代处理海量数据的周期性流水线模型。 周期性流水线模式的挑战周期性的数据流水线模型是非常脆弱易坏的。初期调试后，整个流水线的性能可能">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/image-20220716110440637.png">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/image-20220716113751716.png">
 <meta property="og:image" content="https://liangyuanzheng.com/assets/images/image-20220716113726424.png">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  837
+                  840
                 </span>
               
 
@@ -470,19 +470,19 @@
       
 
       
-        <p>本章关注数据处理流水线在实际应用中面临的复杂问题。讨论了周期性运行的数据流水线与持续运行永不停止的数据处理流水线面临的共同问题，也讨论了它们的不同点。本章提出了一个崭新的、更可靠的、更易扩展的领头人、追随者模式（即 Master/Slave 模式），可以用来替代处理海量数据的周期性流水线模型。</p>
+        <p>本章关注数据处理流水线在实际应用中面临的复杂问题。讨论了周期性运行的数据流水线与持续运行永不停止的数据处理流水线面临的共同问题，也讨论了它们的不同点。本章提出了一个崭新的、更可靠的、更易扩展的领头人、追随者模式（即 Master&#x2F;Slave 模式），可以用来替代处理海量数据的周期性流水线模型。</p>
 <h2 id="周期性流水线模式的挑战"><a href="#周期性流水线模式的挑战" class="headerlink" title="周期性流水线模式的挑战"></a>周期性流水线模式的挑战</h2><p>周期性的数据流水线模型是非常脆弱易坏的。初期调试后，整个流水线的性能可能很稳定。随着数据量的自然增长会对整个系统造成压力，导致各种各样的问题出现。这种问题包括任务运行超时、<strong>资源耗尽</strong>，<strong>某些分块处理卡住</strong>导致整体运维压力上升等。</p>
 <h2 id="工作分发不均"><a href="#工作分发不均" class="headerlink" title="工作分发不均"></a>工作分发不均</h2><h2 id="分布式环境中周期性数据流水线的缺点"><a href="#分布式环境中周期性数据流水线的缺点" class="headerlink" title="分布式环境中周期性数据流水线的缺点"></a>分布式环境中周期性数据流水线的缺点</h2><p>对于每天运行一次的流水线来说，几个小时的启动延迟是可以接受的。但是随着执行频率增高，每次执行之间的最小间隔很快会与平均启动延迟持平，这就使得周期性数据流水线的执行延迟有了一个下限。超过这个阈值继续减少任务的执行间隔周期只会造成更多的问题而不能让任务执行得更快。</p>
-<p><img src="assets/images/image-20220716110440637.png" alt="image-20220716110440637"></p>
+<p><img src="/assets/images/image-20220716110440637.png" alt="image-20220716110440637"></p>
 <h2 id="监控周期性流水线的问题"><a href="#监控周期性流水线的问题" class="headerlink" title="监控周期性流水线的问题"></a>监控周期性流水线的问题</h2><ul>
 <li>惊群效应</li>
 </ul>
-<p><img src="assets/images/image-20220716113751716.png" alt="image-20220716113751716"></p>
+<p><img src="/assets/images/image-20220716113751716.png" alt="image-20220716113751716"></p>
 <ul>
 <li>摩尔负载模式</li>
 </ul>
-<p><img src="assets/images/image-20220716113726424.png" alt="image-20220716113726424"></p>
-<h2 id="Google-Workflow"><a href="#Google-Workflow" class="headerlink" title="Google Workflow"></a>Google Workflow</h2><p>Master/Slave 分布式系统设计模式。</p>
+<p><img src="/assets/images/image-20220716113726424.png" alt="image-20220716113726424"></p>
+<h2 id="Google-Workflow"><a href="#Google-Workflow" class="headerlink" title="Google Workflow"></a>Google Workflow</h2><p>Master&#x2F;Slave 分布式系统设计模式。</p>
 <h3 id="Workflow-中的执行阶段"><a href="#Workflow-中的执行阶段" class="headerlink" title="Workflow 中的执行阶段"></a>Workflow 中的执行阶段</h3><p>我们可以通过将工作进程进一步划分为更小的任务组，而将流水线的”深度“随意增加。每个任务组负责处理该执行阶段的数据，可以对某一小块数据进行任意操作。</p>
 <p>工作进程处理前序阶段产生的工作单元，同时生产出新的输出单元。输出可以终止整个执行，也可以作为其他处理阶段的输入。</p>
 <h3 id="正确性保障"><a href="#正确性保障" class="headerlink" title="正确性保障"></a>正确性保障</h3><ul>
@@ -496,11 +496,11 @@
 <blockquote>
 <p>分布式锁</p>
 </blockquote>
-<p><img src="assets/images/image-20220716113818654.png" alt="image-20220716113818654"></p>
+<p><img src="/assets/images/image-20220716113818654.png" alt="image-20220716113818654"></p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>周期性的数据流水线是很有价值的。但是如果一个数据处理问题本身是持续性的，或者会自然增长成为持续性的，那么就不要采用周期性的设计方式，而是采用一种类似 Workflow 的设计特点的系统。</p>
 <p>我们发现带有强一致性的持续数据处理系统，就像 Workflow 这样，在分布式集群环境中工作性能和扩展性都非常好。这样一个系统能够周期性地提供可以依赖的结果，并且是一个非常可靠且稳定的可运维系统。</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li><a href="https://sites.cs.ucsb.edu/~rich/publications/shao-hcw.pdf" target="_blank" rel="noopener">https://sites.cs.ucsb.edu/~rich/publications/shao-hcw.pdf</a> “Master/Slave Computing on the Grid”</li>
+<li><a href="https://sites.cs.ucsb.edu/~rich/publications/shao-hcw.pdf" target="_blank" rel="noopener">https://sites.cs.ucsb.edu/~rich/publications/shao-hcw.pdf</a> “Master&#x2F;Slave Computing on the Grid”</li>
 <li><a href="https://en.wikipedia.org/wiki/System_prevalence" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/System_prevalence</a> “流式系统设计”</li>
 </ol>
 

@@ -471,14 +471,14 @@
         <h1 id="安全思想：漏洞防护"><a href="#安全思想：漏洞防护" class="headerlink" title="安全思想：漏洞防护"></a>安全思想：漏洞防护</h1><h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>安全思想是指在设计、开发和维护计算机系统和网络时，将安全性作为首要考虑的原则和理念。它强调在整个系统生命周期中，从设计阶段到实施和运行阶段，都要考虑安全性，并采取相应的措施来保护系统免受恶意攻击和数据泄露的威胁。</p>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-Go-安全编码实践指南"><a href="#⓵-Go-安全编码实践指南" class="headerlink" title="⓵ Go 安全编码实践指南"></a><strong>⓵ Go 安全编码实践指南</strong></h3><p>采用安全编码实践，可以提高应用程序的安全性，减少潜在的安全风险，并为用户提供更可靠和安全的体验。</p>
 <p>本节内容摘自 <a href="http://www.owasp.org.cn/OWASP-CHINA/" target="_blank" rel="noopener">OWASP</a> 的 <a href="http://www.owasp.org.cn/OWASP-CHINA/go-webapp-scp-cn.pdf" target="_blank" rel="noopener">《Go-安全编码实践指南》</a></p>
-<p><img src="assets/images/21f9faba441126a2ba22d49be4625b2c_MD5.png" alt=""></p>
+<p><img src="/assets/images/21f9faba441126a2ba22d49be4625b2c_MD5.png"></p>
 <p>其他：</p>
 <ul>
 <li><a href="http://www.owasp.org.cn/OWASP-CHINA/owasp-project/download/OWASP_SCP_Quick_Reference_Guide-Chinese.pdf" target="_blank" rel="noopener">《OWASP 安全编码规范 快速参考指南》</a></li>
 <li><a href="http://www.owasp.org.cn/OWASP-CHINA/owasp-project/OWASPAPITop102019.pdf" target="_blank" rel="noopener">《十大关键 API 安全风险》</a></li>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">CSRF 防御手册</a></li>
 <li><a href="https://github.com/google/re2" target="_blank" rel="noopener">RE2</a></li>
-<li><a href="1%20Project/腾讯/智影/浅析服务端优化/智影：浅析后端接口优化实战（20240331）/资料/OWASP低代码十大安全风险.pdf">《OWASP 低代码十大安全风险》</a></li>
+<li><a href="1%20Project/%E8%85%BE%E8%AE%AF/%E6%99%BA%E5%BD%B1/%E6%B5%85%E6%9E%90%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BC%98%E5%8C%96/%E6%99%BA%E5%BD%B1%EF%BC%9A%E6%B5%85%E6%9E%90%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%8820240331%EF%BC%89/%E8%B5%84%E6%96%99/OWASP%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%8D%81%E5%A4%A7%E5%AE%89%E5%85%A8%E9%A3%8E%E9%99%A9.pdf">《OWASP 低代码十大安全风险》</a></li>
 <li><a href="http://www.owasp.org.cn/OWASP-CHINA/owasp-project/OWASP-TOP10-2021%E4%B8%AD%E6%96%87%E7%89%88V1.0%E5%8F%91%E5%B8%83.pdf" target="_blank" rel="noopener">《2021 OWASP TOP 10》</a></li>
 </ul>
 <h3 id="⓶-业界安全事件分析与借鉴"><a href="#⓶-业界安全事件分析与借鉴" class="headerlink" title="⓶ 业界安全事件分析与借鉴"></a><strong>⓶ 业界安全事件分析与借鉴</strong></h3><table>
@@ -491,37 +491,37 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>2023/4/3</td>
+<td>2023&#x2F;4&#x2F;3</td>
 <td><a href="https://mp.weixin.qq.com/s/qOVYPd5J-SinDJOK28hIVg" target="_blank" rel="noopener" title="https://mp.weixin.qq.com/s/qOVYPd5J-SinDJOK28hIVg"><strong>三星引入 ChatGPT 后疑似泄露公司资料</strong></a></td>
 <td>三星接入 ChatGPT 后有员工在使用过程中上传了源码和会议记录业界普遍<strong>怀疑 ChatGPT 可能收集对话数据用于训练迭代</strong>，可能会在其他对话中漏出</td>
 <td><strong>不泄露公司敏感信息</strong>，以免触碰高压线 <br>1、不把工作代码贴进 ChatGPT 对话中 <br>2、对话过程中不输入公司敏感信息与资料，如密码密钥、业务数据、财务数据、用户个人数据、未公开算法等</td>
 </tr>
 <tr>
-<td>2023/1/4</td>
+<td>2023&#x2F;1&#x2F;4</td>
 <td><a href="https://www.secrss.com/articles/50767" target="_blank" rel="noopener" title="https://www.secrss.com/articles/50767"><strong>黑客出售 2 亿 Twitter 用户个人资料</strong></a></td>
 <td>推测为根据 2022 年漏洞泄露的数据做整理 <br>2022 年漏洞原因：twitter<strong>接口会根据传入的邮箱或手机号返回对应的 twitterID</strong></td>
 <td>1、<strong>API 设计应避免泄露用户个人数据</strong>，特别是对不需要做身份校验的接口</td>
 </tr>
 <tr>
-<td>2023/2/12</td>
+<td>2023&#x2F;2&#x2F;12</td>
 <td><a href="https://zhuanlan.zhihu.com/p/608130774" target="_blank" rel="noopener" title="https://zhuanlan.zhihu.com/p/608130774"><strong>45 亿条快递数据遭泄露</strong></a></td>
-<td>可能为快递/电商平台等多个泄露源拼接而成，过往主要泄露原因包括： <br>1、<strong>API 接口漏洞导致泄露</strong> <br>2、<strong>内鬼泄露</strong> <br>3、云仓平台被植入木马后泄露</td>
+<td>可能为快递&#x2F;电商平台等多个泄露源拼接而成，过往主要泄露原因包括： <br>1、<strong>API 接口漏洞导致泄露</strong> <br>2、<strong>内鬼泄露</strong> <br>3、云仓平台被植入木马后泄露</td>
 <td>1、API 接口不返回多余信息；<strong>敏感 API 接口做严谨鉴权</strong> <br>2、内部人员权限按需最小化授予，管理平台限制导出条数</td>
 </tr>
 <tr>
-<td>2023/3/20</td>
+<td>2023&#x2F;3&#x2F;20</td>
 <td><a href="https://mp.weixin.qq.com/s/O-Kgvrtmg8hph5bmAnqFhg" target="_blank" rel="noopener" title="https://mp.weixin.qq.com/s/O-Kgvrtmg8hph5bmAnqFhg"><strong>ChatGPT 部分用户可查看他人聊天记录</strong></a></td>
 <td>所使用的<strong>redis python 客户端连接池存在 bug</strong>，对部分特殊场景的请求会错误分配到他人的处理连接，相应的返回他人的数据</td>
 <td>1、保持使用最新版或<strong>安全版本的第三方软件</strong>，对提示有漏洞的版本及时升级修复 <br>2、优先从内部软件源下载第三方组件，其次从软件官网</td>
 </tr>
 <tr>
-<td>2023/1/15</td>
+<td>2023&#x2F;1&#x2F;15</td>
 <td><a href="https://mp.weixin.qq.com/s/1OJZ5ZhJsnRAHVTmoZ6LNw" target="_blank" rel="noopener" title="https://mp.weixin.qq.com/s/1OJZ5ZhJsnRAHVTmoZ6LNw"><strong>俄罗斯科技巨头 Yandex 内部源代码泄露</strong></a></td>
 <td>员工<strong>离职前恶意下载和泄露源代码</strong><br><br>（twitter 3 月份也有员工泄露源码事件）</td>
 <td>1、<strong>源码中不写入密钥密码等敏感数据</strong>，改为存放至七彩石或 KMS，收到类似风险提醒时切实修改，不随意忽略 <br>2、公司对源码恶意下载和泄露有监控和审计溯源能力，建议<strong>团队内做好宣导，以免违规违法</strong></td>
 </tr>
 <tr>
-<td>2023/3/3</td>
+<td>2023&#x2F;3&#x2F;3</td>
 <td><a href="https://zhuanlan.zhihu.com/p/610241711" target="_blank" rel="noopener" title="https://zhuanlan.zhihu.com/p/610241711"><strong>拼多多 app 利用漏洞恶意竞争被 google paly 下架</strong></a></td>
 <td>拼多多 app 中综合<strong>利用 android 低版本漏洞和手机厂商 OEM 代码漏洞</strong>，达到： <br>1、隐蔽安装，无法卸载 <br>2、攻击竞争对手 App <br>3、窃取用户隐私数据 <br>4、逃避隐私合规监管</td>
 <td>1、业务程序中<strong>不利用漏洞</strong>实现业务目的，不违规收集用户隐私数据</td>

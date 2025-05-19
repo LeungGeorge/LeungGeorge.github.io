@@ -480,7 +480,7 @@
 
 <p>如文档所说，它返回写入的字节数，当 <code>n != len(b)</code> 时会返回一个非 <code>nil</code> 的错误。这是一种常见的风格；有关更多示例，请参考错误处理部分。</p>
 <blockquote>
-<p>and as the documentation says, it returns the number of bytes written and a non-nil error when n != len(b). This is a common style; see the section on error handling for more examples.</p>
+<p>and as the documentation says, it returns the number of bytes written and a non-nil error when n !&#x3D; len(b). This is a common style; see the section on error handling for more examples.</p>
 </blockquote>
 <p>类似的方法排除了向返回值传递指针以模拟引用参数的必要。这里有一个简单的函数，从直接切片中获取一个数字，并返回这个数字和下一个位置。</p>
 <blockquote>
@@ -543,7 +543,7 @@
 <p>For programmers accustomed to block-level resource management from other languages, defer may seem peculiar, but its most interesting and powerful applications come precisely from the fact that it’s not block-based but function-based. In the section on panic and recover we’ll see another example of its possibilities.</p>
 </blockquote>
 <hr>
-<p><img src="source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
+<p><img src="/source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
 
       
     </div>

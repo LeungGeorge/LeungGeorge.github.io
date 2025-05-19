@@ -486,7 +486,7 @@
 <li>归还连接：使用完毕后，将连接对象归还给连接对象池，使其可供其他请求使用。</li>
 <li>销毁连接：当连接池不再需要时，可以销毁连接对象，释放资源。</li>
 </ol>
-<p><img src="assets/images/Pasted%20image%2020240314102315.png" alt=""></p>
+<p><img src="/assets/images/Pasted%20image%2020240314102315.png"></p>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-go-redis-连接池"><a href="#⓵-go-redis-连接池" class="headerlink" title="⓵ go-redis 连接池"></a><strong>⓵ <a href="https://github.com/go-redis/redis/tree/master/internal/pool" target="_blank" rel="noopener">go-redis 连接池</a></strong></h3><p>总览下连接池的核心<a href="https://github.com/go-redis/redis/blob/master/internal/pool/pool.go" target="_blank" rel="noopener">代码结构</a>，go-redis 的连接池实现分为如下几个部分：</p>
 <ol>
 <li>连接池初始化、管理连接</li>
@@ -494,7 +494,7 @@
 <li>获取与放回连接，核心实现 <a href="https://github.com/go-redis/redis/blob/master/internal/pool/pool.go#L259" target="_blank" rel="noopener">Get</a>、<a href="https://github.com/go-redis/redis/blob/master/internal/pool/pool.go#L366" target="_blank" rel="noopener">Put</a></li>
 <li>监控统计 &amp;&amp; 连接保活配置</li>
 </ol>
-<p><img src="assets/images/e1be7be262cc3ec77245b3d424f60f79_MD5.png" alt=""></p>
+<p><img src="/assets/images/e1be7be262cc3ec77245b3d424f60f79_MD5.png"></p>
 <center><font color="#7f7f7f">图：go-redis连接池的基本流程</font></center>
 
 <p>原理可参考：<a href="https://pandaychen.github.io/2020/02/22/A-REDIS-POOL-ANALYSIS/" target="_blank" rel="noopener">《Go-Redis 连接池（Pool）源码分析》</a></p>

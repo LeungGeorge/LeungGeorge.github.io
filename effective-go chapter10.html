@@ -581,7 +581,7 @@
 <p>When someone visits the page <code>/args</code> , the handler installed at that page has value <code>ArgServer</code> and type <code>HandlerFunc</code> . The HTTP server will invoke the method <code>ServeHTTP</code> of that type, with <code>ArgServer</code> as the receiver, which will in turn call <code>ArgServer</code> (via the invocation <code>f(w, req)</code> inside <code>HandlerFunc.ServeHTTP</code> ). The arguments will then be displayed.</p>
 <p>In this section we have made an HTTP server from a struct, an integer, a channel, and a function, all because interfaces are just sets of methods, which can be defined for (almost) any type.</p>
 <hr>
-<p><img src="source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
+<p><img src="/source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
 
       
     </div>

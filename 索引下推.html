@@ -469,7 +469,7 @@
       
 
       
-        <h2 id="mysql-架构"><a href="#mysql-架构" class="headerlink" title="mysql 架构"></a>mysql 架构</h2><p><img src="assets/images/0b2d7d040f82be5852d9fd2f88911577_MD5.png" alt=""></p>
+        <h2 id="mysql-架构"><a href="#mysql-架构" class="headerlink" title="mysql 架构"></a>mysql 架构</h2><p><img src="/assets/images/0b2d7d040f82be5852d9fd2f88911577_MD5.png"></p>
 <ul>
 <li>MySQL 服务层：也就是 SERVER 层，用来解析 SQL 的语法、语义、生成查询计划、接管从 MySQL 存储引擎层上推的数据进行二次过滤等等。</li>
 <li>MySQL 存储引擎层：按照 MySQL 服务层下发的请求，通过索引或者全表扫描等方式把数据上传到 MySQL 服务层。</li>
@@ -483,11 +483,11 @@
 </ul>
 <p>例如一张表，建了一个联合索引（name, age），查询语句：<code>select * from t_user where name like &#39;张%&#39; and age=10;</code>，由于 <code>name</code> 使用了范围查询，根据最左匹配原则：</p>
 <p>不使用 ICP，引擎层查找到 <code>name like &#39;张%&#39;</code> 的数据，再由 Server 层去过滤 <code>age=10</code> 这个条件，这样一来，就回表了两次，浪费了联合索引的另外一个字段 <code>age</code>。</p>
-<p><img src="assets/images/IMG-B1FD15B33A23BF64496143A0CB4FB4E5-2.png" alt="没有使用 ICP"></p>
+<p><img src="/assets/images/IMG-B1FD15B33A23BF64496143A0CB4FB4E5-2.png" alt="没有使用 ICP"></p>
 <center>没有使用 ICP</center>
 
 <p>但是，使用了索引下推优化，把 where 的条件放到了引擎层执行，直接根据 <code>name like &#39;张%&#39; and age=10</code> 的条件进行过滤，减少了回表的次数。</p>
-<p><img src="assets/images/IMG-49F0583477D5AE07D736D81AD3665E74-2.png" alt="使用 ICP"></p>
+<p><img src="/assets/images/IMG-49F0583477D5AE07D736D81AD3665E74-2.png" alt="使用 ICP"></p>
 <center>使用 ICP</center>
 
 <p>索引条件下推优化可以减少存储引擎查询基础表的次数，也可以减少 MySQL 服务器从存储引擎接收数据的次数。</p>

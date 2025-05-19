@@ -478,7 +478,7 @@
 <p>This approach can be taken too far. Reference counts may be best done by putting a mutex around an integer variable, for instance. But as a high-level approach, using channels to control access makes it easier to write clear, correct programs.</p>
 <p>One way to think about this model is to consider a typical single-threaded program running on one CPU. It has no need for synchronization primitives. Now run another such instance; it too needs no synchronization. Now let those two communicate; if the communication is the synchronizer, there’s still no need for other synchronization. Unix pipelines, for example, fit this model perfectly. Although Go’s approach to concurrency originates in Hoare’s Communicating Sequential Processes (CSP), it can also be seen as a type-safe generalization of Unix pipes.</p>
 <h3 id="Goroutines"><a href="#Goroutines" class="headerlink" title="Goroutines"></a>Goroutines</h3><p>They’re called_goroutines_because the existing terms—threads, coroutines, processes, and so on—convey inaccurate connotations. A goroutine has a simple model: it is a function executing concurrently with other goroutines in the same address space. It is lightweight, costing little more than the allocation of stack space. And the stacks start small, so they are cheap, and grow by allocating (and freeing) heap storage as required.</p>
-<p>Goroutines are multiplexed onto multiple OS threads so if one should block, such as while waiting for I/O, others continue to run. Their design hides many of the complexities of thread creation and management.</p>
+<p>Goroutines are multiplexed onto multiple OS threads so if one should block, such as while waiting for I&#x2F;O, others continue to run. Their design hides many of the complexities of thread creation and management.</p>
 <p>Prefix a function or method call with the <code>go</code> keyword to run the call in a new goroutine. When the call completes, the goroutine exits, silently. (The effect is similar to the Unix shell’s <code>&amp;</code> notation for running a command in the background.)</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> list.Sort()  <span class="comment">// run list.Sort concurrently; don't wait for it.</span></span><br></pre></td></tr></table></figure>
 
@@ -548,7 +548,7 @@
 
 <p>The client attempts to retrieve a buffer from <code>freeList</code> ; if none is available, it allocates a fresh one. The server’s send to <code>freeList</code> puts <code>b</code> back on the free list unless the list is full, in which case the buffer is dropped on the floor to be reclaimed by the garbage collector. (The <code>default</code> clauses in the <code>select</code> statements execute when no other case is ready, meaning that the <code>selects</code> never block.) This implementation builds a leaky bucket free list in just a few lines, relying on the buffered channel and the garbage collector for bookkeeping.</p>
 <hr>
-<p><img src="source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
+<p><img src="/source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
 
       
     </div>

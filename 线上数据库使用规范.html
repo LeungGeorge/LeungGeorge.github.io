@@ -471,7 +471,7 @@
       
         <h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1><h2 id="库名、表名、字段名、索引"><a href="#库名、表名、字段名、索引" class="headerlink" title="库名、表名、字段名、索引"></a>库名、表名、字段名、索引</h2><p>库名、表名、字段名使用驼峰命名。（<strong>线上库为大小写敏感</strong>）  </p>
 <blockquote>
-<p>MySQL有配置参数lower_case_table_names=1，即库表名以小写存储，大小写不敏感。如果是0，则库表名以实际情况存储，大小写敏感；如果是2，以实际情况存储，但以小写比较。  </p>
+<p>MySQL有配置参数lower_case_table_names&#x3D;1，即库表名以小写存储，大小写不敏感。如果是0，则库表名以实际情况存储，大小写敏感；如果是2，以实际情况存储，但以小写比较。  </p>
 </blockquote>
 <p>查看MySQL是否大小写敏感：</p>
 <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like <span class="emphasis">'%case%'</span>;</span><br><span class="line"><span class="code">+------------------------+</span>-------+</span><br><span class="line">| Variable<span class="emphasis">_name          | Value |</span></span><br><span class="line"><span class="emphasis">+------------------------+-------+</span></span><br><span class="line"><span class="emphasis">| lower_</span>case<span class="emphasis">_file_</span>system | OFF   |</span><br><span class="line">| lower<span class="emphasis">_case_</span>table<span class="emphasis">_names | 0     |</span></span><br><span class="line"><span class="emphasis">+------------------------+-------+</span></span><br><span class="line"><span class="emphasis">2 rows in set (0.01 sec)</span></span><br></pre></td></tr></table></figure>
@@ -496,14 +496,14 @@
 <li>对于长度基本固定的列，如果该列恰好更新又特别频繁，适合char</li>
 <li>varchar虽然存储变长字符串，但不可太小也不可太大。UTF8最多能存21844个汉字，或65532个英文</li>
 <li>varbinary(M)保存的是二进制字符串，它保存的是字节而不是字符，所以没有字符集的概念，M长度0-255（字节）。只用于排序或比较时大小写敏感的类型，不包括密码存储</li>
-<li>TEXT类型与VARCHAR都类似，存储可变长度，最大限制也是2^16，但是它20bytes以后的内容是在数据页以外的空间存储（row_format=dynamic），对它的使用需要多一次寻址，没有默认值。<br>一般用于存放容量平均都很大、操作没有其它字段那样频繁的值。<br>网上部分文章说要避免使用text和blob，要知道如果纯用varchar可能会导致行溢出，效果差不多，但因为每行占用字节数过多，会导致buffer_pool能缓存的数据行、页下降。另外text和blob上面一般不会去建索引，而是利用sphinx之类的第三方全文搜索引擎，如果确实要创建（前缀）索引，那就会影响性能。凡事看具体场景。<br>另外尽可能把text/blob拆到另一个表中</li>
+<li>TEXT类型与VARCHAR都类似，存储可变长度，最大限制也是2^16，但是它20bytes以后的内容是在数据页以外的空间存储（row_format&#x3D;dynamic），对它的使用需要多一次寻址，没有默认值。<br>一般用于存放容量平均都很大、操作没有其它字段那样频繁的值。<br>网上部分文章说要避免使用text和blob，要知道如果纯用varchar可能会导致行溢出，效果差不多，但因为每行占用字节数过多，会导致buffer_pool能缓存的数据行、页下降。另外text和blob上面一般不会去建索引，而是利用sphinx之类的第三方全文搜索引擎，如果确实要创建（前缀）索引，那就会影响性能。凡事看具体场景。<br>另外尽可能把text&#x2F;blob拆到另一个表中</li>
 <li>BLOB可以看出varbinary的扩展版本，内容以二进制字符串存储，无字符集，区分大小写，有一种经常提但不用的场景：不要在数据库里存储图片。</li>
 </ul>
 <h2 id="int、tinyint、decimal等数字类型"><a href="#int、tinyint、decimal等数字类型" class="headerlink" title="int、tinyint、decimal等数字类型"></a>int、tinyint、decimal等数字类型</h2><ul>
 <li>使用tinyint来代替 enum和boolean，ENUM类型在需要修改或增加枚举值时，需要在线DDL，成本较高；ENUM列值如果含有数字类型，可能会引起默认值混淆，tinyint使用1个字节，一般用于status,type,flag的列</li>
 <li>建议使用 UNSIGNED 存储非负数值，相比不使用 unsigned，可以扩大一倍使用数值范围</li>
 <li>int使用固定4个字节存储，int(11)与int(4)只是显示宽度的区别</li>
-<li>使用Decimal 代替float/double存储精确浮点数，对于货币、金额这样的类型，使用decimal，如 decimal(9,2)。float默认只能能精确到6位有效数字</li>
+<li>使用Decimal 代替float&#x2F;double存储精确浮点数，对于货币、金额这样的类型，使用decimal，如 decimal(9,2)。float默认只能能精确到6位有效数字</li>
 </ul>
 <h2 id="timestamp与datetime选择"><a href="#timestamp与datetime选择" class="headerlink" title="timestamp与datetime选择"></a>timestamp与datetime选择</h2><h2 id="建议字段都定义为NOT-NULL"><a href="#建议字段都定义为NOT-NULL" class="headerlink" title="建议字段都定义为NOT NULL"></a>建议字段都定义为NOT NULL</h2><h2 id="索引定义规范"><a href="#索引定义规范" class="headerlink" title="索引定义规范"></a>索引定义规范</h2><h2 id="sql上线，先explain，查看索引使用情况"><a href="#sql上线，先explain，查看索引使用情况" class="headerlink" title="sql上线，先explain，查看索引使用情况"></a>sql上线，先explain，查看索引使用情况</h2><p>尽量避免extra列出现：Using File Sort，Using Temporary，rows超过1000的要谨慎上线。<br>explain解读:</p>
 <ul>
@@ -537,10 +537,10 @@
 <li>不在索引列进行数学运算和函数运算</li>
 <li>尽量不使⽤外键 ，外键用来保护参照完整性，可在业务端实现；对父亲和子表的操作会相互影响，降低可用性 ；INNODB本身对online DDL的限制</li>
 <li>不使⽤%前导的查询，如like “%ab”</li>
-<li>不使用负向查询，如not in/like “无法使用索引，导致全表扫描 </li>
+<li>不使用负向查询，如not in&#x2F;like “无法使用索引，导致全表扫描</li>
 </ul>
 <h2 id="最左前缀原则"><a href="#最左前缀原则" class="headerlink" title="最左前缀原则"></a>最左前缀原则</h2><ul>
-<li>mysql使用联合索引时，从左向右匹配，遇到断开或者范围查询时，无法用到后续的索引列<br>比如索引idx_c1_c2_c3 (c1,c2,c3)，相当于创建了(c1)、(c1,c2)、(c1,c2,c3)三个索引，where条件包含上面三种情况的字段比较则可以用到索引，但像 where c1=a and c3=c 只能用到c1列的索引，像 c2=b and c3=c等情况就完全用不到这个索引</li>
+<li>mysql使用联合索引时，从左向右匹配，遇到断开或者范围查询时，无法用到后续的索引列<br>比如索引idx_c1_c2_c3 (c1,c2,c3)，相当于创建了(c1)、(c1,c2)、(c1,c2,c3)三个索引，where条件包含上面三种情况的字段比较则可以用到索引，但像 where c1&#x3D;a and c3&#x3D;c 只能用到c1列的索引，像 c2&#x3D;b and c3&#x3D;c等情况就完全用不到这个索引</li>
 </ul>
 <h2 id="尽量不要在频繁更新的列上创建索引"><a href="#尽量不要在频繁更新的列上创建索引" class="headerlink" title="尽量不要在频繁更新的列上创建索引"></a>尽量不要在频繁更新的列上创建索引</h2><p>如不在定义了 ON UPDATE CURRENT_STAMP 的列上创建索引，维护成本太高（好在mysql有insert buffer，会合并索引的插入）</p>
 <h1 id="SQL设计规范"><a href="#SQL设计规范" class="headerlink" title="SQL设计规范"></a>SQL设计规范</h1><ul>
@@ -549,12 +549,12 @@
 <li>使用like模糊匹配，%不要放首位<br>会导致索引失效，有这种搜索需求是，考虑其它方案，如sphinx全文搜索</li>
 <li>涉及到复杂sql时，务必先参考已有索引设计，先explain</li>
 <li>IN的内容尽量不超过200个</li>
-<li>拒绝大事务<br>比如在一个事务里进行多个select，多个update，如果是高频事务，会严重影响MySQL并发能力，因为事务持有的锁等资源只在事务rollback/commit时才能释放。但同时也要权衡数据写入的一致性。</li>
+<li>拒绝大事务<br>比如在一个事务里进行多个select，多个update，如果是高频事务，会严重影响MySQL并发能力，因为事务持有的锁等资源只在事务rollback&#x2F;commit时才能释放。但同时也要权衡数据写入的一致性。</li>
 <li>减少与数据库交互的次数，尽量采用批量SQL语句</li>
 <li>INSERT … ON DUPLICATE KEY UPDATE …，插入行后会导致在一个UNIQUE索引或PRIMARY KEY中出现重复值，则执行旧行UPDATE，如果不重复则直接插入，影响1行。</li>
 <li>REPLACE INTO类似，但它是冲突时删除旧行。INSERT IGNORE相反，保留旧行，丢弃要插入的新行。</li>
 <li>INSERT INTO VALUES(),(),()，合并插入。</li>
-<li>去掉where 1=1 这样无意义或恒真的条件，如果遇到update/delete或遭到sql注入就恐怖了</li>
+<li>去掉where 1&#x3D;1 这样无意义或恒真的条件，如果遇到update&#x2F;delete或遭到sql注入就恐怖了</li>
 </ul>
 <h1 id="事务使用规范"><a href="#事务使用规范" class="headerlink" title="事务使用规范"></a>事务使用规范</h1><p>使用场景、原则等。</p>
 <h1 id="行为规范"><a href="#行为规范" class="headerlink" title="行为规范"></a>行为规范</h1><ul>

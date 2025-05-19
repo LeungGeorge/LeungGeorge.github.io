@@ -477,14 +477,12 @@
 <figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat ~<span class="regexp">/.ssh/</span>work_id_rsa.pub</span><br><span class="line">cat ~<span class="regexp">/.ssh/gi</span>thub_id_rsa.pub</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改config文件</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Host work.domain.com</span><br><span class="line">  HostName work.domain.com</span><br><span class="line"> <span class="built_in"> User </span>git</span><br><span class="line">  IdentityFile ~/.ssh/work_id_rsa</span><br><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure>
-
-</li>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Host work.domain.com</span><br><span class="line">  HostName work.domain.com</span><br><span class="line"> <span class="built_in"> User </span>git</span><br><span class="line">  IdentityFile ~/.ssh/work_id_rsa</span><br><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="测试配置结果"><a href="#测试配置结果" class="headerlink" title="测试配置结果"></a>测试配置结果</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">Hi LeungGeorge! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p><img src="source/assets/images/image-202212101052137252.png" alt="image-20221210105213725"></p>
+<p><img src="/source/assets/images/image-202212101052137252.png" alt="image-20221210105213725"></p>
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
 
 <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>

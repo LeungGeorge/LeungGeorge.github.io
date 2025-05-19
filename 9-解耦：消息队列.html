@@ -479,7 +479,7 @@
 
       
         <h1 id="解耦：消息队列"><a href="#解耦：消息队列" class="headerlink" title="解耦：消息队列"></a>解耦：消息队列</h1><h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>消息队列是重要的分布式系统组件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。可用于异步通信、削峰填谷、解耦系统、数据缓存等多种业务场景。</p>
-<p><img src="assets/images/6b66a93e09b8b0ddb2a01a8be1af5603_MD5.png" alt=""></p>
+<p><img src="/assets/images/6b66a93e09b8b0ddb2a01a8be1af5603_MD5.png"></p>
 <p>常用的消息队列实现有：Kafka、RabbitMQ、RocketMQ、Pulsar、ActiveMQ 等等。关于消息队列选型可参考：<a href="https://km.woa.com/articles/show/611417" target="_blank" rel="noopener">《【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了》</a>本节将主要介绍如何使用消息队列去解决业务上的具体问题。</p>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="⓵-解耦系统"><a href="#⓵-解耦系统" class="headerlink" title="⓵ 解耦系统"></a><strong>⓵ 解耦系统</strong></h3><p>以电商系 IT 架构为例。在传统的紧耦架构中，客户下单后，订单系统收到请求后，调用库存系统减库存。这种模式有如下缺点：</p>
 <ul>
@@ -487,7 +487,7 @@
 <li>遇到突发流量时，库存系统负载（查询、修改）。</li>
 </ul>
 <p>引用 MQ 后的方案：</p>
-<p><img src="assets/images/cba745d7d4ebe6e10d97396cb762b9d9_MD5.png" alt=""></p>
+<p><img src="/assets/images/cba745d7d4ebe6e10d97396cb762b9d9_MD5.png"></p>
 <p>引入 MQ 后，订单系统和库存系统分别工作，解除了强耦合性。即便在下单时库存系统宕机了，也不影响正常下单（待库存系统恢复后，从 MQ 取出订单保证最终成功）。</p>
 <blockquote>
 <p>电商网站中，新的用户注册时，需要将用户的信息保存到数据库中，同时还需要额外发送注册的邮件通知、以及短信注册码给用户。</p>
@@ -496,12 +496,12 @@
 <p>传统的做法有两种：<strong>串行的方式、并行的方式。</strong></p>
 <p><strong>串行的方式：</strong></p>
 <p>将注册信息写入数据库后，先发送邮件通知，再发送短信提醒。以上三个任务全部完成后，返回给客户端。</p>
-<p><img src="assets/images/096d28602676aad56a7e5531a4dc3707_MD5.png" alt=""></p>
+<p><img src="/assets/images/096d28602676aad56a7e5531a4dc3707_MD5.png"></p>
 <center><font color="#7f7f7f">图：串行发送</font></center>
 
 <p><strong>并行的方式：</strong></p>
 <p>将注册信息写入数据库成功后，发送注册邮件的同时，发送注册短信。以上三个过程完成后，返回给客户端。与串行的差别是并行的方式可以缩短处理时间。</p>
-<p><img src="assets/images/96578136d4c6ab265ee1f36d578cc249_MD5.png" alt=""></p>
+<p><img src="/assets/images/96578136d4c6ab265ee1f36d578cc249_MD5.png"></p>
 <center><font color="#7f7f7f">图：并行发送</font></center>
 
 <p><strong>消息队列：</strong></p>
@@ -510,11 +510,11 @@
 <li>注册信息写入数据库成功后，再把发送注册邮件、注册短信的消息写入消息队列，返回给客户端；</li>
 <li>然后，服务端订阅消息队列（保证最终成功），分别发送注册邮件、注册短信。</li>
 </ul>
-<p><img src="assets/images/cdfe1c9637a9732de8084e6be3ead7ef_MD5.png" alt=""></p>
+<p><img src="/assets/images/cdfe1c9637a9732de8084e6be3ead7ef_MD5.png"></p>
 <h3 id="⓷-削峰填谷"><a href="#⓷-削峰填谷" class="headerlink" title="⓷ 削峰填谷"></a><strong>⓷ 削峰填谷</strong></h3><p>像双十一、手机预约抢购等对 IO 时延敏感的业务场景，当外部请求超过系统负载时，如果系统没有过载保护策略，很可能会被短时的峰值流量冲垮。</p>
-<p><img src="assets/images/e3deafea3168692cd3936c463b3fd46e_MD5.png" alt=""></p>
+<p><img src="/assets/images/e3deafea3168692cd3936c463b3fd46e_MD5.png"></p>
 <p>针对这种洪峰流量，引入消息队列，将非即时处理的业务逻辑进行异步化，处理成功后通知用户（邮件、短信等）。这种削弱峰值流量延缓处理的方式，相当于给系统做了一层缓冲。</p>
-<p><img src="assets/images/IMG-EDDF8512F68C62E4D0599B41632D7DAD.png" alt=""></p>
+<p><img src="/assets/images/IMG-EDDF8512F68C62E4D0599B41632D7DAD.png"></p>
 <center><font color="#7f7f7f">图：削峰填谷</font></center>
 
 <p>上图中，黄色的部分代表超出消息处理能力的部分。把黄色部分的消息平均到之后的空闲时间去处理，这样既可以保证系统负载处在一个稳定的水位，又可以尽可能地处理更多消息。通过配置流控规则，可以达到消息匀速处理的效果。</p>
@@ -531,14 +531,14 @@
 <li>解除系统间依赖，生产一次数据，可被不同子系统同时消费，多次复用；</li>
 <li>可以根据业务特性，延迟处理。</li>
 </ul>
-<p><img src="assets/images/fdfed2c07c5d8fd35a71c5afd616e4f5_MD5.png" alt=""></p>
+<p><img src="/assets/images/fdfed2c07c5d8fd35a71c5afd616e4f5_MD5.png"></p>
 <h3 id="⓹-延时队列"><a href="#⓹-延时队列" class="headerlink" title="⓹ 延时队列"></a><strong>⓹ 延时队列</strong></h3><p>消息队列可以实现一些延时操作，如定时调度、超时处理等。</p>
 <p><strong>分布式定时调度：</strong></p>
 <p>在需要精细化调度的场景中，如每 2 分钟触发一次消息推送。传统基于数据库的定时调度方案在分布式场景下（特别是数据量大的时候），性能不高，实现复杂。基于消息队列（如 RocketMQ）可以封装出类似的定时触发器：</p>
-<p><img src="assets/images/f69c3c9a03364addc2c7826288890203_MD5.gif" alt=""></p>
+<p><img src="/assets/images/f69c3c9a03364addc2c7826288890203_MD5.gif"></p>
 <p><strong>任务超时处理：</strong></p>
 <p>以购买火车票为例，我们在 12306 下单后暂未支付，订单是不会被取消的。而是等待一段时间后（如 30 min），系统才会关闭未支付的订单。可以使用消息队列实现超时任务检查：</p>
-<p><img src="assets/images/3f637154d869fde22b773c80c6b2df47_MD5.png" alt=""></p>
+<p><img src="/assets/images/3f637154d869fde22b773c80c6b2df47_MD5.png"></p>
 <p>基于定时消息的超时任务处理有如下优势：</p>
 <ul>
 <li>精度高、开发门槛低：基于消息通知方式不存在定时阶梯间隔。可以轻松实现任意精度事件触发，无需业务去重。</li>

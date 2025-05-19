@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  492
+                  516
                 </span>
               
 
@@ -474,18 +474,18 @@
 <li>创建仓库，<a href="https://leunggeorge.github.io/" target="_blank" rel="noopener">leunggeorge.github.io</a></li>
 <li>创建两个分支：master 与 hexo；</li>
 <li>设置 hexo 为默认分支（因为我们只需要手动管理这个分支上的 Hexo 网站文件）；</li>
-<li>使用 git clone <a href="mailto:git@github.com">git@github.com</a>:LeungGeorge/LeungGeorge.github.io.git 拷贝仓库；</li>
+<li>使用 git clone <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>:LeungGeorge&#x2F;LeungGeorge.github.io.git 拷贝仓库；</li>
 <li>在本地<a href="https://leunggeorge.github.io/" target="_blank" rel="noopener">leunggeorge.github.io</a>文件夹下通过 Git bash 依次执行 npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为 hexo）;</li>
 <li>修改_config.yml 中的 deploy 参数，分支应为 master；<br>具体如下:<br>deploy:<br>type: git<br>repository: <a href="https://github.com/LeungGeorge/LeungGeorge.github.io.git" target="_blank" rel="noopener">https://github.com/LeungGeorge/LeungGeorge.github.io.git</a><br>branch: master</li>
 <li>依次执行 git add .、git commit -m “…”、git push origin hexo 提交网站相关的文件；</li>
-<li>执行 hexo g -d 生成网站并部署到 GitHub 上。<br>这样一来，在 GitHub 上的<a href="https://leunggeorge.github.io/仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美" target="_blank" rel="noopener">https://leunggeorge.github.io/仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美</a>( •̀ ω •́ )y！</li>
+<li>执行 hexo g -d 生成网站并部署到 GitHub 上。<br>这样一来，在 GitHub 上的<a href="https://leunggeorge.github.io/%E4%BB%93%E5%BA%93%E5%B0%B1%E6%9C%89%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%EF%BC%8C%E4%B8%80%E4%B8%AAhexo%E5%88%86%E6%94%AF%E7%94%A8%E6%9D%A5%E5%AD%98%E6%94%BE%E7%BD%91%E7%AB%99%E7%9A%84%E5%8E%9F%E5%A7%8B%E6%96%87%E4%BB%B6%EF%BC%8C%E4%B8%80%E4%B8%AAmaster%E5%88%86%E6%94%AF%E7%94%A8%E6%9D%A5%E5%AD%98%E6%94%BE%E7%94%9F%E6%88%90%E7%9A%84%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E3%80%82%E5%AE%8C%E7%BE%8E" target="_blank" rel="noopener">https://leunggeorge.github.io/仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美</a>( •̀ ω •́ )y！</li>
 </ol>
 <h1 id="改进流程"><a href="#改进流程" class="headerlink" title="改进流程"></a>改进流程</h1><ol>
 <li>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。<br>依次执行指令将改动推送到 GitHub（此时当前分支应为 hexo）；：<br>git add .<br>git commit -m “…”<br>git push origin hexo</li>
 <li>然后才执行 hexo g -d 发布网站到 master 分支上。<br>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</li>
 </ol>
 <h1 id="本地资料恢复流程"><a href="#本地资料恢复流程" class="headerlink" title="本地资料恢复流程"></a>本地资料恢复流程</h1><ol>
-<li>使用 git clone <a href="mailto:git@github.com">git@github.com</a>:LeungGeorge/LeungGeorge.github.io.git 拷贝仓库（默认分支为 hexo）；</li>
+<li>使用 git clone <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;</a>:LeungGeorge&#x2F;LeungGeorge.github.io.git 拷贝仓库（默认分支为 hexo）；</li>
 <li>在本地新拷贝的<a href="https://leunggeorge.github.io/" target="_blank" rel="noopener">LeungGeorge.github.io</a>文件夹下通过 Git bash 依次执行下列指令：<br>npm install hexo<br>npm install<br>npm install hexo-deployer-git<br>【记得，不需要 hexo init 这条指令】</li>
 </ol>
 <h2 id="常见错误处理"><a href="#常见错误处理" class="headerlink" title="常见错误处理"></a>常见错误处理</h2><ol>

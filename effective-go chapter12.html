@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  790
+                  791
                 </span>
               
 
@@ -478,7 +478,7 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ReadWriter is the interface that combines the Reader and Writer interfaces.</span></span><br><span class="line"><span class="keyword">type</span> ReadWriter <span class="keyword">interface</span> &#123;</span><br><span class="line">    Reader</span><br><span class="line">    Writer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>This says just what it looks like: A<code>ReadWriter</code>can do what a<code>Reader</code>does_and_what a<code>Writer</code>does; it is a union of the embedded interfaces (which must be disjoint sets of methods). Only interfaces can be embedded within interfaces.</p>
-<p>The same basic idea applies to structs, but with more far-reaching implications. The<code>bufio</code>package has two struct types,<code>bufio.Reader</code>and<code>bufio.Writer</code>, each of which of course implements the analogous interfaces from package<code>io</code>. And<code>bufio</code>also implements a buffered reader/writer, which it does by combining a reader and a writer into one struct using embedding: it lists the types within the struct but does not give them field names.</p>
+<p>The same basic idea applies to structs, but with more far-reaching implications. The<code>bufio</code>package has two struct types,<code>bufio.Reader</code>and<code>bufio.Writer</code>, each of which of course implements the analogous interfaces from package<code>io</code>. And<code>bufio</code>also implements a buffered reader&#x2F;writer, which it does by combining a reader and a writer into one struct using embedding: it lists the types within the struct but does not give them field names.</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ReadWriter stores pointers to a Reader and a Writer.</span></span><br><span class="line"><span class="comment">// It implements io.ReadWriter.</span></span><br><span class="line"><span class="keyword">type</span> ReadWriter <span class="keyword">struct</span> &#123;</span><br><span class="line">    *Reader  <span class="comment">// *bufio.Reader</span></span><br><span class="line">    *Writer  <span class="comment">// *bufio.Writer</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>The embedded elements are pointers to structs and of course must be initialized to point to valid structs before they can be used. The<code>ReadWriter</code>struct could be written as</p>
@@ -507,7 +507,7 @@
 <p>Embedding types introduces the problem of name conflicts but the rules to resolve them are simple. First, a field or method<code>X</code>hides any other item<code>X</code>in a more deeply nested part of the type. If<code>log.Logger</code>contained a field or method called<code>Command</code>, the<code>Command</code>field of<code>Job</code>would dominate it.</p>
 <p>Second, if the same name appears at the same nesting level, it is usually an error; it would be erroneous to embed<code>log.Logger</code>if the<code>Job</code>struct contained another field or method called<code>Logger</code>. However, if the duplicate name is never mentioned in the program outside the type definition, it is OK. This qualification provides some protection against changes made to types embedded from outside; there is no problem if a field is added that conflicts with another field in another subtype if neither field is ever used.</p>
 <hr>
-<p><img src="source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
+<p><img src="/source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
 
       
     </div>

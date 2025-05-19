@@ -574,8 +574,8 @@
 <td align="center">按位与</td>
 </tr>
 <tr>
-<td align="center">`</td>
-<td align="center">`</td>
+<td align="center">&#96;</td>
+<td align="center">&#96;</td>
 </tr>
 <tr>
 <td align="center"><code>^</code></td>
@@ -668,7 +668,7 @@
 </tr>
 <tr>
 <td align="center"><code>&lt;-</code></td>
-<td align="center">向 channel 中发送 / 接收数据</td>
+<td align="center">向 channel 中发送 &#x2F; 接收数据</td>
 </tr>
 </tbody></table>
 <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>与 C 不同，<a href="https://blog.golang.org/gos-declaration-syntax" target="_blank" rel="noopener">类型放在标识符后面</a>：</p>
@@ -701,7 +701,7 @@
 <h2 id="package"><a href="#package" class="headerlink" title="package"></a>package</h2><ol>
 <li>package 在源文件开头声明</li>
 <li>main package 才是可执行文件</li>
-<li>约定：package 名字与 import 路径的最后一个单词一致（如导入 math/rand 则 package 叫 rand）</li>
+<li>约定：package 名字与 import 路径的最后一个单词一致（如导入 math&#x2F;rand 则 package 叫 rand）</li>
 <li>大写开头的标识符（变量名、函数名…）：对其他 package 是可访问的</li>
 <li>小写开头的标识符：对其他 package 是不可见的</li>
 </ol>
@@ -793,15 +793,7 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">true<span class="keyword">var</span> c = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">2</span>)</span><br><span class="line">truec &lt;- <span class="number">1</span></span><br><span class="line">truec &lt;- <span class="number">2</span></span><br><span class="line">true<span class="built_in">close</span>(c)</span><br><span class="line">true<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">truetrue<span class="built_in">println</span>(&lt;-c)</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行：</p>
-<img src="http://p7f8yck57.bkt.clouddn.com/2018-06-11-104956.png" width=60%> 
-
-
-
-
-
-
-
-</li>
+<img src="http://p7f8yck57.bkt.clouddn.com/2018-06-11-104956.png" width=60%></li>
 </ol>
 <h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">"Hello, 你好, नमस्ते, Привет, ᎣᏏᏲ"</span>) 		<span class="comment">// 最基本的输出，会自动加一个换行</span></span><br><span class="line">p := <span class="keyword">struct</span> &#123; X, Y <span class="keyword">int</span> &#125;&#123; <span class="number">17</span>, <span class="number">2</span> &#125;</span><br><span class="line">fmt.Println( <span class="string">"My point:"</span>, p, <span class="string">"x coord="</span>, p.X ) 		<span class="comment">// 输出结构体字段等</span></span><br><span class="line">s := fmt.Sprintln( <span class="string">"My point:"</span>, p, <span class="string">"x coord="</span>, p.X )	<span class="comment">// 组合字符串并返回</span></span><br><span class="line"></span><br><span class="line">fmt.Printf(<span class="string">"%d hex:%x bin:%b fp:%f sci:%e"</span>,<span class="number">17</span>,<span class="number">17</span>,<span class="number">17</span>,<span class="number">17.0</span>,<span class="number">17.0</span>) <span class="comment">// 类 C 的格式化输出</span></span><br><span class="line">s2 := fmt.Sprintf( <span class="string">"%d %f"</span>, <span class="number">17</span>, <span class="number">17.0</span> )			<span class="comment">// 格式化字符串并返回</span></span><br><span class="line"></span><br><span class="line">hellomsg := <span class="string">`</span></span><br><span class="line"><span class="string"> "Hello" in Chinese is 你好 ('Ni Hao')</span></span><br><span class="line"><span class="string"> "Hello" in Hindi is नमस्ते ('Namaste')</span></span><br><span class="line"><span class="string">`</span> </span><br><span class="line"><span class="comment">// 声明多行字符串，在前后均使用反引号 `</span></span><br></pre></td></tr></table></figure>
 

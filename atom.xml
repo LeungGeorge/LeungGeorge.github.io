@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangyuanzheng.com/"/>
-  <updated>2025-04-28T05:05:20.156Z</updated>
+  <updated>2025-04-28T06:06:46.462Z</updated>
   <id>https://liangyuanzheng.com/</id>
   
   <author>
@@ -14,14 +14,14 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>每日一库：ImGo —— 简洁链式调用的 Go 图像处理库</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AImGo-%E2%80%94%E2%80%94-%E7%AE%80%E6%B4%81%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E7%9A%84-Go-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%BA%93.html"/>
-    <id>https://liangyuanzheng.com/每日一库：ImGo-——-简洁链式调用的-Go-图像处理库.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AImGo-%E2%80%94%E2%80%94-%E7%AE%80%E6%B4%81%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E7%9A%84-Go-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%BA%93.html</id>
     <published>2025-04-26T16:00:00.000Z</published>
-    <updated>2025-04-28T05:05:20.156Z</updated>
+    <updated>2025-04-28T06:06:46.462Z</updated>
     
     <summary type="html">
     
@@ -51,7 +51,7 @@
   <entry>
     <title>每日一库：ants-Go-高性能-Goroutine-池</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Aants-Go-%E9%AB%98%E6%80%A7%E8%83%BD-Goroutine-%E6%B1%A0.html"/>
-    <id>https://liangyuanzheng.com/每日一库：ants-Go-高性能-Goroutine-池.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Aants-Go-%E9%AB%98%E6%80%A7%E8%83%BD-Goroutine-%E6%B1%A0.html</id>
     <published>2025-04-25T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -85,7 +85,7 @@
   <entry>
     <title>资治通鉴 庙号</title>
     <link href="https://liangyuanzheng.com/%E5%BA%99%E5%8F%B7.html"/>
-    <id>https://liangyuanzheng.com/庙号.html</id>
+    <id>https://liangyuanzheng.com/%E5%BA%99%E5%8F%B7.html</id>
     <published>2025-04-24T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -119,7 +119,7 @@
   <entry>
     <title>每日一库：cron-Go-高性能定时任务库</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Acron-Go-%E9%AB%98%E6%80%A7%E8%83%BD%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%BA%93.html"/>
-    <id>https://liangyuanzheng.com/每日一库：cron-Go-高性能定时任务库.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Acron-Go-%E9%AB%98%E6%80%A7%E8%83%BD%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%BA%93.html</id>
     <published>2025-04-24T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -154,7 +154,7 @@
   <entry>
     <title>每日一库：Google-UUID（Go语言实现）</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AGoogle-UUID%EF%BC%88Go%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%EF%BC%89.html"/>
-    <id>https://liangyuanzheng.com/每日一库：Google-UUID（Go语言实现）.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AGoogle-UUID%EF%BC%88Go%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%EF%BC%89.html</id>
     <published>2025-04-22T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -188,7 +188,7 @@
   <entry>
     <title>每日一库：now-——-Go-语言时间处理工具库</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Anow-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E5%BA%93.html"/>
-    <id>https://liangyuanzheng.com/每日一库：now-——-Go-语言时间处理工具库.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Anow-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E5%BA%93.html</id>
     <published>2025-04-21T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -196,7 +196,7 @@
     
       
       
-        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;jinzhu/now 是一个专注于简化 Go 语言时间操作的轻量级库。它扩展了标准库 &lt;code&gt;time&lt;/code&gt; 的功能，提供了一系
+        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;jinzhu&amp;#x2F;now 是一个专注于简化 Go 语言时间操作的轻量级库。它扩展了标准库 &lt;code&gt;time&lt;/code&gt; 的功能，
       
     
     </summary>
@@ -220,7 +220,7 @@
   <entry>
     <title>每日一库：go-astisub-——-专注于​​多格式字幕文件的处理</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Ago-astisub-%E2%80%94%E2%80%94-%E4%B8%93%E6%B3%A8%E4%BA%8E%E2%80%8B%E2%80%8B%E5%A4%9A%E6%A0%BC%E5%BC%8F%E5%AD%97%E5%B9%95%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%84%E7%90%86.html"/>
-    <id>https://liangyuanzheng.com/每日一库：go-astisub-——-专注于​​多格式字幕文件的处理.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Ago-astisub-%E2%80%94%E2%80%94-%E4%B8%93%E6%B3%A8%E4%BA%8E%E2%80%8B%E2%80%8B%E5%A4%9A%E6%A0%BC%E5%BC%8F%E5%AD%97%E5%B9%95%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%84%E7%90%86.html</id>
     <published>2025-04-20T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -252,7 +252,7 @@
   <entry>
     <title>每日一库：retry-go-——-Go-语言轻量级重试库</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Aretry-go-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E8%BD%BB%E9%87%8F%E7%BA%A7%E9%87%8D%E8%AF%95%E5%BA%93.html"/>
-    <id>https://liangyuanzheng.com/每日一库：retry-go-——-Go-语言轻量级重试库.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Aretry-go-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E8%BD%BB%E9%87%8F%E7%BA%A7%E9%87%8D%E8%AF%95%E5%BA%93.html</id>
     <published>2025-04-19T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -284,7 +284,7 @@
   <entry>
     <title>千字文注</title>
     <link href="https://liangyuanzheng.com/%E5%8D%83%E5%AD%97%E6%96%87%E6%B3%A8.html"/>
-    <id>https://liangyuanzheng.com/千字文注.html</id>
+    <id>https://liangyuanzheng.com/%E5%8D%83%E5%AD%97%E6%96%87%E6%B3%A8.html</id>
     <published>2025-04-19T06:13:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -321,7 +321,7 @@
   <entry>
     <title>每日一库：Govalidator-——-Go-语言的强大验证与清理工具​</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AGovalidator-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E7%9A%84%E5%BC%BA%E5%A4%A7%E9%AA%8C%E8%AF%81%E4%B8%8E%E6%B8%85%E7%90%86%E5%B7%A5%E5%85%B7%E2%80%8B.html"/>
-    <id>https://liangyuanzheng.com/每日一库：Govalidator-——-Go-语言的强大验证与清理工具​.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AGovalidator-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E7%9A%84%E5%BC%BA%E5%A4%A7%E9%AA%8C%E8%AF%81%E4%B8%8E%E6%B8%85%E7%90%86%E5%B7%A5%E5%85%B7%E2%80%8B.html</id>
     <published>2025-04-18T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -355,7 +355,7 @@
   <entry>
     <title>每日一库：Expr-Go-语言的高性能动态表达式引擎</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AExpr-Go-%E8%AF%AD%E8%A8%80%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E5%8A%A8%E6%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%95%E6%93%8E.html"/>
-    <id>https://liangyuanzheng.com/每日一库：Expr-Go-语言的高性能动态表达式引擎.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AExpr-Go-%E8%AF%AD%E8%A8%80%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E5%8A%A8%E6%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%95%E6%93%8E.html</id>
     <published>2025-04-17T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -385,7 +385,7 @@
   <entry>
     <title>每日一库：Uber-开源的-Go-依赖注入库-dig​</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AUber-%E5%BC%80%E6%BA%90%E7%9A%84-Go-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E5%BA%93-dig%E2%80%8B.html"/>
-    <id>https://liangyuanzheng.com/每日一库：Uber-开源的-Go-依赖注入库-dig​.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AUber-%E5%BC%80%E6%BA%90%E7%9A%84-Go-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E5%BA%93-dig%E2%80%8B.html</id>
     <published>2025-04-16T16:00:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -402,11 +402,11 @@
       <category term="essay" scheme="https://liangyuanzheng.com/categories/essay/"/>
     
     
-      <category term="设计与实现" scheme="https://liangyuanzheng.com/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
-    
       <category term="blog" scheme="https://liangyuanzheng.com/tags/blog/"/>
     
       <category term="note" scheme="https://liangyuanzheng.com/tags/note/"/>
+    
+      <category term="设计与实现" scheme="https://liangyuanzheng.com/tags/%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
     
       <category term="Golang" scheme="https://liangyuanzheng.com/tags/golang/"/>
     
@@ -417,7 +417,7 @@
   <entry>
     <title>每日一库：Lancet-——-Go-语言高效工具库</title>
     <link href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9ALancet-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E9%AB%98%E6%95%88%E5%B7%A5%E5%85%B7%E5%BA%93.html"/>
-    <id>https://liangyuanzheng.com/每日一库：Lancet-——-Go-语言高效工具库.html</id>
+    <id>https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9ALancet-%E2%80%94%E2%80%94-Go-%E8%AF%AD%E8%A8%80%E9%AB%98%E6%95%88%E5%B7%A5%E5%85%B7%E5%BA%93.html</id>
     <published>2025-04-16T01:53:00.000Z</published>
     <updated>2025-04-27T08:10:29.602Z</updated>
     
@@ -449,7 +449,7 @@
   <entry>
     <title>搞懂异地多活，看这篇就够了</title>
     <link href="https://liangyuanzheng.com/%E6%90%9E%E6%87%82%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%B4%BB%EF%BC%8C%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html"/>
-    <id>https://liangyuanzheng.com/搞懂异地多活，看这篇就够了.html</id>
+    <id>https://liangyuanzheng.com/%E6%90%9E%E6%87%82%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%B4%BB%EF%BC%8C%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html</id>
     <published>2024-12-09T11:34:00.000Z</published>
     <updated>2025-04-27T09:00:42.062Z</updated>
     
@@ -509,7 +509,7 @@
   <entry>
     <title>索引下推</title>
     <link href="https://liangyuanzheng.com/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.html"/>
-    <id>https://liangyuanzheng.com/索引下推.html</id>
+    <id>https://liangyuanzheng.com/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.html</id>
     <published>2024-10-31T11:50:00.000Z</published>
     <updated>2025-04-16T02:11:04.200Z</updated>
     
@@ -517,7 +517,7 @@
     
       
       
-        &lt;h2 id=&quot;mysql-架构&quot;&gt;&lt;a href=&quot;#mysql-架构&quot; class=&quot;headerlink&quot; title=&quot;mysql 架构&quot;&gt;&lt;/a&gt;mysql 架构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;assets/images/0b2d7d040f82be5852d9fd
+        &lt;h2 id=&quot;mysql-架构&quot;&gt;&lt;a href=&quot;#mysql-架构&quot; class=&quot;headerlink&quot; title=&quot;mysql 架构&quot;&gt;&lt;/a&gt;mysql 架构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/assets/images/0b2d7d040f82be5852d9f
       
     
     </summary>
@@ -535,7 +535,7 @@
   <entry>
     <title>IT技术社区</title>
     <link href="https://liangyuanzheng.com/IT%E6%8A%80%E6%9C%AF%E7%A4%BE%E5%8C%BA.html"/>
-    <id>https://liangyuanzheng.com/IT技术社区.html</id>
+    <id>https://liangyuanzheng.com/IT%E6%8A%80%E6%9C%AF%E7%A4%BE%E5%8C%BA.html</id>
     <published>2024-10-29T10:32:00.000Z</published>
     <updated>2024-11-01T02:22:37.048Z</updated>
     
@@ -562,7 +562,7 @@
   <entry>
     <title>域名系统（DNS）</title>
     <link href="https://liangyuanzheng.com/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F%EF%BC%88DNS%EF%BC%89.html"/>
-    <id>https://liangyuanzheng.com/域名系统（DNS）.html</id>
+    <id>https://liangyuanzheng.com/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F%EF%BC%88DNS%EF%BC%89.html</id>
     <published>2024-10-24T06:18:00.000Z</published>
     <updated>2024-11-01T02:22:37.049Z</updated>
     
@@ -590,7 +590,7 @@
   <entry>
     <title>Linux dig 命令：查询单个域名的 DNS 信息</title>
     <link href="https://liangyuanzheng.com/20241023115736-Linux-dig-%E5%91%BD%E4%BB%A4.html"/>
-    <id>https://liangyuanzheng.com/20241023115736-Linux-dig-命令.html</id>
+    <id>https://liangyuanzheng.com/20241023115736-Linux-dig-%E5%91%BD%E4%BB%A4.html</id>
     <published>2024-10-23T03:57:00.000Z</published>
     <updated>2024-11-01T02:22:37.049Z</updated>
     
@@ -619,7 +619,7 @@
   <entry>
     <title>复用：设计模式</title>
     <link href="https://liangyuanzheng.com/10-%E5%A4%8D%E7%94%A8%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html"/>
-    <id>https://liangyuanzheng.com/10-复用：设计模式.html</id>
+    <id>https://liangyuanzheng.com/10-%E5%A4%8D%E7%94%A8%EF%BC%9A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html</id>
     <published>2024-09-05T06:46:00.000Z</published>
     <updated>2025-04-16T02:36:59.152Z</updated>
     

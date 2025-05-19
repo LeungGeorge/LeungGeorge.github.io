@@ -479,7 +479,7 @@
 <p>Spider进度查看地址：<a href="http://localhost:6800/" target="_blank" rel="noopener">http://localhost:6800/</a></p>
 <a id="more"></a>
 
-<p><img src="source/assets/images/20190905235045.png" alt="20190905235045.png"></p>
+<p><img src="/source/assets/images/20190905235045.png" alt="20190905235045.png"></p>
 <h1 id="部署scrapy项目"><a href="#部署scrapy项目" class="headerlink" title="部署scrapy项目"></a>部署scrapy项目</h1><h2 id="部署scrapy项目（修改Spider之后需要重新部署哦）"><a href="#部署scrapy项目（修改Spider之后需要重新部署哦）" class="headerlink" title="部署scrapy项目（修改Spider之后需要重新部署哦）"></a>部署scrapy项目（修改Spider之后需要重新部署哦）</h2><p>修改scrapy.cfg文件</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">deploy</span>] section see:</span><br><span class="line"></span><br><span class="line">[<span class="meta">settings</span>]</span><br><span class="line"><span class="keyword">default</span> = demo.settings</span><br><span class="line"></span><br><span class="line">[<span class="meta">deploy:demo_deploy</span>]</span><br><span class="line">url = http:<span class="comment">//localhost:6800/</span></span><br><span class="line">project = demo</span><br></pre></td></tr></table></figure>
 
