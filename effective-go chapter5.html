@@ -1,0 +1,1382 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="post" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Go的控制结构与C相关，但是在重要的方面存在差异。Go中没有 do 、 while 循环，只有一个略微广义的 for ； switch 则更加灵活， if 和 switch 接受类似于for的可选初始化语句； break 和 continue 语句接受一个可选的标号来标识中断或继续什么；也有一些新的控制结构，包括类型 switch 和多路通信多路复用器（a multiway communi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="effective-go chapter5">
+<meta property="og:url" content="https://liangyuanzheng.com/effective-go%20chapter5.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="Go的控制结构与C相关，但是在重要的方面存在差异。Go中没有 do 、 while 循环，只有一个略微广义的 for ； switch 则更加灵活， if 和 switch 接受类似于for的可选初始化语句； break 和 continue 语句接受一个可选的标号来标识中断或继续什么；也有一些新的控制结构，包括类型 switch 和多路通信多路复用器（a multiway communi">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/leunggeorge.github.io-image-9o2i34.png">
+<meta property="article:published_time" content="2022-12-14T12:54:23.000Z">
+<meta property="article:modified_time" content="2025-12-02T00:48:22.395Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="post">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/source/assets/images/leunggeorge.github.io-image-9o2i34.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/effective-go chapter5.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>effective-go chapter5 | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/effective-go%20chapter5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">effective-go chapter5</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-12-14T12:54:23+00:00">
+                2022-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/effective-go/" itemprop="url" rel="index">
+                    <span itemprop="name">effective-go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<!-- 1. 发布前：删除草稿的 uuid -->
+<!-- 2. 发布后：补充tag，category -->
+
+<p>Go的控制结构与C相关，但是在重要的方面存在差异。Go中没有 <code>do</code> 、 <code>while</code> 循环，只有一个略微广义的 <code>for</code> ； <code>switch</code> 则更加灵活， <code>if</code> 和 <code>switch</code> 接受类似于for的可选初始化语句； <code>break</code> 和 <code>continue</code> 语句接受一个可选的标号来标识中断或继续什么；也有一些新的控制结构，包括类型 <code>switch</code> 和多路通信多路复用器（a multiway communications multiplexer），select。语法上，也略微不同：没有括号，控制结构体必须总是由大括号包起来。</p>
+<blockquote>
+<p>The control structures of Go are related to those of C but differ in important ways. There is no <code>do</code> or <code>while</code> loop, only a slightly generalized <code>for</code> ; <code>switch</code> is more flexible; <code>if</code> and <code>switch</code> accept an optional initialization statement like that of <code>for</code> ; <code>break</code> and <code>continue</code> statements take an optional label to identify what to break or continue; and there are new control structures including a type switch and a multiway communications multiplexer, <code>select</code> . The syntax is also slightly different: there are no parentheses and the bodies must always be brace-delimited.</p>
+</blockquote>
+<h3 id="If"><a href="#If" class="headerlink" title="If"></a>If</h3><p>在Go中，一个 <code>if</code> 的例子大概长这样：</p>
+<blockquote>
+<p>In Go a simple <code>if</code> looks like this:</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x &gt; <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>强制性的大括号g7里在多行中编写简单语句。不管怎样，这样做是一个好的风格，尤其是当控制体包含一条控制一句时，比如 <code>return</code> 或者 <code>break</code> 。</p>
+<p>由于if和switch可以接受初始化语句，那么常见的情况是用来创建一个局部变量。</p>
+<blockquote>
+<p>Mandatory braces encourage writing simple <code>if</code> statements on multiple lines. It’s good style to do so anyway, especially when the body contains a control statement such as a <code>return</code> or <code>break</code> .</p>
+<p>Since <code>if</code> and <code>switch</code> accept an initialization statement, it’s common to see one used to set up a local variable.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> err := file.Chmod(<span class="number">0664</span>); err != <span class="literal">nil</span> &#123;</span><br><span class="line">    log.Print(err)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在Go的基础库中，if语句不会不会流向下一条语句时——也就是说，控制体以 <code>break</code> ， <code>continue</code> ， <code>goto</code> 或者 <code>return</code> 结尾——这时，没有不要的 <code>else</code> 会被省略。</p>
+<blockquote>
+<p>In the Go libraries, you’ll find that when an <code>if</code> statement doesn’t flow into the next statement—that is, the body ends in <code>break</code> , <code>continue</code> , <code>goto</code> , or <code>return</code> —the unnecessary <code>else</code> is omitted.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f, err := os.Open(name)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line">codeUsing(f)</span><br></pre></td></tr></table></figure>
+
+<p>这是一个常见的示例，代码需要防范这这一系列的错误。如果代码走下去的都是成功流，可读性会很好。当出现错误时，立即消除它们。由于错误情况会以 <code>return</code> 语句结尾，因此代码不需要 <code>else</code> 语句。</p>
+<blockquote>
+<p>This is an example of a common situation where code must guard against a sequence of error conditions. The code reads well if the successful flow of control runs down the page, eliminating error cases as they arise. Since error cases tend to end in <code>return</code> statements, the resulting code needs no <code>else</code> statements.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f, err := os.Open(name)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line">d, err := f.Stat()</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    f.Close()</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line">codeUsing(f, d)</span><br></pre></td></tr></table></figure>
+
+<h3 id="重新声明和重新赋值"><a href="#重新声明和重新赋值" class="headerlink" title="重新声明和重新赋值"></a>重新声明和重新赋值</h3><p>题外话， 上一节点最后一个例子演示了 <code>:=</code> 短声明的细节。该声明调用 <code>os.Open</code> 进行读取，</p>
+<blockquote>
+<p>An aside: The last example in the previous section demonstrates a detail of how the <code>:=</code> short declaration form works. The declaration that calls <code>os.Open</code> reads, </p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f, err := os.Open(name)</span><br></pre></td></tr></table></figure>
+
+<p>这个语句声明了两个变量， <code>f</code> 和 <code>err</code> 。几行之后，调用 <code>f.Stat</code> 进行读取，</p>
+<blockquote>
+<p>This statement declares two variables, <code>f</code> and <code>err</code> . A few lines later, the call to <code>f.Stat</code> reads, </p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d, err := f.Stat()</span><br></pre></td></tr></table></figure>
+
+<p>这看起来像是声明了 <code>d</code> 和 <code>err</code> 。但是注意，这连个语句中都出现了 <code>err</code> 。这种重复是合法的：因为 <code>err</code> 是被第一个语句声明，在第二个语句中仅仅是重新赋值。这意味着 <code>f.Stat</code> 使用了前面已经声明的变量 <code>err</code> ，仅仅是给他赋予了新值而已。</p>
+<blockquote>
+<p>which looks as if it declares <code>d</code> and <code>err</code> . Notice, though, that <code>err</code> appears in both statements. This duplication is legal: <code>err</code> is declared by the first statement, but only_re-assigned_in the second. This means that the call to <code>f.Stat</code> uses the existing <code>err</code> variable declared above, and just gives it a new value.</p>
+</blockquote>
+<p>在 <code>:=</code> 声明中，变量 <code>v</code> 即使声明过，也是可以再次出现的，前提是：</p>
+<ul>
+<li>这个声明和已有声明<code>v</code>在相同的作用域（如果<code>v</code>已经在外面的作用域声明了，这里的声明将会创建一个新的变量<code>§</code>）</li>
+<li>初始化中相应的值可以赋值给<code>v</code>，或者</li>
+<li>在声明中至少有一个新的变量。</li>
+</ul>
+<blockquote>
+<p>In a <code>:=</code> declaration a variable <code>v</code> may appear even if it has already been declared, provided:</p>
+<ul>
+<li>this declaration is in the same scope as the existing declaration of <code>v</code> (if <code>v</code> is already declared in an outer scope, the declaration will create a new variable §), </li>
+<li>the corresponding value in the initialization is assignable to <code>v</code> , and</li>
+<li>there is at least one other variable in the declaration that is being declared anew.</li>
+</ul>
+</blockquote>
+<p>这种不同寻常的特性是纯粹的实用主义，例如，你会经常看到，在一个长的 <code>if-else</code> 链中，更易于使用单个 <code>err</code> 值。</p>
+<p>§ 值得一提的是，在Go中，函数参数和返回值的作用域跟函数体是一致的。尽管它们在词法上在包裹函数体的大括号之外。</p>
+<blockquote>
+<p>This unusual property is pure pragmatism, making it easy to use a single <code>err</code> value, for example, in a long <code>if-else</code> chain. You’ll see it used often.</p>
+<p>§ It’s worth noting here that in Go the scope of function parameters and return values is the same as the function body, even though they appear lexically outside the braces that enclose the body.</p>
+</blockquote>
+<h3 id="For"><a href="#For" class="headerlink" title="For"></a>For</h3><p>在Go中，for循环跟C的相似——但又不完全相同。它统一了for和while，在Go中没有do-while语句。一共有三种形式，只有只有带有分号。</p>
+<blockquote>
+<p>The Go <code>for</code> loop is similar to—but not the same as—C’s. It unifies <code>for</code> and <code>while</code> and there is no <code>do-while</code> . There are three forms, only one of which has semicolons.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Like a C for</span></span><br><span class="line"><span class="keyword">for</span> init; condition; post &#123; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Like a C while</span></span><br><span class="line"><span class="keyword">for</span> condition &#123; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Like a C for(;;)</span></span><br><span class="line"><span class="keyword">for</span> &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>短声明使得在循环中很容易声明索引变量。</p>
+<blockquote>
+<p>Short declarations make it easy to declare the index variable right in the loop.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum := <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">    sum += i</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果你正在循环遍历一个 <code>array</code> ， <code>slice</code> ， <code>string</code> ，或者 <code>map</code> ，亦或是从 <code>channel</code> 中读数据，那么可以使用 <code>range</code> 子句管理循环。</p>
+<blockquote>
+<p>If you’re looping over an array, slice, string, or map, or reading from a channel, a <code>range</code> clause can manage the loop.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> oldMap &#123;</span><br><span class="line">    newMap[key] = value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如你仅仅需要 <code>range</code> 的第一项（健或者索引），就丢掉第二个：</p>
+<blockquote>
+<p>If you only need the first item in the range (the key or index), drop the second:</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key := <span class="keyword">range</span> m &#123;</span><br><span class="line">    <span class="keyword">if</span> key.expired() &#123;</span><br><span class="line">        <span class="built_in">delete</span>(m, key)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果你仅需要 <code>range</code> 的第二项（值），可以使用空白标识 <code>_</code> 下划线，以丢弃第一个：</p>
+<blockquote>
+<p>If you only need the second item in the range (the value), use the blank identifier, an underscore, to discard the first:</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum := <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> _, value := <span class="keyword">range</span> array &#123;</span><br><span class="line">    sum += value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>空白标识符有很多用处，接下来的一节我们会对此详述。</p>
+<p>对于字符串， <code>range</code> 为你可以做更过的事情，通过解析 <code>UTF-8</code> 编码来拆分单个 <code>Unicode</code> 编码点。错误的编码会小号一个字节，并产生一个替换性的符文 <code>U+FFFD</code> 。<br>（ <code>rune</code> （相关的内置类型）这个词是 <code>Go</code> 中的术语，用以标记单个 <code>Unicode</code> 编码点。到<a href="https://golang.org/ref/spec#Rune_literals" target="_blank" rel="noopener">语言规范</a>查看更多详情）。循环</p>
+<blockquote>
+<p>The blank identifier has many uses, as described in a later section.</p>
+<p>For strings, the range does more work for you, breaking out individual Unicode code points by parsing the UTF-8. Erroneous encodings consume one byte and produce the replacement rune U+FFFD. (The name (with associated builtin type) rune is Go terminology for a single Unicode code point. See <a href="https://golang.org/ref/spec#Rune_literals" target="_blank" rel="noopener">the language specification</a> for details.) The loop</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> pos, char := <span class="keyword">range</span> <span class="string">"日本\x80語"</span> &#123; <span class="comment">// \x80 is an illegal UTF-8 encoding</span></span><br><span class="line">    fmt.Printf(<span class="string">"character %#U starts at byte position %d\n"</span>, char, pos)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印如下：</p>
+<blockquote>
+<p>prints</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">character U+<span class="number">65E5</span> <span class="string">'日'</span> starts at <span class="keyword">byte</span> position <span class="number">0</span></span><br><span class="line">character U+<span class="number">672</span>C <span class="string">'本'</span> starts at <span class="keyword">byte</span> position <span class="number">3</span></span><br><span class="line">character U+FFFD <span class="string">'�'</span> starts at <span class="keyword">byte</span> position <span class="number">6</span></span><br><span class="line">character U+<span class="number">8</span>A9E <span class="string">'語'</span> starts at <span class="keyword">byte</span> position <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<p>最后， <code>Go</code> 没有都好运算符， <code>++</code> 和 <code>--</code> 谁语句而不是表达式。因此，如果你想在for中运行多个变量，你应该是用并行赋值（虽然这样会妨碍使用 <code>++</code> 和 <code>--</code> ）</p>
+<blockquote>
+<p>Finally, Go has no comma operator and ++ and – are statements not expressions. Thus if you want to run multiple variables in a for you should use parallel assignment (although that precludes ++ and –).</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Reverse a</span></span><br><span class="line"><span class="keyword">for</span> i, j := <span class="number">0</span>, <span class="built_in">len</span>(a)<span class="number">-1</span>; i &lt; j; i, j = i+<span class="number">1</span>, j<span class="number">-1</span> &#123;</span><br><span class="line">    a[i], a[j] = a[j], a[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><p>Go的 <code>switch</code> 比 <code>C</code> 的更加通用。表达式不必是常量，甚至是整数， <code>case</code> 从上到下的顺序进行求值，直到匹配。如果 <code>switch</code> 没有表达式，则它回匹配 <code>true</code> 。 <code>switch</code> 就像是一个 <code>if-else-if-else</code> 的链。</p>
+<blockquote>
+<p>Go’s switch is more general than C’s. The expressions need not be constants or even integers, the cases are evaluated top to bottom until a match is found, and if the switch has no expression it switches on true. It’s therefore possible—and idiomatic—to write an if-else-if-else chain as a switch.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">unhex</span><span class="params">(c <span class="keyword">byte</span>)</span> <span class="title">byte</span></span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'0'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'9'</span>:</span><br><span class="line">        <span class="keyword">return</span> c - <span class="string">'0'</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">'a'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'f'</span>:</span><br><span class="line">        <span class="keyword">return</span> c - <span class="string">'a'</span> + <span class="number">10</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'F'</span>:</span><br><span class="line">        <span class="keyword">return</span> c - <span class="string">'A'</span> + <span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Go中，switch不会自动通过case，但是case条件可以以逗号表达式列表的形式展示。</p>
+<blockquote>
+<p>There is no automatic fall through, but cases can be presented in comma-separated lists.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">shouldEscape</span><span class="params">(c <span class="keyword">byte</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> c &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">' '</span>, <span class="string">'?'</span>, <span class="string">'&amp;'</span>, <span class="string">'='</span>, <span class="string">'#'</span>, <span class="string">'+'</span>, <span class="string">'%'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>break语句可以用来结束一个switch，尽管在Go中并不像在其他语言中那么常见。但是，有时候需要需要跳出一个循环，而不是switch，在Go中可以通过设置一个标号来中断循环。下面的例子会演示这两种用法：</p>
+<blockquote>
+<p>Although they are not nearly as common in Go as some other C-like languages, break statements can be used to terminate a switch early. Sometimes, though, it’s necessary to break out of a surrounding loop, not the switch, and in Go that can be accomplished by putting a label on the loop and “breaking” to that label. This example shows both uses.</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Loop:</span><br><span class="line">true<span class="keyword">for</span> n := <span class="number">0</span>; n &lt; <span class="built_in">len</span>(src); n += size &#123;</span><br><span class="line">truetrue<span class="keyword">switch</span> &#123;</span><br><span class="line">truetrue<span class="keyword">case</span> src[n] &lt; sizeOne:</span><br><span class="line">truetruetrue<span class="keyword">if</span> validateOnly &#123;</span><br><span class="line">truetruetruetrue<span class="keyword">break</span></span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetruesize = <span class="number">1</span></span><br><span class="line">truetruetrueupdate(src[n])</span><br><span class="line"></span><br><span class="line">truetrue<span class="keyword">case</span> src[n] &lt; sizeTwo:</span><br><span class="line">truetruetrue<span class="keyword">if</span> n+<span class="number">1</span> &gt;= <span class="built_in">len</span>(src) &#123;</span><br><span class="line">truetruetruetrueerr = errShortInput</span><br><span class="line">truetruetruetrue<span class="keyword">break</span> Loop</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrue<span class="keyword">if</span> validateOnly &#123;</span><br><span class="line">truetruetruetrue<span class="keyword">break</span></span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetruesize = <span class="number">2</span></span><br><span class="line">truetruetrueupdate(src[n] + src[n+<span class="number">1</span>]&lt;&lt;shift)</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然，continue语句可以接受一个可选的标号，但是它只能应用于循环。</p>
+<p>为结束这一节，这里有一个使用switch语句对字节切片进行比较的例子。</p>
+<blockquote>
+<p>Of course, the continue statement also accepts an optional label but it applies only to loops.</p>
+<p>To close this section, here’s a comparison routine for byte slices that uses two switch statements。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Compare returns an integer comparing the two byte slices,</span></span><br><span class="line"><span class="comment">// lexicographically.</span></span><br><span class="line"><span class="comment">// The result will be 0 if a == b, -1 if a &lt; b, and +1 if a &gt; b</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Compare</span><span class="params">(a, b []<span class="keyword">byte</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(a) &amp;&amp; i &lt; <span class="built_in">len</span>(b); i++ &#123;</span><br><span class="line">        <span class="keyword">switch</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> a[i] &gt; b[i]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">case</span> a[i] &lt; b[i]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">switch</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="built_in">len</span>(a) &gt; <span class="built_in">len</span>(b):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> <span class="built_in">len</span>(a) &lt; <span class="built_in">len</span>(b):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Type-switch"><a href="#Type-switch" class="headerlink" title="Type switch"></a>Type switch</h3><p><code>switch</code> 也可以用来发现接口变量的动态类型。这种 <code>type switch</code> 使用类型断言，括号中使用关键字 <code>type</code> 。如果在switch在表达式中声明了一个变量，则变量在每个子句中就会有响应的类型。在这种情况下复用名字也是习惯用法，声明一个变量，在每个子句中类型不同，但有着相同的名字。</p>
+<blockquote>
+<p>A switch can also be used to discover the dynamic type of an interface variable. Such a type switch uses the syntax of a type assertion with the keyword type inside the parentheses. If the switch declares a variable in the expression, the variable will have the corresponding type in each clause. It’s also idiomatic to reuse the name in such cases, in effect declaring a new variable with the same name but a different type in each case.</p>
+</blockquote>
+<hr>
+<p><img src="/source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/writing/" rel="tag"># writing</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/effective-go%20chapter4.html" rel="next" title="effective-go chapter4">
+                <i class="fa fa-chevron-left"></i> effective-go chapter4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/effective-go%20chapter6.html" rel="prev" title="effective-go chapter6">
+                effective-go chapter6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#If"><span class="nav-number">1.</span> <span class="nav-text">If</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新声明和重新赋值"><span class="nav-number">2.</span> <span class="nav-text">重新声明和重新赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For"><span class="nav-number">3.</span> <span class="nav-text">For</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Switch"><span class="nav-number">4.</span> <span class="nav-text">Switch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-switch"><span class="nav-number">5.</span> <span class="nav-text">Type switch</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>

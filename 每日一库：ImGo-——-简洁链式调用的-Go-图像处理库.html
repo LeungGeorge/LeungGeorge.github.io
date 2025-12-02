@@ -1,0 +1,1302 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="blog,note,Golang,每日一库,DONE," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1 项目简介ImGo 是一个基于 Go 语言的开源图像处理库，旨在提供类似 PHP 中 Intervention Image 的链式调用体验，让开发者能够通过简洁的代码实现复杂的图像操作，例如加载、调整尺寸、叠加图片、保存等。其命名来源于 “Image Golang” 的缩写，设计灵感源于弥补 Go 生态中缺乏直观链式调用图像处理工具的空白。  GitHub - fishtailstudio&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一库：ImGo —— 简洁链式调用的 Go 图像处理库">
+<meta property="og:url" content="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AImGo-%E2%80%94%E2%80%94-%E7%AE%80%E6%B4%81%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E7%9A%84-Go-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%BA%93.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="1 项目简介ImGo 是一个基于 Go 语言的开源图像处理库，旨在提供类似 PHP 中 Intervention Image 的链式调用体验，让开发者能够通过简洁的代码实现复杂的图像操作，例如加载、调整尺寸、叠加图片、保存等。其命名来源于 “Image Golang” 的缩写，设计灵感源于弥补 Go 生态中缺乏直观链式调用图像处理工具的空白。  GitHub - fishtailstudio&amp;#x">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/IMG-8D84F9E08F0EC078A40C254481A8510A.png">
+<meta property="article:published_time" content="2025-04-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-02T00:48:22.399Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="Golang">
+<meta property="article:tag" content="每日一库">
+<meta property="article:tag" content="DONE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/assets/images/IMG-8D84F9E08F0EC078A40C254481A8510A.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/每日一库：ImGo-——-简洁链式调用的-Go-图像处理库.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>每日一库：ImGo —— 简洁链式调用的 Go 图像处理库 | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9AImGo-%E2%80%94%E2%80%94-%E7%AE%80%E6%B4%81%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E7%9A%84-Go-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%BA%93.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">每日一库：ImGo —— 简洁链式调用的 Go 图像处理库</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2025-04-27T00:00:00+08:00">
+                2025-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/essay/" itemprop="url" rel="index">
+                    <span itemprop="name">essay</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  914
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-项目简介"><a href="#1-项目简介" class="headerlink" title="1 项目简介"></a>1 项目简介</h1><p>ImGo 是一个基于 Go 语言的开源图像处理库，旨在提供类似 PHP 中 <strong>Intervention Image</strong> 的链式调用体验，让开发者能够通过简洁的代码实现复杂的图像操作，例如加载、调整尺寸、叠加图片、保存等。其命名来源于 “Image Golang” 的缩写，设计灵感源于弥补 Go 生态中缺乏直观链式调用图像处理工具的空白。</p>
+<ul>
+<li><a href="https://github.com/fishtailstudio/imgo" target="_blank" rel="noopener">GitHub - fishtailstudio&#x2F;imgo: Golang image handling and manipulation library. Golang 图片处理库。</a></li>
+</ul>
+<p><img src="/assets/images/IMG-8D84F9E08F0EC078A40C254481A8510A.png"></p>
+<h1 id="2-核心特性"><a href="#2-核心特性" class="headerlink" title="2 核心特性"></a>2 核心特性</h1><ul>
+<li><strong>链式调用语法</strong>：支持类似 <code>Load().Resize().Insert().Save()</code> 的链式操作，代码可读性高，逻辑清晰。</li>
+<li><strong>丰富的图像操作</strong>：包括调整大小、裁剪、叠加图片等基本操作，模糊、像素化、颜色调整（亮度、对比度）等特效，支持 <code>jpeg</code>、<code>png</code>、<code>gif</code> 等常见格式。</li>
+<li><strong>跨平台兼容性</strong>：基于 Go 语言开发，天然支持跨平台运行。</li>
+<li><strong>轻量高效</strong>：依赖简洁，资源占用低，适合高频次图像处理场景。</li>
+</ul>
+<h1 id="3-安装与使用"><a href="#3-安装与使用" class="headerlink" title="3 安装与使用"></a>3 安装与使用</h1><p>通过 Go 模块直接安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/fishtailstudio/imgo</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>⓵ 加载图片 → 调整尺寸 → 叠加水印 → 保存</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"github.com/fishtailstudio/imgo"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    imgo.Load(<span class="string">"background.png"</span>).</span><br><span class="line">        Resize(<span class="number">250</span>, <span class="number">350</span>).</span><br><span class="line">        Insert(<span class="string">"gopher.png"</span>, <span class="number">50</span>, <span class="number">50</span>).</span><br><span class="line">        Save(<span class="string">"out.png"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码展示了从加载图片到保存的全流程，通过链式调用一气呵成。</p>
+<p><strong>⓶ 模糊处理</strong> </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imgo.Load(<span class="string">"input.jpg"</span>).Blur(<span class="number">10</span>).Save(<span class="string">"blurred.jpg"</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>⓷ 像素化效果​</strong>​</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mgo.Load(<span class="string">"input.jpg"</span>).Pixelate(<span class="number">20</span>).Save(<span class="string">"pixelated.jpg"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>​<strong>​⓸ 绘制形状​</strong>​</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imgo.Create(<span class="number">500</span>, <span class="number">500</span>, <span class="string">"#FFFFFF"</span>).DrawRect(<span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">200</span>, <span class="string">"#FF0000"</span>).Save(<span class="string">"rect.png"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>⓹ 创建纯色图像</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">imgo.New(<span class="number">400</span>, <span class="number">300</span>). <span class="comment">// 创建一个 400x300 像素的空白图像</span></span><br><span class="line">    SetBgColor(imgo.RGB&#123;<span class="number">255</span>, <span class="number">200</span>, <span class="number">150</span>&#125;). <span class="comment">// 设置背景颜色为浅橙色</span></span><br><span class="line">    Text(<span class="string">"Hello ImGo"</span>, <span class="number">100</span>, <span class="number">150</span>, imgo.TextOption&#123;</span><br><span class="line">        FontSize: <span class="number">24</span>,</span><br><span class="line">        Color:    imgo.Black,</span><br><span class="line">    &#125;). <span class="comment">// 添加文本</span></span><br><span class="line">    Save(<span class="string">"text-image.png"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-设计背景"><a href="#4-设计背景" class="headerlink" title="4 设计背景"></a>4 设计背景</h1><p>开发者因 Go 生态中原有库（如 <code>gg</code>）文档不全且缺乏链式调用体验，受 PHP 的 <strong>Intervention Image</strong> 启发而创建 ImGo，旨在提供更符合直觉的 API 设计。</p>
+<h1 id="5-对比其他库"><a href="#5-对比其他库" class="headerlink" title="5 对比其他库"></a>5 对比其他库</h1><ul>
+<li><strong>imaging</strong>：提供基础的调整大小、裁剪功能，但 API 为函数式调用，缺乏链式连贯性。</li>
+<li><strong>imagor</strong>：专注于高性能服务器端图像处理，适合 Web 服务，但复杂度较高。</li>
+<li><strong>ImGo</strong> 的优势在于 <strong>开发效率</strong>，适合需要快速实现图像处理逻辑的应用场景。</li>
+</ul>
+<h1 id="6-社区与贡献"><a href="#6-社区与贡献" class="headerlink" title="6 社区与贡献"></a>6 社区与贡献</h1><ul>
+<li>项目鼓励开发者通过提交 <strong>Issue</strong> 或 <strong>Pull Request</strong> 参与改进。</li>
+<li>文档和示例代码较为简洁，适合新手快速上手。</li>
+</ul>
+<h1 id="7-应用场景"><a href="#7-应用场景" class="headerlink" title="7 应用场景"></a>7 应用场景</h1><ul>
+<li><strong>Web 应用图片预处理</strong>：如用户上传图片的缩略图生成、水印添加。</li>
+<li><strong>批量图像处理脚本</strong>：结合命令行工具实现自动化操作。</li>
+<li>​<strong>​创意工具​</strong>​：通过代码生成艺术图像或动态图形。</li>
+<li><strong>教育或原型开发</strong>：链式语法易于教学和验证图像处理逻辑。</li>
+</ul>
+<h1 id="8-未来展望"><a href="#8-未来展望" class="headerlink" title="8 未来展望"></a>8 未来展望</h1><p>尽管当前功能聚焦基础操作，但未来可扩展方向包括：</p>
+<ul>
+<li><strong>滤镜效果</strong>（如模糊、锐化）。</li>
+<li><strong>格式转换支持</strong>（如 WebP 或 HEIC）。</li>
+<li><strong>性能优化</strong>：结合 libvips 等高效后端提升处理速度。</li>
+</ul>
+<h1 id="9-总结"><a href="#9-总结" class="headerlink" title="9 总结"></a>9 总结</h1><p>ImGo 凭借链式调用和简洁 API，成为 Go 生态中图像处理的轻量级优选。虽然功能尚未覆盖高级特效，但其设计哲学与易用性使其在快速开发场景中脱颖而出。对于需要复杂功能的用户，可结合其他高性能库（如 <code>imagor</code>）使用。</p>
+<p><strong>参考源码与文档</strong>：  </p>
+<ul>
+<li><a href="https://github.com/fishtailstudio/imgo" target="_blank" rel="noopener">GitHub 仓库</a></li>
+<li><a href="https://www.codeleading.com/article/59596651895/" target="_blank" rel="noopener">快速入门示例</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/golang/" rel="tag"># Golang</a>
+          
+            <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93/" rel="tag"># 每日一库</a>
+          
+            <a href="/tags/done/" rel="tag"># DONE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%BA%93%EF%BC%9Aants-Go-%E9%AB%98%E6%80%A7%E8%83%BD-Goroutine-%E6%B1%A0.html" rel="next" title="每日一库：ants-Go-高性能-Goroutine-池">
+                <i class="fa fa-chevron-left"></i> 每日一库：ants-Go-高性能-Goroutine-池
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/She%EF%BC%88Groove-Coverage-2004%E5%B9%B4%E5%8F%91%E8%A1%8C%E7%9A%84%E5%8D%95%E6%9B%B2%EF%BC%89.html" rel="prev" title="She（Groove-Coverage-2004年发行的单曲）">
+                She（Groove-Coverage-2004年发行的单曲） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-项目简介"><span class="nav-number">1.</span> <span class="nav-text">1 项目简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-核心特性"><span class="nav-number">2.</span> <span class="nav-text">2 核心特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-安装与使用"><span class="nav-number">3.</span> <span class="nav-text">3 安装与使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设计背景"><span class="nav-number">4.</span> <span class="nav-text">4 设计背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-对比其他库"><span class="nav-number">5.</span> <span class="nav-text">5 对比其他库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-社区与贡献"><span class="nav-number">6.</span> <span class="nav-text">6 社区与贡献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-应用场景"><span class="nav-number">7.</span> <span class="nav-text">7 应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-未来展望"><span class="nav-number">8.</span> <span class="nav-text">8 未来展望</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-总结"><span class="nav-number">9.</span> <span class="nav-text">9 总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>

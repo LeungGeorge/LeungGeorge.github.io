@@ -1,0 +1,1468 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="golang,源码,gcache," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想，然后再从源码解读 gcache 的实现。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gcache 源码分析">
+<meta property="og:url" content="https://liangyuanzheng.com/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想，然后再从源码解读 gcache 的实现。">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910241710292.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910250005372.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910250007362.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910250007552.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092016272.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092017262.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910241720102.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910241717442.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092020042.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092025292.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092022412.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910091946552.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910091956062.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910091956502.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092007472.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092008452.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092009262.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910092029342.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910121638482.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910251025172.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910121654332.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/2019102500342072.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910250051292.png">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910250058272.png">
+<meta property="article:published_time" content="2019-10-07T07:02:00.000Z">
+<meta property="article:modified_time" content="2025-12-02T00:48:22.393Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="golang">
+<meta property="article:tag" content="源码">
+<meta property="article:tag" content="gcache">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/source/assets/images/201910241710292.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/gcache-源码分析.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>gcache 源码分析 | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/gcache-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">gcache 源码分析</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-07T07:02:00+00:00">
+                2019-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index">
+                    <span itemprop="name">golang</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  5.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  23
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  首先介绍 FIFO 、LRU、LFU 三种缓存算法的特征、基本思想，然后再从源码解读 gcache 的实现。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- TODO 缓存算法 + gcache 的源码分析 -->
+<a id="more"></a>
+
+<h2 id="缓存清除策略"><a href="#缓存清除策略" class="headerlink" title="缓存清除策略"></a>缓存清除策略</h2><h3 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h3><p>FIFO（First In First Out）是一种先进先出的调度策略。<br>先进先出策略，最先进入缓存的数据在缓存空间不够的情况下（超出最大元素限制）会被优先被清除掉，以腾出新的空间接受新的数据。策略算法主要比较缓存元素的创建时间。在数据实效性要求场景下可选择该类策略，优先保障最新数据可用。</p>
+<p>缺点：</p>
+<blockquote>
+<p>判断一个页面置换算法优劣的指标就是缺页率，而 FIFO 算法的一个显著的缺点是，在某些特定的时刻，缺页率反而会随着分配页面的增加而增加，这称为 Belady 现象。产生 Belady 现象现象的原因是，FIFO 置换算法与进程访问内存的动态特征是不相容的，被置换的内存页面往往是被频繁访问的，或者没有给进程分配足够的页面，因此 FIFO 算法会使一些页面频繁地被替换和重新申请内存，从而导致缺页率增加。因此，FIFO 算法的使用场景较少。</p>
+</blockquote>
+<h3 id="LRU"><a href="#LRU" class="headerlink" title="LRU"></a>LRU</h3><p>LRU（Least Recently Used）是一种最近最少使用策略。<br>最近最少使用策略，无论是否过期，根据元素最后一次被使用的时间戳，清除最远使用时间戳的元素释放空间。策略算法主要比较元素最近一次被get使用时间。在热点数据场景下较适用，优先保证热点数据的有效性。</p>
+<h3 id="LFU"><a href="#LFU" class="headerlink" title="LFU"></a>LFU</h3><p>LRU（Least Frequency Used）是一种最少使用调度策略。<br>最少使用策略，无论是否过期，根据元素的被使用次数判断，清除使用次数较少的元素释放空间。策略算法主要比较元素的hitCount（命中次数）。在保证高频数据有效性场景下，可选择这类策略。</p>
+<h3 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h3><p>ARC 是为了提高缓存效果介于 LRU 和 LFU 设置的算法。借助 LRU 和 LFU 基本思想实现，以获得可用缓存的最佳使用。</p>
+<h3 id="OPT"><a href="#OPT" class="headerlink" title="OPT"></a>OPT</h3><p>OPT（OPTimal replacement）是一种理论上最佳的页面置换算法。<br>淘汰以后永远用不到的数据项；如果没有，则淘汰最久以后再用到的数据项。属于理想型算法，不可能实现（因为无法知道全局的访问序列）。但是，可以最为评价其他算法优劣的参考标准。</p>
+<h2 id="gcache-源码分析"><a href="#gcache-源码分析" class="headerlink" title="gcache 源码分析"></a>gcache 源码分析</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>gcache 是基于 Golang 实现的一个内存级 Cache 基础库，支持带失效时间的 Cache。</p>
+<blockquote>
+<p>在这篇文章里，我们将主要从键值对的读写过程，以及数据变化的角度来阐述 gcache 的基本原理，详细操作可参考源代码。</p>
+</blockquote>
+<h4 id="多种缓存策略"><a href="#多种缓存策略" class="headerlink" title="多种缓存策略"></a>多种缓存策略</h4><p>gcache 目前包括 Simple，LFU（Least Frequency Used），LRU（Least Recently Used），ARC（Adaptive Replacement Cache）四种缓存策略。</p>
+<ul>
+<li>Simple：普通缓存策略，随机淘汰。</li>
+<li>LRU：Least Recently Used，优先替换最近最少使用的内容。</li>
+<li>LFU：Least Frequently Used，优先替换访问次数最少的内容。</li>
+<li>ARC：Adaptive Replacement Cache，ARC介于 LRU 和 LFU 之间。</li>
+</ul>
+<h4 id="支持回调策略"><a href="#支持回调策略" class="headerlink" title="支持回调策略"></a>支持回调策略</h4><p>gcache 的回调函数原型（定制化操作），在 cache.go 中定义：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> (</span><br><span class="line">trueLoaderFunc       <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span>                 // 自动加载回调函数</span></span><br><span class="line">trueLoaderExpireFunc <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, *time.Duration, error)</span> // 过期回调函数</span></span><br><span class="line">trueEvictedFunc      <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">interface</span>&#123;&#125;, <span class="keyword">interface</span>&#123;&#125;)</span>                         // 淘汰回调函数</span></span><br><span class="line">truePurgeVisitorFunc <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">interface</span>&#123;&#125;, <span class="keyword">interface</span>&#123;&#125;)</span>                         // 清除所有 <span class="title">key</span> 回调函数</span></span><br><span class="line">trueAddedFunc        <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">interface</span>&#123;&#125;, <span class="keyword">interface</span>&#123;&#125;)</span>                         // 新增 <span class="title">key</span> 回调函数</span></span><br><span class="line">trueDeserializeFunc  <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">interface</span>&#123;&#125;, <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span>    // 反序列化回调函数</span></span><br><span class="line">trueSerializeFunc    <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">interface</span>&#123;&#125;, <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span>    // 序列化回调函数</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="计数统计"><a href="#计数统计" class="headerlink" title="计数统计"></a>计数统计</h4><ul>
+<li>HitCount：命中次数</li>
+<li>MissCount：未命中次数</li>
+<li>LookupCount：查找次数（HitCount + MissCount）</li>
+<li>HitRate：命中率（HitCount &#x2F; LookupCount）</li>
+</ul>
+<blockquote>
+<p><a href="https://github.com/bluele/gcache" target="_blank" rel="noopener">官方代码</a><br><a href="https://github.com/LeungGeorge/gcache" target="_blank" rel="noopener">注解版代码</a><br><a href="https://godoc.org/github.com/bluele/gcache" target="_blank" rel="noopener">godoc 文档</a></p>
+</blockquote>
+<h4 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h4><p>![20191024232913.png](&#x2F;images</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Cache <span class="keyword">interface</span> &#123;</span><br><span class="line">trueSet(key, value <span class="keyword">interface</span>&#123;&#125;) error</span><br><span class="line">trueSetWithExpire(key, value <span class="keyword">interface</span>&#123;&#125;, expiration time.Duration) error</span><br><span class="line">trueGet(key <span class="keyword">interface</span>&#123;&#125;) (<span class="keyword">interface</span>&#123;&#125;, error)</span><br><span class="line">trueGetIFPresent(key <span class="keyword">interface</span>&#123;&#125;) (<span class="keyword">interface</span>&#123;&#125;, error)</span><br><span class="line">trueGetALL(checkExpired <span class="keyword">bool</span>) <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]<span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">trueget(key <span class="keyword">interface</span>&#123;&#125;, onLoad <span class="keyword">bool</span>) (<span class="keyword">interface</span>&#123;&#125;, error)</span><br><span class="line">trueRemove(key <span class="keyword">interface</span>&#123;&#125;) <span class="keyword">bool</span></span><br><span class="line">truePurge()</span><br><span class="line">trueKeys(checkExpired <span class="keyword">bool</span>) []<span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">trueLen(checkExpired <span class="keyword">bool</span>) <span class="keyword">int</span></span><br><span class="line">trueHas(key <span class="keyword">interface</span>&#123;&#125;) <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line">truestatsAccessor</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CacheBuilder"><a href="#CacheBuilder" class="headerlink" title="CacheBuilder"></a>CacheBuilder</h3><p>CacheBuilder 用来构造缓存对象，以及各种个性化化配置、策略。由 cache.go&#x2F;CacheBuilder 结构表示：  </p>
+<blockquote>
+<p><a href="https://github.com/LeungGeorge/gcache/blob/master/cache.go" target="_blank" rel="noopener">cache.go</a> 中有详细注解。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CacheBuilder 构造缓存对象，以及各种个性化化配置、策略。</span></span><br><span class="line"><span class="comment">// 构建 cache 时，会赋值给 baseCache 中对应的字段</span></span><br><span class="line"><span class="keyword">type</span> CacheBuilder <span class="keyword">struct</span> &#123;</span><br><span class="line">trueclock            Clock            <span class="comment">// cache 时钟</span></span><br><span class="line">truetp               <span class="keyword">string</span>           <span class="comment">// 缓存类型：TYPE_SIMPLE，TYPE_LRU，TYPE_LFU，TYPE_ARC</span></span><br><span class="line">truesize             <span class="keyword">int</span>              <span class="comment">// 缓存大小</span></span><br><span class="line">trueloaderExpireFunc LoaderExpireFunc <span class="comment">// key 过期时的回调函数</span></span><br><span class="line">trueevictedFunc      EvictedFunc      <span class="comment">// 淘汰 key 时的回调函数</span></span><br><span class="line">truepurgeVisitorFunc PurgeVisitorFunc <span class="comment">// 清空缓存所有 key 时的回调函数</span></span><br><span class="line">trueaddedFunc        AddedFunc        <span class="comment">// 新增 key 时的回调函数</span></span><br><span class="line">trueexpiration       *time.Duration   <span class="comment">// 失效时间</span></span><br><span class="line">truedeserializeFunc  DeserializeFunc  <span class="comment">// 序列化回调函数</span></span><br><span class="line">trueserializeFunc    SerializeFunc    <span class="comment">// 反序列化回调函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 构建 cache</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">buildCache</span><span class="params">(c *baseCache, cb *CacheBuilder)</span></span> &#123;</span><br><span class="line">truec.clock = cb.clock</span><br><span class="line">truec.size = cb.size</span><br><span class="line">truec.loaderExpireFunc = cb.loaderExpireFunc</span><br><span class="line">truec.expiration = cb.expiration</span><br><span class="line">truec.addedFunc = cb.addedFunc</span><br><span class="line">truec.deserializeFunc = cb.deserializeFunc</span><br><span class="line">truec.serializeFunc = cb.serializeFunc</span><br><span class="line">truec.evictedFunc = cb.evictedFunc</span><br><span class="line">truec.purgeVisitorFunc = cb.purgeVisitorFunc</span><br><span class="line">truec.stats = &amp;stats&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置回调函数"><a href="#设置回调函数" class="headerlink" title="设置回调函数"></a>设置回调函数</h4><p>这里仅列举了 <code>loaderExpireFunc</code> （key 过期时的回调函数）的具体实现；其他回调（淘汰 key 时的回调、序列化回调、反序列化回调等等）的设置方式相同。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set a loader function with expiration.</span></span><br><span class="line"><span class="comment">// loaderExpireFunc: create a new value with this function if cached value is expired.</span></span><br><span class="line"><span class="comment">// If nil returned instead of time.Duration from loaderExpireFunc than value will never expire.</span></span><br><span class="line"><span class="comment">// 设置过期回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(cb *CacheBuilder)</span> <span class="title">LoaderExpireFunc</span><span class="params">(loaderExpireFunc LoaderExpireFunc)</span> *<span class="title">CacheBuilder</span></span> &#123;</span><br><span class="line">truecb.loaderExpireFunc = loaderExpireFunc</span><br><span class="line">true<span class="keyword">return</span> cb</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置淘汰策略"><a href="#设置淘汰策略" class="headerlink" title="设置淘汰策略"></a>设置淘汰策略</h4><p>这里仅列举一个 <code>LRU 淘汰策略</code> 的设置（LFU，ARC 的设置方式相同）。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置淘汰策略</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(cb *CacheBuilder)</span> <span class="title">EvictType</span><span class="params">(tp <span class="keyword">string</span>)</span> *<span class="title">CacheBuilder</span></span> &#123;</span><br><span class="line">truecb.tp = tp</span><br><span class="line">true<span class="keyword">return</span> cb</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置淘汰策略</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(cb *CacheBuilder)</span> <span class="title">LRU</span><span class="params">()</span> *<span class="title">CacheBuilder</span></span> &#123;</span><br><span class="line">true<span class="keyword">return</span> cb.EvictType(TYPE_LRU)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="baseCache"><a href="#baseCache" class="headerlink" title="baseCache"></a>baseCache</h3><p>baseCache 是 gcache 的基础数据结构，包含缓存大小、回调、失效时间、读写锁、命中率等，由 cache.go&#x2F;baseCache 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> baseCache <span class="keyword">struct</span> &#123;</span><br><span class="line">trueclock            Clock</span><br><span class="line">truesize             <span class="keyword">int</span></span><br><span class="line">trueloaderExpireFunc LoaderExpireFunc</span><br><span class="line">trueevictedFunc      EvictedFunc</span><br><span class="line">truepurgeVisitorFunc PurgeVisitorFunc</span><br><span class="line">trueaddedFunc        AddedFunc</span><br><span class="line">truedeserializeFunc  DeserializeFunc</span><br><span class="line">trueserializeFunc    SerializeFunc</span><br><span class="line">trueexpiration       *time.Duration</span><br><span class="line">truemu               sync.RWMutex</span><br><span class="line">trueloadGroup        Group</span><br><span class="line">true*stats</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SimpleCache"><a href="#SimpleCache" class="headerlink" title="SimpleCache"></a>SimpleCache</h3><p>gcache 中 SimpleCache 由 simple.go&#x2F;SimpleCache 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SimpleCache has no clear priority for evict cache. It depends on key-value map order.</span></span><br><span class="line"><span class="keyword">type</span> SimpleCache <span class="keyword">struct</span> &#123;</span><br><span class="line">truebaseCache</span><br><span class="line">trueitems <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*simpleItem</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>SimpleCache 中 simpleItem 由 simple.go&#x2F;simpleItem 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> simpleItem <span class="keyword">struct</span> &#123;</span><br><span class="line">trueclock      Clock</span><br><span class="line">truevalue      <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">trueexpiration *time.Time</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>源码参考 <a href="https://github.com/LeungGeorge/gcache/blob/master/simple.go" target="_blank" rel="noopener">simple.go</a> </p>
+</blockquote>
+<h4 id="设置超时时间"><a href="#设置超时时间" class="headerlink" title="设置超时时间"></a>设置超时时间</h4><p>超时时间的设定方式：在当前时间的基础上加上超时时间 expiration。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set a new key-value pair with an expiration time</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *SimpleCache)</span> <span class="title">SetWithExpire</span><span class="params">(key, value <span class="keyword">interface</span>&#123;&#125;, expiration time.Duration)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">truec.mu.Lock()</span><br><span class="line">true<span class="keyword">defer</span> c.mu.Unlock()</span><br><span class="line">trueitem, err := c.set(key, value)</span><br><span class="line">true<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> err</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">truet := c.clock.Now().Add(expiration)</span><br><span class="line">trueitem.(*simpleItem).expiration = &amp;t</span><br><span class="line">true<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="键值对失效判断"><a href="#键值对失效判断" class="headerlink" title="键值对失效判断"></a>键值对失效判断</h4><p>simpleItem 的超时判断，其他（lruItem，lfuItem，arcItem）超时判断逻辑相同，即检查过期时间 expiration 是否在当前时间 now 之前。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IsExpired returns boolean value whether this item is expired or not.</span></span><br><span class="line"><span class="comment">// 键值对是否超时</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(si *simpleItem)</span> <span class="title">IsExpired</span><span class="params">(now *time.Time)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">true<span class="keyword">if</span> si.expiration == <span class="literal">nil</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">if</span> now == <span class="literal">nil</span> &#123;</span><br><span class="line">truetruet := si.clock.Now()</span><br><span class="line">truetruenow = &amp;t</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> si.expiration.Before(*now)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置键值对"><a href="#设置键值对" class="headerlink" title="设置键值对"></a>设置键值对</h4><p>我们通过 SET 方法为 SimpleCache 设置键值对：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gc := gcache.New(<span class="number">3</span>).</span><br><span class="line">    Simple().</span><br><span class="line">    Build()</span><br><span class="line"></span><br><span class="line">gc.Set(<span class="string">"k1"</span>, <span class="string">"v1"</span>)</span><br><span class="line">gc.Set(<span class="string">"k2"</span>, <span class="string">"v2"</span>)</span><br><span class="line">gc.Set(<span class="string">"k3"</span>, <span class="string">"v3"</span>)</span><br></pre></td></tr></table></figure>
+<p>如图，展示了设置上述 3 个键值对之后 SimpleCache 的状态（为了在接下来操作中表述简单，此处未设置失效时间）：<br><img src="/source/assets/images/201910241710292.png" alt="20191024171029"></p>
+<h4 id="读取键值对"><a href="#读取键值对" class="headerlink" title="读取键值对"></a>读取键值对</h4><p>由于 SimpleCache 没有排序策略，读取操作不会改变键值对的相对排序。</p>
+<h4 id="缓存满时增加键值对"><a href="#缓存满时增加键值对" class="headerlink" title="缓存满时增加键值对"></a>缓存满时增加键值对</h4><p>当 SimpleCache 缓存满时再增加键值对，会先执行淘汰策略。随机淘汰 items 中的键值对（因为 golang 中，map 遍历是随机的）。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gc.Set(<span class="string">"k4"</span>, <span class="string">"v4"</span>)</span><br></pre></td></tr></table></figure>
+<p>：<br>如图，展示了随机淘汰 items 中 1 个键值对，并新增键值对过程中，SimpleCache 的变化（为了在接下来操作中表述简单，此处未设置失效时间）：<br><img src="/source/assets/images/201910250005372.png" alt="20191025000537"><br><img src="/source/assets/images/201910250007362.png" alt="20191025000736"><br><img src="/source/assets/images/201910250007552.png" alt="20191025000755"></p>
+<h3 id="LRUCache"><a href="#LRUCache" class="headerlink" title="LRUCache"></a>LRUCache</h3><p>gcache 中 LRUCache 由 lru.go&#x2F;LRUCache 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Discards the least recently used items first.</span></span><br><span class="line"><span class="keyword">type</span> LRUCache <span class="keyword">struct</span> &#123;</span><br><span class="line">truebaseCache</span><br><span class="line">trueitems     <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*list.Element</span><br><span class="line">trueevictList *list.List</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><input disabled="" type="checkbox"> baseCache 为缓存基础数据结构，包含缓存大小以及各种回调函数；</li>
+<li><input disabled="" type="checkbox"> items 是一个 map 类型，可以在 O(1) 时间内找到指定键值对，值为 lruItem；</li>
+<li><input disabled="" type="checkbox"> evictList 是一个双向链表，用来淘汰最近未使用的键值对，是实现 LRU 策略的关键结构；</li>
+</ul>
+<p>LRUCache 中 lruItem 由 lru.go&#x2F;lruItem 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> lruItem <span class="keyword">struct</span> &#123;</span><br><span class="line">trueclock      Clock</span><br><span class="line">truekey        <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">truevalue      <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">trueexpiration *time.Time</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置键值对-1"><a href="#设置键值对-1" class="headerlink" title="设置键值对"></a>设置键值对</h4><p>我们通过 SET 方法为 LRUCache 设置键值对：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gc := gcache.New(<span class="number">3</span>).</span><br><span class="line">    LRU().</span><br><span class="line">    Build()</span><br><span class="line"></span><br><span class="line">gc.Set(<span class="string">"k1"</span>, <span class="string">"v1"</span>)</span><br><span class="line">gc.Set(<span class="string">"k2"</span>, <span class="string">"v2"</span>)</span><br><span class="line">gc.Set(<span class="string">"k3"</span>, <span class="string">"v3"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如图，展示了设置上述 3 个键值对之后 LRUCache 的状态（为了在接下来操作中表述简单，此处未设置失效时间）：<br><img src="/source/assets/images/201910092016272.png" alt="20191009201627"></p>
+<p>关键代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// set a new key-value pair</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">Set</span><span class="params">(key, value <span class="keyword">interface</span>&#123;&#125;)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">truec.mu.Lock()</span><br><span class="line">true<span class="keyword">defer</span> c.mu.Unlock()</span><br><span class="line">true_, err := c.set(key, value)</span><br><span class="line">true<span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">set</span><span class="params">(key, value <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">true<span class="keyword">var</span> err error</span><br><span class="line">true<span class="keyword">if</span> c.serializeFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruevalue, err = c.serializeFunc(key, value)</span><br><span class="line">truetrue<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// Check for existing item</span></span><br><span class="line">true<span class="keyword">var</span> item *lruItem</span><br><span class="line">true<span class="comment">// 查找 key 是否已经存在，如果存在直接更新对应的 value</span></span><br><span class="line">true<span class="keyword">if</span> it, ok := c.items[key]; ok &#123;</span><br><span class="line">truetruec.evictList.MoveToFront(it)</span><br><span class="line">truetrueitem = it.Value.(*lruItem)</span><br><span class="line">truetrueitem.value = value</span><br><span class="line">true&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetrue<span class="comment">// Verify size not exceeded</span></span><br><span class="line">truetrue<span class="comment">// 判断是否超出缓存大小，如果超出就先删除一个元素</span></span><br><span class="line">truetrue<span class="keyword">if</span> c.evictList.Len() &gt;= c.size &#123;</span><br><span class="line">truetruetruec.evict(<span class="number">1</span>)</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrueitem = &amp;lruItem&#123;</span><br><span class="line">truetruetrueclock: c.clock,</span><br><span class="line">truetruetruekey:   key,</span><br><span class="line">truetruetruevalue: value,</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="comment">// 新数据加入链表首部</span></span><br><span class="line">truetruec.items[key] = c.evictList.PushFront(item)</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> c.expiration != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruet := c.clock.Now().Add(*c.expiration)</span><br><span class="line">truetrueitem.expiration = &amp;t</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> c.addedFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruec.addedFunc(key, value)</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">return</span> item, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="读取键值对-1"><a href="#读取键值对-1" class="headerlink" title="读取键值对"></a>读取键值对</h4><p>我们通过 LRUCache 方法读取 gcache 中的键值对。当 key 存在时，返回对应的键值对；当 key 不存在时返回错误 KeyNotFoundError（如果设置有回调，则为返回回调执行结果）。</p>
+<blockquote>
+<p>会涉及到键值对顺序，hitCount、missCount 的变化。</p>
+</blockquote>
+<ol>
+<li><p>读取成功<br>执行 <code>GET(&quot;k2&quot;)</code> 读取键值对。缓存命中次数（hitCount）+1，k2 在被移动到淘汰链表首部。读取后成功后 LRUCache 状态（流程）：<br><img src="/source/assets/images/201910092017262.png" alt="201910092017262.png"><br><img src="/source/assets/images/201910241720102.png" alt="201910241720102.png"><br><img src="/source/assets/images/201910241717442.png" alt="201910241717442.png"></p>
+</li>
+<li><p>读取失败（访问不存在的键）<br>执行 <code>GET(&quot;k4&quot;)</code> 读取键值对。缺失次数（missCount）+1，淘汰链表顺序不变，LRUCache 状态：<br><img src="/source/assets/images/201910092020042.png" alt="201910092020042.png"></p>
+</li>
+</ol>
+<p>关键代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get a value from cache pool using key if it exists.</span></span><br><span class="line"><span class="comment">// If it dose not exists key and has LoaderFunc,</span></span><br><span class="line"><span class="comment">// generate a value using `LoaderFunc` method returns value.</span></span><br><span class="line"><span class="comment">// 读取键值对</span></span><br><span class="line"><span class="comment">// 如果存在缓存，则返回；</span></span><br><span class="line"><span class="comment">// 否则，如果定义了 LoaderFunc 回调，则执行回调。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">Get</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">truev, err := c.get(key, <span class="literal">false</span>)</span><br><span class="line">true<span class="keyword">if</span> err == KeyNotFoundError &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> c.getWithLoader(key, <span class="literal">true</span>)</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> v, err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">get</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;, onLoad <span class="keyword">bool</span>)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">truev, err := c.getValue(key, onLoad)</span><br><span class="line">true<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">if</span> c.deserializeFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> c.deserializeFunc(key, v)</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> v, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">getValue</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;, onLoad <span class="keyword">bool</span>)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">truec.mu.Lock()</span><br><span class="line">trueitem, ok := c.items[key]</span><br><span class="line">true<span class="comment">// 命中缓存</span></span><br><span class="line">true<span class="keyword">if</span> ok &#123;</span><br><span class="line">truetrueit := item.Value.(*lruItem)</span><br><span class="line">truetrue<span class="comment">// 缓存未过期</span></span><br><span class="line">truetrue<span class="keyword">if</span> !it.IsExpired(<span class="literal">nil</span>) &#123;</span><br><span class="line">truetruetruec.evictList.MoveToFront(item)</span><br><span class="line">truetruetruev := it.value</span><br><span class="line">truetruetruec.mu.Unlock()</span><br><span class="line">truetruetrue<span class="keyword">if</span> !onLoad &#123;</span><br><span class="line">truetruetruetruec.stats.IncrHitCount()</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrue<span class="keyword">return</span> v, <span class="literal">nil</span></span><br><span class="line">truetrue&#125;</span><br><span class="line">truetruec.removeElement(item)</span><br><span class="line">true&#125;</span><br><span class="line">truec.mu.Unlock()</span><br><span class="line">true<span class="keyword">if</span> !onLoad &#123;</span><br><span class="line">truetruec.stats.IncrMissCount()</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> <span class="literal">nil</span>, KeyNotFoundError</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="缓存满时增加键值对-1"><a href="#缓存满时增加键值对-1" class="headerlink" title="缓存满时增加键值对"></a>缓存满时增加键值对</h4><p>当 LRUCache 缓存满时再增加键值对，会先执行淘汰策略。淘汰链表尾部键值对，并删除 items 中对应 key。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gc.Set(<span class="string">"k5"</span>, <span class="string">"v5"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>淘汰链表尾部键值对 和 items 对应元素：<br><img src="/source/assets/images/201910092025292.png" alt="20191009202529"></p>
+<p>关键代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// evict removes the oldest item from the cache.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">evict</span><span class="params">(count <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">true<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; count; i++ &#123;</span><br><span class="line">truetrueent := c.evictList.Back()</span><br><span class="line">truetrue<span class="keyword">if</span> ent == <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span></span><br><span class="line">truetrue&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetruetruec.removeElement(ent)</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *LRUCache)</span> <span class="title">removeElement</span><span class="params">(e *list.Element)</span></span> &#123;</span><br><span class="line">truec.evictList.Remove(e)</span><br><span class="line">trueentry := e.Value.(*lruItem)</span><br><span class="line">true<span class="built_in">delete</span>(c.items, entry.key)</span><br><span class="line">true<span class="keyword">if</span> c.evictedFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetrueentry := e.Value.(*lruItem)</span><br><span class="line">truetruec.evictedFunc(entry.key, entry.value)</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>k5 键值对，插入到链表头部位置：<br><img src="/source/assets/images/201910092022412.png" alt="20191009202241"></p>
+<h3 id="LFUCache"><a href="#LFUCache" class="headerlink" title="LFUCache"></a>LFUCache</h3><p>gcache 中 LFUCache 由 lfu.go&#x2F;LFUCache 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Discards the least frequently used items first.</span></span><br><span class="line"><span class="comment">// LFUCache 会优先删除访问频次最少的键值对</span></span><br><span class="line"><span class="keyword">type</span> LFUCache <span class="keyword">struct</span> &#123;</span><br><span class="line">truebaseCache</span><br><span class="line">trueitems    <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*lfuItem</span><br><span class="line">truefreqList *list.List <span class="comment">// list for freqEntry</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><input disabled="" type="checkbox"> baseCache 为缓存基础数据结构，包含缓存大小以及各种回调函数；</li>
+<li><input disabled="" type="checkbox"> items 是一个 map 类型，可以在 O(1) 时间内找到指定键值对，值为 lruItem；</li>
+<li><input disabled="" type="checkbox"> freqList 是一个双向链表，用来淘汰最近未使用的键值对，是实现 LRU 策略的关键结构；</li>
+</ul>
+<p>LFUCache 中 freqEntry 由 lfu.go&#x2F;freqEntry 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> freqEntry <span class="keyword">struct</span> &#123;</span><br><span class="line">truefreq  <span class="keyword">uint</span></span><br><span class="line">trueitems <span class="keyword">map</span>[*lfuItem]<span class="keyword">struct</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>LFUCache 中 lfuItem 由 lfu.go&#x2F;lfuItem 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> lfuItem <span class="keyword">struct</span> &#123;</span><br><span class="line">trueclock       Clock</span><br><span class="line">truekey         <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">truevalue       <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">truefreqElement *list.Element</span><br><span class="line">trueexpiration  *time.Time</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如图，展示了未设置任何键值对时 LFUCache 的状态：<br><img src="/source/assets/images/201910091946552.png" alt="20191009194655"></p>
+<h4 id="设置键值对-2"><a href="#设置键值对-2" class="headerlink" title="设置键值对"></a>设置键值对</h4><p>同样，我们通过 SET 方法为 LFUCache 设置键值对：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gc := gcache.New(<span class="number">3</span>).</span><br><span class="line">    LFU().</span><br><span class="line">    Build()</span><br><span class="line"></span><br><span class="line">gc.Set(<span class="string">"k1"</span>, <span class="string">"v1"</span>)</span><br><span class="line">gc.Set(<span class="string">"k2"</span>, <span class="string">"v2"</span>)</span><br><span class="line">gc.Set(<span class="string">"k3"</span>, <span class="string">"v3"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如图，展示了设置上述 3 个键值对之后 LFUCache 的状态（为了在接下来操作中表述简单，此处未设置失效时间）：<br><img src="/source/assets/images/201910091956062.png" alt="20191009195606"></p>
+<h4 id="读取键值对-2"><a href="#读取键值对-2" class="headerlink" title="读取键值对"></a>读取键值对</h4><p>我们通过 GET 方法读取 LFUCache 中的键值对。当 key 存在时，返回对应的键值对；当 key 不存在时返回错误 KeyNotFoundError（如果设置有回调，则为返回回调执行结果）。</p>
+<blockquote>
+<p>读取操作会改变键值对所在 freqEntry 节点，同时 hitCount、missCount 也会随之变化。<br>读取失败时，与 LRUCache 的逻辑一致，这里不再说明。</p>
+</blockquote>
+<p>以执行 <code>GET(&quot;k1&quot;)</code> 读取键值对为例：</p>
+<ol>
+<li><p>删除 freqEntry(freq &#x3D; 0) 节点 items 中的 key &#x3D; lfuItem1 的键值对：<br><img src="/source/assets/images/201910091956502.png" alt="201910091956502.png"></p>
+</li>
+<li><p>创建 freqEntry(freq &#x3D; 1) 新节点（插入到 freq &#x3D; 0 节点之后），然后把 key &#x3D; lfuItem1 的键值对添加到节点 items 中，并修改命中次数（hitCount）：<br><img src="/source/assets/images/201910092007472.png" alt="201910092007472.png"></p>
+</li>
+</ol>
+<blockquote>
+<p>注意：<br>随着读取操作的发生，freqList 会越来越长（如果某个 key 读取次数最多达到 N 次，那么 freqList 长度就等于 N + 1）。<br>这样的话，就可能会带来内存问题。</p>
+</blockquote>
+<h4 id="缓存满时增加键值对-2"><a href="#缓存满时增加键值对-2" class="headerlink" title="缓存满时增加键值对"></a>缓存满时增加键值对</h4><p>当 LFUCache 缓存满时再增加键值对，会先执行淘汰策略。从链表首部（访问频次为 0 的节点）开始删除指定个数（默认 1）的键值对，并删除 items 中对应 key。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gc.Set(<span class="string">"k5"</span>, <span class="string">"v5"</span>)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>从链表首部节点开始选择待淘汰键值对：<br><img src="/source/assets/images/201910092008452.png" alt="201910092008452.png"></p>
+</li>
+<li><p>淘汰 <code>步骤 1</code> 中选定的键值对：<br><img src="/source/assets/images/201910092009262.png" alt="201910092009262.png"></p>
+</li>
+<li><p>新节点加入到链表首部节点（freq &#x3D; 0）中，并更新 items：<br><img src="/source/assets/images/201910092029342.png" alt="201910092029342.png"></p>
+</li>
+</ol>
+<h3 id="ARCCache"><a href="#ARCCache" class="headerlink" title="ARCCache"></a>ARCCache</h3><p>ARC(Adaptive Replacement Cache) 融合了 LRU 和 LFU 的特点，在二者之间取得一个平衡，同时也使得算法看起来更复杂一些。<br>gcache 中 ARCCache 由 arc.go&#x2F;ARCCache 结构表示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Constantly balances between LRU and LFU, to improve the combined result.</span></span><br><span class="line"><span class="keyword">type</span> ARC <span class="keyword">struct</span> &#123;</span><br><span class="line">truebaseCache</span><br><span class="line">trueitems <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*arcItem</span><br><span class="line"></span><br><span class="line">truepart <span class="keyword">int</span></span><br><span class="line">truet1   *arcList</span><br><span class="line">truet2   *arcList</span><br><span class="line">trueb1   *arcList</span><br><span class="line">trueb2   *arcList</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如图，展示了未设置任何键值对时 ARCCache 的状态：<br><img src="/source/assets/images/201910121638482.png" alt="20191012163848"></p>
+<p>相比 LRUCache，LFUCache 来讲，ARCCache 的逻辑复杂了很多。如图，给出 ARCCache 键值对转移状态图：<br><img src="/source/assets/images/201910251025172.png" alt="20191025102517"></p>
+<blockquote>
+<p>键值对状态图与失效时间有关，这里给出键值对的流转图示。  </p>
+</blockquote>
+<h4 id="设置键值对-3"><a href="#设置键值对-3" class="headerlink" title="设置键值对"></a>设置键值对</h4><p>同样，我们通过 SET 方法为 ARCCache 设置键值对：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gc := gcache.New(<span class="number">3</span>).</span><br><span class="line">    ARC().</span><br><span class="line">    Build()</span><br><span class="line"></span><br><span class="line">gc.SetWithExpire(<span class="string">"k1"</span>, <span class="string">"v1"</span>, <span class="number">10</span> * time.Second)</span><br><span class="line">gc.Set(<span class="string">"k2"</span>, <span class="string">"v2"</span>)</span><br><span class="line">gc.Set(<span class="string">"k3"</span>, <span class="string">"v3"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>ARCCache 的内部存储就复杂了很多，大致流程参考前面给的【ARCCache 键值对转移状态图】。键值对如下：<br><img src="/source/assets/images/201910121654332.png" alt="20191012165433"></p>
+<p>关键代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *ARC)</span> <span class="title">Set</span><span class="params">(key, value <span class="keyword">interface</span>&#123;&#125;)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">truec.mu.Lock()</span><br><span class="line">true<span class="keyword">defer</span> c.mu.Unlock()</span><br><span class="line">true_, err := c.set(key, value)</span><br><span class="line">true<span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *ARC)</span> <span class="title">set</span><span class="params">(key, value <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">true<span class="keyword">var</span> err error</span><br><span class="line">true<span class="keyword">if</span> c.serializeFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruevalue, err = c.serializeFunc(key, value)</span><br><span class="line">truetrue<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">trueitem, ok := c.items[key]</span><br><span class="line">true<span class="keyword">if</span> ok &#123;</span><br><span class="line">truetrueitem.value = value</span><br><span class="line">true&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetrueitem = &amp;arcItem&#123;</span><br><span class="line">truetruetrueclock: c.clock,</span><br><span class="line">truetruetruekey:   key,</span><br><span class="line">truetruetruevalue: value,</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetruec.items[key] = item</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> c.expiration != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruet := c.clock.Now().Add(*c.expiration)</span><br><span class="line">truetrueitem.expiration = &amp;t</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">truetrue<span class="keyword">if</span> c.addedFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetruec.addedFunc(key, value)</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;()</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> c.t1.Has(key) || c.t2.Has(key) &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> item, <span class="literal">nil</span></span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// 高频访问</span></span><br><span class="line">true<span class="comment">// 移动键值对 (from b1 to t2)</span></span><br><span class="line">true<span class="keyword">if</span> elt := c.b1.Lookup(key); elt != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruec.setPart(minInt(c.size, c.part+maxInt(c.b2.Len()/c.b1.Len(), <span class="number">1</span>)))</span><br><span class="line">truetruec.replace(key)</span><br><span class="line">truetruec.b1.Remove(key, elt)</span><br><span class="line">truetruec.t2.PushFront(key)</span><br><span class="line">truetrue<span class="keyword">return</span> item, <span class="literal">nil</span></span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// 高频访问</span></span><br><span class="line">true<span class="comment">// 移动键值对 (from b2 to t2)</span></span><br><span class="line">true<span class="keyword">if</span> elt := c.b2.Lookup(key); elt != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruec.setPart(maxInt(<span class="number">0</span>, c.part-maxInt(c.b1.Len()/c.b2.Len(), <span class="number">1</span>)))</span><br><span class="line">truetruec.replace(key)</span><br><span class="line">truetruec.b2.Remove(key, elt)</span><br><span class="line">truetruec.t2.PushFront(key)</span><br><span class="line">truetrue<span class="keyword">return</span> item, <span class="literal">nil</span></span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// 缓存满：选择性淘汰 t1，b1，b2</span></span><br><span class="line">true<span class="keyword">if</span> c.isCacheFull() &amp;&amp; c.t1.Len()+c.b1.Len() == c.size &#123;</span><br><span class="line">truetrue<span class="keyword">if</span> c.t1.Len() &lt; c.size &#123;</span><br><span class="line">truetruetruec.b1.RemoveTail()</span><br><span class="line">truetruetruec.replace(key)</span><br><span class="line">truetrue&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetruetruepop := c.t1.RemoveTail()</span><br><span class="line">truetruetrueitem, ok := c.items[pop]</span><br><span class="line">truetruetrue<span class="keyword">if</span> ok &#123;</span><br><span class="line">truetruetruetrue<span class="built_in">delete</span>(c.items, pop)</span><br><span class="line">truetruetruetrue<span class="keyword">if</span> c.evictedFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetruetruetruec.evictedFunc(item.key, item.value)</span><br><span class="line">truetruetruetrue&#125;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetruetotal := c.t1.Len() + c.b1.Len() + c.t2.Len() + c.b2.Len()</span><br><span class="line">truetrue<span class="keyword">if</span> total &gt;= c.size &#123;</span><br><span class="line">truetruetrue<span class="keyword">if</span> total == (<span class="number">2</span> * c.size) &#123;</span><br><span class="line">truetruetruetrue<span class="keyword">if</span> c.b2.Len() &gt; <span class="number">0</span> &#123;</span><br><span class="line">truetruetruetruetruec.b2.RemoveTail()</span><br><span class="line">truetruetruetrue&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetruetruetruetruec.b1.RemoveTail()</span><br><span class="line">truetruetruetrue&#125;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetruec.replace(key)</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// t1 新增键值对</span></span><br><span class="line">truec.t1.PushFront(key)</span><br><span class="line">true<span class="keyword">return</span> item, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="读取键值对-3"><a href="#读取键值对-3" class="headerlink" title="读取键值对"></a>读取键值对</h4><p>执行 <code>GET(&quot;k1&quot;)</code> 操作（第 1 次读），ARCCache 会将键值对从 <code>t1</code> 移到 <code>t2</code>。或者从 <code>Ghost list</code> 中捞回。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gc.Get(<span class="string">"k1"</span>)</span><br><span class="line">gc.Get(<span class="string">"k2"</span>)</span><br><span class="line">gc.Get(<span class="string">"k3"</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>假如在访问的过程中键值对 k1 过期了，则会被移到 b1 中：<br><img src="/source/assets/images/2019102500342072.png" alt="20191025003420"></p>
+</li>
+<li><p>可以看到，t1 中的其他键值对，依次被移动到了 t2 中：<br>![20191025003158](&#x2F;images</p>
+</li>
+<li><p>再次执行 <code>gc.Get(&quot;k2&quot;)</code> 操作时，由于键值已经在 t2 中，会改变键值对的排序：<br><img src="/source/assets/images/201910250051292.png" alt="20191025005129"></p>
+</li>
+<li><p>再次执行 <code>gc.Set(&quot;k1&quot;, &quot;v1&quot;)</code> 操作时，由于键值对已经在 b1 中，则会把 k1 捞出来，并且放到 t2 中（认为是高频访问）：<br><img src="/source/assets/images/201910250058272.png" alt="20191025005827"></p>
+</li>
+</ol>
+<p>关键代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get a value from cache pool using key if it exists. If not exists and it has LoaderFunc, it will generate the value using you have specified LoaderFunc method returns value.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *ARC)</span> <span class="title">Get</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">truev, err := c.get(key, <span class="literal">false</span>)</span><br><span class="line">true<span class="keyword">if</span> err == KeyNotFoundError &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> c.getWithLoader(key, <span class="literal">true</span>)</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> v, err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *ARC)</span> <span class="title">get</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;, onLoad <span class="keyword">bool</span>)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">truev, err := c.getValue(key, onLoad)</span><br><span class="line">true<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">if</span> c.deserializeFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetrue<span class="keyword">return</span> c.deserializeFunc(key, v)</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> v, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *ARC)</span> <span class="title">getValue</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;, onLoad <span class="keyword">bool</span>)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">truec.mu.Lock()</span><br><span class="line">true<span class="keyword">defer</span> c.mu.Unlock()</span><br><span class="line">true<span class="keyword">if</span> elt := c.t1.Lookup(key); elt != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruec.t1.Remove(key, elt)</span><br><span class="line">truetrueitem := c.items[key]</span><br><span class="line">truetrue<span class="keyword">if</span> !item.IsExpired(<span class="literal">nil</span>) &#123;</span><br><span class="line">truetruetruec.t2.PushFront(key)</span><br><span class="line">truetruetrue<span class="keyword">if</span> !onLoad &#123;</span><br><span class="line">truetruetruetruec.stats.IncrHitCount()</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrue<span class="keyword">return</span> item.value, <span class="literal">nil</span></span><br><span class="line">truetrue&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetruetrue<span class="comment">// TODO else 可以去掉</span></span><br><span class="line">truetruetrue<span class="built_in">delete</span>(c.items, key)</span><br><span class="line">truetruetruec.b1.PushFront(key)</span><br><span class="line">truetruetrue<span class="keyword">if</span> c.evictedFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetruetruec.evictedFunc(item.key, item.value)</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">if</span> elt := c.t2.Lookup(key); elt != <span class="literal">nil</span> &#123;</span><br><span class="line">truetrueitem := c.items[key]</span><br><span class="line">truetrue<span class="keyword">if</span> !item.IsExpired(<span class="literal">nil</span>) &#123;</span><br><span class="line">truetruetruec.t2.MoveToFront(elt)</span><br><span class="line">truetruetrue<span class="keyword">if</span> !onLoad &#123;</span><br><span class="line">truetruetruetruec.stats.IncrHitCount()</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrue<span class="keyword">return</span> item.value, <span class="literal">nil</span></span><br><span class="line">truetrue&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetruetrue<span class="comment">// TODO else 可以去掉</span></span><br><span class="line">truetruetrue<span class="built_in">delete</span>(c.items, key)</span><br><span class="line">truetruetruec.t2.Remove(key, elt)</span><br><span class="line">truetruetruec.b2.PushFront(key)</span><br><span class="line">truetruetrue<span class="keyword">if</span> c.evictedFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetruetruec.evictedFunc(item.key, item.value)</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> !onLoad &#123;</span><br><span class="line">truetruec.stats.IncrMissCount()</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> <span class="literal">nil</span>, KeyNotFoundError</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="缓存满时增加键值对-3"><a href="#缓存满时增加键值对-3" class="headerlink" title="缓存满时增加键值对"></a>缓存满时增加键值对</h4><p>当缓存满时新增键值对，ARCCache 会淘汰 t1，b1，b2 中的数据（参考 SET 方法）。</p>
+<blockquote>
+<p>图略</p>
+</blockquote>
+<p>淘汰策略：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// replace</span></span><br><span class="line"><span class="comment">// 1. 淘汰数据 t1, t2 数据到 b1 b2</span></span><br><span class="line"><span class="comment">// 2. 从 items 中删除键值对</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *ARC)</span> <span class="title">replace</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">true<span class="keyword">if</span> !c.isCacheFull() &#123;</span><br><span class="line">truetrue<span class="keyword">return</span></span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">var</span> old <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">true<span class="keyword">if</span> c.t1.Len() &gt; <span class="number">0</span> &amp;&amp; ((c.b2.Has(key) &amp;&amp; c.t1.Len() == c.part) || (c.t1.Len() &gt; c.part)) &#123;</span><br><span class="line">truetrue<span class="comment">// t1 淘汰到 b1</span></span><br><span class="line">truetrueold = c.t1.RemoveTail()</span><br><span class="line">truetruec.b1.PushFront(old)</span><br><span class="line">true&#125; <span class="keyword">else</span> <span class="keyword">if</span> c.t2.Len() &gt; <span class="number">0</span> &#123;</span><br><span class="line">truetrue<span class="comment">// t2 淘汰到 b2</span></span><br><span class="line">truetrueold = c.t2.RemoveTail()</span><br><span class="line">truetruec.b2.PushFront(old)</span><br><span class="line">true&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetrue<span class="comment">// t1 淘汰到 b1</span></span><br><span class="line">truetrueold = c.t1.RemoveTail()</span><br><span class="line">truetruec.b1.PushFront(old)</span><br><span class="line">true&#125;</span><br><span class="line">trueitem, ok := c.items[old]</span><br><span class="line">true<span class="keyword">if</span> ok &#123;</span><br><span class="line">truetrue<span class="comment">// 删除已淘汰的数据</span></span><br><span class="line">truetrue<span class="built_in">delete</span>(c.items, old)</span><br><span class="line">truetrue<span class="keyword">if</span> c.evictedFunc != <span class="literal">nil</span> &#123;</span><br><span class="line">truetruetruec.evictedFunc(item.key, item.value)</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>引用<br><a href="https://www.cnblogs.com/fkissx/p/4712959.html" target="_blank" rel="noopener">操作系统之页面置换算法</a><br><a href="https://www.ezlippi.com/blog/2015/02/cache.html" target="_blank" rel="noopener">谈谈缓存和基本的缓存算法</a><br><a href="https://www.cnblogs.com/hongdada/p/10406902.html" target="_blank" rel="noopener">缓存算法（FIFO 、LRU、LFU三种算法的区别）</a><br><a href="https://segmentfault.com/a/1190000020002827?utm_source=tag-newest" target="_blank" rel="noopener">Go gcache 源码分析（图解）</a><br><a href="https://blog.csdn.net/youanyyou/article/details/78989956" target="_blank" rel="noopener">常用缓存淘汰算法（LFU、LRU、ARC、FIFO、MRU）</a><br><a href="https://blog.csdn.net/WSKINGS/article/details/46416451" target="_blank" rel="noopener">缓存机制Cache ARC算法（一）</a><br><a href="http://mckee.cn/golang/gcache" target="_blank" rel="noopener">gcache 源码分析</a><br><a href="https://youzhixueyuan.com/explain-the-principles-of-memcached-and-redis.html" target="_blank" rel="noopener">阿里P8架构师谈：详解Memcached、Redis等缓存的特征、原理、应用</a><br><a href="https://juejin.im/entry/5b59615a5188251af86bf5c9" target="_blank" rel="noopener">一文深入了解：分布式系统中的缓存架构</a><br><a href="https://github.com/dgraph-io/ristretto" target="_blank" rel="noopener">Ristretto is a fast, concurrent cache library built with a focus on performance and correctness.</a><br><a href="https://www.cnblogs.com/rickiyang/p/11074158.html" target="_blank" rel="noopener">Caffeine Cache-高性能Java本地缓存组件 </a></p>
+</blockquote>
+<hr>
+<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
+<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+<script>
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+</script>
+
+<!-- > 来源：[https://leunggeorge.github.io/](https://leunggeorge.github.io/)   -->
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/golang/" rel="tag"># golang</a>
+          
+            <a href="/tags/%E6%BA%90%E7%A0%81/" rel="tag"># 源码</a>
+          
+            <a href="/tags/gcache/" rel="tag"># gcache</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/npm-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%96%B0-package-json-%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9D%97%E7%89%88%E6%9C%AC.html" rel="next" title="npm 一键更新 package.json 依赖模块版本">
+                <i class="fa fa-chevron-left"></i> npm 一键更新 package.json 依赖模块版本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/SELECT-COUNT-%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF.html" rel="prev" title="SELECT COUNT 那些事儿">
+                SELECT COUNT 那些事儿 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存清除策略"><span class="nav-number">1.</span> <span class="nav-text">缓存清除策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FIFO"><span class="nav-number">1.1.</span> <span class="nav-text">FIFO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LRU"><span class="nav-number">1.2.</span> <span class="nav-text">LRU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LFU"><span class="nav-number">1.3.</span> <span class="nav-text">LFU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARC"><span class="nav-number">1.4.</span> <span class="nav-text">ARC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OPT"><span class="nav-number">1.5.</span> <span class="nav-text">OPT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gcache-源码分析"><span class="nav-number">2.</span> <span class="nav-text">gcache 源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">2.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多种缓存策略"><span class="nav-number">2.1.1.</span> <span class="nav-text">多种缓存策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#支持回调策略"><span class="nav-number">2.1.2.</span> <span class="nav-text">支持回调策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计数统计"><span class="nav-number">2.1.3.</span> <span class="nav-text">计数统计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本架构"><span class="nav-number">2.1.4.</span> <span class="nav-text">基本架构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口"><span class="nav-number">2.2.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CacheBuilder"><span class="nav-number">2.3.</span> <span class="nav-text">CacheBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置回调函数"><span class="nav-number">2.3.1.</span> <span class="nav-text">设置回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置淘汰策略"><span class="nav-number">2.3.2.</span> <span class="nav-text">设置淘汰策略</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#baseCache"><span class="nav-number">2.4.</span> <span class="nav-text">baseCache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SimpleCache"><span class="nav-number">2.5.</span> <span class="nav-text">SimpleCache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置超时时间"><span class="nav-number">2.5.1.</span> <span class="nav-text">设置超时时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#键值对失效判断"><span class="nav-number">2.5.2.</span> <span class="nav-text">键值对失效判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置键值对"><span class="nav-number">2.5.3.</span> <span class="nav-text">设置键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取键值对"><span class="nav-number">2.5.4.</span> <span class="nav-text">读取键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存满时增加键值对"><span class="nav-number">2.5.5.</span> <span class="nav-text">缓存满时增加键值对</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LRUCache"><span class="nav-number">2.6.</span> <span class="nav-text">LRUCache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置键值对-1"><span class="nav-number">2.6.1.</span> <span class="nav-text">设置键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取键值对-1"><span class="nav-number">2.6.2.</span> <span class="nav-text">读取键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存满时增加键值对-1"><span class="nav-number">2.6.3.</span> <span class="nav-text">缓存满时增加键值对</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LFUCache"><span class="nav-number">2.7.</span> <span class="nav-text">LFUCache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置键值对-2"><span class="nav-number">2.7.1.</span> <span class="nav-text">设置键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取键值对-2"><span class="nav-number">2.7.2.</span> <span class="nav-text">读取键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存满时增加键值对-2"><span class="nav-number">2.7.3.</span> <span class="nav-text">缓存满时增加键值对</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARCCache"><span class="nav-number">2.8.</span> <span class="nav-text">ARCCache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置键值对-3"><span class="nav-number">2.8.1.</span> <span class="nav-text">设置键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取键值对-3"><span class="nav-number">2.8.2.</span> <span class="nav-text">读取键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存满时增加键值对-3"><span class="nav-number">2.8.3.</span> <span class="nav-text">缓存满时增加键值对</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>

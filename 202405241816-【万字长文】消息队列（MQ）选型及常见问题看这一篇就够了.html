@@ -1,0 +1,1836 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="blog,随笔,note,架构,消息队列,km,系统设计,kafka,后台,分布式系统,pulsar," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="消息队列是重要的分布式系统组件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。可用于异步通信、削峰填谷、解耦系统、数据缓存等多种业务场景。本文系消息队列（MQ）选型和常见问题的精心整理。在这篇文章中，我们将详细介绍消息队列的概念、作用以及如何选择适合自己需求的消息队列系统。   1 概述消息队列是分布式系统中重要的中间件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。分布式系统可以借">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了">
+<meta property="og:url" content="https://liangyuanzheng.com/202405241816-%E3%80%90%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%E3%80%91%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%88MQ%EF%BC%89%E9%80%89%E5%9E%8B%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="消息队列是重要的分布式系统组件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。可用于异步通信、削峰填谷、解耦系统、数据缓存等多种业务场景。本文系消息队列（MQ）选型和常见问题的精心整理。在这篇文章中，我们将详细介绍消息队列的概念、作用以及如何选择适合自己需求的消息队列系统。   1 概述消息队列是分布式系统中重要的中间件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。分布式系统可以借">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/6b66a93e09b8b0ddb2a01a8be1af5603_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/79ac75632b17020a25f4913a985c385d_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/77b6df890bb9f3b79fc8585d2097eac6_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/c74239ed5792cd5b468f5a72ae8b0439_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/97c9e9c4dff37ab5677082d19d96b269_MD5.jpg">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/1846afc24d7d9007ca207143d1642105_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/2784a2ae5d0562274b3fd8e0f9f0aaa1_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/1c5a893721a998b8651e9a31cb1c6ee3_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/f41e69cdcf27928b3a70bebda45d03ef_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/20d3e7b6bc7a7980e092eb79a2af4638_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/e4396056368a26ab791c4907c3fe8b09_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/8c15d744763c0be5f98b0e0f173cd886_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/9693c90c7095f53e2279af1c181e72d2_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/1353ec70d75ea0e4c2aa55f5c56b3fd0_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/1e4d52e7bcb05ed7f5acb75f8cb969b9_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/eecb5bbe4e08b43034d0239d3f7bd3b1_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/2e1fdf252627e39bc9e349718eafe3f3_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/a7547eb09f1b9c338cbc9394bc1a5d07_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/c7f863436bc4a2e45b995aa941b9b06c_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/3b3c4a5b541d47a9b0bbff7fa6efaebf_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/10cfe0acf553408639420cf583bd66ee_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/86be924bda14d0633d1d61386a61b165_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/0cb8b7237849a92c4a1608c734f63f42_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/dd370fc4a9bda2ffe3552c5224a60088_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/db03b2f2af7b1f9294d3d340908e1f11_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/d022ae1f1e50a49246bdacf99837de61_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/323fb957d3e990a33ba8f20b793c0298_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/4c255ce80aa0b7de003406ec2b178e02_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/403d351f67377331461e6d109699d452_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/33e2a0aeb1516a7a68aab8964776af6c_MD5.png">
+<meta property="article:published_time" content="2024-08-20T08:05:00.000Z">
+<meta property="article:modified_time" content="2025-12-02T00:48:22.396Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="架构">
+<meta property="article:tag" content="消息队列">
+<meta property="article:tag" content="km">
+<meta property="article:tag" content="系统设计">
+<meta property="article:tag" content="kafka">
+<meta property="article:tag" content="后台">
+<meta property="article:tag" content="分布式系统">
+<meta property="article:tag" content="pulsar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/assets/images/6b66a93e09b8b0ddb2a01a8be1af5603_MD5.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/202405241816-【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了 | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/202405241816-%E3%80%90%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%E3%80%91%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%88MQ%EF%BC%89%E9%80%89%E5%9E%8B%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">【万字长文】消息队列（MQ）选型及常见问题看这一篇就够了</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-08-20T08:05:00+00:00">
+                2024-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">软件工程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  16.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  59
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>消息队列是重要的分布式系统组件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。可用于异步通信、削峰填谷、解耦系统、数据缓存等多种业务场景。<br>本文系消息队列（MQ）选型和常见问题的精心整理。在这篇文章中，我们将详细介绍消息队列的概念、作用以及如何选择适合自己需求的消息队列系统。</p>
+</blockquote>
+<p><img src="/assets/images/6b66a93e09b8b0ddb2a01a8be1af5603_MD5.png"></p>
+<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><p>消息队列是分布式系统中重要的中间件，在高性能、高可用、低耦合等系统架构中扮演着重要作用。分布式系统可以借助消息队列的能力，轻松实现以下功能：</p>
+<ul>
+<li>解耦：将一个流程的上下游拆解开，上游专注于生产消息，下游专注于处理消息；</li>
+<li>广播：上游生产的消息可以轻松被多个下游服务处理；</li>
+<li>缓冲：应对突发流量，消息队列扮演缓冲器的作用，保护下游服务，使其可以根据自身的实际消费能力处理消息；</li>
+<li>异步：上游发送消息后可以马上返回，下游可以异步处理消息；</li>
+<li>冗余：保留历史消息，处理失败或当出现异常时可以进行重试或者回溯，防止丢失；</li>
+</ul>
+<h1 id="2-架构简介"><a href="#2-架构简介" class="headerlink" title="2 架构简介"></a>2 架构简介</h1><h2 id="2-1-Kafka"><a href="#2-1-Kafka" class="headerlink" title="2.1 Kafka"></a>2.1 Kafka</h2><h3 id="2-1-1-系统框架"><a href="#2-1-1-系统框架" class="headerlink" title="2.1.1 系统框架"></a>2.1.1 系统框架</h3><p><img src="/assets/images/79ac75632b17020a25f4913a985c385d_MD5.png"></p>
+<p>一个 Kafka 集群由多个 Broker 和一个 ZooKeeper 集群组成，Broker 作为 Kafka 节点的服务器。同一个消息主题 Topic 可以由多个分区 Partition 组成，分区物理存储在 Broker 上。负载均衡考虑，同一个 Topic 的多个分区存储在多个不同的 Broker 上，为了提高可靠性，每个分区在不同的 Broker 会存在副本。</p>
+<p><a href="notes/timenotes/2024/05/ZooKeeper">ZookKeeper</a> 是一个分布式开源的应用程序协调服务，可以实现统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等工作。Kafka 里的 ZooKeeper 主要有一下几个作用：</p>
+<ul>
+<li>Broker 注册，当有 Broker 故障的时候能及时感知。</li>
+<li>Topic 注册，维护 Topic 各分区的个副本所在的 Broker 节点，以及对应 leader&#x2F;follower 的角色。</li>
+<li>Consumer 注册，维护消费者组的 offset 以及消费者与分区的对应关系，实现负载均衡。</li>
+</ul>
+<h3 id="2-1-2-基本术语"><a href="#2-1-2-基本术语" class="headerlink" title="2.1.2 基本术语"></a>2.1.2 <strong>基本术语</strong></h3><p><strong>Producer</strong>：消息生产者。一般情况下，一条消息会被发送到特定的主题上。通常情况下，写入的消息会通过轮询将消息写入各分区。生产者也可以通过设定消息 key 值将消息写入指定分区。写入分区的数据越均匀 Kafka 的性能才能更好发挥。</p>
+<p><strong>Topic</strong>：Topic 是个抽象的虚拟概念，一个集群可以有多个 Topic，作为一类消息的标识。一个生产者将消息发送到 topic，消费者通过订阅 Topic 获取分区消息。</p>
+<p><strong>Partition</strong>：Partition 是个物理概念，一个 Topic 对应一个或多个 Partition。新消息会以追加的方式写入分区里，在同一个 Partition 里消息是有序的。Kafka 通过分区，实现消息的冗余和伸缩性，以及支持物理上的并发读、写，大大提高了吞吐量。</p>
+<p><strong>Replicas</strong>：一个 Partition 有多个 Replicas 副本。这些副本保存在 broker，每个 broker 存储着成百上千个不同主题和分区的副本，存储的内容分为两种：master 副本，每个 Partition 都有一个 master 副本，所有内容的写入和消费都会经过 master 副本；follower 副本不处理任何客户端的请求，只同步 master 的内容进行复制。如果 master 发生了异常，很快会有一个 follower 成为新的 master。</p>
+<p><strong>Consumer</strong>：消息读取者。消费者订阅主题，并按照一定顺序读取消息。Kafka 保证每个分区只能被一个消费者使用。</p>
+<p><strong>Offset</strong>：偏移量是一种元数据，是不断递增的整数。在消息写入时 Kafka 会把它添加到消息里。在分区内偏移量是唯一的。消费过程中，会将最后读取的偏移量存储在 Kafka 中，消费者关闭偏移量不会丢失，重启会继续从上次位置开始消费。</p>
+<p><strong>Broker</strong>：独立的 Kafka 服务器。一个 Topic 有 N 个 Partition，一个集群有 N 个 Broker，那么每个 Broker 都会存储一个这个 Topic 的 Partition。如果某 topic 有 N 个 partition，集群有(N+M)个 broker，那么其中有 N 个 broker 存储该 topic 的一个 partition，剩下的 M 个 broker 不存储该 topic 的 partition 数据。如果某 topic 有 N 个 partition，集群中 broker 数目少于 N 个，那么一个 broker 存储该 topic 的一个或多个 partition。在实际生产环境中，尽量避免这种情况的发生，这种情况容易导致 Kafka 集群数据不均衡。</p>
+<h2 id="2-2-Pulsar"><a href="#2-2-Pulsar" class="headerlink" title="2.2 Pulsar"></a>2.2 Pulsar</h2><h3 id="2-2-1-系统框架"><a href="#2-2-1-系统框架" class="headerlink" title="2.2.1 系统框架"></a>2.2.1 系统框架</h3><p><img src="/assets/images/77b6df890bb9f3b79fc8585d2097eac6_MD5.png"></p>
+<p>Pulsar 有三个重要的组件，Broker、BookKeeper 和<a href="notes/timenotes/2024/05/ZooKeeper.md">ZooKeeper</a>，Broker 是无状态服务，客户端需要连接到 Broker 上进行消息的传递。BookKeeper 与 ZooKeeper 是有状态服务。BookKeeper 的节点叫 Bookie，负责存储消息和游标，ZooKeeper 存储 Broker 和 Bookie 的元数据。Pulsar 以这种架构，实现存储和计算分离，Broker 负责计算，Bookie 负责有状态存储。</p>
+<p><img src="/assets/images/c74239ed5792cd5b468f5a72ae8b0439_MD5.png"></p>
+<p>Pulsar 的多层架构影响了存储数据的方式。Pulsar 将 Topic 分区划分为分片（Segment），然后将这些分片存储在 Apache BookKeeper 的存储节点上，以提高性能、可伸缩性和可用性。Pulsar 的分布式日志以分片为中心，借助扩展日志存储（通过 Apache BookKeeper）实现，内置分层存储支持，因此分片可以均匀地分布在存储节点上。由于与任一给定 Topic 相关的数据都不会与特定存储节点进行捆绑，因此很容易替换存储节点或缩扩容。另外，集群中最小或最慢的节点也不会成为存储或带宽的短板。</p>
+<h3 id="2-2-2-基本术语"><a href="#2-2-2-基本术语" class="headerlink" title="2.2.2 基本术语"></a>2.2.2 基本术语</h3><p><strong>Property</strong>：代表租户，每个 property 都可以代表一个团队、一个功能、一个产品线。一个 property 可包含多个 namesapce，多租户是一种资源隔离手段，可以提高资源利用率；</p>
+<p><strong>Namespace</strong>：Pulsar 的基本管理单元，在 namaspace 级别可设置权限、消息 TTL、Retention 策略等。一个 namaspace 里的所有 topic 都继承相同的设置。命名空间分为两种：本地命名空间，只在集群内可见、全局命名空间对多个集群可见集群命名空间；</p>
+<p><img src="/assets/images/97c9e9c4dff37ab5677082d19d96b269_MD5.jpg"></p>
+<p><strong>Producer</strong>：数据生产方，负责创建消息并将消息投递到 Pulsar 中；</p>
+<p><strong>Consumer</strong>：数据消费方，连接到 Pulsar 接收消息并进行相应的处理；</p>
+<p><strong>Broker</strong>：无状态 Proxy 服务，负责接收消息、传递消息、集群负载均衡等操作，它对 client 屏蔽了服务端读写流程的复杂性，是保证数据一致性与数据负载均衡的重要角色。Broker 不会持久化保存元数据。可以扩容但不能缩容；</p>
+<p><strong>BookKeeper</strong>：有状态，负责持久化存储消息。当集群扩容时，Pulsar 会在新增 BookKeeper 和 Segment（即 Bookeeper 的 Ledger），不需要像 kafka 一样在扩容时进行 Rebalance。扩容结果是 Fragments 跨多个 Bookies 以带状分布，同一个 Ledger 的 Fragments 分布在多个 Bookie 上，导致读取和写入会在多个 Bookies 之间跳跃；</p>
+<p><strong>ZooKeeper</strong>：存储 Pulsar 、 BookKeeper 的元数据，集群配置等信息，负责集群间的协调、服务发现等；</p>
+<p><strong>Topic</strong>：用作从 producer 到 consumer 传输消息。Pulsar 在 Topic 级别拥有一个 leader Broker，称之为拥有 Topic 的所有权，针对该 Topic 所有的 R&#x2F;W 都经过该 Broker 完成。Topic 的 Ledger 和 Fragment 之间映射关系等元数据存储在 Zookeeper 中，Pulsar Broker 需要实时跟踪这些关系进行读写流程；</p>
+<p><strong>Ledger</strong>：即 Segment，Pulsar 底层数据以 Ledger 的形式存储在 BookKeeper 上。是 Pulsar 删除的最小单位；</p>
+<p><strong>Fragment</strong> ：每个 Ledger 由若干 Fragment 组成。</p>
+<h2 id="2-3-RocketMQ"><a href="#2-3-RocketMQ" class="headerlink" title="2.3 RocketMQ"></a>2.3 RocketMQ</h2><h3 id="2-3-1-系统框架"><a href="#2-3-1-系统框架" class="headerlink" title="2.3.1 系统框架"></a>2.3.1 系统框架</h3><p><img src="/assets/images/1846afc24d7d9007ca207143d1642105_MD5.png"><br>RocketMQ 是阿里开源的消息中间件，它是一个开源的分布式消息传递和流式数据平台。总共有四大部分：<strong>NameServer，Broker，Producer，Consumer</strong>。</p>
+<p>NameServer 主要用来管理 brokers 以及路由信息。broker 服务器启动时会注册到 NameServer 上，并且两者之间保持心跳监测机制，以此来保证 NameServer 知道 broker 的存活状态。而且，每一台 NameServer 都存有全部的 broker 集群信息和生产者&#x2F;消费者客户端的请求信息。</p>
+<p>Broker 负责管理消息存储分发，主从数据同步，为消息建立索引，提供消息查询等能力。</p>
+<h3 id="2-3-2-基本术语"><a href="#2-3-2-基本术语" class="headerlink" title="2.3.2 基本术语"></a>2.3.2 基本术语</h3><p><strong>Topic</strong>：一个 Topic 可以有 0 个、1 个、多个生产者向其发送消息，一个生产者也可以同时向不同的 Topic 发送消息。一个 Topic 也可以被 0 个、1 个、多个消费者订阅；</p>
+<p><strong>Tag</strong>：消息二级类型，可以为用户提供额外的灵活度，一条消息可以没有 tag；</p>
+<p><strong>Producer</strong>：消息生产者；</p>
+<p><strong>Broker</strong>：存储消息，以 Topic 为纬度轻量级的队列；转发消息，单个 Broker 节点与所有的 NameServer 节点保持长连接及心跳，会定时将 Topic 信息注册到 NameServer；</p>
+<p><strong>Consumer</strong>：消息消费者，负责接收并消费消息；</p>
+<p><strong>MessageQueue</strong>：消息的物理管理单位，一个 Topic 可以有多个 Queue，Queue 的引入实现了水平扩展的能力；</p>
+<p><strong>NameServer</strong>：负责对原数据的管理，包括 Topic 和路由信息，每个 NameServer 之间是没有通信的；</p>
+<p><strong>Group</strong>：一个组可以订阅多个 Topic，ProducerGroup、ConsumerGroup 分别是一类生产者和一类消费者；</p>
+<p><strong>Offset</strong>：通过 Offset 访问存储单元，RocketMQ 中所有消息都是持久化的，且存储单元定长。Offset 为 Java Long 类型，理论上 100 年内不会溢出，所以认为 Message Queue 是无限长的数据，Offset 是下标；</p>
+<p><strong>Consumer</strong>：支持 PUSH 和 PULL 两种消费模式，支持集群消费和广播消费。</p>
+<h2 id="2-4-RabbitMQ"><a href="#2-4-RabbitMQ" class="headerlink" title="2.4 RabbitMQ"></a>2.4 RabbitMQ</h2><h3 id="2-4-1-系统框架"><a href="#2-4-1-系统框架" class="headerlink" title="2.4.1 系统框架"></a>2.4.1 系统框架</h3><p><img src="/assets/images/2784a2ae5d0562274b3fd8e0f9f0aaa1_MD5.png"></p>
+<p>RabbitMQ 基于 AMQP 协议来实现，主要由 Exchange 和 Queue 两部分组成，然后通过 RoutingKey 关联起来，消息投递到 Exchange 然后通过 Queue 接收。</p>
+<h3 id="2-4-2-基本术语"><a href="#2-4-2-基本术语" class="headerlink" title="2.4.2 基本术语"></a>2.4.2 基本术语</h3><p><strong>Broker</strong>：接收客户端链接实体，实现 AMQP 消息队列和路由功能；</p>
+<p><strong>Virtual Host</strong>：是一个虚拟概念，权限控制的最小单位。一个 Virtual Host 里包含多个 Exchange 和 Queue；</p>
+<p><strong>Exchange</strong>：接收消息生产者的消息并将消息转发到队列。发送消息时根据不同 ExchangeType 的决定路由规则，ExchangeType 常用的有：direct、fanout 和 topic 三种；</p>
+<p><strong>Message Queue</strong>：消息队列，存储为被消费的消息；</p>
+<p><strong>Message</strong>：由 Header 和 Body 组成，Header 是生产者添加的各种属性，包含 Message 是否持久化、哪个 MessageQueue 接收、优先级。Body 是具体的消息内容；</p>
+<p><strong>Binding</strong>：Binding 连接起了 Exchange 和 Message Queue。在服务器运行时，会生成一张路由表，这张路由表上记录着 MessageQueue 的条件和 BindingKey 值。当 Exchange 收到消息后，会解析消息中的 Header 得到 BindingKey，并根据路由表和 ExchangeType 将消息发送到对应的 MessageQueue。最终的匹配模式是由 ExchangeType 决定；</p>
+<p><strong>Connection</strong>：在 Broker 和客户端之间的 TCP 连接；</p>
+<p><strong>Channel</strong>：信道。Broker 和客户端只有 tcp 连接是不能发送消息的，必须创建信道。AMQP 协议规定只有通过 Channel 才能执行 AMQP 命令。一个 Connection 可以包含多个 Channel。之所以需要建立 Channel，是因为每个 TCP 连接都是很宝贵的。如果每个客户端、每个线程都需要和 Broker 交互，都需要维护一个 TCP 连接的话是机器耗费资源的，一般建议共享 Connection。RabbitMQ 不建议客户端线程之前共享 Channel，至少保证同一 Channel 发送消息是串行的；</p>
+<p><strong>Command</strong>：AMQP 命令，客户端通过 Command 来完成和 AMQP 服务器的交互。</p>
+<h2 id="2-5-NSQ"><a href="#2-5-NSQ" class="headerlink" title="2.5 NSQ"></a>2.5 NSQ</h2><h3 id="2-5-1-系统框架"><a href="#2-5-1-系统框架" class="headerlink" title="2.5.1 系统框架"></a>2.5.1 系统框架</h3><p><img src="/assets/images/1c5a893721a998b8651e9a31cb1c6ee3_MD5.png"><br>NSQ 主要有 nsqlookup、nsqd 两部分组成：</p>
+<ul>
+<li>Nsqlookup 为守护进程，负责管理拓扑信息并提供发现服务。客户端通过查询 nsqlookupd 获取指定 Topic 所在的 nsqd 节点。nsqd 往 nsqlookup 上注册和广播自身 topic 和 channel 的信息。</li>
+<li>nsqd 在服务端运行的守护进程，负责接收，排队，投递消息给客户端。</li>
+</ul>
+<p>NSQ 由 3 个守护进程组成:</p>
+<ul>
+<li><strong><em>nsqd</em></strong>  是接收、队列和传送消息到客户端的守护进程。</li>
+<li><strong><em>nsqlookupd</em></strong>  是管理的拓扑信息，并提供了最终一致发现服务的守护进程。客户端通过查询 nsqlookupd 获取指定 Topic 所在的 nsqd 节点。nsqd 往 nsqlookup 上注册和广播自身 topic 和 channel 的信息。</li>
+<li><strong><em>nsqadmin</em></strong>  是一个 Web UI 来实时监控集群(和执行各种管理任务)。</li>
+</ul>
+<h1 id="3-选型要点"><a href="#3-选型要点" class="headerlink" title="3 选型要点"></a>3 选型要点</h1><h2 id="3-1-选型参考"><a href="#3-1-选型参考" class="headerlink" title="3.1 选型参考"></a>3.1 <strong>选型参考</strong></h2><ul>
+<li>消息顺序：发送到队列的消息，消费时是否可以保证消费的顺序；</li>
+<li>伸缩：当消息队列性能有问题，比如消费太慢，是否可以快速支持扩容；当消费队列过多，浪费系统资源，是否可以支持缩容。</li>
+<li>消息留存：消息消费成功后，是否还会继续保留在消息队列；</li>
+<li>容错性：当一条消息消费失败后，是否有一些机制，保证这条消息一定能成功，比如异步第三方退款消息，需要保证这条消息消费掉，才能确定给用户退款成功，所以必须保证这条消息消费成功的准确性；</li>
+<li>消息可靠性：是否会存在丢消息的情况，比如有 A&#x2F;B 两个消息，最后只有 B 消息能消费，A 消息丢失；</li>
+<li>消息时序：主要包括“消息存活时间”和“延迟消息”；</li>
+<li>吞吐量：支持的最高并发数；</li>
+<li>消息路由：根据路由规则，只订阅匹配路由规则的消息，比如有 A&#x2F;B 两者规则的消息，消费者可以只订阅 A 消息，B 消息不会消费。</li>
+</ul>
+<h2 id="3-2-消息队列对比"><a href="#3-2-消息队列对比" class="headerlink" title="3.2 消息队列对比"></a>3.2 消息队列对比</h2><p><img src="/assets/images/f41e69cdcf27928b3a70bebda45d03ef_MD5.png"></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th><a href="https://github.com/apache/activemq" target="_blank" rel="noopener">ActiveMQ</a></th>
+<th><a href="https://github.com/rabbitmq/rabbitmq-server" target="_blank" rel="noopener">RabbitMQ</a></th>
+<th><a href="https://github.com/apache/rocketmq" target="_blank" rel="noopener">RocketMQ</a></th>
+<th><a href="https://github.com/apache/kafka" target="_blank" rel="noopener">Kafka</a></th>
+<th><a href="https://github.com/apache/pulsar" target="_blank" rel="noopener">Pulsar</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单机吞吐量</td>
+<td>较低(万级)</td>
+<td>一般（万级）</td>
+<td>高（十万级）</td>
+<td>高（十万级）</td>
+<td>高（十万级）</td>
+</tr>
+<tr>
+<td>开发语言</td>
+<td>Java</td>
+<td>Erlang</td>
+<td>Java</td>
+<td>Java&#x2F;Scala</td>
+<td>Java</td>
+</tr>
+<tr>
+<td>维护者</td>
+<td>Apache</td>
+<td>Spring</td>
+<td>Apache（Alibaba）</td>
+<td>Apache（Confluent）</td>
+<td>Apache（StreamNative）</td>
+</tr>
+<tr>
+<td>Star 数量</td>
+<td>2.3K</td>
+<td>12K</td>
+<td>21K</td>
+<td>28.2K</td>
+<td>14.1K</td>
+</tr>
+<tr>
+<td>Contributor</td>
+<td>139</td>
+<td>264</td>
+<td>527</td>
+<td>1189</td>
+<td>661</td>
+</tr>
+<tr>
+<td>社区活跃度</td>
+<td>低</td>
+<td>高</td>
+<td>较高</td>
+<td>高</td>
+<td>高</td>
+</tr>
+<tr>
+<td>消费模式</td>
+<td>P2P、Pub-Sub</td>
+<td>direct、topic、Headers、fanout</td>
+<td>基于 Topic 和 MessageTag 的的 Pub-Sub</td>
+<td>基于 Topic 的 Pub-Sub</td>
+<td>基于 Topic 的 Pub-Sub，支持独占（exclusive）、共享（shared）、灾备（failover）、key 共享（key_shared）4 种模式</td>
+</tr>
+<tr>
+<td>持久化</td>
+<td>支持（小）</td>
+<td>支持（小）</td>
+<td>支持（大）</td>
+<td>支持（大）</td>
+<td>支持（大）</td>
+</tr>
+<tr>
+<td>顺序消息</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>性能稳定性</td>
+<td>好</td>
+<td>好</td>
+<td>一般</td>
+<td>较差</td>
+<td>一般</td>
+</tr>
+<tr>
+<td>集群支持</td>
+<td>主备模式</td>
+<td>复制模式</td>
+<td>主备模式</td>
+<td>Leader-Slave 每台既是 master 也是 slave，集群可扩展性强</td>
+<td>集群模式，broker 无状态，易迁移，支持跨数据中心</td>
+</tr>
+<tr>
+<td>管理界面</td>
+<td>一般</td>
+<td>较好</td>
+<td>一般</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>计算和存储分离</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>AMQP 支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>不完全支持</td>
+<td>不完全支持</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注：作为 LShift 和 CohesiveFT 于 2007 年成立的合资企业，RabbitMQ 于 2010 年 4 月被 VMware 旗下的 SpringSource 收购。</p>
+</blockquote>
+<h1 id="4-功能剖析"><a href="#4-功能剖析" class="headerlink" title="4 功能剖析"></a>4 功能剖析</h1><h2 id="4-1-消费推拉模式"><a href="#4-1-消费推拉模式" class="headerlink" title="4.1 消费推拉模式"></a>4.1 <strong>消费推拉模式</strong></h2><p>客户端消费者获取消息的方式，Kafka 和 RocketMQ 是通过长轮询 Pull 的方式拉取消息，RabbitMQ、Pulsar、NSQ 都是通过 Push 的方式。</p>
+<p>pull 类型的消息队列更适合高吞吐量的场景，允许消费者自己进行流量控制，根据消费者实际的消费能力去获取消息。而 push 类型的消息队列，实时性更好，但需要有一套良好的<a href="notes/timenotes/2024/05/%E6%B5%81%E6%8E%A7%E7%AD%96%E7%95%A5%EF%BC%88backpressure%EF%BC%89">流控策略</a>当消费者消费能力不足时，减少 push 的消费数量，避免压垮消费端。</p>
+<h2 id="4-2-延迟队列"><a href="#4-2-延迟队列" class="headerlink" title="4.2 延迟队列"></a>4.2 <strong>延迟队列</strong></h2><p>消息延迟投递，当消息产生送达消息队列时，有些业务场景并不希望消费者立刻收到消息，而是等待特定时间后，消费者才能拿到这个消息进行消费。延迟队列一般分为两种，基于消息的延迟和基于队列的延迟。基于消息的延迟指为每条消息设置不同的延迟时间，当队列有新消息进入的时候根据延迟时间排序，当然这样会对性能造成较大影响。另一种基于队列的延迟指的是设置不同延迟级别的队列，队列中每个消息的延迟时间都是相同的，这样免去了基于延迟时间排序对性能带来的损耗，通过一定的扫描策略即可投递超时的消息。</p>
+<p>延迟消息的使用场景比如异常检测重试，订单超时取消等，例如：</p>
+<ul>
+<li>服务请求异常，需要将异常请求放到单独的队列，隔 5 分钟后进行重试；</li>
+<li>用户购买商品，但一直处于未支付状态，需要定期提醒用户支付，超时则关闭订单；</li>
+<li>面试或者会议预约，在面试或者会议开始前半小时，发送通知再次提醒。</li>
+</ul>
+<p>Kafka 不支持延迟消息。Pulsar 支持秒级的延迟消息，所有延迟投递的消息会被 Delayed Message Tracker 记录对应的 index，consumer 在消费时，会先去 Delayed Message Tracker 检查，是否有到期需要投递的消息，如果有到期的消息，则从 Tracker 中拿出对应的 index，找到对应的消息进行消费，如果没有到期的消息，则直接消费正常的消息。对于长时间的延迟消息，会被存储在磁盘中，当快到延迟间隔时才被加载到内存里。</p>
+<p><img src="/assets/images/20d3e7b6bc7a7980e092eb79a2af4638_MD5.png"></p>
+<p>RocketMQ 开源版本延迟消息临时存储在一个内部主题中，不支持任意时间精度，支持特定的 level，例如定时 5s，10s，1m 等。</p>
+<p>RabbitMQ 需要安装一个 rabbitmq_delayed_message_exchange 插件。</p>
+<p>NSQ 通过内存中的优先级队列来保存延迟消息，支持秒级精度，最多 2 个小时延迟。</p>
+<h2 id="4-3-死信队列"><a href="#4-3-死信队列" class="headerlink" title="4.3 死信队列"></a>4.3 <strong>死信队列</strong></h2><p><img src="/assets/images/e4396056368a26ab791c4907c3fe8b09_MD5.png"></p>
+<p>由于某些原因消息无法被正确的投递，为了确保消息不会被无故的丢弃，一般将其置于一个特殊角色的队列，这个队列一般称之为死信队列。与此对应的还有一个“回退队列”的概念，试想如果消费者在消费时发生了异常，那么就不会对这一次消费进行确认（Ack）, 进而发生回滚消息的操作之后消息始终会放在队列的顶部，然后不断被处理和回滚，导致队列陷入死循环。为了解决这个问题，可以为每个队列设置一个回退队列，它和死信队列都是为异常的处理提供的一种机制保障。实际情况下，回退队列的角色可以由死信队列和重试队列来扮演。</p>
+<p>Kafka 没有死信队列，通过 Offset 的方式记录当前消费的偏移量。</p>
+<p>Pulsar 有重试机制，当某些消息第一次被消费者消费后，没有得到正常的回应，则会进入重试 Topic 中，当重试达到一定次数后，停止重试，投递到死信 Topic 中。</p>
+<p>RocketMQ 通过 DLQ 来记录所有消费失败的消息。</p>
+<p>RabbitMQ 是利用类似于延迟队列的形式实现死信队列。</p>
+<p>NSQ 没有死信队列。</p>
+<h2 id="4-4-优先级队列"><a href="#4-4-优先级队列" class="headerlink" title="4.4 优先级队列"></a>4.4 <strong>优先级队列</strong></h2><p>有一些业务场景下，我们需要优先处理一些消息，比如银行里面的金卡客户、银卡客户优先级高于普通客户，他们的业务需要优先处理。如下图：</p>
+<p><img src="/assets/images/8c15d744763c0be5f98b0e0f173cd886_MD5.png"></p>
+<p>优先级队列不同于先进先出队列，优先级高的消息具备优先被消费的特权，这样可以为下游提供不同消息级别的保证。不过这个优先级也是需要有一个前提的：如果消费者的消费速度大于生产者的速度，并且消息中间件服务器（一般简单的称之为 Broker）中没有消息堆积，那么对于发送的消息设置优先级也就没有什么实质性的意义了，因为生产者刚发送完一条消息就被消费者消费了，那么就相当于 Broker 中至多只有一条消息，对于单条消息来说优先级是没有什么意义的。</p>
+<p>Kafka、RocketMQ、Pulsar、NSQ 不支持优先级队列，可以通过不同的队列来实现消息优先级。</p>
+<p>RabbitMQ 支持优先级消息。</p>
+<h2 id="4-5-消息回溯"><a href="#4-5-消息回溯" class="headerlink" title="4.5 消息回溯"></a>4.5 <strong>消息回溯</strong></h2><p>一般消息在消费完成之后就被处理了，之后再也不能消费到该条消息。消息回溯正好相反，是指消息在消费完成之后，还能消费到之前被消费掉的消息。对于消息而言，经常面临的问题是“消息丢失”，至于是真正由于消息中间件的缺陷丢失还是由于使用方的误用而丢失一般很难追查，如果消息中间件本身具备消息回溯功能的话，可以通过回溯消费复现“丢失的”消息进而查出问题的源头之所在。消息回溯的作用远不止与此，比如还有索引恢复、本地缓存重建，有些业务补偿方案也可以采用回溯的方式来实现。</p>
+<p>Kafka 支持消息回溯，可以根据时间戳或指定 Offset，重置 Consumer 的 Offset 使其可以重复消费。</p>
+<p>Pulsar 支持按时间对消息进行回溯。</p>
+<p>RocketMQ 支持按时间回溯，实现的原理跟 Kafka 一致。</p>
+<p>RabbitMQ 不支持回溯，消息一旦标记确认就会被标记删除。</p>
+<p>NSQ 一般消息是不可回溯的，但可以通过 nsq_to_file 工具，将消息写入到文件，然后从文件里重放消息。</p>
+<h2 id="4-6-消息持久化"><a href="#4-6-消息持久化" class="headerlink" title="4.6 消息持久化"></a>4.6 <strong>消息持久化</strong></h2><p>流量削峰是消息中间件的一个非常重要的功能，而这个功能其实得益于其消息堆积能力。从某种意义上来讲，如果一个消息中间件不具备消息堆积的能力，那么就不能把它看做是一个合格的消息中间件。消息堆积分内存式堆积和磁盘式堆积。一般来说，磁盘的容量会比内存的容量要大得多，对于磁盘式的堆积其堆积能力就是整个磁盘的大小。从另外一个角度讲，消息堆积也为消息中间件提供了冗余存储的功能。</p>
+<p>Kafka 和 RocketMQ 直接将消息刷入磁盘文件中进行持久化，所有的消息都存储在磁盘中。只要磁盘容量够，可以做到无限消息堆积。</p>
+<p>RabbitMQ 是典型的内存式堆积，但这并非绝对，在某些条件触发后会有换页动作来将内存中的消息换页到磁盘（换页动作会影响吞吐），或者直接使用惰性队列来将消息直接持久化至磁盘中。</p>
+<p>Pulsar 消息是存储在 BookKeeper 存储集群上，也是磁盘文件。</p>
+<p>NSQ 通过 nsq_to_file 工具，将消息写入到文件。</p>
+<h2 id="4-7-消息确认机制"><a href="#4-7-消息确认机制" class="headerlink" title="4.7 消息确认机制"></a>4.7 消息确认机制</h2><p>消息队列需要管理消费进度，确认消费者是否成功处理消息，使用 push 的方式的消息队列组件往往是对单条消息进行确认，对于未确认的消息，进行延迟重新投递或者进入死信队列。</p>
+<p><strong>Kafka</strong>通过 Offset 的方式确认消息。</p>
+<p>1）发送方确认机制<br>ack&#x3D;0，不管消息是否成功写入分区<br>ack&#x3D;1，消息成功写入首领分区后，返回成功<br>ack&#x3D;all，消息成功写入所有分区后，返回成功。</p>
+<p>2）接收方确认机制<br>自动或者手动提交分区偏移量，早期版本的 kafka 偏移量是提交给 Zookeeper 的，这样使得 zookeeper 的压力比较大，更新版本的 kafka 的偏移量是提交给 kafka 服务器的，不再依赖于 zookeeper 群组，集群的性能更加稳定。</p>
+<p><strong>RocketMQ</strong>与 Kafka 类似也会提交 Offset，区别在于消费者对于消费失败的消息，可以标记为消息消费失败，Broker 会重试投递，如果累计多次消费失败，会投递到死信队列。</p>
+<p><strong>RabbitMQ</strong>和 NSQ 类似，消费者确认单条消息，否则会重新放回队列中等待下次投递。</p>
+<p>1）发送方确认机制，消息被投递到所有匹配的队列后，返回成功。如果消息和队列是可持久化的，那么在写入磁盘后，返回成功。支持批量确认和异步确认。</p>
+<p>2）接收方确认机制，设置 autoAck 为 false，需要显式确认，设置 autoAck 为 true，自动确认。<br>当 autoAck 为 false 的时候，rabbitmq 队列会分成两部分，一部分是等待投递给 consumer 的消息，一部分是已经投递但是没收到确认的消息。如果一直没有收到确认信号，并且 consumer 已经断开连接，rabbitmq 会安排这个消息重新进入队列，投递给原来的消费者或者下一个消费者。<br>未确认的消息不会有过期时间，如果一直没有确认，并且没有断开连接，rabbitmq 会一直等待，rabbitmq 允许一条消息处理的时间可以很久很久。</p>
+<p><strong>Pulsar</strong>使用专门的 Cursor 管理。累积确认和 Kafka 效果一样；提供单条或选择性确认。</p>
+<h2 id="4-8-消息-TTL"><a href="#4-8-消息-TTL" class="headerlink" title="4.8 消息 TTL"></a>4.8 <strong>消息 TTL</strong></h2><p>消息 TTL 表示一条消息的生存时间，如果消息发出来后，在 TTL 的时间内没有消费者进行消费，消息队列会将消息删除或者放入死信队列中。</p>
+<p>Kafka 根据设置的保留期来删除消息。有可能消息没被消费，过期后被删除。不支持 TTL。</p>
+<p>Pulsar 支持 TTL，如果消息未在配置的 TTL 时间段内被任何消费者使用，则消息将自动标记为已确认。消息保留期与消息 TTL 之间的区别在于：消息保留期作用于标记为已确认并设置为已删除的消息，而 TTL 作用于未 ack 的消息。上面的图例中说明了 Pulsar 中的 TTL。例如，如果订阅 B 没有活动消费者，则在配置的 TTL 时间段过后，消息 M10 将自动标记为已确认，即使没有消费者实际读取该消息。</p>
+<p>RocketMQ 提及到消息 TTL 的资料比较少，不过看接口似乎是支持的。</p>
+<p>RabbitMQ 有两种方式，一个是声明队列的时候在队列属性中设置，整个队列中的消息都有相同的有效期。还可以发送消息的时候给消息设置属性，可以位每条消息都设置不同的 TTL。</p>
+<p>NSQ 似乎还没支持，有一个 Feature Request 的 Issue 处于 Open 状态。</p>
+<h2 id="4-9-多租户隔离"><a href="#4-9-多租户隔离" class="headerlink" title="4.9 多租户隔离"></a>4.9 <strong>多租户隔离</strong></h2><p>多租户是指通过一个软件实例为多个租户提供服务的能力。租户是指对系统有着相同“视图”的一组用户。不支持多租户的系统里边，往往要为不同用户或者不同集群创建多个消息队列实例实现物理隔离，这样会带来较高的运维成本。作为一种企业级的消息系统，Pulsar 的多租户能力按照设计可满足下列需求：</p>
+<ul>
+<li>确保严苛的 SLA 可顺利满足。</li>
+<li>保证不同租户之间的隔离。</li>
+<li>针对资源利用率强制实施配额。</li>
+<li>提供每租户和系统级的安全性。</li>
+<li>确保低成本运维以及尽可能简单的管理。</li>
+</ul>
+<p>Pulsar 通过下列方式满足了上述需求：</p>
+<ul>
+<li>通过为每个租户进行身份验证、授权和 ACL（访问控制列表）获得所需安全性。</li>
+<li>为每个租户强制实施存储配额。</li>
+</ul>
+<p>以策略的方式定义所有隔离机制，策略可在运行过程中更改，借此降低运维成本并简化管理工作。</p>
+<h2 id="4-10-消息顺序性"><a href="#4-10-消息顺序性" class="headerlink" title="4.10 消息顺序性"></a>4.10 <strong>消息顺序性</strong></h2><p>消息顺序性是指保证消息有序。消息消费顺序跟生产的顺序保持一致。</p>
+<p>Kafka 保证了分区内的消息有序。</p>
+<p>Pulsar 支持两种消费模式，独占订阅的流模式只保证了消息的顺序性，共享订阅队列模型不保证有序性。</p>
+<p>RocketMQ 需要用到锁来保证一个队列同时只有一个消费者线程进行消费，保证消息的有序性。</p>
+<p>RabbitMQ 顺序性的条件比较苛刻，需要单线程发送、单线程消费，并且不采用延迟队列、优先级队列等高级功能。</p>
+<p>NSQ 是利用了 golang 自身的 case&#x2F;select 实现的消息分发，本身不提供有序性保障，不能够把特性消息和消费者对应起来，无法实现消息的有序性。</p>
+<h2 id="4-11-消息查询"><a href="#4-11-消息查询" class="headerlink" title="4.11 消息查询"></a>4.11 <strong>消息查询</strong></h2><p>在实际开发中，经常要查看 MQ 中消息的内容，比如通过某个 MessageKey&#x2F;ID，查询到 MQ 的具体消息。或者是对消息进行链路追踪，知道消息从哪里来，发送到哪里去，进而快速对问题进行排查定位。</p>
+<p>Kafka 存储层是以分布式提交日志的形式实现，每次写操作都顺序追加到日志的末尾。读也是顺序读。不支持检索功能。</p>
+<p>Pulsar 可以通过消息 ID，查询到具体某条消息的消息内容、消息参数和消息轨迹。</p>
+<p>RocketMQ 支持按 Message Key、Unique Key、Message Id 对消息进行查询。</p>
+<p>RabbitMQ 使用基于索引的存储系统。这些将数据保存在树结构中，以提供确认单个消息所需的快速访问。由于 RabbitMQ 的消息在确认后会被删除，因此只能查询未确认的消息。</p>
+<p>NSQ 自身不支持消息持久化和消息检索，不过可以使用 nsq_to_http 等工具将消息写入可支持索引的存储里。</p>
+<h2 id="4-12-消费模式"><a href="#4-12-消费模式" class="headerlink" title="4.12 消费模式"></a>4.12 <strong>消费模式</strong></h2><p>Kafka 有两种消费模式，最终都会保证一个分区只有 1 个消费者在消费：</p>
+<ul>
+<li>subscribe 方式：当主题分区数量变化或者 consumer 数量变化时，会进行 rebalance；注册 rebalance 监听器，可以手动管理 offset 不注册监听器，kafka 自动管理。</li>
+<li>assign 方式：手动将 consumer 与 partition 进行对应，kafka 不会进行 rebanlance。</li>
+</ul>
+<p>Pulsar 有以下四种消费模式，其中独占模式和灾备模式跟 Kafka 类似，为流模型，每个分区只有 1 个消费者消费，能保证消息有序性。共享模式和 Key 共享模式为队列模型，多个消费者能提高消费速度，但不能保证有序性。</p>
+<p><img src="/assets/images/9693c90c7095f53e2279af1c181e72d2_MD5.png"></p>
+<ul>
+<li>Exclusive 独占模式（默认模式）：一个 Subscription 只能与一个 Consumer 关联，只有这个 Consumer 可以接收到 Topic 的全部消息，如果该 Consumer 出现故障了就会停止消费。</li>
+<li>灾备模式（Failover）：当存在多个 consumer 时，将会按字典顺序排序，第一个 consumer 被初始化为唯一接受消息的消费者。当第一个 consumer 断开时，所有的消息（未被确认和后续进入的）将会被分发给队列中的下一个 consumer。</li>
+<li>共享模式（Shared）：消息通过 round robin 轮询机制（也可以自定义）分发给不同的消费者，并且每个消息仅会被分发给一个消费者。当消费者断开连接，所有被发送给他，但没有被确认的消息将被重新安排，分发给其它存活的消费者。</li>
+<li>KEY 共享模式（Key_Shared）：当存在多个 consumer 时，将根据消息的 key 进行分发，key 相同的消息只会被分发到同一个消费者。</li>
+</ul>
+<p>RocketMQ 有两种消费模式，BROADCASTING 广播模式，CLUSTERING 集群模式。</p>
+<p>广播消费指的是：一条消息被多个 consumer 消费，即使这些 consumer 属于同一个 ConsumerGroup，消息也会被 ConsumerGroup 中的每个 Consumer 都消费一次，广播消费中 ConsumerGroup 概念可以认为在消息划分方面无意义。</p>
+<p>集群消费模式：一个 ConsumerGroup 中的 Consumer 实例平均分摊消费消息。例如某个 Topic 有 9 条消息，其中一个 ConsumerGroup 有 3 个实例（可能是 3 个进程，或者 3 台机器），那么每个实例只消费其中部分，消费完的消息不能被其他实例消费。</p>
+<p>RabbitMQ 和 NSQ 的消费比较类似，都是跟 Pulsar 共享模式类似的，队列的形式，增加一个消费者组里的消费者数量能提高消费速度。</p>
+<h2 id="4-13-消息可靠性"><a href="#4-13-消息可靠性" class="headerlink" title="4.13 消息可靠性"></a>4.13 <strong>消息可靠性</strong></h2><p>消息丢失是使用消息中间件时所不得不面对的一个同点，其背后消息可靠性也是衡量消息中间件好坏的一个关键因素。尤其是在金融支付领域，消息可靠性尤为重要。比如当服务出现故障时，一些对于生产者来说已经生产成功的消息，是否会在高可用切换时丢失。同步刷盘是增强一个组件可靠性的有效方式，消息中间件也不例外，Kafka 和 RabbitMQ 都可以支持同步刷盘，但绝大多数情景下，一个组件的可靠性不应该由同步刷盘这种极其损耗性能的操作来保障，而是采用多副本的机制来保证。</p>
+<p>Kafka 可以通过配置 request.required.acks 参数设置可靠级别，表示一条消息有多少个副本确认接收成功后，才被任务发送成功。</p>
+<ul>
+<li>request.required.acks&#x3D;-1 (全量同步确认，强可靠性保证)</li>
+<li>request.required.acks&#x3D;1(leader 确认收到，默认)</li>
+<li>request.required.acks&#x3D;0 (不确认，但是吞吐量大)</li>
+</ul>
+<p>Pulsar 有跟 Kafka 类似的概念，叫 Ack Quorum Size(Qa)，Qa 是每次写请求发送完毕后需要回复确认的 Bookie 的个数，其数值越大则需要确认写成功的时间越长，其值上限是副本数 Qw。为了一致性，Qa 应该是：(Qw+1)&#x2F;2 或者更，即为了确保数据安全性，Qa 下限是  (Qw+1)&#x2F;2。</p>
+<p>RocketMQ 与 Kafka 类似。</p>
+<p>RabbitMQ 是主从架构，通过镜像环形队列实现多副本及强一致性语义的。多副本可以保证在 master 节点宕机异常之后可以提升 slave 作为新的 master 而继续提供服务来保障可用性。</p>
+<p>NSQ 会通过 go-diskqueue 组件将消息落盘到本地文件中，通过 mem-queue-size 参数控制内存中队列大小，如果 mem-queue-size&#x3D;0 每条消息都会存储到磁盘里，不用担心节点重启引起的消息丢失。但由于是存储在本地磁盘中，如果节点离线，堆积在节点磁盘里的消息会丢失。</p>
+<h2 id="4-14-负载均衡"><a href="#4-14-负载均衡" class="headerlink" title="4.14 负载均衡"></a>4.14 <strong>负载均衡</strong></h2><p><strong>Kafka</strong>：支持负载均衡。<br>一个 broker 通常就是一台服务器节点。对于同一个 Topic 的不同分区，Kafka 会尽力将这些分区分布到不同的 Broker 服务器上，zookeeper 保存了 broker、主题和分区的元数据信息。分区首领会处理来自客户端的生产请求，kafka 分区首领会被分配到不同的 broker 服务器上，让不同的 broker 服务器共同分担任务。</p>
+<p>每一个 broker 都缓存了元数据信息，客户端可以从任意一个 broker 获取元数据信息并缓存起来，根据元数据信息知道要往哪里发送请求。</p>
+<p>kafka 的消费者组订阅同一个 topic，会尽可能地使得每一个消费者分配到相同数量的分区，分摊负载。</p>
+<p>当消费者加入或者退出消费者组的时候，还会触发再均衡，为每一个消费者重新分配分区，分摊负载。</p>
+<p>kafka 的负载均衡大部分是自动完成的，分区的创建也是 kafka 完成的，隐藏了很多细节，避免了繁琐的配置和人为疏忽造成的负载问题。</p>
+<p>发送端由 topic 和 key 来决定消息发往哪个分区，如果 key 为 null，那么会使用轮询算法将消息均衡地发送到同一个 topic 的不同分区中。如果 key 不为 null，那么会根据 key 的 hashcode 取模计算出要发往的分区。</p>
+<p><strong>rabbitmq</strong>：对负载均衡的支持不好。<br>消息被投递到哪个队列是由交换器和 key 决定的，交换器、路由键、队列都需要手动创建。</p>
+<p>rabbitmq 客户端发送消息要和 broker 建立连接，需要事先知道 broker 上有哪些交换器，有哪些队列。通常要声明要发送的目标队列，如果没有目标队列，会在 broker 上创建一个队列，如果有，就什么都不处理，接着往这个队列发送消息。假设大部分繁重任务的队列都创建在同一个 broker 上，那么这个 broker 的负载就会过大。（可以在上线前预先创建队列，无需声明要发送的队列，但是发送时不会尝试创建队列，可能出现找不到队列的问题，rabbitmq 的备份交换器会把找不到队列的消息保存到一个专门的队列中，以便以后查询使用）</p>
+<p>使用镜像队列机制建立 rabbitmq 集群可以解决这个问题，形成 master-slave 的架构，master 节点会均匀分布在不同的服务器上，让每一台服务器分摊负载。slave 节点只是负责转发，在 master 失效时会选择加入时间最长的 slave 成为 master。</p>
+<p>当新节点加入镜像队列的时候，队列中的消息不会同步到新的 slave 中，除非调用同步命令，但是调用命令后，队列会阻塞，不能在生产环境中调用同步命令。</p>
+<p>当 rabbitmq 队列拥有多个消费者的时候，队列收到的消息将以轮询的分发方式发送给消费者。每条消息只会发送给订阅列表里的一个消费者，不会重复。</p>
+<p>这种方式非常适合扩展，而且是专门为并发程序设计的。</p>
+<p>如果某些消费者的任务比较繁重，那么可以设置 basicQos 限制信道上消费者能保持的最大未确认消息的数量，在达到上限时，rabbitmq 不再向这个消费者发送任何消息。</p>
+<p>对于 rabbitmq 而言，客户端与集群建立的 TCP 连接不是与集群中所有的节点建立连接，而是挑选其中一个节点建立连接。</p>
+<p>但是 rabbitmq 集群可以借助 HAProxy、LVS 技术，或者在客户端使用算法实现负载均衡，引入负载均衡之后，各个客户端的连接可以分摊到集群的各个节点之中。</p>
+<p>客户端均衡算法：</p>
+<ul>
+<li>轮询法。按顺序返回下一个服务器的连接地址。</li>
+<li>加权轮询法。给配置高、负载低的机器配置更高的权重，让其处理更多的请求；而配置低、负载高的机器，给其分配较低的权重，降低其系统负载。</li>
+<li>随机法。随机选取一个服务器的连接地址。</li>
+<li>加权随机法。按照概率随机选取连接地址。</li>
+<li>源地址哈希法。通过哈希函数计算得到的一个数值，用该数值对服务器列表的大小进行取模运算。</li>
+<li>最小连接数法。动态选择当前连接数最少的一台服务器的连接地址。</li>
+</ul>
+<p><strong>zeromq</strong>：去中心化，不支持负载均衡。本身只是一个多线程网络库。</p>
+<p><strong>rocketmq</strong>：支持负载均衡。<br>一个 broker 通常是一个服务器节点，broker 分为 master 和 slave,master 和 slave 存储的数据一样，slave 从 master 同步数据。</p>
+<p>nameserver 与每个集群成员保持心跳，保存着 Topic-Broker 路由信息，同一个 topic 的队列会分布在不同的服务器上。</p>
+<p>发送消息通过轮询队列的方式发送，每个队列接收平均的消息量。发送消息指定 topic、tags、keys，无法指定投递到哪个队列（没有意义，集群消费和广播消费跟消息存放在哪个队列没有关系）。</p>
+<p>tags 选填，类似于 Gmail 为每封邮件设置的标签，方便服务器过滤使用。目前只支 持每个消息设置一个 tag，所以也可以类比为 Notify 的 MessageType 概念。</p>
+<p>keys 选填，代表这条消息的业务关键词，服务器会根据 keys 创建哈希索引，设置后， 可以在 Console 系统根据 Topic、Keys 来查询消息，由于是哈希索引，请尽可能 保证 key 唯一，例如订单号，商品 Id 等。</p>
+<p>rocketmq 的负载均衡策略规定：Consumer 数量应该小于等于 Queue 数量，如果 Consumer 超过 Queue 数量，那么多余的 Consumer 将不能消费消息。这一点和 kafka 是一致的，rocketmq 会尽可能地为每一个 Consumer 分配相同数量的队列，分摊负载。</p>
+<p><strong>activemq</strong>：支持负载均衡。可以基于 zookeeper 实现负载均衡。</p>
+<h2 id="4-15-集群方式"><a href="#4-15-集群方式" class="headerlink" title="4.15 集群方式"></a>4.15 <strong>集群方式</strong></h2><p><strong>Kafka</strong>：天然的‘Leader-Slave’无状态集群，每台服务器既是 Master 也是 Slave。<br>分区首领均匀地分布在不同的 kafka 服务器上，分区副本也均匀地分布在不同的 kafka 服务器上，所以每一台 kafka 服务器既含有分区首领，同时又含有分区副本，每一台 kafka 服务器是某一台 kafka 服务器的 Slave，同时也是某一台 kafka 服务器的 leader。</p>
+<p>kafka 的集群依赖于 zookeeper，zookeeper 支持热扩展，所有的 broker、消费者、分区都可以动态加入移除，而无需关闭服务，与不依靠 zookeeper 集群的 mq 相比，这是最大的优势。</p>
+<p><strong>rabbitmq</strong>：支持简单集群，’复制’模式，对高级集群模式支持不好。</p>
+<p>rabbitmq 的每一个节点，不管是单一节点系统或者是集群中的一部分，要么是内存节点，要么是磁盘节点，集群中至少要有一个是磁盘节点。</p>
+<p>在 rabbitmq 集群中创建队列，集群只会在单个节点创建队列进程和完整的队列信息（元数据、状态、内容），而不是在所有节点上创建。</p>
+<p>引入镜像队列，可以避免单点故障，确保服务的可用性，但是需要人为地为某些重要的队列配置镜像。</p>
+<p><strong>zeromq</strong>：去中心化，不支持集群。</p>
+<p><strong>rocketmq</strong>：常用 多对’Master-Slave’ 模式，开源版本需手动切换 Slave 变成 Master</p>
+<p>Name Server 是一个几乎无状态节点，可集群部署，节点之间无任何信息同步。</p>
+<p>Broker 部署相对复杂，Broker 分为 Master 与 Slave，一个 Master 可以对应多个 Slave，但是一个 Slave 只能对应一个 Master，Master 与 Slave 的对应关系通过指定相同的 BrokerName，不同的 BrokerId 来定义，BrokerId 为 0 表示 Master，非 0 表示 Slave。Master 也可以部署多个。每个 Broker 与 Name Server 集群中的所有节点建立长连接，定时注册 Topic 信息到所有 Name Server。</p>
+<p>Producer 与 Name Server 集群中的其中一个节点（随机选择）建立长连接，定期从 Name Server 取 Topic 路由信息，并向提供 Topic 服务的 Master 建立长连接，且定时向 Master 发送心跳。Producer 完全无状态，可集群部署。</p>
+<p>Consumer 与 Name Server 集群中的其中一个节点（随机选择）建立长连接，定期从 Name Server 取 Topic 路由信息，并向提供 Topic 服务的 Master、Slave 建立长连接，且定时向 Master、Slave 发送心跳。Consumer 既可以从 Master 订阅消息，也可以从 Slave 订阅消息，订阅规则由 Broker 配置决定。</p>
+<p>客户端先找到 NameServer, 然后通过 NameServer 再找到 Broker。</p>
+<p>一个 topic 有多个队列，这些队列会均匀地分布在不同的 broker 服务器上。rocketmq 队列的概念和 kafka 的分区概念是基本一致的，kafka 同一个 topic 的分区尽可能地分布在不同的 broker 上，分区副本也会分布在不同的 broker 上。</p>
+<p>rocketmq 集群的 slave 会从 master 拉取数据备份，master 分布在不同的 broker 上。</p>
+<p><strong>activemq</strong>：支持简单集群模式，比如’主-备’，对高级集群模式支持不好。</p>
+<h1 id="5-性能"><a href="#5-性能" class="headerlink" title="5 性能"></a>5 性能</h1><p>Kafka 的公司 Confluent 在 2020 年 8 月发了一篇 Benchmarking Apache Kafka, Apache Pulsar, and RabbitMQ: Which is the Fastest?文章，并且提出了一个开源的 MQ Benchmark 框架 THE OPENMESSAGING BENCHMARK FRAMEWORK，在这个文档里，对比了 Kafka、Pulsar、RabbitMQ 的吞吐量、端到端延迟等性能数据。最后得出结论 Kafka 相对来说性能最好。</p>
+<p><img src="/assets/images/1353ec70d75ea0e4c2aa55f5c56b3fd0_MD5.png"></p>
+<p>但接下来 StreamNative 在 2020 年 12 月指出了 Confluence 的基准测试的一些问题，并对 Pulsar 进行了参数调优之后重新执行了一遍结果，测试报告展示 Pulsar 能达到跟 Kafka 同样的吞吐量，在某些场景下，Pulsar 的延迟显著低于 Kafka。</p>
+<p><img src="/assets/images/1e4d52e7bcb05ed7f5acb75f8cb969b9_MD5.png"></p>
+<p>而且在性能测试上，有很多客户端、服务端参数设置、机器性能配置等影响，比如消息可靠性级别，压缩算法等，很难做到“完全”控制变量公平的测试。而且 OpenMessaging Benchmark 的开源 Github 的 Readme 上也提到了。</p>
+<p>不过有几个关注点：</p>
+<ul>
+<li>RabbitMQ 的延迟是微秒级的，其他组件的延迟都是毫秒级，RabbitMQ 应该是 MQ 组件里相对来说较低的。</li>
+<li>Kafka 单实例在主题&#x2F;分区数比较多的情况下，性能会明显降低。<ol>
+<li>kafka 是一个分区一个文件，当 topic 过多，分区的总量也会增加，kafka 中存在过多的文件，当对消息刷盘时，就会出现文件竞争磁盘，出现性能的下降。</li>
+<li>还有 Kafka 每个消费者加入或退出都会进行重平衡，当分区数比较多时重平衡可能耗时较久，在重平衡的阶段消费者是不能消费消息的。</li>
+</ol>
+</li>
+<li>而 Pulsar 由于存储与计算分离的架构，使得它可以支持百万级别的 Topic 数量。</li>
+</ul>
+<p>Pulsar 和 Kafka 都被广泛用于各个企业，也各有优势，都能通过数量基本相同的硬件处理大流量。部分用户误以为 Pulsar 使用了很多组件，因此需要很多服务器来实现与 Kafka 相匹敌的性能。这种想法适用于一些特定硬件配置，但在多数资源配置相同的情况中，Pulsar 的优势更加明显，可以用相同的资源实现更好的性能。举例来说，Splunk 最近分享了他们选择 Pulsar 放弃 Kafka 的原因，其中提到“由于分层架构，Pulsar 帮助他们将成本降低了 30%-50%，延迟降低了 80%-98%，运营成本降低了 33%-50%”。Splunk 团队发现 Pulsar 可以更好地利用磁盘 IO，降低 CPU 利用率，同时更好地控制内存。</p>
+<p>在分布式系统里，单机性能指标虽然也很重要，分布式系统整体的性能以及灵活扩缩容、高可用容灾等能力也会是评估的一个重要参考。MQ 中间件具体的性能指标，也需要我们自己根据实际的情况，根据实际购买的集群配置和客户端参数，进行压测调优来评估。</p>
+<h1 id="6-运维"><a href="#6-运维" class="headerlink" title="6 运维"></a>6 <strong>运维</strong></h1><p>在使用过程中难免会出现各种异常情况，比如宕机、网络抖动、扩容等。消息队列具备异地容灾，高可用架构等能力，能避免一些计算节点、网络等基础设施不可用导致的故障。</p>
+<h2 id="6-1-高可用"><a href="#6-1-高可用" class="headerlink" title="6.1 高可用"></a>6.1 <strong>高可用</strong></h2><p>Kafka 通过分区多副本的方式解决高可用问题。</p>
+<p>Pulsar 的计算集群 Broker 是无状态的，可以灵活扩缩容，存储节点 Bookie 上通过消息分区分片副本的方式，每个分片都有一个或多个副本，保证在某一个 Bookie 挂掉后，有其他分片可以提供服务。</p>
+<p>RocketMQ 和 RabbitMQ 都是主从架构，当 master 挂掉后，由原来的从节点继续提供服务。备机提供消费服务，保证消息不丢，但不提供写服务。</p>
+<p>NSQ 是类似分布式架构，不过由于消息存储是在节点本地磁盘上，如果一个节点离线，堆积在节点磁盘上的消息会丢失。</p>
+<h2 id="6-2-跨地域容灾"><a href="#6-2-跨地域容灾" class="headerlink" title="6.2 跨地域容灾"></a>6.2 <strong>跨地域容灾</strong></h2><p>Pulsar 原生支持跨地域容灾功能，在这个图中，每当 P1、P2 和 P3 的生产者分别向 Cluster-A、Cluster-B 和 Cluster-C 中的 T1 topic 发送消息时，这些消息很快在不同的集群中复制。一旦消息完成复制，消费者 C1 和 C2 会从各自的集群消费到这个消息。</p>
+<p>在这个跨地域容灾的设计支撑下，其一，我们可以比较容易的将服务分散到多个机房；其二，可以应对机房级别的故障，即在一个机房不可用的情况下，服务可以转接到其它的机房来继续对外提供服务。</p>
+<p>一句话概括，Pulsar 的跨地域复制，其实就是在一个本地集群中创建一个 Producer，把异地的集群作为这个 Producer 的发送地址，将本地集群的消息发送过去，并且在本地维护一个 Cusor 来保证消息可靠性和幂等性。</p>
+<p><img src="/assets/images/eecb5bbe4e08b43034d0239d3f7bd3b1_MD5.png"></p>
+<h2 id="6-3-集群扩容"><a href="#6-3-集群扩容" class="headerlink" title="6.3 集群扩容"></a>6.3 <strong>集群扩容</strong></h2><p>当消息量突然上涨，消息队列集群到达瓶颈的时候，需要对集群进行扩容，扩容一般分为水平扩容和垂直扩容两种方式，水平扩容指的是往往集群中增加节点，垂直扩容指的是把集群中部分节点的配置调高，增加处理能力。</p>
+<p>Kafka 集群由于主题分区是物理存储在 Broker 节点上的，新加入的集群的节点并没有存储分区分片，也就无法提供马上提供服务，因此需要把一些 Topic 的分区分配到新加入的节点里，这里会涉及到一个分区数据均衡的过程，将某些分区的数据复制到新节点上。这个过程跟分区当前堆积的数据量、Broker 性能有关，有可能会出现由于源 Broker 负载过高，堆积数据过大，导致数据均衡的时间变长。</p>
+<p>Pulsar 的无限分布式日志以分片为中心，借助扩展日志存储（通过 Apache BookKeeper）实现，内置分层存储支持，因此分片可以均匀地分布在存储节点上。由于与任一给定 topic 相关的数据都不会与特定存储节点进行捆绑，因此很容易替换存储节点或缩扩容。另外，集群中最小或最慢的节点也不会成为存储或带宽的短板。</p>
+<p>RocketMQ 新节点直接加入到集群中，在新的 broker 创建新 topic 并且分配队列，或者在已有 topic 基础上分配队列。与 Kafka 的区别是，Kafka 的分区是在不同的物理机器上，而 Rocketmq 是逻辑分区，用的队列形式，因此不存在出现数据不均衡的情况。</p>
+<p>RabbitMQ 和 NSQ 类似，由于不涉及过多的消息持久化，直接往集群中增加节点。</p>
+<h2 id="6-4-使用成本"><a href="#6-4-使用成本" class="headerlink" title="6.4 使用成本"></a>6.4 <strong>使用成本</strong></h2><p>Kafka&#x2F;Pulsar&#x2F;RocketMQ&#x2F;RabbitMQ 在腾讯云上都上线了标准产品，可以直接购买创建实例(<a href="https://cloud.tencent.com/product/message-queue-catalog" target="_blank" rel="noopener">产品选型</a>)，能大大降低部署运维成本。而 NSQ 目前暂时还没有上线，需要自行部署。</p>
+<p>CKafka 在腾讯云上是以实例的形式售卖，专业版最低配 1494 元&#x2F;月，500G SSD，40MB&#x2F;s，TDMQ Pulsar 是以类似无服务的方式按量计费，按调用次数&#x2F;消息大小&#x2F;存储大小等计费，调用次数 2.00 元&#x2F;百万次。在用量较少的情况下，比如一些小型快速上线的业务，TDMQ Pulsar 的成本会比 CKafka 低很多。</p>
+<p>RocketMQ 和 RabbitMQ 都是最近推出的产品，目前仍在公测阶段，暂时还没有定价。</p>
+<h1 id="7-常见问题-使用场景"><a href="#7-常见问题-使用场景" class="headerlink" title="7 常见问题 &amp; 使用场景"></a>7 常见问题 &amp; 使用场景</h1><h2 id="7-1-Kafka"><a href="#7-1-Kafka" class="headerlink" title="7.1 Kafka"></a>7.1 Kafka</h2><ul>
+<li><strong>日志收集</strong>：大量的日志消息先写入 kafka，数据服务通过消费 kafka 消息将数据落地；</li>
+</ul>
+<h2 id="7-2-RocketMQ"><a href="#7-2-RocketMQ" class="headerlink" title="7.2 RocketMQ"></a>7.2 <strong>RocketMQ</strong></h2><ul>
+<li>为金融互联网领域而生，对于可靠性要求很高的场景。</li>
+</ul>
+<h2 id="7-3-普通消息"><a href="#7-3-普通消息" class="headerlink" title="7.3 普通消息"></a>7.3 <strong>普通消息</strong></h2><p>消息队列最基础的功能就是生产者发送消息、Broker 保存消息，消费者来消费消息，以此实现系统解耦、削峰填谷的作用。</p>
+<p><img src="/assets/images/2e1fdf252627e39bc9e349718eafe3f3_MD5.png"></p>
+<p>普通消息是消息队列必备的消息类型，也是系统使用场景最多的一种消息。</p>
+<h2 id="7-4-顺序消息"><a href="#7-4-顺序消息" class="headerlink" title="7.4 顺序消息"></a>7.4 <strong>顺序消息</strong></h2><p>顺序消息是指生产者发送消息的顺序和消费者消费消息的顺序是一致的。比如在一个电商场景，同一个用户提交订单、订单支付、订单出库，这三个消息消费者需要按照顺序来进行消费。如下图：</p>
+<p><img src="/assets/images/a7547eb09f1b9c338cbc9394bc1a5d07_MD5.png"></p>
+<p>顺序消息的实现并不容易，原因如下：</p>
+<ul>
+<li>生产者集群中，有多个生产者发送消息，网络延迟不一样，很难保证发送到 Broker 的消息落盘顺序是一致的；</li>
+<li>如果 Broker 有多个分区或队列，生产者发送的消息会进入多个分区，也无法保证顺序消费；</li>
+<li>如果有多个消费者来异步消费同一个分区，很难保证消费顺序跟生产者发送顺序一致。</li>
+</ul>
+<p>要保证消息有序，需要满足两个条件：</p>
+<ul>
+<li>同一个生产者必须同步发送消息到同一个分区；</li>
+<li>一个分区只能给同一个消费者消费。</li>
+</ul>
+<p>如下图：</p>
+<p><img src="/assets/images/c7f863436bc4a2e45b995aa941b9b06c_MD5.png"></p>
+<p>上面第二个条件是比较容易实现的，一个分区绑定一个消费者就可以，主要是第一个条件。</p>
+<p>在主流消息队列的实现中，Kafka 和 Pulsar 的实现方式类似，生产者给消息赋值一个 key，对 key 做 Hash 运算来指定消息发送到哪一个分区。比如上面电商的例子，对同一个用户的一笔订单，提交订单、订单支付、订单出库这三个消息赋值同一个 key，就可以把这三条消息发送到同一个分区。</p>
+<p>对于 RocketMQ，生产者在发送消息的时候，可以通过 MessageQueueSelector 指定把消息投递到那个 MessageQueue，如下图：</p>
+<p><img src="/assets/images/3b3c4a5b541d47a9b0bbff7fa6efaebf_MD5.png"></p>
+<h2 id="7-5-延时消息"><a href="#7-5-延时消息" class="headerlink" title="7.5 延时消息"></a>7.5 <strong>延时消息</strong></h2><p>或者也叫定时消息，是指消息发送后不会立即被消费，而是指定一个时间，到时间后再消费。经典的场景比如电商购物时，30 分钟未支付订单，让订单自动失效。</p>
+<h3 id="7-5-1-RocketMQ-实现"><a href="#7-5-1-RocketMQ-实现" class="headerlink" title="7.5.1 RocketMQ 实现"></a>7.5.1 <strong>RocketMQ 实现</strong></h3><p>RocketMQ 定义了 18 个延时级别，每个延时级别对应一个延时时间。下面如果延迟级别是 3，则消息会延迟 10s 才会拉取。</p>
+<p>RocketMQ 的延时消息如下图：</p>
+<p><img src="/assets/images/10cfe0acf553408639420cf583bd66ee_MD5.png"></p>
+<p>生产者把消费发送到 Broker 后，Broker 首先把消息保存到 SCHEDULE_TOPIC_XXXX 这个 Topic，然后调度任务会判断是否到期，如果到期，会把消息从 SCHEDULE_TOPIC_XXXX 取出投递到原始的 queue，这样消费者就可以消费到了。</p>
+<p><strong>RocketMQ 的延时消息只支持最大两个小时的延时，不过 RocketMQ5.0 基于时间轮算法实现了定时消息，解决了这个问题。</strong></p>
+<h3 id="7-5-2-Pulsar-实现"><a href="#7-5-2-Pulsar-实现" class="headerlink" title="7.5.2 Pulsar 实现"></a>7.5.2 <strong>Pulsar 实现</strong></h3><p>Pulsar 的实现如下图：</p>
+<p><img src="/assets/images/86be924bda14d0633d1d61386a61b165_MD5.png"></p>
+<p>Pulsar 的延时消息首先会写入一个 Delayed Message Tracker 的数据结构中，Delayed Message Tracker 根据延时时间构建 delayed index 优先级队列。消费者拉取消息时，首先去 Delayed Message Tracker 检查是否有到期的消息。如果有则直接拉取进行消费。</p>
+<h3 id="7-5-3-RabbitMQ-实现"><a href="#7-5-3-RabbitMQ-实现" class="headerlink" title="7.5.3 RabbitMQ 实现"></a>7.5.3 <strong>RabbitMQ 实现</strong></h3><p>RabbitMQ 的实现方式有两种，一种是投递到普通队列都不消费，等消息过期后被投递到死信队列，消费者消费死信队列。如下图：</p>
+<p><img src="/assets/images/0cb8b7237849a92c4a1608c734f63f42_MD5.png"></p>
+<p>第二种方式是生产者发送消息时，先发送到本地 Mnesia 数据库，消息到期后定时器再将消息投递到 broker。</p>
+<h3 id="7-5-4-Kafka-实现"><a href="#7-5-4-Kafka-实现" class="headerlink" title="7.5.4 Kafka 实现"></a>7.5.4 <strong>Kafka 实现</strong></h3><p>Kafka 本身并没有延时队列，不过可以通过生产者拦截器来实现消息延时发送，也可以定义延时 Topic，利用类似 RocketMQ 的方案来实现延时消息。</p>
+<h2 id="7-6-事务消息"><a href="#7-6-事务消息" class="headerlink" title="7.6 事务消息"></a>7.6 <strong>事务消息</strong></h2><p>事务消息是指生产消息和消费消息满足事务的特性。</p>
+<p>RabbitMQ 和 Kafka 的事务消息都是只支持生产消息的事务特性，即一批消息要不全部发送成功，要不全部发送失败。</p>
+<p>RabbitMQ 通过 Channel 来开启事务消息，代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ConnectionFactory factory=<span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">connection=factory.newConnection();</span><br><span class="line">Channel channel=connection.createChannel();</span><br><span class="line"><span class="comment">//开启事务</span></span><br><span class="line">channel.txSelect();</span><br><span class="line">channel.basicPublish(<span class="string">"directTransactionExchange"</span>,<span class="string">"transactionRoutingKey"</span>,<span class="literal">null</span>,message.getBytes(<span class="string">"utf-8"</span>));</span><br><span class="line"><span class="comment">//提交事务 或者 channel.txRollback()回滚事务</span></span><br><span class="line">channel.txCommit();</span><br></pre></td></tr></table></figure>
+
+<p><strong>Kafka 可以给多个生产者设置同一个事务 ID ，从而把多个 Topic 、多个 Partition 放在一个事务中，实现原子性写入。</strong></p>
+<p>Pulsar 的事务消息对于事务语义的定义是：允许事件流应用将消费、处理、生产消息整个过程定义为一个原子操作。可见，Pulsar 的事务消息可以覆盖消息流整个过程。</p>
+<p>RocketMQ 的事务消息是通过 half 消息来实现的。以电商购物场景来看，账户服务扣减账户金额后，发送消息给 Broker，库存服务来消费这条消息进行扣减库存。如下图:</p>
+<p><img src="/assets/images/dd370fc4a9bda2ffe3552c5224a60088_MD5.png"></p>
+<p>可见，RocketMQ 只能保证生产者发送消息和本地事务的原子性，并不能保证消费消息的原子性。</p>
+<h2 id="7-7-轨迹消息"><a href="#7-7-轨迹消息" class="headerlink" title="7.7 轨迹消息"></a>7.7 <strong>轨迹消息</strong></h2><p>轨迹消息主要用于跟踪消息的生命周期，当消息丢失时可以很方便地找出原因。</p>
+<p>轨迹消息也跟普通消息一样，也需要存储和查询，也会占用消息队列的资源，所以选择轨迹消息要考虑下面几点：</p>
+<ul>
+<li>消息生命周期的关键节点一定要记录；</li>
+<li>不能影响正常消息的发送和消费性能；</li>
+<li>不能影响 Broker 的消息存储性能；</li>
+<li>要考虑消息查询维度和性能。</li>
+</ul>
+<p>RabbitMQ Broker 实现了轨迹消息的功能，打开 Trace 开关，就可以把轨迹消息发送到 amq.rabbitmq.trace 这个 exchange，但是要考虑轨迹消息会不会给 Broker 造成 压力进而导致消息积压。RabbitMQ 的生产者和消费者都没有实现轨迹消息，需要开发者自己来实现。</p>
+<p>RocketMQ 生产者、Broker 和消费者都实现了轨迹消息，不过默认是关闭的，需要手工开启。</p>
+<p>使用轨迹消息，需要考虑记录哪些节点、存储介质、性能、查询方式等问题。</p>
+<h2 id="7-8-Kafka-是否会消息丢失？"><a href="#7-8-Kafka-是否会消息丢失？" class="headerlink" title="7.8 Kafka 是否会消息丢失？"></a>7.8 Kafka 是否会消息丢失？</h2><ul>
+<li>只对“已提交”的消息做有限度的持久化保证<ul>
+<li>已提交的消息：消息写入日志文件</li>
+<li>有限度的持久化保证：N 个 broker 至少一个存活</li>
+</ul>
+</li>
+<li>生产者丢失数据<ul>
+<li>producer.send(msg) 异步发送消息，不保证数据到达 Kafka</li>
+<li>producer.send(msg, callback) 判断回调</li>
+</ul>
+</li>
+<li>消费者程序丢失数据<ul>
+<li>应该「先消费消息，后更新位移的顺序」</li>
+<li>新问题：消息的重复处理</li>
+<li>多线程异步处理消息，Consumer 不要开启自动提交位移，应用程序手动提交位移</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-9-Kafka-如何持久化？"><a href="#7-9-Kafka-如何持久化？" class="headerlink" title="7.9 Kafka 如何持久化？"></a>7.9 Kafka 如何持久化？</h2><ul>
+<li>消息日志（Log）保存数据，磁盘追加写（Append-only）<ul>
+<li>避免缓慢的随机 I&#x2F;O 操作</li>
+<li>高吞吐</li>
+</ul>
+</li>
+<li>定期删除消息（日志段）</li>
+</ul>
+<p><img src="/assets/images/db03b2f2af7b1f9294d3d340908e1f11_MD5.png"></p>
+<h2 id="7-10-Kafka-文件存储机制"><a href="#7-10-Kafka-文件存储机制" class="headerlink" title="7.10 Kafka 文件存储机制"></a>7.10 Kafka 文件存储机制</h2><ul>
+<li>每个 partition 相当于一个巨型文件 → 多个大小相等 segment 数据文件中</li>
+<li>每个 partition 只需要顺序读写就行了，segment 文件生命周期由配置决定</li>
+<li>segment file 组成：<ul>
+<li>index file：索引文件</li>
+<li>data file：数据文件</li>
+</ul>
+</li>
+<li>segment file 文件命名规则：<ul>
+<li>全局第一个 segment 是 0</li>
+<li>后序每个加上全局 partition 的最大 offset</li>
+</ul>
+</li>
+</ul>
+<p><img src="/assets/images/d022ae1f1e50a49246bdacf99837de61_MD5.png"></p>
+<p><img src="/assets/images/323fb957d3e990a33ba8f20b793c0298_MD5.png"></p>
+<p>一对 segment file</p>
+<p><img src="/assets/images/4c255ce80aa0b7de003406ec2b178e02_MD5.png"></p>
+<p>message 物理结构</p>
+<p><img src="/assets/images/403d351f67377331461e6d109699d452_MD5.png"></p>
+<h2 id="7-11-Kafka-分区"><a href="#7-11-Kafka-分区" class="headerlink" title="7.11 Kafka 分区"></a>7.11 Kafka 分区</h2><p><strong>为什么分区？</strong></p>
+<ul>
+<li>Kafka 的消息组织方式：主题-分区-消息</li>
+<li>一条消息，仅存在某一个分区中</li>
+<li>提高伸缩性，不同分区可以放到不同机器，读写操作也是以分区粒度</li>
+</ul>
+<p><strong>分区策略？</strong></p>
+<ul>
+<li>轮询</li>
+<li>随机</li>
+<li>按 key 保序，单分区有序</li>
+</ul>
+<p><img src="/assets/images/33e2a0aeb1516a7a68aab8964776af6c_MD5.png"></p>
+<h2 id="7-12-MQ-消息堆积问题处理"><a href="#7-12-MQ-消息堆积问题处理" class="headerlink" title="7.12 MQ 消息堆积问题处理"></a>7.12 <strong>MQ 消息堆积问题处理</strong></h2><p><strong>消息堆积可能的原因：</strong><br>队列中消息不能被及时的消费，导致大量堆积在队列里面<br>rocketMq Kafka RabbitMq 都会有这样的问题<br>产生消息堆积的可以从 mq 的生产消费模型去考虑，从生产者到消息中间件、再到消费者，都会发生堆积<br><strong>消费者</strong>：消费者处理速度过慢，或者消费者故障、延迟，无法即使的处理消息，导致消息堆积<br><strong>生产者：</strong>生产者产生速度过快，消费者无法即使处理<br><strong>MQ 消息队列</strong>：Mq 服务器的性能不足，比如它所在的机器，cpu、内存、磁盘等超载，无法即使的处理消息，导致消息堆积<br><strong>其他</strong>：其他方面也会有这样的问题， 比如网络故障，连接问题，消息在传递过程中过慢，从而导致消息堆积<br>业务方面，消息消费失败重试，不断的重试，没有设置重试次数，导致消息堆积！。</p>
+<p><strong>处理消息堆积问题：</strong><br><strong>一、消费者：</strong><br>1、<strong>增加消费者的数量</strong>，提高消费的处理速度；（<strong>注意这个不通用</strong>，只适合 RabbitMq）<br><strong>需要注意不能一味的水平扩展消费者</strong><br>因为其他关键链路性能是否抗的住大量的水平扩展，比如 mysq、redis，详细见下方 rabbitmq 消息堆积解决方案<br>2、<strong>或者提高消费者的处理能力</strong>，比如通过并发处理、异步处理提高消费者吞吐量。<br>这个则要注意通过线程池、队列，把 mq 拉到程序的队列中，要承担对应的<strong>宕机导致消息丢失</strong>风险。</p>
+<p><strong>二、MQ 消息队列：</strong><br>增加 MQ 的服务器资源，cpu、内存、磁盘，提高 mq 处理能力<br>也可以通过分区队列将消息分散到多个队列中，提高整体的处理能力。（<strong>这个则是 Kafka、Rocket 采用的</strong>）</p>
+<p><strong>控制队列容量，避免堆积过多，设置持久化策略。</strong>rabbitMQ 的<strong>懒加载队列</strong>，兼顾了持久化和堆积上限</p>
+<p><strong>三、监控告警（重要）</strong><br>设置监控系统，比如普罗米修斯，监控消息数量，消费者处理速度，队列状态等等，在堆积发生前，即使的告警，及时采取措施。</p>
+<p><strong>But</strong><br>上面的策略是通用的一些解决方案，不同的 MQ，生产消费模型是不一样的，导致需要针对不同 mq 的消息堆积解决方案不一样。</p>
+<p>RabbitMq、Kafka、RocketMq 发生消息堆积，分别该如何去解决？</p>
+<p>这里先点一下，<strong>增加消费者数量，并不是通用的，只适合 RabbitMq</strong></p>
+<h1 id="8-总结"><a href="#8-总结" class="headerlink" title="8 总结"></a>8 <strong>总结</strong></h1><p>Kafka 与 Pulsar 都是腾讯云主打的消息队列中间件，都具有高性能，高可靠，支持多种场景。Kafka 推出的时间较早，各种场景比如日志、大数据处理等都有较成熟的解决方案。而 Pulsar 作为一个新秀，支持的功能比 CKafka 更丰富，而且跨地域容灾，多租户等功能，解决了很多 Kafka 设计缺陷和运维成本问题，整体稳定性更强。很多国内外大公司也有很多 Pulsar 的实践案例。因此，一些传统的日志、大数据处理等场景，对高吞吐量有要求的，对消息可靠性的要求没那么高的，可以选用 Kafka，有很多优秀的文档说明怎么参数调优提高性能。而一些对消息可靠性、容灾要求更好，或者有高分区、延迟队列等需求的场景，可以选用 Pulsar。</p>
+<p>我们后台的技术栈是基于 Golang 的，在上文的对比中，还挑了一个基于 Golang 开发的消息队列 NSQ，如果有一些定制化需求或者需要二次开发的，可以选用 NSQ。也可以通过阅读 NSQ 的源码，学习一些优秀高性能消息队列中间件的实现方式，比如里边 diskqueue 组件，一个基于磁盘的消息队列，在某些场景下可能也可以进行二次利用。</p>
+<h1 id="9-参考文献"><a href="#9-参考文献" class="headerlink" title="9 参考文献"></a>9 参考文献</h1><ol>
+<li><a href="https://cloud.tencent.com/developer/article/1944357" target="_blank" rel="noopener">10 分钟搞懂！消息队列选型全方位对比</a></li>
+<li><a href="https://rocketmq.apache.org/docs/domainModel/01main/" target="_blank" rel="noopener">Apache RocketMQ Domain Model</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/37081073" target="_blank" rel="noopener">分布式实时消息平台 NSQ</a></li>
+<li><a href="https://www.cnblogs.com/88223100/p/The-basic-principle-and-selection-comparison-of-message-queue.html" target="_blank" rel="noopener" title="发布于 2022-08-18 08:11">消息队列基本原理和选型对比</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1430167" target="_blank" rel="noopener">技术选型 | 常用消息中间件 17 个维度全方位对比</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/2241083" target="_blank" rel="noopener">消息队列如何选择</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/2083716" target="_blank" rel="noopener">消息队列基本原理和选型对比</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/2306748" target="_blank" rel="noopener">消息队列 20 年：腾讯专家沉淀的 MQ 设计精要</a></li>
+<li><a href="https://www.open-open.com/lib/view/open1421150566328.html" target="_blank" rel="noopener">Kafka 文件存储机制那些事</a></li>
+<li><a href="https://juejin.cn/post/7096095180536676365" target="_blank" rel="noopener">消息队列原理和选型：Kafka、RocketMQ、RabbitMQ 和 ActiveMQ</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"># 随笔</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/%E6%9E%B6%E6%9E%84/" rel="tag"># 架构</a>
+          
+            <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag"># 消息队列</a>
+          
+            <a href="/tags/km/" rel="tag"># km</a>
+          
+            <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="tag"># 系统设计</a>
+          
+            <a href="/tags/kafka/" rel="tag"># kafka</a>
+          
+            <a href="/tags/%E5%90%8E%E5%8F%B0/" rel="tag"># 后台</a>
+          
+            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" rel="tag"># 分布式系统</a>
+          
+            <a href="/tags/pulsar/" rel="tag"># pulsar</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/7-%E5%AE%89%E5%85%A8%E6%80%9D%E6%83%B3%EF%BC%9A%E6%BC%8F%E6%B4%9E%E9%98%B2%E6%8A%A4.html" rel="next" title="安全思想：漏洞防护">
+                <i class="fa fa-chevron-left"></i> 安全思想：漏洞防护
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/9-%E8%A7%A3%E8%80%A6%EF%BC%9A%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97.html" rel="prev" title="解耦：消息队列">
+                解耦：消息队列 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-概述"><span class="nav-number">1.</span> <span class="nav-text">1 概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-架构简介"><span class="nav-number">2.</span> <span class="nav-text">2 架构简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Kafka"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Kafka</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-系统框架"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 系统框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-基本术语"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 基本术语</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Pulsar"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Pulsar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-系统框架"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 系统框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-基本术语"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 基本术语</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-RocketMQ"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 RocketMQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-系统框架"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1 系统框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-基本术语"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 基本术语</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-RabbitMQ"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 RabbitMQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-系统框架"><span class="nav-number">2.4.1.</span> <span class="nav-text">2.4.1 系统框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-基本术语"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.4.2 基本术语</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-NSQ"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 NSQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-1-系统框架"><span class="nav-number">2.5.1.</span> <span class="nav-text">2.5.1 系统框架</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-选型要点"><span class="nav-number">3.</span> <span class="nav-text">3 选型要点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-选型参考"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 选型参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-消息队列对比"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 消息队列对比</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-功能剖析"><span class="nav-number">4.</span> <span class="nav-text">4 功能剖析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-消费推拉模式"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 消费推拉模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-延迟队列"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 延迟队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-死信队列"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 死信队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-优先级队列"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 优先级队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-消息回溯"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 消息回溯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-消息持久化"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 消息持久化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-消息确认机制"><span class="nav-number">4.7.</span> <span class="nav-text">4.7 消息确认机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-消息-TTL"><span class="nav-number">4.8.</span> <span class="nav-text">4.8 消息 TTL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-9-多租户隔离"><span class="nav-number">4.9.</span> <span class="nav-text">4.9 多租户隔离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-10-消息顺序性"><span class="nav-number">4.10.</span> <span class="nav-text">4.10 消息顺序性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-11-消息查询"><span class="nav-number">4.11.</span> <span class="nav-text">4.11 消息查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-12-消费模式"><span class="nav-number">4.12.</span> <span class="nav-text">4.12 消费模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-13-消息可靠性"><span class="nav-number">4.13.</span> <span class="nav-text">4.13 消息可靠性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-14-负载均衡"><span class="nav-number">4.14.</span> <span class="nav-text">4.14 负载均衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-15-集群方式"><span class="nav-number">4.15.</span> <span class="nav-text">4.15 集群方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-性能"><span class="nav-number">5.</span> <span class="nav-text">5 性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-运维"><span class="nav-number">6.</span> <span class="nav-text">6 运维</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-高可用"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 高可用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-跨地域容灾"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 跨地域容灾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-集群扩容"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 集群扩容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-使用成本"><span class="nav-number">6.4.</span> <span class="nav-text">6.4 使用成本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-常见问题-使用场景"><span class="nav-number">7.</span> <span class="nav-text">7 常见问题 &amp; 使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-Kafka"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 Kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-RocketMQ"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 RocketMQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-普通消息"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 普通消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-顺序消息"><span class="nav-number">7.4.</span> <span class="nav-text">7.4 顺序消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-延时消息"><span class="nav-number">7.5.</span> <span class="nav-text">7.5 延时消息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-1-RocketMQ-实现"><span class="nav-number">7.5.1.</span> <span class="nav-text">7.5.1 RocketMQ 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-2-Pulsar-实现"><span class="nav-number">7.5.2.</span> <span class="nav-text">7.5.2 Pulsar 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-3-RabbitMQ-实现"><span class="nav-number">7.5.3.</span> <span class="nav-text">7.5.3 RabbitMQ 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-4-Kafka-实现"><span class="nav-number">7.5.4.</span> <span class="nav-text">7.5.4 Kafka 实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-6-事务消息"><span class="nav-number">7.6.</span> <span class="nav-text">7.6 事务消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-7-轨迹消息"><span class="nav-number">7.7.</span> <span class="nav-text">7.7 轨迹消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-8-Kafka-是否会消息丢失？"><span class="nav-number">7.8.</span> <span class="nav-text">7.8 Kafka 是否会消息丢失？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-9-Kafka-如何持久化？"><span class="nav-number">7.9.</span> <span class="nav-text">7.9 Kafka 如何持久化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-10-Kafka-文件存储机制"><span class="nav-number">7.10.</span> <span class="nav-text">7.10 Kafka 文件存储机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-11-Kafka-分区"><span class="nav-number">7.11.</span> <span class="nav-text">7.11 Kafka 分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-12-MQ-消息堆积问题处理"><span class="nav-number">7.12.</span> <span class="nav-text">7.12 MQ 消息堆积问题处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-总结"><span class="nav-number">8.</span> <span class="nav-text">8 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-参考文献"><span class="nav-number">9.</span> <span class="nav-text">9 参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>

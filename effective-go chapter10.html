@@ -1,0 +1,1346 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="post" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Interfaces and other types &amp;#124;  接口与其他类型Interfaces &amp;#124;  接口Interfaces in Go provide a way to specify the behavior of an object: if something can do this, then it can be used here. We’ve seen a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="effective-go chapter10">
+<meta property="og:url" content="https://liangyuanzheng.com/effective-go%20chapter10.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="Interfaces and other types &amp;#124;  接口与其他类型Interfaces &amp;#124;  接口Interfaces in Go provide a way to specify the behavior of an object: if something can do this, then it can be used here. We’ve seen a">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/leunggeorge.github.io-image-9o2i34.png">
+<meta property="article:published_time" content="2022-12-14T13:03:19.000Z">
+<meta property="article:modified_time" content="2025-12-02T00:48:22.394Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="post">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/source/assets/images/leunggeorge.github.io-image-9o2i34.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/effective-go chapter10.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>effective-go chapter10 | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/effective-go%20chapter10.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">effective-go chapter10</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-12-14T13:03:19+00:00">
+                2022-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/effective-go/" itemprop="url" rel="index">
+                    <span itemprop="name">effective-go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<!-- 1. 发布前：删除草稿的 uuid -->
+<!-- 2. 发布后：补充tag，category -->
+
+<h2 id="Interfaces-and-other-types-124-接口与其他类型"><a href="#Interfaces-and-other-types-124-接口与其他类型" class="headerlink" title="Interfaces and other types &#124;  接口与其他类型"></a>Interfaces and other types <font color=silver>&#124; </font> 接口与其他类型</h2><h3 id="Interfaces-124-接口"><a href="#Interfaces-124-接口" class="headerlink" title="Interfaces &#124;  接口"></a>Interfaces <font color=silver>&#124; </font> 接口</h3><p>Interfaces in Go provide a way to specify the behavior of an object: if something can do <em>this</em>, then it can be used <em>here</em>. We’ve seen a couple of simple examples already; custom printers can be implemented by a <code>String</code> method while <code>Fprintf</code> can generate output to anything with a <code>Write</code> method. Interfaces with only one or two methods are common in Go code, and are usually given a name derived from the method, such as <code>io.Writer</code> for something that implements <code>Write</code>.</p>
+<blockquote>
+<p>Go 中的接口提供了一种指定对象行为的方法：如果有东西可以做到这一点，那么它就可以在这里使用。我们已经看过几个简单的例子；自定义打印函数可以通过 String 方法实现，而 Fprintf 可以使用 Write 方法生成任何输出。只有一两个方法的接口在 Go 代码中很常见，并且通常被赋予从方法派生的名称，例如 io.Writer 表示实现了 Write 的一类对象。</p>
+</blockquote>
+<p>A type can implement multiple interfaces. For instance, a collection can be sorted by the routines in package <code>sort</code> if it implements <code>sort.Interface</code> , which contains <code>Len()</code> , <code>Less(i, j int) bool</code> , and <code>Swap(i, j int)</code> , and it could also have a custom formatter. In this contrived example <code>Sequence</code> satisfies both.</p>
+<blockquote>
+<p>一个类型可以实现多个接口。例如，如果集合实现了 <code>sort.Interface</code> 接口，就可以通过 <code>sort</code> 包中的例程对其进行排序，接口包含<code>Len()</code>、<code>Less(i, j int) bool</code> 和 <code>Swap(i, j int)</code> ，它也可以有一个自定义的格式化程序。</p>
+<p>一个类型可以实现多个接口。例如，如果集合实现了 <code>sort.Interface</code> 包，则可以通过 <code>sort</code> 包中的例程对集合进行排序，其中包含 <code>Len()</code>、<code>Less(i, j int) bool</code> 和 <code>Swap(i, j int)</code> ，它也可以有一个自定义的格式化程序。以下构造的例子中，<code>Sequence</code> 满足两种情况。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Methods required by sort.Interface.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Len</span><span class="params">()</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(s)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Less</span><span class="params">(i, j <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s[i] &lt; s[j]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Swap</span><span class="params">(i, j <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    s[i], s[j] = s[j], s[i]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Method for printing - sorts the elements before printing.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    sort.Sort(s)</span><br><span class="line">    str := <span class="string">"["</span></span><br><span class="line">    <span class="keyword">for</span> i, elem := <span class="keyword">range</span> s &#123;</span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">0</span> &#123;</span><br><span class="line">            str += <span class="string">" "</span></span><br><span class="line">        &#125;</span><br><span class="line">        str += fmt.Sprint(elem)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> str + <span class="string">"]"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Conversions-124-转换"><a href="#Conversions-124-转换" class="headerlink" title="Conversions &#124;  转换"></a>Conversions <font color=silver>&#124; </font> 转换</h3><p>The <code>String</code> method of <code>Sequence</code> is recreating the work that <code>Sprint</code> already does for slices. We can share the effort if we convert the <code>Sequence</code> to a plain <code>[]int</code> before calling <code>Sprint</code> .</p>
+<blockquote>
+<p> <code>Sequence</code> 的 <code>String</code>方法重新实现了 <code>Sprint</code>为切片实现的功能。如果我们在调用<code>Sprint</code>前把 <code>Sequence</code> 转为纯粹的 []int，就可以共享之前的功能。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    sort.Sort(s)</span><br><span class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This method is another example of the conversion technique for calling <code>Sprintf</code> safely from a <code>String</code> method. Because the two types ( <code>Sequence</code> and <code>[]int</code> ) are the same if we ignore the type name, it’s legal to convert between them. The conversion doesn’t create a new value, it just temporarily acts as though the existing value has a new type. (There are other legal conversions, such as from integer to floating point, that do create a new value.)</p>
+<blockquote>
+<p>该方法是转换技术的另一个例子，在 <code>String</code> 方法中安全地调用<code>Sprintf</code> 。如果我们忽略类型名的话，其实这两种类型（ <code>Sequence</code> and <code>[]int</code>）是相同的，因此它们之间是可以相互转换的。转换并不会创建新的值，它只是暂时让现在的值看起来有一个新类型而已。（也有一些会创建新值的合法转换，如从整数转为浮点数。）</p>
+</blockquote>
+<p>It’s an idiom in Go programs to convert the type of an expression to access a different set of methods. As an example, we could use the existing type <code>sort.IntSlice</code> to reduce the entire example to this:</p>
+<blockquote>
+<p>在Go语言中，访问不同方法集时进行类型转换是一种习惯用法。例如，我们可以用现有类型 <code>sort.IntSlice</code> 来简化整个例子。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Method for printing - sorts the elements before printing</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    sort.IntSlice(s).Sort()</span><br><span class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now, instead of having <code>Sequence</code> implement multiple interfaces (sorting and printing), we’re using the ability of a data item to be converted to multiple types ( <code>Sequence</code> , <code>sort.IntSlice</code> and <code>[]int</code> ), each of which does some part of the job. That’s more unusual in practice but can be effective.</p>
+<blockquote>
+<p>现在，不必为<code>Sequence</code> 实现多个接口（sorting and printing），我们可以通过将数据项转换为多种类型（<code>Sequence</code> , <code>sort.IntSlice</code> and <code>[]int</code>），每个完成其一部分工作。在实践中虽不多见，却往往很高效。</p>
+</blockquote>
+<h3 id="Interface-conversions-and-type-assertions-124-接口转换和类型断言"><a href="#Interface-conversions-and-type-assertions-124-接口转换和类型断言" class="headerlink" title="Interface conversions and type assertions &#124;  接口转换和类型断言"></a>Interface conversions and type assertions <font color=silver>&#124; </font> 接口转换和类型断言</h3><p><a href="https://docs.huihoo.com/go/golang.org/doc/effective_go.html#type_switch" target="_blank" rel="noopener">Type switches</a> are a form of conversion: they take an interface and, for each case in the switch, in a sense convert it to the type of that case. Here’s a simplified version of how the code under <code>fmt.Printf</code> turns a value into a string using a type switch. If it’s already a string, we want the actual string value held by the interface, while if it has a <code>String</code> method we want the result of calling the method.</p>
+<blockquote>
+<p>类型选择是一种转换形式，他们接收一个接口，在选择语句中转换为条件对应的类型。以下是<code>fmt.Printf</code>的简化代码，它使用类型转换将值转换成一个字符串。如果它已经是一个字符串，我们需要接口中的实际字符串值，而如果它有一个<code>String</code>方法，我们需要调用该方法的结果。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Stringer <span class="keyword">interface</span> &#123;</span><br><span class="line">    String() <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> value <span class="keyword">interface</span>&#123;&#125; <span class="comment">// Value provided by caller.</span></span><br><span class="line"><span class="keyword">switch</span> str := value.(<span class="keyword">type</span>) &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">    <span class="keyword">return</span> str</span><br><span class="line"><span class="keyword">case</span> Stringer:</span><br><span class="line">    <span class="keyword">return</span> str.String()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The first case finds a concrete value; the second converts the interface into another interface. It’s perfectly fine to mix types this way.</p>
+<blockquote>
+<p>第一种情况是获取具体值；第二种则转换为一个新接口。对于混合类型这种方式非常好。</p>
+</blockquote>
+<p>What if there’s only one type we care about? If we know the value holds a <code>string</code> and we just want to extract it? A one-case type switch would do, but so would a_type assertion_. A type assertion takes an interface value and extracts from it a value of the specified explicit type. The syntax borrows from the clause opening a type switch, but with an explicit type rather than the <code>type</code> keyword:</p>
+<blockquote>
+<p>如果我们只关心一种类型呢？如果我们知道它的值是个字符串，而我们只想提取它呢？一个 case 的 switch 可以实现，类型断言也可以。类型断言采用接口值并从中提取指定显式类型的值。该语法借鉴了一个 case 的 switch 子句，但使用了显式类型而不是<code>type</code>关键字：</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value.(typeName)</span><br></pre></td></tr></table></figure>
+
+<p>and the result is a new value with the static type <code>typeName</code> . That type must either be the concrete type held by the interface, or a second interface type that the value can be converted to. To extract the string we know is in the value, we could write:</p>
+<blockquote>
+<p>结果是一个静态类型为 <code>typeName</code> 的新值。该类型必须是接口持有的具体类型，或者是值可以转换的第二种接口类型。要提取其中的字符串，我们可以这样写：</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str := value.(<span class="keyword">string</span>)</span><br></pre></td></tr></table></figure>
+
+<p>But if it turns out that the value does not contain a string, the program will crash with a run-time error. To guard against that, use the “comma, ok” idiom to test, safely, whether the value is a string:</p>
+<blockquote>
+<p>如果事实上值中不包含字符串，程序就会崩溃并报运行时错误。为防止这种情况，使用”逗号, ok”习语来安全地测试值是否为字符串：</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str, ok := value.(<span class="keyword">string</span>)</span><br><span class="line"><span class="keyword">if</span> ok &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"string value is: %q\n"</span>, str)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"value is not a string\n"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If the type assertion fails, <code>str</code> will still exist and be of type string, but it will have the zero value, an empty string.</p>
+<blockquote>
+<p>如果类型断言失败了， <code>str</code> 仍然存在并且是一个字符串类开，但它将是零值，一个空字符串。</p>
+</blockquote>
+<p>As an illustration of the capability, here’s an <code>if</code> - <code>else</code> statement that’s equivalent to the type switch that opened this section.</p>
+<blockquote>
+<p>为了说明这个功能，来看下这个<code>if-else</code>语句，它等同于前面的swith</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> str, ok := value.(<span class="keyword">string</span>); ok &#123;</span><br><span class="line">    <span class="keyword">return</span> str</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> str, ok := value.(Stringer); ok &#123;</span><br><span class="line">    <span class="keyword">return</span> str.String()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Generality-124"><a href="#Generality-124" class="headerlink" title="Generality &#124; "></a>Generality <font color=silver>&#124; </font></h3><p>If a type exists only to implement an interface and will never have exported methods beyond that interface, there is no need to export the type itself. Exporting just the interface makes it clear the value has no interesting behavior beyond what is described in the interface. It also avoids the need to repeat the documentation on every instance of a common method.</p>
+<p>In such cases, the constructor should return an interface value rather than the implementing type. As an example, in the hash libraries both <code>crc32.NewIEEE</code> and <code>adler32.New</code> return the interface type <code>hash.Hash32</code> . Substituting the CRC-32 algorithm for Adler-32 in a Go program requires only changing the constructor call; the rest of the code is unaffected by the change of algorithm.</p>
+<p>A similar approach allows the streaming cipher algorithms in the various <code>crypto</code> packages to be separated from the block ciphers they chain together. The <code>Block</code> interface in the <code>crypto/cipher</code> package specifies the behavior of a block cipher, which provides encryption of a single block of data. Then, by analogy with the <code>bufio</code> package, cipher packages that implement this interface can be used to construct streaming ciphers, represented by the <code>Stream</code> interface, without knowing the details of the block encryption.</p>
+<p>The <code>crypto/cipher</code> interfaces look like this:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Block <span class="keyword">interface</span> &#123;</span><br><span class="line">    BlockSize() <span class="keyword">int</span></span><br><span class="line">    Encrypt(src, dst []<span class="keyword">byte</span>)</span><br><span class="line">    Decrypt(src, dst []<span class="keyword">byte</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Stream <span class="keyword">interface</span> &#123;</span><br><span class="line">    XORKeyStream(dst, src []<span class="keyword">byte</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Here’s the definition of the counter mode (CTR) stream, which turns a block cipher into a streaming cipher; notice that the block cipher’s details are abstracted away:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// NewCTR returns a Stream that encrypts/decrypts using the given Block in</span></span><br><span class="line"><span class="comment">// counter mode. The length of iv must be the same as the Block's block size.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewCTR</span><span class="params">(block Block, iv []<span class="keyword">byte</span>)</span> <span class="title">Stream</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>NewCTR</code> applies not just to one specific encryption algorithm and data source but to any implementation of the <code>Block</code> interface and any <code>Stream</code> . Because they return interface values, replacing CTR encryption with other encryption modes is a localized change. The constructor calls must be edited, but because the surrounding code must treat the result only as a <code>Stream</code> , it won’t notice the difference.</p>
+<h3 id="Interfaces-and-methods-124"><a href="#Interfaces-and-methods-124" class="headerlink" title="Interfaces and methods &#124; "></a>Interfaces and methods <font color=silver>&#124; </font></h3><p>Since almost anything can have methods attached, almost anything can satisfy an interface. One illustrative example is in the <code>http</code> package, which defines the <code>Handler</code> interface. Any object that implements <code>Handler</code> can serve HTTP requests.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Handler <span class="keyword">interface</span> &#123;</span><br><span class="line">    ServeHTTP(ResponseWriter, *Request)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>ResponseWriter</code> is itself an interface that provides access to the methods needed to return the response to the client. Those methods include the standard <code>Write</code> method, so an <code>http.ResponseWriter</code> can be used wherever an <code>io.Writer</code> can be used. <code>Request</code> is a struct containing a parsed representation of the request from the client.</p>
+<p>For brevity, let’s ignore POSTs and assume HTTP requests are always GETs; that simplification does not affect the way the handlers are set up. Here’s a trivial but complete implementation of a handler to count the number of times the page is visited.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Simple counter server.</span></span><br><span class="line"><span class="keyword">type</span> Counter <span class="keyword">struct</span> &#123;</span><br><span class="line">    n <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(ctr *Counter)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">    ctr.n++</span><br><span class="line">    fmt.Fprintf(w, <span class="string">"counter = %d\n"</span>, ctr.n)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(Keeping with our theme, note how <code>Fprintf</code> can print to an <code>http.ResponseWriter</code> .) For reference, here’s how to attach such a server to a node on the URL tree.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"net/http"</span></span><br><span class="line">...</span><br><span class="line">ctr := <span class="built_in">new</span>(Counter)</span><br><span class="line">http.Handle(<span class="string">"/counter"</span>, ctr)</span><br></pre></td></tr></table></figure>
+
+<p>But why make <code>Counter</code> a struct? An integer is all that’s needed. (The receiver needs to be a pointer so the increment is visible to the caller.)</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Simpler counter server.</span></span><br><span class="line"><span class="keyword">type</span> Counter <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(ctr *Counter)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">    *ctr++</span><br><span class="line">    fmt.Fprintf(w, <span class="string">"counter = %d\n"</span>, *ctr)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>What if your program has some internal state that needs to be notified that a page has been visited? Tie a channel to the web page.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A channel that sends a notification on each visit.</span></span><br><span class="line"><span class="comment">// (Probably want the channel to be buffered.)</span></span><br><span class="line"><span class="keyword">type</span> Chan <span class="keyword">chan</span> *http.Request</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(ch Chan)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">    ch &lt;- req</span><br><span class="line">    fmt.Fprint(w, <span class="string">"notification sent"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Finally, let’s say we wanted to present on <code>/args</code> the arguments used when invoking the server binary. It’s easy to write a function to print the arguments.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ArgServer</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(os.Args)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>How do we turn that into an HTTP server? We could make <code>ArgServer</code> a method of some type whose value we ignore, but there’s a cleaner way. Since we can define a method for any type except pointers and interfaces, we can write a method for a function. The <code>http</code> package contains this code:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The HandlerFunc type is an adapter to allow the use of</span></span><br><span class="line"><span class="comment">// ordinary functions as HTTP handlers.  If f is a function</span></span><br><span class="line"><span class="comment">// with the appropriate signature, HandlerFunc(f) is a</span></span><br><span class="line"><span class="comment">// Handler object that calls f.</span></span><br><span class="line"><span class="keyword">type</span> HandlerFunc <span class="function"><span class="keyword">func</span><span class="params">(ResponseWriter, *Request)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ServeHTTP calls f(w, req).</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f HandlerFunc)</span> <span class="title">ServeHTTP</span><span class="params">(w ResponseWriter, req *Request)</span></span> &#123;</span><br><span class="line">    f(w, req)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>HandlerFunc</code> is a type with a method, <code>ServeHTTP</code> , so values of that type can serve HTTP requests. Look at the implementation of the method: the receiver is a function, <code>f</code> , and the method calls <code>f</code> . That may seem odd but it’s not that different from, say, the receiver being a channel and the method sending on the channel.</p>
+<p>To make <code>ArgServer</code> into an HTTP server, we first modify it to have the right signature.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Argument server.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ArgServer</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">    fmt.Fprintln(w, os.Args)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>ArgServer</code> now has same signature as <code>HandlerFunc</code> , so it can be converted to that type to access its methods, just as we converted <code>Sequence</code> to <code>IntSlice</code> to access <code>IntSlice.Sort</code> . The code to set it up is concise:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http.Handle(<span class="string">"/args"</span>, http.HandlerFunc(ArgServer))</span><br></pre></td></tr></table></figure>
+
+<p>When someone visits the page <code>/args</code> , the handler installed at that page has value <code>ArgServer</code> and type <code>HandlerFunc</code> . The HTTP server will invoke the method <code>ServeHTTP</code> of that type, with <code>ArgServer</code> as the receiver, which will in turn call <code>ArgServer</code> (via the invocation <code>f(w, req)</code> inside <code>HandlerFunc.ServeHTTP</code> ). The arguments will then be displayed.</p>
+<p>In this section we have made an HTTP server from a struct, an integer, a channel, and a function, all because interfaces are just sets of methods, which can be defined for (almost) any type.</p>
+<hr>
+<p><img src="/source/assets/images/leunggeorge.github.io-image-9o2i34.png" alt="20200131220947.png"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/writing/" rel="tag"># writing</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/effective-go%20chapter9.html" rel="next" title="effective-go chapter9">
+                <i class="fa fa-chevron-left"></i> effective-go chapter9
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/effective-go%20chapter11.html" rel="prev" title="effective-go chapter11">
+                effective-go chapter11 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Interfaces-and-other-types-124-接口与其他类型"><span class="nav-number">1.</span> <span class="nav-text">Interfaces and other types &amp;#124;  接口与其他类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Interfaces-124-接口"><span class="nav-number">1.1.</span> <span class="nav-text">Interfaces &amp;#124;  接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conversions-124-转换"><span class="nav-number">1.2.</span> <span class="nav-text">Conversions &amp;#124;  转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interface-conversions-and-type-assertions-124-接口转换和类型断言"><span class="nav-number">1.3.</span> <span class="nav-text">Interface conversions and type assertions &amp;#124;  接口转换和类型断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generality-124"><span class="nav-number">1.4.</span> <span class="nav-text">Generality &amp;#124; </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interfaces-and-methods-124"><span class="nav-number">1.5.</span> <span class="nav-text">Interfaces and methods &amp;#124; </span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>

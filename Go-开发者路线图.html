@@ -1,0 +1,1453 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="golang,文摘,学习路线," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="在 2019 成为一名 Go 开发者的路线图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go 开发者路线图">
+<meta property="og:url" content="https://liangyuanzheng.com/Go-%E5%BC%80%E5%8F%91%E8%80%85%E8%B7%AF%E7%BA%BF%E5%9B%BE.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="在 2019 成为一名 Go 开发者的路线图：">
+<meta property="og:image" content="https://liangyuanzheng.com/source/assets/images/201910031657412.png">
+<meta property="og:image" content="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg">
+<meta property="article:published_time" content="2019-10-03T08:34:06.000Z">
+<meta property="article:modified_time" content="2025-12-02T00:48:22.393Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="golang">
+<meta property="article:tag" content="文摘">
+<meta property="article:tag" content="学习路线">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/source/assets/images/201910031657412.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/Go-开发者路线图.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>Go 开发者路线图 | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/Go-%E5%BC%80%E5%8F%91%E8%80%85%E8%B7%AF%E7%BA%BF%E5%9B%BE.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Go 开发者路线图</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-03T08:34:06+00:00">
+                2019-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AC%E8%BD%BD/" itemprop="url" rel="index">
+                    <span itemprop="name">转载</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  748
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>在 2019 成为一名 <a href="https://golang.org/" target="_blank" rel="noopener">Go</a> 开发者的路线图：</p>
+</blockquote>
+<a id="more"></a>
+
+<p>在下边有一个图表，如果你想要成为一名 Go 的开发者的话，里面记录了一条成长路线以及一些你也许可以用得上的库。这是我为每一个想要问我：”我该怎么才能成为 Go 的开发者？“的人而准备的。</p>
+<h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a><strong>免责声明</strong></h2><blockquote>
+<p>本路线图的目的是让您了解大致的学习内容。路线图会在您对接下来要学习什么感到困惑的时候给您适当的指导，而不是让您选择时髦的东西。你应该逐渐了解为什么一个工具比另一个工具更适合某些情况。记住，时髦的东西不一定最适合某个情况</p>
+</blockquote>
+<h2 id="给我一个-Star！-star"><a href="#给我一个-Star！-star" class="headerlink" title="给我一个 Star！ :star:"></a>给我一个 Star！ :star:</h2><p>如果您喜欢或者打算使用这个项目来学习或者来开始你的设计，给我一个 Star，谢谢！</p>
+<h2 id="路线图"><a href="#路线图" class="headerlink" title="路线图"></a>路线图</h2><p><img src="/source/assets/images/201910031657412.png" alt="201910031657412.png"></p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ol>
+<li><p>先决条件</p>
+<ul>
+<li><a href="https://golangbot.com/" target="_blank" rel="noopener">Go</a></li>
+<li><a href="https://blog.golang.org/using-go-modules" target="_blank" rel="noopener">Go Modules</a></li>
+<li><a href="https://www.w3schools.com/sql/default.asp" target="_blank" rel="noopener">SQL</a></li>
+</ul>
+</li>
+<li><p>通用开发技能</p>
+<ul>
+<li>学习 GIT，在 GitHub 上建立一些仓库，与其它人分享你的代码</li>
+<li>了解 HTTP(S) 协议，request 方法（GET, POST, PUT, PATCH, DELETE, OPTIONS）</li>
+<li>不要害怕使用 Google，<a href="http://www.powersearchingwithgoogle.com/" target="_blank" rel="noopener">Google 搜索的力量</a></li>
+<li>看一些和数据结构以及算法有关的书籍</li>
+<li>学习关于认证的基础实现</li>
+<li>面向对象原则等等</li>
+</ul>
+</li>
+<li><p>命令行工具</p>
+<ol>
+<li><a href="https://github.com/spf13/cobra" target="_blank" rel="noopener">cobra</a></li>
+<li><a href="https://github.com/urfave/cli" target="_blank" rel="noopener">urfave&#x2F;cli</a></li>
+</ol>
+</li>
+<li><p>网页框架 + 路由</p>
+<ol>
+<li><a href="https://github.com/labstack/echo" target="_blank" rel="noopener">Echo</a></li>
+<li><a href="https://github.com/astaxie/beego" target="_blank" rel="noopener">Beego</a></li>
+<li><a href="https://github.com/gin-gonic/gin" target="_blank" rel="noopener">Gin</a></li>
+<li><a href="https://github.com/revel/revel" target="_blank" rel="noopener">Revel</a></li>
+<li><a href="https://github.com/go-chi/chi" target="_blank" rel="noopener">Chi</a></li>
+</ol>
+</li>
+<li><p>数据库</p>
+<ol>
+<li>关系型<ol>
+<li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-2017" target="_blank" rel="noopener">SQL Server</a></li>
+<li><a href="https://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL</a></li>
+<li><a href="https://mariadb.org/" target="_blank" rel="noopener">MariaDB</a></li>
+<li><a href="https://www.mysql.com/" target="_blank" rel="noopener">MySQL</a></li>
+<li><a href="https://www.cockroachlabs.com/" target="_blank" rel="noopener">CockroachDB</a></li>
+</ol>
+</li>
+<li>云数据库<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db" target="_blank" rel="noopener">CosmosDB</a></li>
+<li><a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">DynamoDB</a></li>
+</ul>
+</li>
+<li>搜索引擎<ul>
+<li><a href="https://www.elastic.co/" target="_blank" rel="noopener">ElasticSearch</a></li>
+<li><a href="http://lucene.apache.org/solr/" target="_blank" rel="noopener">Solr</a></li>
+<li><a href="http://sphinxsearch.com/" target="_blank" rel="noopener">Sphinx</a></li>
+</ul>
+</li>
+<li>NoSQL<ul>
+<li><a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a></li>
+<li><a href="https://redis.io/" target="_blank" rel="noopener">Redis</a></li>
+<li><a href="http://cassandra.apache.org/" target="_blank" rel="noopener">Apache Cassandra</a></li>
+<li><a href="https://github.com/mbdavid/LiteDB" target="_blank" rel="noopener">LiteDB</a></li>
+<li><a href="https://github.com/ravendb/ravendb" target="_blank" rel="noopener">RavenDB</a></li>
+<li><a href="http://couchdb.apache.org/" target="_blank" rel="noopener">CouchDB</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>对象关系映射框架</p>
+<ol>
+<li><a href="https://github.com/jinzhu/gorm" target="_blank" rel="noopener">Gorm</a></li>
+<li><a href="https://github.com/go-xorm/xorm" target="_blank" rel="noopener">Xorm</a></li>
+</ol>
+</li>
+<li><p>高速缓存</p>
+<ol>
+<li><a href="https://github.com/bluele/gcache" target="_blank" rel="noopener">GCache</a></li>
+<li>分布式缓存<ol>
+<li><a href="https://github.com/go-redis/redis" target="_blank" rel="noopener">Go-Redis</a></li>
+<li><a href="https://github.com/bradfitz/gomemcache" target="_blank" rel="noopener">GoMemcached</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>日志</p>
+<ol>
+<li>日志框架<ul>
+<li><a href="https://github.com/uber-go/zap" target="_blank" rel="noopener">Zap</a></li>
+<li><a href="https://github.com/rs/zerolog" target="_blank" rel="noopener">ZeroLog</a></li>
+<li><a href="https://github.com/sirupsen/logrus" target="_blank" rel="noopener">Logrus</a></li>
+</ul>
+</li>
+<li>日志管理系统<ul>
+<li><a href="http://sentry.io/" target="_blank" rel="noopener">Sentry.io</a></li>
+<li><a href="https://loggly.com/" target="_blank" rel="noopener">Loggly.com</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>实时通讯</p>
+<ol>
+<li><a href="https://socket.io/" target="_blank" rel="noopener">Socket.IO</a></li>
+</ol>
+</li>
+<li><p>API 客户端</p>
+<ol>
+<li>REST<ul>
+<li><a href="https://github.com/h2non/gentleman" target="_blank" rel="noopener">Gentleman</a></li>
+<li><a href="https://github.com/kennethreitz/grequests" target="_blank" rel="noopener">GRequests</a></li>
+<li><a href="https://github.com/heimdal/heimdal" target="_blank" rel="noopener">heimdall</a></li>
+</ul>
+</li>
+<li><a href="https://graphql.org/" target="_blank" rel="noopener">GraphQL</a><ul>
+<li><a href="https://github.com/99designs/gqlgen" target="_blank" rel="noopener">gqlgen</a></li>
+<li><a href="https://github.com/graph-gophers/graphql-go" target="_blank" rel="noopener">graphql-go</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>最好知道</p>
+<ul>
+<li><a href="https://github.com/chriso/validator.js/" target="_blank" rel="noopener">Validator</a></li>
+<li><a href="https://github.com/pytorch/glow" target="_blank" rel="noopener">Glow</a></li>
+<li><a href="https://github.com/tidwall/gjson" target="_blank" rel="noopener">GJson</a></li>
+<li><a href="https://github.com/volatiletech/authboss" target="_blank" rel="noopener">Authboss</a></li>
+<li><a href="https://github.com/ahl5esoft/golang-underscore" target="_blank" rel="noopener">Go-Underscore</a></li>
+</ul>
+</li>
+<li><p>测试</p>
+<ol>
+<li>单元，行为，集成测试<ol>
+<li><a href="https://github.com/golang/mock" target="_blank" rel="noopener">GoMock</a></li>
+<li><a href="https://github.com/stretchr/testify" target="_blank" rel="noopener">Testify</a></li>
+<li><a href="https://github.com/onsi/ginkgo" target="_blank" rel="noopener">GinkGo</a></li>
+<li><a href="https://github.com/onsi/gomega" target="_blank" rel="noopener">GoMega</a></li>
+<li><a href="https://github.com/go-check/check" target="_blank" rel="noopener">GoCheck</a></li>
+<li><a href="https://github.com/DATA-DOG/godog" target="_blank" rel="noopener">GoDog</a></li>
+<li><a href="https://github.com/smartystreets/goconvey" target="_blank" rel="noopener">GoConvey</a></li>
+</ol>
+</li>
+<li>端对端测试<ul>
+<li><a href="https://github.com/tebeka/selenium" target="_blank" rel="noopener">Selenium</a></li>
+<li><a href="https://github.com/viant/endly" target="_blank" rel="noopener">Endly</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>任务调度</p>
+<ul>
+<li><a href="https://github.com/roylee0704/gron" target="_blank" rel="noopener">Gron</a></li>
+<li><a href="https://github.com/bamzi/jobrunner" target="_blank" rel="noopener">JobRunner</a></li>
+</ul>
+</li>
+<li><p>微服务</p>
+<ol>
+<li>消息代理<ul>
+<li><a href="https://www.rabbitmq.com/tutorials/tutorial-one-go.html" target="_blank" rel="noopener">RabbitMQ</a></li>
+<li><a href="https://kafka.apache.org/" target="_blank" rel="noopener">Apache Kafka</a></li>
+<li><a href="https://github.com/apache/activemq" target="_blank" rel="noopener">ActiveMQ</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview" target="_blank" rel="noopener">Azure Service Bus</a></li>
+</ul>
+</li>
+<li>消息总线<ul>
+<li><a href="https://github.com/vardius/message-bus" target="_blank" rel="noopener">Message-Bus</a></li>
+</ul>
+</li>
+<li>框架<ul>
+<li><a href="https://github.com/go-kit/kit" target="_blank" rel="noopener">GoKit</a></li>
+<li><a href="https://github.com/micro/go-micro" target="_blank" rel="noopener">Micro</a></li>
+<li><a href="https://github.com/smallnest/rpcx" target="_blank" rel="noopener">rpcx</a></li>
+<li><a href="https://github.com/istio/istio" target="_blank" rel="noopener">istio</a></li>
+</ul>
+</li>
+<li>RPC<ul>
+<li><a href="https://github.com/protocolbuffers/protobuf" target="_blank" rel="noopener">Protocol Buffers</a></li>
+<li><a href="https://github.com/grpc/grpc-go" target="_blank" rel="noopener">gRPC-Go</a></li>
+<li><a href="https://github.com/grpc-ecosystem/grpc-gateway" target="_blank" rel="noopener">gRPC-Gateway</a></li>
+<li><a href="https://github.com/twitchtv/twirp" target="_blank" rel="noopener">Twirp</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><a href="https://github.com/tmrts/go-patterns" target="_blank" rel="noopener">Go-模式</a></p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>如果您认为该路线图可以改进，请务必提交PR或者发Issue。当然，我也会持续地改进它，所以你也许想要给这个仓库来个 Star 从而再次访问。</p>
+<p>想法来源于 : <a href="https://github.com/MoienTajik/AspNetCore-Developer-Roadmap" target="_blank" rel="noopener">ASP.NET Core Developer Roadmap</a></p>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><p>这个路线图是用 <a href="https://www.draw.io/" target="_blank" rel="noopener">Draw.io</a> 做的。项目文件为该仓库下的 <code>golang-developer-roadmap.xml</code> 文件。 您如果想要修改它，您可以进入 <a href="https://www.draw.io/" target="_blank" rel="noopener">Draw.io</a> 点击打开已有图表并且选择这个 <code>xml</code> 文件。它会为您打开这个路线图。改进它，并且上传，以及更新该 ReadMe 中的对应图片，然后提交 PR（以 400% 的缩放导出 PNG 以及使用 <a href="https://compressor.io/compress" target="_blank" rel="noopener">Compressor.io</a> 来压缩它）。</p>
+<ul>
+<li>用 PR 提交改进</li>
+<li>在 Issue 中交流想法</li>
+<li>传播这个图表</li>
+</ul>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" alt="License: CC BY-NC-SA 4.0"></a></p>
+<blockquote>
+<p><a href="https://github.com/Quorafind/golang-developer-roadmap-cn/blob/master/ReadMe.md" target="_blank" rel="noopener">原文</a></p>
+</blockquote>
+<hr>
+<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/default.min.css">
+<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+<script>
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+</script>
+
+<blockquote>
+<p>来源：<a href="https://leunggeorge.github.io/" target="_blank" rel="noopener">https://leunggeorge.github.io/</a>  </p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/golang/" rel="tag"># golang</a>
+          
+            <a href="/tags/%E6%96%87%E6%91%98/" rel="tag"># 文摘</a>
+          
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" rel="tag"># 学习路线</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/TCP-%E4%B8%8E-UDP.html" rel="next" title="TCP 与 UDP">
+                <i class="fa fa-chevron-left"></i> TCP 与 UDP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/golang-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-slice.html" rel="prev" title="golang 设计与实现 slice">
+                golang 设计与实现 slice <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#免责声明"><span class="nav-number">1.</span> <span class="nav-text">免责声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给我一个-Star！-star"><span class="nav-number">2.</span> <span class="nav-text">给我一个 Star！ :star:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路线图"><span class="nav-number">3.</span> <span class="nav-text">路线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-number">4.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贡献"><span class="nav-number">6.</span> <span class="nav-text">贡献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">7.</span> <span class="nav-text">License</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>

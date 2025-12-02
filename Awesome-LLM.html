@@ -1,0 +1,1416 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="code-CycccvLKGr" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="blog,note," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七点一刻的魔法书" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Awesome-LLM 🔥 Large Language Models (LLM) have taken the NLP community AI community the Whole World by storm. Here is a curated list of papers about large language models, especially relating to Chat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Awesome-LLM">
+<meta property="og:url" content="https://liangyuanzheng.com/Awesome-LLM.html">
+<meta property="og:site_name" content="七点一刻的魔法书">
+<meta property="og:description" content="Awesome-LLM 🔥 Large Language Models (LLM) have taken the NLP community AI community the Whole World by storm. Here is a curated list of papers about large language models, especially relating to Chat">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/8cdaceb60a9120edd71da31eebe343cd_MD5.gif">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/3ece06e242551f2fe43c97c31346d50f_MD5.png">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/cc496465737a6230293f36c764382b85_MD5.jpg">
+<meta property="og:image" content="https://liangyuanzheng.com/assets/images/c31953a1f1aba484caec36385ec18eb8_MD5.png">
+<meta property="article:published_time" content="2024-11-15T01:52:00.000Z">
+<meta property="article:modified_time" content="2025-12-02T00:48:22.398Z">
+<meta property="article:author" content="七点一刻">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangyuanzheng.com/assets/images/8cdaceb60a9120edd71da31eebe343cd_MD5.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FWXTLLN24O',
+      apiKey: '9fe78ed368d4c017f33c16a170ce10a0',
+      indexName: 'dev_jobbymsblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liangyuanzheng.com/Awesome-LLM.html"/>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134786669444472"
+     crossorigin="anonymous"></script>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-1134786669444472?ers=1" nonce="rrsMWi50mvFQ0nJ8zWOpsQ"></script><script nonce="rrsMWi50mvFQ0nJ8zWOpsQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+
+  <title>Awesome-LLM | 七点一刻的魔法书</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?85c063245825f8a02c40f450c05f5d86";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七点一刻的魔法书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">书里面记载了许多召唤术，可以召唤天使或者精灵为自己服务</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+<!-- 添加 theme.algolia_search.enable -->
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+　　　　　　<!--增加的代码 start-->
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://liangyuanzheng.com/Awesome-LLM.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七点一刻的魔法书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Awesome-LLM</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-11-15T01:52:00+00:00">
+                2024-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/llm/" itemprop="url" rel="index">
+                    <span itemprop="name">LLM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  970
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Awesome-LLM"><a href="#Awesome-LLM" class="headerlink" title="Awesome-LLM"></a><a href="https://github.com/Hannibal046/Awesome-LLM" target="_blank" rel="noopener">Awesome-LLM</a></h2><p><img src="/assets/images/8cdaceb60a9120edd71da31eebe343cd_MD5.gif"></p>
+<p>🔥 Large Language Models (LLM) have taken the <del>NLP community</del> <del>AI community</del> <strong>the Whole World</strong> by storm. Here is a curated list of papers about large language models, especially relating to ChatGPT. It also contains frameworks for LLM training, tools to deploy LLM, courses and tutorials about LLM and all publicly available LLM checkpoints and APIs.</p>
+<ul>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#awesome-llm-" target="_blank" rel="noopener">Awesome-LLM</a><ul>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#milestone-papers" target="_blank" rel="noopener">Milestone Papers</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#other-papers" target="_blank" rel="noopener">Other Papers</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#llm-leaderboard" target="_blank" rel="noopener">LLM Leaderboard</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#open-llm" target="_blank" rel="noopener">Open LLM</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#llm-data" target="_blank" rel="noopener">LLM Data</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#llm-evaluation" target="_blank" rel="noopener">LLM Evaluation</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#llm-training-frameworks" target="_blank" rel="noopener">LLM Training Framework</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#llm-deployment" target="_blank" rel="noopener">LLM Deployment</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#llm-applications" target="_blank" rel="noopener">LLM Applications</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#llm-books" target="_blank" rel="noopener">LLM Books</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#great-thoughts-about-llm" target="_blank" rel="noopener">Great thoughts about LLM</a></li>
+<li><a href="https://github.com/Hannibal046/Awesome-LLM#miscellaneous" target="_blank" rel="noopener">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Awesome-Chinese-LLM"><a href="#Awesome-Chinese-LLM" class="headerlink" title="Awesome-Chinese-LLM"></a><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM" target="_blank" rel="noopener">Awesome-Chinese-LLM</a></h2><p>整理开源的中文大语言模型，以规模较小、可私有化部署、训练成本较低的模型为主，包括底座模型，垂直领域微调及应用，数据集与教程等。</p>
+<p><img src="/assets/images/3ece06e242551f2fe43c97c31346d50f_MD5.png"><br>自 ChatGPT 为代表的大语言模型（Large Language Model, LLM）出现以后，由于其惊人的类通用人工智能（AGI）的能力，掀起了新一轮自然语言处理领域的研究和应用的浪潮。尤其是以 ChatGLM、LLaMA 等平民玩家都能跑起来的较小规模的 LLM 开源之后，业界涌现了非常多基于 LLM 的二次微调或应用的案例。本项目旨在收集和梳理中文 LLM 相关的开源模型、应用、数据集及教程等资料，目前收录的资源已达 100+个！</p>
+<ul>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E7%9B%AE%E5%BD%95" target="_blank" rel="noopener">目录</a><ul>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#1-%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">1. 模型</a><ul>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#11-%E6%96%87%E6%9C%ACllm%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">1.1 文本 LLM 模型</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#12-%E5%A4%9A%E6%A8%A1%E6%80%81llm%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">1.2 多模态 LLM 模型</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#2-%E5%BA%94%E7%94%A8" target="_blank" rel="noopener">2. 应用</a><ul>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#21-%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%E5%BE%AE%E8%B0%83" target="_blank" rel="noopener">2.1 垂直领域微调</a><ul>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E5%8C%BB%E7%96%97" target="_blank" rel="noopener">医疗</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E6%B3%95%E5%BE%8B" target="_blank" rel="noopener">法律</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E9%87%91%E8%9E%8D" target="_blank" rel="noopener">金融</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E6%95%99%E8%82%B2" target="_blank" rel="noopener">教育</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E7%A7%91%E6%8A%80" target="_blank" rel="noopener">科技</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E7%94%B5%E5%95%86" target="_blank" rel="noopener">电商</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8" target="_blank" rel="noopener">网络安全</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E5%86%9C%E4%B8%9A" target="_blank" rel="noopener">农业</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#22-langchain%E5%BA%94%E7%94%A8" target="_blank" rel="noopener">2.2 LangChain 应用</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#23-%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8" target="_blank" rel="noopener">2.3 其他应用</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#3-%E6%95%B0%E6%8D%AE%E9%9B%86" target="_blank" rel="noopener">3. 数据集</a><ul>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E9%A2%84%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E9%9B%86" target="_blank" rel="noopener">预训练数据集</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#sft%E6%95%B0%E6%8D%AE%E9%9B%86" target="_blank" rel="noopener">SFT 数据集</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E5%81%8F%E5%A5%BD%E6%95%B0%E6%8D%AE%E9%9B%86" target="_blank" rel="noopener">偏好数据集</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#4-llm%E8%AE%AD%E7%BB%83%E5%BE%AE%E8%B0%83%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">4. LLM 训练微调框架</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#5-llm%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">5. LLM 推理部署框架</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#6-llm%E8%AF%84%E6%B5%8B" target="_blank" rel="noopener">6. LLM 评测</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#7-llm%E6%95%99%E7%A8%8B" target="_blank" rel="noopener">7. LLM 教程</a><ul>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#llm%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" target="_blank" rel="noopener">LLM 基础知识</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#%E6%8F%90%E7%A4%BA%E5%B7%A5%E7%A8%8B%E6%95%99%E7%A8%8B" target="_blank" rel="noopener">提示工程教程</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#llm%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B" target="_blank" rel="noopener">LLM 应用教程</a></li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#llm%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B" target="_blank" rel="noopener">LLM 实战教程</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#8-%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93" target="_blank" rel="noopener">8. 相关仓库</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/HqWu-HITCS/Awesome-Chinese-LLM#star-history" target="_blank" rel="noopener">Star History</a></li>
+</ul>
+<h2 id="Awesome-LLMOps"><a href="#Awesome-LLMOps" class="headerlink" title="Awesome-LLMOps"></a><a href="https://github.com/tensorchord/Awesome-LLMOps" target="_blank" rel="noopener">Awesome-LLMOps</a></h2><p>An awesome &amp; curated list of best LLMOps tools for developers。</p>
+<ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#table-of-contents" target="_blank" rel="noopener">Table of Contents</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#model" target="_blank" rel="noopener">Model</a><ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#large-language-model" target="_blank" rel="noopener">Large Language Model</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#cv-foundation-model" target="_blank" rel="noopener">CV Foundation Model</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#audio-foundation-model" target="_blank" rel="noopener">Audio Foundation Model</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#serving" target="_blank" rel="noopener">Serving</a><ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#large-model-serving" target="_blank" rel="noopener">Large Model Serving</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#frameworksservers-for-serving" target="_blank" rel="noopener">Frameworks&#x2F;Servers for Serving</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#observability" target="_blank" rel="noopener">Observability</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#security" target="_blank" rel="noopener">Security</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#llmops" target="_blank" rel="noopener">LLMOps</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#search" target="_blank" rel="noopener">Search</a><ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#vector-search" target="_blank" rel="noopener">Vector search</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#code-ai" target="_blank" rel="noopener">Code AI</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#training" target="_blank" rel="noopener">Training</a><ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#ides-and-workspaces" target="_blank" rel="noopener">IDEs and Workspaces</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#foundation-model-fine-tuning" target="_blank" rel="noopener">Foundation Model Fine Tuning</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#frameworks-for-training" target="_blank" rel="noopener">Frameworks for Training</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#experiment-tracking" target="_blank" rel="noopener">Experiment Tracking</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#visualization" target="_blank" rel="noopener">Visualization</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#model-editing" target="_blank" rel="noopener">Model Editing</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#data" target="_blank" rel="noopener">Data</a><ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#data-management" target="_blank" rel="noopener">Data Management</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#data-storage" target="_blank" rel="noopener">Data Storage</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#data-tracking" target="_blank" rel="noopener">Data Tracking</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#feature-engineering" target="_blank" rel="noopener">Feature Engineering</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#datafeature-enrichment" target="_blank" rel="noopener">Data&#x2F;Feature enrichment</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#large-scale-deployment" target="_blank" rel="noopener">Large Scale Deployment</a><ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#ml-platforms" target="_blank" rel="noopener">ML Platforms</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#workflow" target="_blank" rel="noopener">Workflow</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#scheduling" target="_blank" rel="noopener">Scheduling</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#model-management" target="_blank" rel="noopener">Model Management</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#performance" target="_blank" rel="noopener">Performance</a><ul>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#ml-compiler" target="_blank" rel="noopener">ML Compiler</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#profiling" target="_blank" rel="noopener">Profiling</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#automl" target="_blank" rel="noopener">AutoML</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#optimizations" target="_blank" rel="noopener">Optimizations</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#federated-ml" target="_blank" rel="noopener">Federated ML</a></li>
+<li><a href="https://github.com/tensorchord/Awesome-LLMOps#awesome-lists" target="_blank" rel="noopener">Awesome Lists</a></li>
+</ul>
+<h2 id="awesome-LLMs-In-China"><a href="#awesome-LLMs-In-China" class="headerlink" title="awesome-LLMs-In-China"></a><a href="https://github.com/wgwang/awesome-LLMs-In-China" target="_blank" rel="noopener">awesome-LLMs-In-China</a></h2><p>中国大模型大全，全面收集有明确来源的大模型情况，包括机构、来源信息和分类等，随时更新。</p>
+<p>旨在记录中国大模型发展情况，欢迎在<strong>Issues</strong>中提供提供<strong>线索</strong>和<strong>素材</strong></p>
+<p>使用数据请注明来源：<strong>微信公众号：走向未来</strong>  和  <strong>仓库：<a href="https://github.com/wgwang/awesome-LLMs-In-China" target="_blank" rel="noopener">https://github.com/wgwang/awesome-LLMs-In-China</a></strong></p>
+<p>Awesome family related to LLMS includes:</p>
+<ul>
+<li><a href="https://github.com/wgwang/awesome-LLM-benchmarks" target="_blank" rel="noopener">https://github.com/wgwang/awesome-LLM-benchmarks</a></li>
+<li><a href="https://github.com/wgwang/awesome-LLMs-In-China" target="_blank" rel="noopener">https://github.com/wgwang/awesome-LLMs-In-China</a></li>
+<li><a href="https://github.com/wgwang/awesome-open-foundation-models" target="_blank" rel="noopener">https://github.com/wgwang/awesome-open-foundation-models</a></li>
+</ul>
+<p>大模型相关的 Awesome 系列包括：</p>
+<ul>
+<li>大模型评测数据集： <a href="https://github.com/wgwang/awesome-LLM-benchmarks" target="_blank" rel="noopener">https://github.com/wgwang/awesome-LLM-benchmarks</a></li>
+<li>中国大模型列表： <a href="https://github.com/wgwang/awesome-LLMs-In-China" target="_blank" rel="noopener">https://github.com/wgwang/awesome-LLMs-In-China</a></li>
+<li>开源开放基础大模型列表： <a href="https://github.com/wgwang/awesome-open-foundation-models" target="_blank" rel="noopener">https://github.com/wgwang/awesome-open-foundation-models</a></li>
+</ul>
+<h2 id="awesome-LLM-resourses-：★★★★☆"><a href="#awesome-LLM-resourses-：★★★★☆" class="headerlink" title="awesome-LLM-resourses ：★★★★☆"></a><a href="https://github.com/WangRongsheng/awesome-LLM-resourses" target="_blank" rel="noopener">awesome-LLM-resourses</a> ：★★★★☆</h2><p><font color="#ff0000">这个好</font></p>
+<p>全世界最好的 LLM 资料总结 | Summary of the world’s best LLM resources.</p>
+<ul>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E6%95%B0%E6%8D%AE-Data" target="_blank" rel="noopener">数据 Data</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E5%BE%AE%E8%B0%83-Fine-Tuning" target="_blank" rel="noopener">微调 Fine-Tuning</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E6%8E%A8%E7%90%86-Inference" target="_blank" rel="noopener">推理 Inference</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E8%AF%84%E4%BC%B0-Evaluation" target="_blank" rel="noopener">评估 Evaluation</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E4%BD%93%E9%AA%8C-Usage" target="_blank" rel="noopener">体验 Usage</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E7%9F%A5%E8%AF%86%E5%BA%93-RAG" target="_blank" rel="noopener">知识库 RAG</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E6%99%BA%E8%83%BD%E4%BD%93-Agents" target="_blank" rel="noopener">智能体 Agents</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E6%90%9C%E7%B4%A2-Search" target="_blank" rel="noopener">搜索 Search</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E4%B9%A6%E7%B1%8D-Book" target="_blank" rel="noopener">书籍 Book</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E8%AF%BE%E7%A8%8B-Course" target="_blank" rel="noopener">课程 Course</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E6%95%99%E7%A8%8B-Tutorial" target="_blank" rel="noopener">教程 Tutorial</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#%E8%AE%BA%E6%96%87-Paper" target="_blank" rel="noopener">论文 Paper</a></li>
+<li><a href="https://github.com/WangRongsheng/awesome-LLM-resourses#tips" target="_blank" rel="noopener">Tips</a></li>
+</ul>
+<h2 id="Awesome-Domain-LLM"><a href="#Awesome-Domain-LLM" class="headerlink" title="Awesome-Domain-LLM"></a><a href="https://github.com/luban-agi/Awesome-Domain-LLM" target="_blank" rel="noopener">Awesome-Domain-LLM</a></h2><p>自以 ChatGPT 为代表的大语言模型出现以后，掀起了新一轮研究和应用浪潮，出现了许多包括 LLaMA、ChatGLM、Baichuan、Qwen 等在内的通用模型。随后，来自不同领域的从业人员在通用模型的基础上通过持续预训练&#x2F;指令微调将其应用于垂直领域。</p>
+<p><img src="/assets/images/cc496465737a6230293f36c764382b85_MD5.jpg"></p>
+<p>本项目旨在收集和梳理垂直领域的<strong>开源模型</strong>、<strong>数据集</strong>及<strong>评测基准</strong>。欢迎大家贡献本项目未收录的开源模型、数据集、评测基准等内容，一起推动大模型赋能各行各业！</p>
+<ul>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">🤖 模型</a><ul>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">🌐 通用模型</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">🧩 领域模型</a><ul>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E5%8C%BB%E7%96%97" target="_blank" rel="noopener">🏥 医疗</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E6%B3%95%E5%BE%8B" target="_blank" rel="noopener">⚖ 法律</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E9%87%91%E8%9E%8D" target="_blank" rel="noopener">💰 金融</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E6%95%99%E8%82%B2" target="_blank" rel="noopener">🎓 教育</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E5%85%B6%E4%BB%96" target="_blank" rel="noopener">➕ 其他</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E6%95%B0%E6%8D%AE%E9%9B%86" target="_blank" rel="noopener">📚 数据集</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E8%AF%84%E6%B5%8B%E5%9F%BA%E5%87%86" target="_blank" rel="noopener">📏 评测基准</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E9%99%84%E5%BD%95" target="_blank" rel="noopener">📎 附录</a><ul>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E7%82%B9%E8%B5%9E%E5%8E%86%E5%8F%B2" target="_blank" rel="noopener">✨ 点赞历史</a></li>
+<li><a href="https://github.com/luban-agi/Awesome-Domain-LLM#-%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5" target="_blank" rel="noopener">🤝 友情链接</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="awesome-LLMs-interview-notes"><a href="#awesome-LLMs-interview-notes" class="headerlink" title="awesome_LLMs_interview_notes"></a><a href="https://github.com/jackaduma/awesome_LLMs_interview_notes" target="_blank" rel="noopener">awesome_LLMs_interview_notes</a></h2><p>LLMs interview notes and answers</p>
+<hr>
+<p><img src="/assets/images/c31953a1f1aba484caec36385ec18eb8_MD5.png"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.html" rel="next" title="索引下推">
+                <i class="fa fa-chevron-left"></i> 索引下推
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/%E6%90%9E%E6%87%82%E5%BC%82%E5%9C%B0%E5%A4%9A%E6%B4%BB%EF%BC%8C%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html" rel="prev" title="搞懂异地多活，看这篇就够了">
+                搞懂异地多活，看这篇就够了 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/9783818?v=3&u=e2bb1f397cfd1d21252d25563057694fe8704850&s=140"
+               alt="七点一刻" />
+          <p class="site-author-name" itemprop="name">七点一刻</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">110</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LeungGeorge" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Awesome-LLM"><span class="nav-number">1.</span> <span class="nav-text">Awesome-LLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Awesome-Chinese-LLM"><span class="nav-number">2.</span> <span class="nav-text">Awesome-Chinese-LLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Awesome-LLMOps"><span class="nav-number">3.</span> <span class="nav-text">Awesome-LLMOps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awesome-LLMs-In-China"><span class="nav-number">4.</span> <span class="nav-text">awesome-LLMs-In-China</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awesome-LLM-resourses-：★★★★☆"><span class="nav-number">5.</span> <span class="nav-text">awesome-LLM-resourses ：★★★★☆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Awesome-Domain-LLM"><span class="nav-number">6.</span> <span class="nav-text">Awesome-Domain-LLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awesome-LLMs-interview-notes"><span class="nav-number">7.</span> <span class="nav-text">awesome_LLMs_interview_notes</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七点一刻</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CSoj0H4zAhO6mczwUbRH2MXq-gzGzoHsz',
+        appKey: 'bHikuasaTpYy6LWbcaW8JAiF',
+        placeholder: '写下你的想法 ^_^',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+  <!-- 小红心   <script type="text/javascript" src="/js/src/love.js"></script>  -->
+
+</body>
+</html>
