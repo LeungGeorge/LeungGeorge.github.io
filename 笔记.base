@@ -1,7 +1,10 @@
 filters:
   and:
     - file.ext == "md"
-    - file.folder == "source/_posts"
+    - or:
+        - file.folder == "source/_posts"
+        - file.folder == "source/_discarded"
+        - file.folder == "source/_drafts"
 views:
   - type: table
     name: 表格
