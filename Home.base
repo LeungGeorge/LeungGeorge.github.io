@@ -10,8 +10,12 @@ views:
     name: 表格
     order:
       - file.name
+      - categories
+      - tags
       - file.ctime
       - file.mtime
     sort:
       - property: date
         direction: DESC
+    columnSize:
+      note.tags: 570
