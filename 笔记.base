@@ -1,0 +1,14 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.folder == "source/_posts"
+views:
+  - type: table
+    name: 表格
+    order:
+      - file.name
+      - file.ctime
+      - file.mtime
+    sort:
+      - property: date
+        direction: DESC
